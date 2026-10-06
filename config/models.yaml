@@ -1,0 +1,53 @@
+# ---------------------------------------------------------------------------
+# Kohort model configuration
+# Which AI model does which job. Swap models here - no code changes needed.
+# ---------------------------------------------------------------------------
+
+providers:
+  google:
+    base_url: https://generativelanguage.googleapis.com/v1beta/openai/
+    api_key_env: GEMINI_API_KEY
+  openrouter:
+    base_url: https://openrouter.ai/api/v1
+    api_key_env: OPENROUTER_API_KEY
+
+default_provider: openrouter
+
+roles:
+  research:
+    model: perplexity/llama-3.1-sonar-large-128k-online
+    temperature: 0.3
+    max_tokens: 8000
+
+  personas:
+    models:
+      - deepseek/deepseek-v4.1-flash
+    temperature: 1.0
+    max_tokens: 1500
+
+  analyst:
+    model: deepseek/deepseek-v4.1-flash
+    temperature: 0.2
+    max_tokens: 16000
+
+  critic:
+    model: typesafe/jev-router
+    temperature: 0.0
+    max_tokens: 100
+
+  report:
+    model: deepseek/deepseek-v4.1-flash
+    temperature: 0.4
+    max_tokens: 10000
+
+prices:
+  deepseek/deepseek-v4.1-flash: [0.30, 1.20]
+  perplexity/llama-3.1-sonar-large-128k-online: [1.00, 1.00]
+
+run:
+  concurrency: 20
+  max_retries: 5
+  budget_usd: 1.0
+  intent_weights:
+    definitely: 0.75
+    probably: 0.25

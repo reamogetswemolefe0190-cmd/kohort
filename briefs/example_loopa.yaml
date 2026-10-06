@@ -1,0 +1,42 @@
+# ---------------------------------------------------------------------------
+# Example client brief. Copy this file for each new client test.
+# Required: client, product_name, category, one_liner, description,
+#           target_market, region. Everything else is optional.
+# ---------------------------------------------------------------------------
+
+client: Loopa Home GmbH
+product_name: Loopa
+category: household cleaning products
+one_liner: Plastic-free cleaning refills delivered monthly - just add tap water.
+
+description: |
+  Loopa sends you concentrated cleaning tablets (all-purpose, bathroom, glass,
+  kitchen) in a recyclable paper envelope once a month. You get a starter set of
+  four durable glass spray bottles. Drop a tablet into a bottle, add tap water,
+  and it's ready to use. No plastic bottles, no heavy shopping bags, and the
+  formulas are plant-based and safe around kids and pets.
+
+key_features:
+  - Starter set of 4 reusable glass spray bottles included
+  - Monthly delivery of concentrated cleaning tablets through the letterbox
+  - Plant-based, child- and pet-safe formulas
+  - Pause, skip or cancel any time in the app
+  - Each tablet replaces one 500 ml plastic bottle
+
+price: 14.90
+currency: EUR
+price_unit: per month
+
+target_market: Environmentally conscious households aged 25-45 in urban areas
+region: Germany
+
+competitors:
+  - Supermarket own-brand cleaners
+  - Frosch
+  - Everdrop
+  - Blueland
+
+# Specific questions the client wants answered. Every persona answers these.
+questions:
+  - Would you prefer a monthly subscription or buying refills when you need them?
+  - How important is it that the starter bottles are glass rather than plastic?
