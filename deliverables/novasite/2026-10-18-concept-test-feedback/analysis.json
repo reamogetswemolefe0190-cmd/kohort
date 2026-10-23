@@ -1,0 +1,224 @@
+{
+  "n": 20,
+  "metrics": {
+    "purchase_intent": {
+      "n": 20,
+      "mean": 2.2,
+      "top2": 0.05,
+      "bottom2": 0.85,
+      "dist": {
+        "1": 0.0,
+        "2": 0.85,
+        "3": 0.1,
+        "4": 0.05,
+        "5": 0.0
+      }
+    },
+    "appeal": {
+      "n": 20,
+      "mean": 2.85,
+      "top2": 0.05,
+      "bottom2": 0.2,
+      "dist": {
+        "1": 0.0,
+        "2": 0.2,
+        "3": 0.75,
+        "4": 0.05,
+        "5": 0.0
+      }
+    },
+    "uniqueness": {
+      "n": 20,
+      "mean": 2.65,
+      "top2": 0.0,
+      "bottom2": 0.35,
+      "dist": {
+        "1": 0.0,
+        "2": 0.35,
+        "3": 0.65,
+        "4": 0.0,
+        "5": 0.0
+      }
+    },
+    "believability": {
+      "n": 20,
+      "mean": 2.4,
+      "top2": 0.0,
+      "bottom2": 0.6,
+      "dist": {
+        "1": 0.0,
+        "2": 0.6,
+        "3": 0.4,
+        "4": 0.0,
+        "5": 0.0
+      }
+    },
+    "value_for_money": {
+      "n": 0
+    }
+  },
+  "trial_estimate": 0.013,
+  "intent_weights": {
+    "definitely": 0.75,
+    "probably": 0.25
+  },
+  "by": {
+    "segment": {
+      "Growth-minded owner-operators": {
+        "n": 5,
+        "intent_mean": 2,
+        "intent_top2": 0.0,
+        "appeal_mean": 3,
+        "trial_estimate": 0.0
+      },
+      "Manual admin SMEs": {
+        "n": 6,
+        "intent_mean": 2.33,
+        "intent_top2": 0.167,
+        "appeal_mean": 3,
+        "trial_estimate": 0.042
+      },
+      "Skeptical or lukewarm browsers": {
+        "n": 2,
+        "intent_mean": 2,
+        "intent_top2": 0.0,
+        "appeal_mean": 2,
+        "trial_estimate": 0.0
+      },
+      "Budget-conscious brochure buyers": {
+        "n": 4,
+        "intent_mean": 2,
+        "intent_top2": 0.0,
+        "appeal_mean": 2.75,
+        "trial_estimate": 0.0
+      },
+      "Custom workflow buyers": {
+        "n": 3,
+        "intent_mean": 2.67,
+        "intent_top2": 0.0,
+        "appeal_mean": 3,
+        "trial_estimate": 0.0
+      }
+    },
+    "adopter_type": {
+      "early adopter": {
+        "n": 7,
+        "intent_mean": 2.43,
+        "intent_top2": 0.143,
+        "appeal_mean": 3.14,
+        "trial_estimate": 0.036
+      },
+      "early majority": {
+        "n": 7,
+        "intent_mean": 2.14,
+        "intent_top2": 0.0,
+        "appeal_mean": 2.86,
+        "trial_estimate": 0.0
+      },
+      "late majority": {
+        "n": 5,
+        "intent_mean": 2,
+        "intent_top2": 0.0,
+        "appeal_mean": 2.6,
+        "trial_estimate": 0.0
+      },
+      "laggard": {
+        "n": 1,
+        "intent_mean": 2,
+        "intent_top2": 0.0,
+        "appeal_mean": 2,
+        "trial_estimate": 0.0
+      }
+    },
+    "model": {
+      "deepseek/deepseek-v4.1-flash": {
+        "n": 10,
+        "intent_mean": 2.2,
+        "intent_top2": 0.1,
+        "appeal_mean": 2.9,
+        "trial_estimate": 0.025
+      },
+      "openai/gpt-4.1-mini": {
+        "n": 10,
+        "intent_mean": 2.2,
+        "intent_top2": 0.0,
+        "appeal_mean": 2.8,
+        "trial_estimate": 0.0
+      }
+    },
+    "income": {
+      "upper-middle": {
+        "n": 2,
+        "intent_mean": 2,
+        "intent_top2": 0.0,
+        "appeal_mean": 2.5,
+        "trial_estimate": 0.0
+      },
+      "middle": {
+        "n": 14,
+        "intent_mean": 2.14,
+        "intent_top2": 0.0,
+        "appeal_mean": 2.86,
+        "trial_estimate": 0.0
+      },
+      "lower-middle": {
+        "n": 4,
+        "intent_mean": 2.5,
+        "intent_top2": 0.25,
+        "appeal_mean": 3,
+        "trial_estimate": 0.062
+      }
+    },
+    "age_band": {
+      "45-59": {
+        "n": 9,
+        "intent_mean": 2.33,
+        "intent_top2": 0.111,
+        "appeal_mean": 3,
+        "trial_estimate": 0.028
+      },
+      "30-44": {
+        "n": 10,
+        "intent_mean": 2.1,
+        "intent_top2": 0.0,
+        "appeal_mean": 2.7,
+        "trial_estimate": 0.0
+      },
+      "18-29": {
+        "n": 1,
+        "intent_mean": 2,
+        "intent_top2": 0.0,
+        "appeal_mean": 3,
+        "trial_estimate": 0.0
+      }
+    }
+  },
+  "pricing": {
+    "stated_price": null,
+    "currency": "ZAR",
+    "price_unit": "varies by offer; see description",
+    "van_westendorp": {
+      "n": 20,
+      "point_of_marginal_cheapness": 2909.38,
+      "optimal_price_point": 3021.75,
+      "indifference_price_point": 8011.2,
+      "point_of_marginal_expensiveness": 15068.35,
+      "median_too_cheap": 1500.0,
+      "median_bargain": 6000.0,
+      "median_getting_expensive": 11500.0,
+      "median_too_expensive": 18000.0
+    },
+    "acceptance": null
+  },
+  "diagnostics": {
+    "intent_std": 0.51,
+    "modal_share": 0.85,
+    "duplicate_quote_ratio": 0.0,
+    "model_intent_spread": 0.0,
+    "price_points_repaired_share": 0.0,
+    "flags": [
+      "Low variety in purchase intent (std dev 0.51); personas may be too uniform.",
+      "85% of personas gave the same intent score; possible herding."
+    ]
+  }
+}

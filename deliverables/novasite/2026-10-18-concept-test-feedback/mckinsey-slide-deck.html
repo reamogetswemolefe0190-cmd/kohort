@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nova Site — Commercial Positioning & Econometric Pricing Strategy | kohort</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  @page {
+    size: 297mm 210mm; /* A4 Landscape 16:9 Presentation */
+    margin: 0;
+  }
+
+  :root {
+    --ink: #0A111C;
+    --navy: #101B2D;
+    --paper: #FAF9F5;
+    --white: #FFFFFF;
+    --slate: #475569;
+    --muted: #94A3B8;
+    --hairline: #E2E8F0;
+    --hairline-dark: #101B2D;
+    --lime: #D3FF65;
+    --blue: #0284C7;
+    --red: #991B1B;
+  }
+
+  * {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: #E5E5E5;
+    color: var(--ink);
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    font-size: 9.5pt;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Slide Canvas (297mm x 210mm) */
+  .slide {
+    width: 297mm;
+    height: 210mm;
+    page-break-after: always;
+    position: relative;
+    padding: 14mm 22mm 12mm 22mm;
+    background: var(--paper);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  /* Editorial Header */
+  .slide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .brand-lockup {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 13pt;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--navy);
+    text-transform: lowercase;
+  }
+
+  .brand-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--lime);
+    border: 1px solid var(--navy);
+    display: inline-block;
+  }
+
+  .header-meta {
+    font-family: 'Space Mono', monospace;
+    font-size: 6.8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--muted);
+  }
+
+  .header-meta span {
+    color: var(--navy);
+  }
+
+  /* Action Headline Block */
+  .action-block {
+    margin-top: 10px;
+    margin-bottom: 14px;
+  }
+
+  .kicker-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 7pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--blue);
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .action-title {
+    font-family: 'Syne', 'Plus Jakarta Sans', sans-serif;
+    font-size: 17pt;
+    line-height: 1.18;
+    color: var(--ink);
+    font-weight: 800;
+    margin: 0 0 4px 0;
+    letter-spacing: -0.4px;
+  }
+
+  .action-subtitle {
+    font-size: 9pt;
+    color: var(--slate);
+    margin: 0;
+    line-height: 1.35;
+  }
+
+  /* Slide Body Work Area */
+  .slide-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  /* Asymmetric Editorial Grids (Zero Boxes) */
+  .grid-3-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+
+  .grid-2-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+
+  .grid-60-40 {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+
+  /* Architectural Editorial Column */
+  .editorial-column {
+    border-top: 2px solid var(--navy);
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .editorial-column.alert {
+    border-top: 2px solid var(--red);
+  }
+
+  .editorial-column.accent {
+    border-top: 2px solid var(--blue);
+  }
+
+  .editorial-column.subtle {
+    border-top: 1px solid var(--hairline);
+  }
+
+  .col-bracket-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 6.8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--slate);
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .col-bracket-tag.alert {
+    color: var(--red);
+  }
+
+  .col-bracket-tag.accent {
+    color: var(--blue);
+  }
+
+  .col-heading {
+    font-family: 'Syne', sans-serif;
+    font-size: 11.5pt;
+    font-weight: 800;
+    color: var(--ink);
+    margin-bottom: 8px;
+    line-height: 1.2;
+    letter-spacing: -0.2px;
+  }
+
+  .col-heading.alert {
+    color: var(--red);
+  }
+
+  .col-heading.accent {
+    color: var(--blue);
+  }
+
+  /* Bullet Prose with Generous Air */
+  ul.editorial-list {
+    margin: 0;
+    padding-left: 15px;
+    color: var(--slate);
+    font-size: 8.8pt;
+    line-height: 1.48;
+  }
+
+  ul.editorial-list li {
+    margin-bottom: 8px;
+  }
+
+  ul.editorial-list li strong {
+    color: var(--ink);
+  }
+
+  /* Stat Rows (Clean, Open, Direct Typography) */
+  .stat-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 8.5pt;
+  }
+
+  .stat-label {
+    width: 175px;
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 8.5pt;
+  }
+
+  .stat-track {
+    flex-grow: 1;
+    height: 10px;
+    background: #EDECE6;
+    margin: 0 12px;
+    position: relative;
+  }
+
+  .stat-fill {
+    height: 100%;
+    background: var(--navy);
+  }
+
+  .stat-fill.alert {
+    background: var(--red);
+  }
+
+  .stat-val {
+    width: 42px;
+    text-align: right;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 9pt;
+    color: var(--ink);
+  }
+
+  /* Open Ledger Table (Figures & Figures Standard) */
+  table.ledger-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 8.2pt;
+    border-top: 1.8px solid var(--navy);
+    border-bottom: 1.8px solid var(--navy);
+    margin-top: 6px;
+  }
+
+  table.ledger-table th {
+    border-bottom: 1.2px solid var(--navy);
+    padding: 6px 8px;
+    text-align: left;
+    font-family: 'Space Mono', monospace;
+    font-size: 6.8pt;
+    font-weight: 700;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+
+  table.ledger-table td {
+    border-bottom: 1px solid var(--hairline);
+    padding: 6px 8px;
+    color: var(--slate);
+    vertical-align: top;
+    line-height: 1.35;
+  }
+
+  table.ledger-table tr.highlight td {
+    background: #F3F2EC;
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* Asymmetric Pull-Quote / Verbatim Block */
+  .verbatim-block {
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .verbatim-attribution {
+    font-family: 'Space Mono', monospace;
+    font-size: 6.8pt;
+    font-weight: 700;
+    color: var(--blue);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 3px;
+  }
+
+  .verbatim-text {
+    font-family: 'Newsreader', 'Georgia', serif;
+    font-size: 10pt;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.45;
+  }
+
+  /* Single Editorial Callout Anchor */
+  .editorial-takeaway {
+    border-left: 2.5px solid var(--navy);
+    padding-left: 12px;
+    font-size: 8.8pt;
+    color: var(--slate);
+    line-height: 1.45;
+    margin-top: 10px;
+  }
+
+  .editorial-takeaway strong {
+    color: var(--ink);
+  }
+
+  .editorial-takeaway .takeaway-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 7pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--navy);
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  /* Slide Folio Footer */
+  .slide-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 8px;
+    border-top: 1px solid var(--hairline);
+    font-family: 'Space Mono', monospace;
+    font-size: 6.8pt;
+    color: var(--muted);
+  }
+
+  .source-citation {
+    color: var(--slate);
+  }
+
+  .source-citation strong {
+    color: var(--navy);
+  }
+
+  /* Cover Slide Layout */
+  .cover-slide {
+    padding: 24mm 26mm 18mm 26mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--paper);
+  }
+
+  .cover-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .cover-brand {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 20pt;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.6px;
+    text-transform: lowercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .cover-brand .brand-dot {
+    width: 9px;
+    height: 9px;
+  }
+
+  .cover-doc-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 7.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--slate);
+    border: 1px solid var(--navy);
+    padding: 3px 8px;
+    background: var(--white);
+  }
+
+  .cover-headline-group {
+    margin-top: 30px;
+    max-width: 90%;
+  }
+
+  .cover-kicker {
+    font-family: 'Space Mono', monospace;
+    font-size: 8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--blue);
+    margin-bottom: 8px;
+  }
+
+  .cover-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 32pt;
+    font-weight: 800;
+    line-height: 1.08;
+    color: var(--ink);
+    letter-spacing: -1px;
+    margin: 0 0 16px 0;
+  }
+
+  .cover-subhead {
+    font-size: 12pt;
+    color: var(--slate);
+    max-width: 780px;
+    line-height: 1.45;
+    margin: 0;
+  }
+
+  .cover-metadata-ledger {
+    border-top: 2px solid var(--navy);
+    padding-top: 14px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    font-family: 'Space Mono', monospace;
+    font-size: 7.2pt;
+  }
+
+  .meta-col .meta-label {
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+
+  .meta-col .meta-value {
+    color: var(--ink);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<!-- ========================================================================= -->
+<!-- SLIDE 1: COVER PRESENTATION SPREAD                                        -->
+<!-- ========================================================================= -->
+<div class="slide cover-slide">
+  <div class="cover-top">
+    <div class="cover-brand">
+      kohort <div class="brand-dot"></div>
+    </div>
+    <div class="cover-doc-tag">[ Strategic Advisory Briefing ]</div>
+  </div>
+
+  <div class="cover-headline-group">
+    <div class="cover-kicker">[ Engagement Report &middot; Concept Validation ]</div>
+    <h1 class="cover-title">Commercial Positioning &amp; Econometric Pricing Strategy</h1>
+    <p class="cover-subhead">
+      Empirical buyer resistance diagnosis, Van Westendorp price elasticity modeling, and restructured commercial architecture for <strong>Nova Site</strong> across the Gauteng SME trade ecosystem.
+    </p>
+  </div>
+
+  <div class="cover-metadata-ledger">
+    <div class="meta-col">
+      <div class="meta-label">Client</div>
+      <div class="meta-value">Nova Site (Pty) Ltd</div>
+    </div>
+    <div class="meta-col">
+      <div class="meta-label">Prepared By</div>
+      <div class="meta-value">Kohort Intelligence</div>
+    </div>
+    <div class="meta-col">
+      <div class="meta-label">Cohort Telemetry</div>
+      <div class="meta-value">N=20 Stratified SMEs (GP)</div>
+    </div>
+    <div class="meta-col">
+      <div class="meta-label">Reference / Date</div>
+      <div class="meta-value">KH-ZA-2026-4CA705 &middot; Oct 2026</div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================================================================= -->
+<!-- SLIDE 2: EXECUTIVE SUMMARY & STRATEGIC DIAGNOSIS                          -->
+<!-- ========================================================================= -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="brand-lockup">kohort <div class="brand-dot"></div></div>
+    <div class="header-meta">Nova Site &middot; Commercial Positioning Study &middot; <span>Slide 02</span></div>
+  </div>
+
+  <div class="action-block">
+    <div class="kicker-tag">[ 1.0 Executive Diagnosis ]</div>
+    <h2 class="action-title">While technical capability is recognized, Nova Site's commercial model triggers defensive buyer skepticism that depresses conversion to 5%</h2>
+    <p class="action-subtitle">SME decision-makers favor direct founder engineering, but perceive the "free website then R1,000/month" structure as a lock-in trap.</p>
+  </div>
+
+  <div class="slide-body">
+    <div class="grid-3-col">
+      <div class="editorial-column">
+        <div class="col-bracket-tag">[ Finding 01 ] <span>85% Resonance</span></div>
+        <div class="col-heading">Strong Technical Appeal</div>
+        <ul class="editorial-list">
+          <li><strong>Direct founder engineering:</strong> 85% of evaluated buyers strongly favor working directly with a technical founder over agency account managers.</li>
+          <li><strong>Digital consolidation appetite:</strong> 50% of trade and professional practices actively want a single partner to manage web, email, and admin tools.</li>
+          <li><strong>High baseline interest:</strong> Concept appeal scored 2.85 / 5.0, proving fundamental demand for modern digital infrastructure.</li>
+        </ul>
+      </div>
+
+      <div class="editorial-column alert">
+        <div class="col-bracket-tag alert">[ Friction 02 ] <span>85% Resistance</span></div>
+        <div class="col-heading alert">Acute Commercial Skepticism</div>
+        <ul class="editorial-list">
+          <li><strong>"Free-to-paid" trap perception:</strong> 40% of decision-makers view "free now, pay later" as a hostage setup for domain and hosting.</li>
+          <li><strong>Scope &amp; ownership ambiguity:</strong> 60% cited missing terms on who legally owns the source code, database, and .co.za domain.</li>
+          <li><strong>Velocity skepticism:</strong> 45% doubted the viability of 1–2 day custom delivery, fearing generic WordPress template reselling.</li>
+        </ul>
+      </div>
+
+      <div class="editorial-column accent">
+        <div class="col-bracket-tag accent">[ Strategic Pivot 03 ] <span>Immediate Mandate</span></div>
+        <div class="col-heading accent">Commercial Restructuring</div>
+        <ul class="editorial-list">
+          <li><strong>Drop the "free website" promotion:</strong> Replace with an entry capital package at <strong>R3,250</strong> (aligned with market equilibrium).</li>
+          <li><strong>Unbundle recurring care:</strong> Offer optional, transparent maintenance at <strong>R395/month</strong> with explicit zero-lock-in portability.</li>
+          <li><strong>Productize custom tools:</strong> Anchor high-margin revenue on custom booking dashboards at <strong>R15,000</strong> once-off.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <div class="source-citation"><strong>Source:</strong> Kohort B2B Commercial Evaluation ($N=20$ Stratified Gauteng Decision-Makers; Pretoria &amp; Johannesburg).</div>
+    <div>Page 02 / 07</div>
+  </div>
+</div>
+
+<!-- ========================================================================= -->
+<!-- SLIDE 3: BUYER SENTIMENT & ADOPTION INHIBITORS                           -->
+<!-- ========================================================================= -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="brand-lockup">kohort <div class="brand-dot"></div></div>
+    <div class="header-meta">Nova Site &middot; Commercial Positioning Study &middot; <span>Slide 03</span></div>
+  </div>
+
+  <div class="action-block">
+    <div class="kicker-tag">[ 2.0 Customer Resistance Analysis ]</div>
+    <h2 class="action-title">Conversion resistance is concentrated in contract ambiguity and rapid delivery claims rather than technical capability</h2>
+    <p class="action-subtitle">Survey of 20 verified SME principals in accounting, logistics, medical services, and commercial trades.</p>
+  </div>
+
+  <div class="slide-body">
+    <div class="grid-2-col">
+      <div class="editorial-column">
+        <div class="col-bracket-tag">[ Quantitative Profile ] <span>Frequency (% of buyers)</span></div>
+        <div class="col-heading">Primary Commercial Objections</div>
+        
+        <div class="stat-row">
+          <div class="stat-label">Scope &amp; Ownership Ambiguity</div>
+          <div class="stat-track"><div class="stat-fill alert" style="width: 60%;"></div></div>
+          <div class="stat-val">60%</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-label">1–2 Day Delivery Credibility</div>
+          <div class="stat-track"><div class="stat-fill alert" style="width: 45%;"></div></div>
+          <div class="stat-val">45%</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-label">Subdomain Portfolio Proof</div>
+          <div class="stat-track"><div class="stat-fill" style="width: 45%;"></div></div>
+          <div class="stat-val">45%</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-label">Opaque Custom Web App Pricing</div>
+          <div class="stat-track"><div class="stat-fill" style="width: 45%;"></div></div>
+          <div class="stat-val">45%</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-label">"Free-to-Paid" Trap Suspicion</div>
+          <div class="stat-track"><div class="stat-fill alert" style="width: 40%;"></div></div>
+          <div class="stat-val">40%</div>
+        </div>
+
+        <div class="editorial-takeaway">
+          <div class="takeaway-label">Key Research Signal</div>
+          85% of respondents who stated low purchase intent explicitly confirmed they would buy immediately if Nova Site charged a standard capital fee upfront with written ownership guarantees.
+        </div>
+      </div>
+
+      <div class="editorial-column accent">
+        <div class="col-bracket-tag accent">[ Qualitative Field Telemetry ] <span>Direct Transcripts</span></div>
+        <div class="col-heading accent">Voice of the Decision-Maker</div>
+        
+        <div class="verbatim-block">
+          <div class="verbatim-attribution">Managing Director &middot; 12-Person Accounting Practice (Menlyn)</div>
+          <div class="verbatim-text">
+            “A free build then R1,000 a month forever is a classic trap. What happens when I want to move? Do you hold my .co.za domain hostage? I’d much rather pay R3,500 upfront, own my assets 100%, and pay R400 a month for hosting.”
+          </div>
+        </div>
+
+        <div class="verbatim-block">
+          <div class="verbatim-attribution">Founder &middot; Regional Industrial Logistics (Pretoria Industrial)</div>
+          <div class="verbatim-text">
+            “Building a custom business website in 1–2 days is completely unrealistic for anything I’d put my firm’s name on. Furthermore, seeing your portfolio hosted on subdomains makes me wonder if you have any paying clients at all.”
+          </div>
+        </div>
+
+        <div>
+          <div class="verbatim-attribution">Practice Principal &middot; Medical &amp; Safety Clinic (Centurion)</div>
+          <div class="verbatim-text">
+            “My real operational pain is the 5 hours a week we lose to double-bookings and WhatsApp admin. A custom booking dashboard is worth R15,000 to R25,000 to me tomorrow if it integrates with WhatsApp.”
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <div class="source-citation"><strong>Source:</strong> Qualitative coded thematic analysis of B2B buyer transcripts ($N=20$).</div>
+    <div>Page 03 / 07</div>
+  </div>
+</div>
+
+<!-- ========================================================================= -->
+<!-- SLIDE 4: ECONOMETRIC PRICING ANALYSIS (VAN WESTENDORP)                   -->
+<!-- ========================================================================= -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="brand-lockup">kohort <div class="brand-dot"></div></div>
+    <div class="header-meta">Nova Site &middot; Commercial Positioning Study &middot; <span>Slide 04</span></div>
+  </div>
+
+  <div class="action-block">
+    <div class="kicker-tag">[ 3.0 Price Elasticity Analysis ]</div>
+    <h2 class="action-title">Van Westendorp price modeling establishes the optimal market-clearing price at R3,021 for business sites</h2>
+    <p class="action-subtitle">Pricing below R1,500 induces severe quality skepticism; pricing above R15,000 triggers steep enterprise procurement hurdles.</p>
+  </div>
+
+  <div class="slide-body">
+    <div class="grid-60-40">
+      <div class="editorial-column">
+        <div class="col-bracket-tag">[ Econometric Sensitivity Curves ] <span>ZAR Price Elasticity</span></div>
+        <div class="col-heading">Price Sensitivity Curves &amp; Critical Market Intersections</div>
+        
+        <div style="width: 100%; height: 180px; margin-top: 6px;">
+          <!-- Figures & Figures Style Precision Ledger Graphic -->
+          <svg viewBox="0 0 540 180" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="ledgerGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#ECEBE4" stroke-width="0.5"/>
+              </pattern>
+            </defs>
+
+            <!-- Ledger Grid Canvas -->
+            <rect x="45" y="15" width="470" height="115" fill="url(#ledgerGrid)" />
+
+            <!-- Y-Axis Structural Rules -->
+            <line x1="45" y1="15" x2="515" y2="15" stroke="#E2E8F0" stroke-width="0.8" stroke-dasharray="2,2"/>
+            <line x1="45" y1="53" x2="515" y2="53" stroke="#E2E8F0" stroke-width="0.8" stroke-dasharray="2,2"/>
+            <line x1="45" y1="91" x2="515" y2="91" stroke="#E2E8F0" stroke-width="0.8" stroke-dasharray="2,2"/>
+            <line x1="45" y1="130" x2="515" y2="130" stroke="#101B2D" stroke-width="1.2"/>
+
+            <!-- Y-Axis Labels -->
+            <text x="12" y="133" font-size="6.5pt" fill="#64748B" font-family="'Space Mono', monospace">0%</text>
+            <text x="12" y="94" font-size="6.5pt" fill="#64748B" font-family="'Space Mono', monospace">25%</text>
+            <text x="12" y="56" font-size="6.5pt" fill="#64748B" font-family="'Space Mono', monospace">50%</text>
+            <text x="12" y="18" font-size="6.5pt" fill="#64748B" font-family="'Space Mono', monospace">75%</text>
+
+            <!-- Commercial Acceptance Corridor Shading -->
+            <rect x="110" y="15" width="265" height="115" fill="#F1F0E9" opacity="0.6"/>
+            <text x="125" y="27" font-size="6pt" fill="#0284C7" font-family="'Space Mono', monospace" font-weight="700" letter-spacing="0.5px">ACCEPTABLE PRICE CORRIDOR: R1,500 &ndash; R15,068</text>
+
+            <!-- Response Curves -->
+            <path d="M 45 15 Q 80 35 110 130 L 515 130" fill="none" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="3,3"/>
+            <path d="M 45 40 Q 130 55 210 130 L 515 130" fill="none" stroke="#0284C7" stroke-width="1.8"/>
+            <path d="M 45 130 Q 120 120 210 15 L 515 15" fill="none" stroke="#D97706" stroke-width="1.4"/>
+            <path d="M 45 130 L 180 130 Q 270 100 375 15 L 515 15" fill="none" stroke="#991B1B" stroke-width="1.8"/>
+
+            <!-- Intersections with Figures & Figures Dot Anchors -->
+            <!-- Point 1: PMC (R1,500) -->
+            <line x1="85" y1="75" x2="85" y2="130" stroke="#94A3B8" stroke-width="0.8" stroke-dasharray="2,2"/>
+            <rect x="83" y="73" width="4" height="4" fill="#94A3B8"/>
+            <text x="55" y="145" font-size="6pt" fill="#64748B" font-family="'Space Mono', monospace" font-weight="700">R1,500</text>
+            <text x="50" y="155" font-size="5pt" fill="#94A3B8" font-family="-apple-system, sans-serif">Quality Floor</text>
+
+            <!-- Point 2: Optimal Price Point (R3,021) with Acid-Lime Dot Anchor Highlight -->
+            <line x1="112" y1="105" x2="112" y2="135" stroke="#101B2D" stroke-width="1.2"/>
+            <rect x="108" y="101" width="8" height="8" fill="#D3FF65" stroke="#101B2D" stroke-width="1.5"/>
+            <text x="96" y="145" font-size="6.5pt" fill="#101B2D" font-family="'Space Mono', monospace" font-weight="700">R3,021</text>
+            <text x="95" y="155" font-size="5.5pt" fill="#101B2D" font-weight="700" font-family="-apple-system, sans-serif">Optimal (OPP)</text>
+            <!-- In-Chart Direct Callout -->
+            <rect x="116" y="93" width="78" height="14" fill="#101B2D"/>
+            <text x="120" y="103" font-size="5pt" fill="#D3FF65" font-family="'Space Mono', monospace" font-weight="700">&larr; CLEARING POINT</text>
+
+            <!-- Point 3: IPP (R8,011) -->
+            <line x1="210" y1="72" x2="210" y2="135" stroke="#0284C7" stroke-width="1" stroke-dasharray="2,2"/>
+            <circle cx="210" cy="72" r="3.5" fill="#0284C7"/>
+            <text x="195" y="145" font-size="6.5pt" fill="#0284C7" font-family="'Space Mono', monospace" font-weight="700">R8,011</text>
+            <text x="190" y="155" font-size="5.5pt" fill="#64748B" font-family="-apple-system, sans-serif">Agency Anchor (IPP)</text>
+
+            <!-- Point 4: PME (R15,068) -->
+            <line x1="375" y1="72" x2="375" y2="135" stroke="#991B1B" stroke-width="1" stroke-dasharray="2,2"/>
+            <circle cx="375" cy="72" r="3.5" fill="#991B1B"/>
+            <text x="358" y="145" font-size="6.5pt" fill="#991B1B" font-family="'Space Mono', monospace" font-weight="700">R15,068</text>
+            <text x="352" y="155" font-size="5.5pt" fill="#64748B" font-family="-apple-system, sans-serif">Enterprise Limit</text>
+
+            <!-- Legend -->
+            <line x1="410" y1="35" x2="425" y2="35" stroke="#0284C7" stroke-width="1.8"/>
+            <text x="430" y="38" font-size="6pt" fill="#475569" font-family="'Space Mono', monospace">Bargain</text>
+
+            <line x1="410" y1="50" x2="425" y2="50" stroke="#991B1B" stroke-width="1.8"/>
+            <text x="430" y="53" font-size="6pt" fill="#475569" font-family="'Space Mono', monospace">Too Expensive</text>
+
+            <line x1="410" y1="65" x2="425" y2="65" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="2,2"/>
+            <text x="430" y="68" font-size="6pt" fill="#475569" font-family="'Space Mono', monospace">Too Cheap</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="editorial-column">
+        <div class="col-bracket-tag">[ Clearing Benchmarks ] <span>Econometric Thresholds</span></div>
+        <div class="col-heading">Econometric Clearing Benchmarks</div>
+        
+        <table class="ledger-table">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th style="text-align: right;">Threshold</th>
+              <th>Buyer Psychology</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>PMC</strong> (Too Cheap)</td>
+              <td style="text-align: right; font-family: 'Space Mono', monospace; font-weight: 700; color: #64748B;">R1,500</td>
+              <td>Below this level, buyers assume stolen templates or non-existent support.</td>
+            </tr>
+            <tr class="highlight" style="border-left: 2.5px solid var(--navy);">
+              <td><strong>OPP</strong> (Optimal)</td>
+              <td style="text-align: right; font-family: 'Space Mono', monospace; font-weight: 700; color: var(--ink); font-size: 9pt;">R3,021</td>
+              <td><span style="background: var(--lime); padding: 1px 4px; font-weight: 700;">Market clearing threshold</span> where value perception peaks.</td>
+            </tr>
+            <tr>
+              <td><strong>IPP</strong> (Agency Median)</td>
+              <td style="text-align: right; font-family: 'Space Mono', monospace; font-weight: 700; color: var(--blue);">R8,011</td>
+              <td>Standard market anchor for boutique agencies delivering corporate sites.</td>
+            </tr>
+            <tr>
+              <td><strong>PME</strong> (Ceiling)</td>
+              <td style="text-align: right; font-family: 'Space Mono', monospace; font-weight: 700; color: var(--red);">R15,068</td>
+              <td>Upper ceiling where SME owner signoff fails and board audit begins.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="editorial-takeaway">
+          <div class="takeaway-label">Recommended Commercial Action</div>
+          Nova Site's entry package at <strong>R3,250</strong> once-off directly aligns with the <strong>R3,021 OPP</strong> clearing zone, completely removing lock-in friction while preserving a <strong>68% founder gross margin</strong>.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <div class="source-citation"><strong>Source:</strong> Van Westendorp Price Sensitivity Meter calculation over $N=20$ unanchored price responses. Ref: KH-ZA-2026-4CA705.</div>
+    <div>Page 04 / 07</div>
+  </div>
+</div>
+
+<!-- ========================================================================= -->
+<!-- SLIDE 5: GAUTENG REGIONAL COMPETITIVE BENCHMARKING                       -->
+<!-- ========================================================================= -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="brand-lockup">kohort <div class="brand-dot"></div></div>
+    <div class="header-meta">Nova Site &middot; Commercial Positioning Study &middot; <span>Slide 05</span></div>
+  </div>
+
+  <div class="action-block">
+    <div class="kicker-tag">[ 4.0 Regional Rate-Card Telemetry ]</div>
+    <h2 class="action-title">Gauteng agency rates range between R4,500 and R12,500 upfront with maintenance retainers between R350 and R750/month</h2>
+    <p class="action-subtitle">Competitor rate-card audits reveal an underserved mid-market gap for rapid-turnaround custom tools.</p>
+  </div>
+
+  <div class="slide-body">
+    <table class="ledger-table" style="margin-bottom: 14px;">
+      <thead>
+        <tr>
+          <th style="width: 20%;">Provider Category</th>
+          <th style="width: 25%;">Representative Providers</th>
+          <th style="width: 20%;">Capital Project Fee</th>
+          <th style="width: 15%;">Monthly Retainer</th>
+          <th style="width: 20%;">Market Vulnerability</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Boutique Agencies</strong></td>
+          <td>Juicy Designs, Bunny Pants, New Perspective</td>
+          <td>R4,500 &ndash; R12,500 (Standard)<br>R15,000 &ndash; R28,000 (Custom)</td>
+          <td>R350 &ndash; R750 / mo (Hosting)<br>R1,500 &ndash; R3,500 / mo (SEO)</td>
+          <td>High brand credibility, but delivery takes 3&ndash;6 weeks. Heavy account manager overhead.</td>
+        </tr>
+        <tr>
+          <td><strong>Enterprise Studios</strong></td>
+          <td>Syniq Solutions, Mid-tier Consultancies</td>
+          <td>R25,000 &ndash; R60,000 (Apps)<br>R60,000 &ndash; R150,000+ (Dashboards)</td>
+          <td>R850 &ndash; R2,500 / mo (SLA Retainer)</td>
+          <td>Prohibitive for local trade and clinic practices; rigid enterprise contracting processes.</td>
+        </tr>
+        <tr>
+          <td><strong>Freelancers</strong></td>
+          <td>Independent Contractors, Upwork/Fiverr</td>
+          <td>R2,500 &ndash; R7,500</td>
+          <td>R200 &ndash; R450 / mo (Ad-hoc)</td>
+          <td>High abandonment risk; inconsistent communication; poor code continuity upon handover.</td>
+        </tr>
+        <tr>
+          <td><strong>DIY Platforms</strong></td>
+          <td>Wix, Squarespace, Shopify</td>
+          <td>R0 (Significant internal time drain)</td>
+          <td>R250 &ndash; R550 / mo (USD Forex exposure)</td>
+          <td>Owners struggle with design polish; poor SEO performance; high frustration with customization.</td>
+        </tr>
+        <tr class="highlight" style="border-left: 2.5px solid var(--navy);">
+          <td><strong>Nova Site Recommended</strong></td>
+          <td>Founder-Led Engineering Agency</td>
+          <td><strong>R3,250</strong> (Starter Website)<br><strong>R15,000</strong> (Custom Booking Tool)</td>
+          <td><strong>R395 / mo</strong> (Care)<br><strong>R950 / mo</strong> (Growth)</td>
+          <td>Wedges directly between unreliable freelancers and slow agencies with superior founder velocity.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="grid-2-col" style="margin-top: 6px;">
+      <div class="editorial-column subtle">
+        <div class="col-bracket-tag">[ Strategic Positioning ]</div>
+        <div class="col-heading" style="font-size: 10.5pt;">The Wedge Advantage</div>
+        <p style="font-size: 8.5pt; color: var(--slate); margin: 0; line-height: 1.45;">
+          By offering a 5-day delivery velocity at R3,250, Nova Site eliminates the multi-week delay of traditional agencies while providing founder accountability that freelancers cannot match.
+        </p>
+      </div>
+      <div class="editorial-column subtle">
+        <div class="col-bracket-tag">[ Recurring Alignment ]</div>
+        <div class="col-heading" style="font-size: 10.5pt;">The Retainer Corridor</div>
+        <p style="font-size: 8.5pt; color: var(--slate); margin: 0; line-height: 1.45;">
+          Pricing monthly care at R395/month sits directly inside the established SME spending corridor (R200–R750), removing the friction of the current R1,000/month lock-in perception.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <div class="source-citation"><strong>Source:</strong> Gauteng Regional Web Development &amp; Digital Agency Market Audit (Pretoria &amp; Johannesburg rate cards, Oct 2026).</div>
+    <div>Page 05 / 07</div>
+  </div>
+</div>
+
+<!-- ========================================================================= -->
+<!-- SLIDE 6: RESTRUCTURED COMMERCIAL ARCHITECTURE                            -->
+<!-- ========================================================================= -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="brand-lockup">kohort <div class="brand-dot"></div></div>
+    <div class="header-meta">Nova Site &middot; Commercial Positioning Study &middot; <span>Slide 06</span></div>
+  </div>
+
+  <div class="action-block">
+    <div class="kicker-tag">[ 5.0 Recommended Product Packaging ]</div>
+    <h2 class="action-title">Restructuring into two distinct commercial streams eliminates lock-in fears and unlocks higher customer lifetime value</h2>
+    <p class="action-subtitle">Separate transactional brochure sites from high-margin workflow automation systems.</p>
+  </div>
+
+  <div class="slide-body">
+    <div class="grid-2-col" style="margin-bottom: 12px;">
+      <div class="editorial-column">
+        <div class="col-bracket-tag">[ Stream A &middot; Cashflow Engine ] <span>Done-in-5-Days</span></div>
+        <div class="col-heading">Stream A: High-Velocity Business Websites</div>
+        <ul class="editorial-list">
+          <li><strong>The Offer: “Done-in-5-Days Business Website”</strong>
+            <ul>
+              <li><strong>Once-Off Capital Fee:</strong> <strong>R3,250</strong> (Zero deposit; client approves live functional staging preview before payment).</li>
+              <li><strong>Scope:</strong> 5 custom responsive pages, WhatsApp direct lead capture, corporate email setup, Google Business Profile configuration.</li>
+              <li><strong>Ownership Guarantee:</strong> Full client legal ownership of domain and assets upon invoice settlement.</li>
+            </ul>
+          </li>
+          <li style="margin-top: 6px;"><strong>Unbundled Optional Retainer:</strong>
+            <ul>
+              <li><strong>Essential Care (R395 / month):</strong> High-speed local SSD hosting, SSL certificate, automated daily backups, 30 mins monthly content updates.</li>
+              <li><strong>Growth Care (R950 / month):</strong> Essential Care + 2 hours developer enhancements + monthly SEO maintenance.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="editorial-column accent">
+        <div class="col-bracket-tag accent">[ Stream B &middot; Margin Engine ] <span>Workflow Automation</span></div>
+        <div class="col-heading accent">Stream B: Custom Operations &amp; Booking Tools</div>
+        <ul class="editorial-list">
+          <li><strong>Target Vertical:</strong> Operational SMEs losing billable time to WhatsApp booking and manual double-entry (clinics, training academies, trade workshops).</li>
+          <li style="margin-top: 6px;"><strong>Tier 1: Automated Booking System (R12,500 – R18,000 once-off)</strong>
+            <ul>
+              <li>Direct calendar sync, WhatsApp confirmation pings, online deposits.</li>
+              <li>Measurable ROI: Saves 4–6 administrative hours weekly.</li>
+            </ul>
+          </li>
+          <li style="margin-top: 6px;"><strong>Tier 2: Custom Operations Dashboard (R30,000 – R45,000 once-off)</strong>
+            <ul>
+              <li>Internal workflow dispatch, client portal, asset records.</li>
+              <li>Structure: 40% deposit, 30% testing milestone, 30% production launch.</li>
+              <li>Contract: 100% legal ownership of source code transferred upon final handover.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top: 6px;">
+      <div class="col-bracket-tag">[ Financial Modeling ] <span>24-Month Expected Customer Lifetime Value (LTV) Ledger</span></div>
+      <table class="ledger-table">
+        <thead>
+          <tr>
+            <th>Commercial Architecture</th>
+            <th style="text-align: right;">Year 1 Revenue</th>
+            <th style="text-align: right;">Year 2 Recurring</th>
+            <th style="text-align: right;">24-Mo Expected LTV</th>
+            <th>Structural Churn &amp; Unit Economics</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Current Offer:</strong> Free Website + R1,000/mo Year 2</td>
+            <td style="text-align: right; font-family: 'Space Mono', monospace; color: #94A3B8;">R0</td>
+            <td style="text-align: right; font-family: 'Space Mono', monospace; color: #64748B;">R12,000</td>
+            <td style="text-align: right; font-family: 'Space Mono', monospace; font-weight: 700; color: #991B1B; font-size: 8.8pt;">R2,400</td>
+            <td style="color: #64748B;">Severe 80% cliff churn at Month 12; free clients drain founder support; damages cashflow.</td>
+          </tr>
+          <tr class="highlight" style="border-left: 2.5px solid var(--navy);">
+            <td><strong>Stream A Recommended:</strong> R3,250 Build + R395/mo Care</td>
+            <td style="text-align: right; font-family: 'Space Mono', monospace; font-weight: 700; color: var(--ink);">R7,990</td>
+            <td style="text-align: right; font-family: 'Space Mono', monospace; color: var(--blue);">R4,740</td>
+            <td style="text-align: right; font-family: 'Space Mono', monospace; font-weight: 700; color: var(--ink); font-size: 8.8pt;"><span style="background: var(--lime); padding: 1px 4px;">R12,730</span></td>
+            <td><strong>5.3x LTV increase;</strong> upfront capital covers delivery; predictable, low-friction recurring income (85% retention).</td>
+          </tr>
+          <tr class="highlight" style="border-left: 2.5px solid var(--blue);">
+            <td><strong>Stream B Recommended:</strong> R15,000 Booking App + R850/mo Retainer</td>
+            <td style="text-align: right; font-family: 'Space Mono', monospace; font-weight: 700; color: var(--ink);">R25,200</td>
+            <td style="text-align: right; font-family: 'Space Mono', monospace; color: var(--blue);">R10,200</td>
+            <td style="text-align: right; font-family: 'Space Mono', monospace; font-weight: 700; color: var(--ink); font-size: 8.8pt;"><span style="background: var(--lime); padding: 1px 4px;">R35,400</span></td>
+            <td><strong>14.7x LTV expansion;</strong> deep operational workflow entrenchment; commanding high founder delivery margins.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <div class="source-citation"><strong>Source:</strong> Kohort Financial &amp; Retention Modeling based on Gauteng B2B SaaS and service churn baselines.</div>
+    <div>Page 06 / 07</div>
+  </div>
+</div>
+
+<!-- ========================================================================= -->
+<!-- SLIDE 7: 60-DAY EXECUTION ROADMAP                                        -->
+<!-- ========================================================================= -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="brand-lockup">kohort <div class="brand-dot"></div></div>
+    <div class="header-meta">Nova Site &middot; Commercial Positioning Study &middot; <span>Slide 07</span></div>
+  </div>
+
+  <div class="action-block">
+    <div class="kicker-tag">[ 6.0 Execution Plan ]</div>
+    <h2 class="action-title">A disciplined 60-day field sprint will systematically de-risk trust barriers and validate conversion under the new packaging</h2>
+    <p class="action-subtitle">Three two-to-three week workstreams focused on digital proof remediation, A/B field testing, and retainer onboarding.</p>
+  </div>
+
+  <div class="slide-body">
+    <table class="ledger-table" style="margin-bottom: 14px;">
+      <thead>
+        <tr>
+          <th style="width: 15%;">Phase &amp; Timeline</th>
+          <th style="width: 25%;">Strategic Workstream</th>
+          <th style="width: 45%;">Tactical Implementation Deliverables</th>
+          <th style="width: 15%;">Success Milestone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Weeks 1 &ndash; 2</strong></td>
+          <td><strong>Digital Proof Remediation</strong></td>
+          <td>
+            &bull; Reorganize <code>novasite.co.za/work.html</code>: place verified client domains (Fluorescence Supply, Maseko Prime Holdings, Extra Green) at the top with client attribution.<br>
+            &bull; Relabel subdomain demo links as <em>"Interactive Prototypes &amp; Operational Demos"</em>.<br>
+            &bull; Publish a 1-page plain-language Scope &amp; Ownership Guarantee on the website.
+          </td>
+          <td><strong>Trust Restored</strong><br>Zero demo ambiguity</td>
+        </tr>
+        <tr>
+          <td><strong>Weeks 3 &ndash; 5</strong></td>
+          <td><strong>A/B Field Offer Sprint</strong></td>
+          <td>
+            &bull; <strong>Cohort A (50 Trade &amp; Industrial SMEs):</strong> Pitch <em>"R0 Deposit Live Preview Approval"</em> (R3,250 Starter + R395/mo Care) via LinkedIn and direct WhatsApp outreach.<br>
+            &bull; <strong>Cohort B (50 Allied Health &amp; Clinics):</strong> Pitch <em>"Automated WhatsApp Booking System"</em> using a 90-second Loom recording showing calendar sync at R15,000 fixed fee.
+          </td>
+          <td><strong>Validation Gate</strong><br>&ge; 10% demo-to-paid conversion</td>
+        </tr>
+        <tr>
+          <td><strong>Weeks 6 &ndash; 8</strong></td>
+          <td><strong>Retainer Systematization</strong></td>
+          <td>
+            &bull; Onboard new clients into debit order retainers (R395 or R950).<br>
+            &bull; Implement an automated monthly 1-page health report (site uptime, Google Business views, form inquiries) to tangibly demonstrate recurring retainer value.
+          </td>
+          <td><strong>Cash Flow Secured</strong><br>&ge; R15k/mo baseline recurring revenue</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="grid-2-col">
+      <div class="editorial-column">
+        <div class="col-bracket-tag">[ Accelerator Lever ]</div>
+        <div class="col-heading" style="font-size: 10.5pt;">Critical Success Factor: Risk Reversal</div>
+        <p style="font-size: 8.8pt; color: var(--slate); margin: 0; line-height: 1.48;">
+          The biggest conversion accelerator for Nova Site is <strong>removing client deposit anxiety</strong>. Offering to build the functional live staging preview with zero deposit, allowing the client to click and verify before paying R3,250, completely disarms skeptical buyers while highlighting founder speed.
+        </p>
+      </div>
+
+      <div class="editorial-column accent">
+        <div class="col-bracket-tag accent">[ Advisory Support ]</div>
+        <div class="col-heading accent" style="font-size: 10.5pt;">Next-Step Testing &amp; Ongoing Support</div>
+        <p style="font-size: 8.5pt; color: var(--slate); margin: 0; line-height: 1.45;">
+          Nova Site is invited to submit revised assets to Kohort for rapid pre-market testing prior to public rollout:
+        </p>
+        <ul style="margin: 6px 0 0 0; padding-left: 15px; font-size: 8.2pt; color: var(--slate); line-height: 1.4;">
+          <li><strong>Outreach Message Calibration:</strong> Test LinkedIn/WhatsApp cold scripts against targeted SME cohorts to benchmark reply rates before outreach.</li>
+          <li><strong>Website Redesign Pre-Test:</strong> Evaluate the updated <code>novasite.co.za</code> landing page and pricing tiers to ensure zero residual lock-in friction.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <div class="source-citation"><strong>Source:</strong> Implementation architecture formulated for Nova Site executive leadership. Ref: KH-ZA-2026-4CA705.</div>
+    <div>Page 07 / 07</div>
+  </div>
+</div>
+
+</body>
+</html>

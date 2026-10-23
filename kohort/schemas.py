@@ -6,6 +6,7 @@ or price points out of order. We repair what we safely can instead of failing.
 
 from __future__ import annotations
 
+import re
 from typing import Literal
 
 from pydantic import BaseModel, Field, field_validator, model_validator
@@ -29,16 +30,33 @@ def _clamp_score(value, lo: int = 1, hi: int = 5) -> int | None:
 
 
 def _to_price(value) -> float | None:
-    if value is None or value == "":
+    if value is None or value == "" or isinstance(value, bool):
+        return None
+    if isinstance(value, (int, float)):
+        return float(value) if value > 0 else None
+    s = str(value).strip()
+    s = re.sub(r"(?<=\d)[,\s](?=\d{3}(?:\D|$))", "", s)
+    s = re.sub(r"(?<=\d),(?=\d{1,2}(?:\D|$))", ".", s)
+    m = re.search(r"-?\d+(?:\.\d+)?", s)
+    if not m:
         return None
     try:
-        num = float(str(value).replace(",", ".").strip().lstrip("€$£").strip())
-    except (TypeError, ValueError):
+        num = float(m.group(0))
+    except ValueError:
         return None
     return num if num > 0 else None
 
 
 # --------------------------------------------------------------------------- brief
+
+
+class HookVariant(BaseModel):
+    """A distinct messaging hook or value proposition tested against personas."""
+
+    id: str
+    name: str = ""
+    hook_text: str
+    angle: str = ""
 
 
 class Brief(BaseModel):
@@ -57,6 +75,7 @@ class Brief(BaseModel):
     region: str
     competitors: list[str] = Field(default_factory=list)
     questions: list[str] = Field(default_factory=list)
+    variants: list[HookVariant] = Field(default_factory=list)
 
     def price_label(self, amount: float | None = None) -> str:
         amount = self.price if amount is None else amount
@@ -65,11 +84,12 @@ class Brief(BaseModel):
         unit = f" {self.price_unit}" if self.price_unit else ""
         return f"{amount:,.2f} {self.currency}{unit}"
 
-    def concept_board(self, include_price: bool) -> str:
+    def concept_board(self, include_price: bool, variant: HookVariant | None = None) -> str:
         """Neutral concept description shown to personas (no marketing hype)."""
+        headline = variant.hook_text if (variant and variant.hook_text) else self.one_liner
         lines = [
             f"PRODUCT: {self.product_name}",
-            f"IN ONE LINE: {self.one_liner}",
+            f"IN ONE LINE: {headline}",
             "",
             self.description.strip(),
         ]
@@ -91,6 +111,31 @@ class Competitor(BaseModel):
     weaknesses: list[str] = Field(default_factory=list)
 
 
+class BuyerDiscoveryQuery(BaseModel):
+    focus: Literal["buying_habits", "frustrations", "price_anchors", "switching_triggers"] = "buying_habits"
+    rationale: str = ""
+    search_query: str
+
+
+class BuyerDiscoveryPlan(BaseModel):
+    """Sense-Maker output: translates a client brief into targeted scraper missions for buyer psychology."""
+
+    buyer_persona_hypothesis: str
+    category_context_needed: str
+    queries: list[BuyerDiscoveryQuery] = Field(default_factory=list)
+
+
+class BuyerDossier(BaseModel):
+    """Scraped real-world buyer intelligence used to tailor persona personalities."""
+
+    buying_habits: list[str] = Field(default_factory=list)
+    real_frustrations: list[str] = Field(default_factory=list)
+    price_anchors: list[str] = Field(default_factory=list)
+    status_quo_alternatives: list[str] = Field(default_factory=list)
+    cultural_signals: list[str] = Field(default_factory=list)
+    scraped_urls: list[str] = Field(default_factory=list)
+
+
 class Segment(BaseModel):
     name: str
     description: str = ""
@@ -100,6 +145,8 @@ class Segment(BaseModel):
     income_levels: list[IncomeBand] = Field(default_factory=lambda: ["lower-middle", "middle", "upper-middle"])
     key_needs: list[str] = Field(default_factory=list)
     likely_objections: list[str] = Field(default_factory=list)
+    buying_habits: list[str] = Field(default_factory=list)
+    price_anchors: list[str] = Field(default_factory=list)
 
     @field_validator("income_levels", mode="before")
     @classmethod
@@ -122,6 +169,8 @@ class MarketResearch(BaseModel):
     competitors: list[Competitor] = Field(default_factory=list)
     typical_price_range: str = ""
     segments: list[Segment]
+    buyer_dossier: BuyerDossier | None = None
+    discovery_plan: BuyerDiscoveryPlan | None = None
     sources: list[str] = Field(default_factory=list)
     caveats: list[str] = Field(default_factory=list)
     web_search_used: bool = False
@@ -172,6 +221,8 @@ class Persona(PersonaProfile):
     id: str
     model: str
     traits: PersonaTraits
+    category_lens: dict = Field(default_factory=dict)
+    trait_provenance: dict[str, str] = Field(default_factory=dict)
 
 
 # --------------------------------------------------------------------------- interviews
@@ -237,6 +288,7 @@ class InterviewPart2(BaseModel):
 class InterviewResponse(BaseModel):
     persona_id: str
     model: str
+    variant_id: str | None = None
     first_reaction: str
     appeal: int
     uniqueness: int
@@ -354,3 +406,74 @@ class ReportNarrative(BaseModel):
     def _verdict(cls, v):
         v = str(v).upper().strip().replace("_", "-").replace(" ", "-")
         return "NO-GO" if v in ("NOGO", "NO-GO", "NO") else v
+
+
+# --------------------------------------------------------------------------- shootout & statistical inference
+
+
+class WilsonInterval(BaseModel):
+    lower: float
+    upper: float
+    confidence: float = 0.95
+
+
+class PairwiseComparison(BaseModel):
+    other_variant_id: str
+    diff_top2: float
+    z_score: float
+    p_value: float
+    significant_95: bool
+    significant_90: bool
+
+
+class VariantMetrics(BaseModel):
+    variant_id: str
+    variant_name: str
+    hook_text: str
+    angle: str = ""
+    n: int
+    intent_mean: float
+    intent_top2: float
+    conversion_count: int
+    wilson_ci: WilsonInterval
+    trial_estimate: float
+    appeal_mean: float
+    pairwise: list[PairwiseComparison] = Field(default_factory=list)
+
+
+class ShootoutAnalysis(BaseModel):
+    enabled: bool = True
+    variants: list[VariantMetrics] = Field(default_factory=list)
+    winner_id: str | None = None
+    winner_rationale: str = ""
+    recommendation: str = ""
+
+
+# --------------------------------------------------------------------------- deterministic data binding & provenance
+
+
+class AdvisoryProvenance(BaseModel):
+    source_metric_id: str  # e.g. "pricing.van_westendorp.optimal_price_point"
+    metric_value: float | int | str | None = None
+    advisory_interpretation: str
+    is_editorial: bool = False
+
+
+class AdvisoryRecommendation(BaseModel):
+    strategic_verdict: str
+    pricing_corridor_min: float | None = None
+    pricing_corridor_max: float | None = None
+    rationale: str = ""
+    provenance: list[AdvisoryProvenance] = Field(default_factory=list)
+
+
+class RawSimulationOutput(BaseModel):
+    n: int
+    metrics: dict
+    trial_estimate: float
+    intent_weights: dict[str, float]
+    by: dict
+    pricing: dict
+    diagnostics: dict
+    shootout: ShootoutAnalysis | None = None
+

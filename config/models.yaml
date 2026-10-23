@@ -13,17 +13,35 @@ providers:
 
 default_provider: openrouter
 
+# Fetch public source pages before rewriting/reviewing competitive research.
+scraping:
+  enabled: true
+  max_pages_per_scan: 6
+  concurrency: 2
+  timeout_seconds: 15
+  max_chars_per_page: 8000
+
 roles:
+  evidence_reviewer:
+    model: openai/gpt-4.1-mini
+    temperature: 0.0
+    max_tokens: 7000
+  competitive_research:
+    model: deepseek/deepseek-v4.1-flash
+    temperature: 0.2
+    max_tokens: 6000
+    web_search: true
   research:
-    model: perplexity/llama-3.1-sonar-large-128k-online
+    model: perplexity/sonar
     temperature: 0.3
     max_tokens: 8000
 
   personas:
     models:
       - deepseek/deepseek-v4.1-flash
-    temperature: 1.0
-    max_tokens: 1500
+      - openai/gpt-4.1-mini
+    temperature: 0.7
+    max_tokens: 3000
 
   analyst:
     model: deepseek/deepseek-v4.1-flash
@@ -31,23 +49,42 @@ roles:
     max_tokens: 16000
 
   critic:
-    model: typesafe/jev-router
+    model: deepseek/deepseek-v4.1-flash
     temperature: 0.0
-    max_tokens: 100
+    max_tokens: 4000
 
   report:
     model: deepseek/deepseek-v4.1-flash
     temperature: 0.4
     max_tokens: 10000
 
+reasoning_enabled:
+  deepseek/deepseek-v4.1-flash: false
+
 prices:
+  openai/gpt-4.1-mini: [0.40, 1.60]
   deepseek/deepseek-v4.1-flash: [0.30, 1.20]
-  perplexity/llama-3.1-sonar-large-128k-online: [1.00, 1.00]
+  perplexity/sonar: [1.00, 1.00]
+  typesafe/jev-1.13: [0.042, 0.0]
+
+# Jev supervises every stage and gates transitions to downstream work.
+guardrails:
+  advantage_review_mode: observe
+  model: typesafe/jev-1.13
+  max_risk_probability: 0.2
+  max_stage_retries: 1
+  retry_min_probability: 0.8
+  self_heal_enabled: true
+  repairable_min_probability: 0.25
+  advisory_max_probability: 0.35
+  batch_size: 20
 
 run:
   concurrency: 20
   max_retries: 5
-  budget_usd: 1.0
+  budget_usd: 2.0
+  web_search_max_uses: 2
+  web_search_max_results: 5
   intent_weights:
     definitely: 0.75
     probably: 0.25

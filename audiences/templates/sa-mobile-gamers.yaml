@@ -1,0 +1,43 @@
+name: sa-mobile-gamers
+title: South African Mobile Gamers (18-34)
+region: South Africa
+category: Mobile Gaming & Interactive Entertainment
+target_market: Active mobile gamers in South Africa aged 18 to 34 playing weekly
+description: >
+  Urban and township mobile gamers playing multiplayer, casual, and competitive
+  games across cellular networks (MTN/Vodacom) and home fibre/Wi-Fi.
+sample_size: 50
+criteria:
+  - "Resident of South Africa aged 18-34"
+  - "Plays mobile games at least 3 hours per week"
+sources:
+  - "Stats SA QLFS youth demographic benchmarks"
+  - "South Africa Digital Media & Mobile Gaming Report"
+assumptions:
+  - "High sensitivity to cellular data bundle costs"
+  - "Prevalence of Android mid-range handsets"
+segments:
+  - name: Competitive Esports & Battle Royale Players
+    description: Dedicated players of mobile competitive titles (PUBG Mobile, Free Fire, COD Mobile) sensitive to latency and device performance.
+    share: 0.40
+    age_min: 18
+    age_max: 28
+    income_levels: [low, lower-middle, middle]
+    key_needs: [low data consumption, high FPS on budget devices, local low-ping servers]
+    likely_objections: [pay-to-win mechanics, high data consumption on mobile networks]
+  - name: Casual & Social Commuter Gamers
+    description: Players who game during taxi commutes and lunch breaks for quick relaxation and social connection.
+    share: 0.35
+    age_min: 20
+    age_max: 34
+    income_levels: [lower-middle, middle, upper-middle]
+    key_needs: [offline playability, low battery drain, quick 5-minute sessions]
+    likely_objections: [aggressive ad interruptions, forced online connection, intrusive microtransactions]
+  - name: Gaming Content Creators & Streamers
+    description: Emerging local gaming creators sharing clips on TikTok and YouTube Shorts.
+    share: 0.25
+    age_min: 18
+    age_max: 30
+    income_levels: [lower-middle, middle]
+    key_needs: [community discovery, monetization, streaming overlay tools]
+    likely_objections: [high platform cuts, lack of local sponsorship options, difficulty cashing out]

@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>__CLIENT_TITLE__ · Kohort positioning report</title>
+<style>
+:root{--ink:#16181d;--muted:#5f6672;--line:#e6e8ec;--paper:#fff;--canvas:#f6f7f9;--accent:#4b3df5;--tint:#eeecff;--warning:#775018;--warning-bg:#fff4e5}
+*{box-sizing:border-box}body{margin:0;background:var(--canvas);color:var(--ink);font:16px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}button,select,input{font:inherit}button,a,select,summary{touch-action:manipulation}button,summary{cursor:pointer}a{color:var(--accent);text-underline-offset:4px}button:focus-visible,a:focus-visible,summary:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:3px}::selection{background:var(--tint);color:var(--ink)}*{scrollbar-color:#b7b4c9 var(--canvas)}[hidden]{display:none!important}
+.skip{position:absolute;left:12px;top:-80px;background:var(--paper);padding:12px;z-index:10}.skip:focus{top:12px}
+.shell{display:grid;grid-template-columns:224px minmax(0,1fr);min-height:100vh}.rail{border-right:1px solid var(--line);background:var(--paper);padding:30px 20px;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;gap:28px}.brand{font-size:22px;font-weight:800;letter-spacing:-.03em;color:var(--accent)}.rail-client{font-size:14px;color:var(--muted);overflow-wrap:anywhere}.rail nav{display:grid;gap:5px}.rail nav a{text-decoration:none;color:var(--muted);padding:11px 12px;border-radius:7px;font-size:14px;font-weight:600}.rail nav a:hover{background:var(--canvas);color:var(--ink)}.rail nav a[aria-current=page]{color:var(--accent);background:var(--tint)}.rail-foot{margin-top:auto;font-size:12px;color:var(--muted)}
+.workspace{min-width:0}.topbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:20px 38px;border-bottom:1px solid var(--line);background:var(--paper)}.topbar p{margin:0;font-size:13px;color:var(--muted)}.actions{display:flex;gap:8px;flex-wrap:wrap}.button{border:1px solid #cbd0da;border-radius:7px;padding:8px 13px;background:var(--paper);color:var(--ink);font-size:13px;font-weight:600}.button:hover{border-color:var(--accent);color:var(--accent)}.button.primary{background:var(--accent);border-color:var(--accent);color:#fff}.button:disabled{opacity:.5;cursor:not-allowed}
+main{max-width:1296px;margin:0 auto;padding:38px 48px 72px}h1{font-size:clamp(28px,3vw,40px);letter-spacing:-.03em;line-height:1.16;margin:0 0 14px;max-width:26ch;text-wrap:balance}h2{font-size:23px;letter-spacing:-.02em;line-height:1.3;margin:32px 0 14px}h3{font-size:17px;line-height:1.4;margin:18px 0 8px}p{margin:0 0 16px;max-width:72ch}.lede{color:var(--muted);max-width:72ch}.notice{background:var(--warning-bg);color:var(--warning);padding:12px 16px;margin:22px 0;font-size:14px;border-radius:6px}.notice strong{font-weight:650}.split{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:38px}.prose{max-width:75ch}.prose>p:first-child{font-size:19px}.prose blockquote{margin:20px 0;padding:0 0 0 18px;border-left:1px solid var(--accent);color:var(--ink)}.prose blockquote p{font-size:20px;line-height:1.5}.prose ul,.prose ol{padding-left:23px}.prose li{margin:8px 0}.prose h1{font-size:25px}.prose h2{font-size:21px}.prose table{font-size:14px}.prose hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.basis{border-top:2px solid var(--ink);font-size:14px}.basis h2{margin-top:14px;font-size:17px}.basis ul{padding:0;list-style:none}.basis li{padding:13px 0;border-bottom:1px solid var(--line)}.basis b{display:block;font-weight:600}.basis span{color:var(--muted)}.basis a{display:inline-block;margin-top:12px}.label{display:block;font-size:13px;font-weight:600;margin-bottom:7px}.controls{display:flex;flex-wrap:wrap;gap:16px;align-items:end;margin:24px 0}.controls label{flex:1;min-width:180px}.controls select,.controls input{width:100%;min-height:44px;border:1px solid #bdc3ce;background:var(--paper);border-radius:6px;padding:8px 11px;color:var(--ink)}.scenario-note{color:var(--muted);font-size:14px;margin-bottom:24px}
+.comparison{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:28px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper)}.offer{padding:22px;min-width:0}.offer+.offer{border-left:1px solid var(--line)}.offer h3{margin-top:0}.offer p{font-size:14px}.offer .count{font-variant-numeric:tabular-nums;font-size:24px;font-weight:650;color:var(--ink);margin-bottom:0}.offer .count span{font-size:13px;font-weight:400;color:var(--muted)}.offer blockquote{margin:16px 0;font-size:14px}.bars{margin:20px 0;max-width:800px}.bar-row{display:grid;grid-template-columns:100px minmax(0,1fr) 66px;gap:14px;align-items:center;margin:12px 0;font-size:14px}.track{height:13px;background:#e2e3e9;border-radius:2px;overflow:hidden}.fill{height:100%;background:var(--accent);width:var(--share)}.bar-row.current .fill{background:#818895}.bar-value{text-align:right;font-variant-numeric:tabular-nums}.note{font-size:13px;color:var(--muted)}
+details{border-bottom:1px solid var(--line);padding:16px 0;overflow-wrap:anywhere}summary{font-weight:600;padding:4px 0;min-height:36px}details[open]>summary{margin-bottom:14px}details p,details li{font-size:14px}details .prose p{font-size:16px}.source-excerpt{white-space:pre-wrap;font-family:inherit;font-size:13px;padding:15px;background:var(--paper);max-height:360px;overflow:auto;overflow-wrap:anywhere}.source-link{overflow-wrap:anywhere;font-size:13px}.evidence-list{border-top:1px solid var(--line)}.subtle{color:var(--muted);font-weight:400}.response-meta{font-size:12px;color:var(--muted);display:block;margin-top:5px}.quote{margin:0 0 16px;padding-left:16px;border-left:1px solid var(--accent)}.empty{padding:30px 0;color:var(--muted)}.row-actions{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:20px;align-items:center}.table-wrap{max-width:100%;overflow:auto}table{border-collapse:collapse;width:100%;margin:16px 0}th,td{text-align:left;vertical-align:top;padding:12px 10px;border-bottom:1px solid var(--line)}th{font-size:13px;font-weight:600;color:var(--muted)}td{font-size:14px}code{font-size:12px;overflow-wrap:anywhere}footer{padding-top:36px;margin-top:40px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}.toast{font-size:13px;color:var(--muted);min-height:20px}.view{animation:arrive .2s ease-out}@keyframes arrive{from{transform:translateY(5px)}to{transform:translateY(0)}}
+.view{animation:none}.journey{list-style:none;padding:0;max-width:850px;counter-reset:stage}.journey>li{counter-increment:stage;position:relative;margin-left:17px;padding:0 0 28px 34px;border-left:1px solid var(--line)}.journey>li:last-child{border-left-color:transparent}.journey>li:before{content:counter(stage);position:absolute;left:-17px;top:0;display:grid;place-items:center;width:33px;height:33px;background:var(--paper);border:1px solid var(--line);border-radius:50%;color:var(--accent);font-size:13px;font-weight:700}.journey h2{font-size:20px;margin:0 0 6px}.journey p{font-size:14px;margin-bottom:10px}.stage-status{display:inline-block;font-size:12px;font-weight:600;color:var(--muted);margin-bottom:10px}.journey details{padding:8px 0}.journey code{display:block}.print-context{display:none}
+@media print{.print-context{display:block}}
+@media(prefers-reduced-motion:reduce){.view{animation:none}}
+@media(max-width:1100px){.split{grid-template-columns:1fr}.basis{display:none}main{padding:30px}.comparison{grid-template-columns:1fr}.offer+.offer{border-left:0;border-top:1px solid var(--line)}}
+@media(max-width:760px){.shell{display:block}.rail{position:static;height:auto;padding:18px 20px;gap:12px;border-right:0;border-bottom:1px solid var(--line)}.rail nav{display:flex;flex-wrap:wrap;gap:3px}.rail nav a{padding:9px 10px}.rail-foot{display:none}.topbar{padding:16px 20px}main{padding:28px 20px}.bar-row{grid-template-columns:88px minmax(0,1fr) 55px;gap:8px}.controls{display:block}.controls label{display:block;margin:14px 0}h1{font-size:30px}.offer{padding:18px}.prose table{display:block;overflow:auto}}
+@media print{.rail,.topbar,.controls,.row-actions,.toast,.skip{display:none!important}.shell{display:block}.view[hidden]{display:block!important}.view{break-before:page;animation:none}.view:first-child{break-before:auto}main{padding:0;max-width:none}body{background:white;font-size:11pt}.basis{display:none}.split{display:block}details{break-inside:avoid}summary{list-style:none}.source-excerpt{max-height:none;overflow:visible}.comparison{display:block}.offer{break-inside:avoid}.offer+.offer{border:0}.notice{background:none;border:1px solid #ccc}.prose{max-width:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#report-main">Skip to report</a>
+<div class="shell">
+<aside class="rail"><div><div class="brand">kohort</div><div class="rail-client" id="client-name"></div></div>
+<nav aria-label="Report sections">
+<a href="#recommendation" aria-current="page">Recommendation</a><a href="#journey">How we reached this</a><a href="#options">Compare options</a><a href="#responses">Buyer responses</a><a href="#evidence">Market evidence</a><a href="#actions">Copy &amp; next actions</a><a href="#method">Method &amp; limitations</a>
+</nav><div class="rail-foot">Positioning report<br>Research. Compare. Decide.<br><br>Prototype · saved results</div></aside>
+<div class="workspace"><header class="topbar"><p id="report-context"></p><div class="actions"><button class="button" id="download">Download evidence</button><button class="button primary" id="print">Print report</button></div></header>
+<main id="report-main" tabindex="-1">
+<section class="view" id="recommendation"><h1>A clearer position.<br>A practical next move.</h1><p class="lede" id="product-name"></p><div class="notice" id="release-notice"></div><div class="split"><div><h2 id="recommendation-title">Our recommendation</h2><div class="prose" id="recommendation-copy"></div><div id="more-recommendation"></div></div><aside class="basis"><h2>What informs this advice</h2><ul><li><b>Owner’s brief</b><span>Services, buyers and commercial context. Owner-reported.</span></li><li><b>Saved market research</b><span id="source-count"></span></li><li><b>AI buyer comparisons</b><span id="response-count"></span></li></ul><a href="#options">Explore the comparisons</a><br><a href="#method">Understand the limitations</a></aside></div></section>
+<section class="view" id="journey" hidden><h1>How we reached this recommendation.</h1><p class="lede">Follow the saved inputs through to the advice. Open a stage to see its supporting records, then explore the relevant findings.</p><div class="notice">This is a map of saved artifacts, not a live execution log. A saved result does not mean every claim is verified. Customer validation remains separate.</div><ol class="journey" id="workflow-stages"></ol></section>
+<section class="view" id="options" hidden><h1>Compare the messages.</h1><p class="lede">Read the exact offers shown to the synthetic buyers, then compare choices within a buying scenario.</p><div class="controls"><label><span class="label">Buying scenario</span><select id="scenario"></select></label></div><p class="scenario-note" id="scenario-note"></p><div class="bars" id="comparison-bars" aria-live="polite"></div><p class="note">Counts are simulated choices, not conversion rates. Scenarios may overlap and must not be pooled.</p><div class="comparison" id="offers"></div><details><summary>Scenario inclusion and exclusions</summary><div id="scenario-rules"></div></details></section>
+<section class="view" id="responses" hidden><h1>Look behind the counts.</h1><p class="lede">Inspect the reasoning and switching conditions in the saved AI responses. These are synthetic role-plays, not interviews with real people.</p><div class="controls"><label><span class="label">Buying scenario</span><select id="response-scenario"></select></label><label><span class="label">Selected option</span><select id="response-choice"></select></label><label><span class="label">Search responses</span><input id="response-search" type="search" placeholder="Ownership, pricing, migration…"></label></div><p class="note" id="response-summary" aria-live="polite"></p><div class="evidence-list" id="response-list"></div><div class="row-actions"><button class="button" id="previous">Previous responses</button><span class="note" id="page-number"></span><button class="button" id="next">Next responses</button></div></section>
+<section class="view" id="evidence" hidden><h1>Every comparison has a source.</h1><p class="lede">Open a competitor or tool to inspect its saved research and the excerpts behind it. Prices describe the saved research, not a fresh price check.</p><div class="notice">Research coverage is incomplete. Missing evidence does not establish that a competitor lacks a feature.</div><h2>Buyer alternatives</h2><div id="competitors" class="evidence-list"></div><h2>Useful tools</h2><div id="tools" class="evidence-list"></div><h2>Research coverage</h2><div id="coverage"></div></section>
+<section class="view" id="actions" hidden><h1>Put the position to work.</h1><p class="lede">The existing editorial recommendation, proposed copy and client actions. Proposed copy has not been tested with customers.</p><div id="action-copy" class="prose"></div></section>
+<section class="view" id="method" hidden><h1>Know what the evidence can support.</h1><p class="lede">The report brings three different kinds of input together. Their limits remain visible.</p><table><thead><tr><th>Input</th><th>What it contributes</th><th>What it cannot establish</th></tr></thead><tbody><tr><td>Owner-supplied brief</td><td>The business’s offer, context and intended buyers.</td><td>Independent verification of delivery, revenue or commercial claims.</td></tr><tr><td>Competitive research</td><td>Source-backed descriptions of available alternatives.</td><td>Exhaustive market coverage or current prices without rechecking.</td></tr><tr><td>Synthetic comparisons</td><td>Reactions to messages and questions worth exploring.</td><td>Real customer demand, market share, conversion or willingness to pay.</td></tr></tbody></table><h2>Run record</h2><div id="run-record"></div><h2>Specific limitations</h2><div id="limitations"></div><details><summary>Original brief appendix</summary><div id="appendix" class="prose"></div></details></section>
+<footer id="report-footer"></footer><div class="toast" role="status" id="status"></div>
+</main></div></div>
+<noscript>This interactive report needs JavaScript. The original client brief and swarm report remain available alongside the saved project files.</noscript>
+<script type="application/json" id="report-data">__REPORT_DATA__</script>
+<script>
+(() => {
+  'use strict';
+  const data = JSON.parse(document.getElementById('report-data').textContent);
+  const $ = id => document.getElementById(id);
+  const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const list = items => '<ul>' + (Array.isArray(items) ? items : [items]).filter(Boolean).map(x => '<li>'+esc(x)+'</li>').join('')+'</ul>';
+  const text = (id, value) => { $(id).textContent = value; };
+  const safeLink = value => { try { const u = new URL(value); return ['http:','https:'].includes(u.protocol) && !u.username ? u.href : ''; } catch { return ''; } };
+  const sectionHTML = s => '<h2>'+esc(s.title)+'</h2>'+s.html;
+  const views = [...document.querySelectorAll('.view')];
+  function route(moveFocus=false) {
+    const id = location.hash.slice(1);
+    if (id === 'report-main') { $('report-main').focus(); return; }
+    const target = views.some(v => v.id === id) ? id : 'recommendation';
+    views.forEach(v => {v.hidden = v.id !== target;});
+    document.querySelectorAll('.rail nav a').forEach(a => {if(a.hash === '#'+target) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');});
+    document.title = data.client+' · '+document.querySelector('.rail nav a[aria-current]').textContent+' · Kohort';
+    if (moveFocus) {
+      const heading = $(target).querySelector('h1');
+      heading.setAttribute('tabindex','-1');
+      heading.focus({preventScroll:true});
+    }
+  }
+  window.addEventListener('hashchange', () => route(true));
+  text('client-name',data.client); text('product-name',data.product);
+  text('report-context',data.client+' / Positioning report');
+  const delivery = data.release.eligible_for_delivery === true && !data.mock;
+  text('release-notice', delivery ? 'Saved swarm output: '+(data.release.status === 'released_with_limits' ? 'released with limitations. ' : 'eligible for delivery. ')+'The recommendation is editorial; real customer demand remains unvalidated.' : 'Draft only · This run is not eligible for client delivery.');
+  text('source-count',data.competitors.length+' alternatives and '+data.tools.length+' tools in the saved advisory.');
+  text('response-count',data.completed+' responses across '+data.scenarios.length+' scenarios.');
+  const stageTargets = {recommendation:'Read the recommendation', evidence:'Inspect market evidence', options:'Compare the offers', responses:'Explore buyer responses', method:'Read the review limits', actions:'See copy and next actions'};
+  $('workflow-stages').innerHTML = data.workflow.map(stage => '<li><h2>'+esc(stage.title)+'</h2><span class="stage-status">'+esc(stage.status)+'</span><p>'+esc(stage.summary)+'</p>'+(stage.artifacts.length || stage.notes.length ? '<details><summary>Supporting records and limitations</summary>'+list(stage.notes)+stage.artifacts.map(name => '<p>'+esc(name)+'<code>SHA-256: '+esc(data.files[name] || 'Unrecorded')+'</code></p>').join('')+'</details>' : '')+'<a href="#'+esc(stage.target)+'">'+esc(stageTargets[stage.target])+'</a></li>').join('');
+  const sections = data.sections;
+  text('recommendation-title',sections[0].title); $('recommendation-copy').innerHTML = sections[0].html;
+  const actionSections = sections.slice(1).filter(s => /copy|next|ways to buy|action/i.test(s.title));
+  const appendixSections = sections.slice(1).filter(s => /appendix/i.test(s.title));
+  const limitSections = sections.slice(1).filter(s => /does not|limitations/i.test(s.title));
+  const otherSections = sections.slice(1).filter(s => !actionSections.includes(s) && !appendixSections.includes(s) && !limitSections.includes(s));
+  $('more-recommendation').innerHTML = otherSections.map(s => '<details><summary>'+esc(s.title)+'</summary><div class="prose">'+s.html+'</div></details>').join('');
+  $('action-copy').innerHTML = actionSections.length ? actionSections.map(sectionHTML).join('') : '<p>No separate action section was supplied in the editorial brief.</p>';
+  $('appendix').innerHTML = appendixSections.length ? appendixSections.map(sectionHTML).join('') : '<p>No appendix was supplied.</p>';
+  const scenarioLabel = s => s.id+' · '+s.segment.buying_responsibility;
+  const scenarioOptions = data.scenarios.map(s => '<option value="'+esc(s.id)+'">'+esc(scenarioLabel(s))+'</option>').join('');
+  $('scenario').innerHTML = scenarioOptions;
+  $('response-scenario').innerHTML = '<option value="">All scenarios (individual responses)</option>'+scenarioOptions;
+  $('response-choice').innerHTML = '<option value="">All choices</option>'+data.offers.map(o=>'<option value="'+esc(o.option_id)+'">Option '+esc(o.option_id)+'</option>').join('')+'<option value="keep_current">Keep current approach</option>';
+  function compare() {
+    const s = data.scenarios.find(x=>x.id === $('scenario').value) || data.scenarios[0];
+    text('scenario-note',s.id+' · '+s.stats.audience_group+' · '+s.segment.setting+' — '+s.segment.buying_responsibility);
+    const counts = [...s.stats.options.map(o=>({id:'Option '+o.option_id,n:o.chosen})),{id:'Keep current',n:s.stats.keep_current}];
+    $('comparison-bars').innerHTML = counts.map((o,i)=>'<div class="bar-row '+(i===counts.length-1?'current':'')+'"><span>'+esc(o.id)+'</span><div class="track" aria-hidden="true"><div class="fill" style="--share:'+(s.stats.completed?o.n/s.stats.completed*100:0)+'%"></div></div><span class="bar-value">'+o.n+' / '+s.stats.completed+'</span></div>').join('');
+    $('offers').innerHTML = data.offers.map(o=>{const b=data.boards.find(b=>b.option_id===o.option_id)||{}; const stat=s.stats.options.find(x=>x.option_id===o.option_id); return '<article class="offer"><h3>Option '+esc(o.option_id)+'</h3><p class="count">'+stat.chosen+' <span>of '+s.stats.completed+' selected</span></p><blockquote>'+esc(o.message)+'</blockquote><details><summary>Positioning rationale &amp; tradeoff</summary><p>'+esc(b.positioning_statement)+'</p><p>'+esc(b.tradeoff)+'</p><p class="note">Internal analysis; this was not shown to the simulated buyers.</p></details><button class="button" data-offer="'+esc(o.option_id)+'" data-scenario="'+esc(s.id)+'">Read these responses</button></article>';}).join('');
+    $('scenario-rules').innerHTML = '<p>'+esc(s.segment.inclusion_criteria)+'</p>'+list(s.segment.exclusion_criteria);
+  }
+  $('scenario').addEventListener('change',compare);
+  $('offers').addEventListener('click',event=>{const b=event.target.closest('[data-offer]'); if(!b)return; $('response-scenario').value=b.dataset.scenario;$('response-choice').value=b.dataset.offer;$('response-search').value='';page=0;showResponses();location.hash='responses';});
+  let page=0; const pageSize=10;
+  function showResponses() {
+    const needle=$('response-search').value.trim().toLocaleLowerCase();
+    const rows=data.responses.filter(r=>(!$('response-scenario').value||r.segment_id===$('response-scenario').value)&&(!$('response-choice').value||r.response.choice===$('response-choice').value)&&(!needle||JSON.stringify(r.response).toLocaleLowerCase().includes(needle)||r.persona_id.toLocaleLowerCase().includes(needle)));
+    const pages=Math.max(1,Math.ceil(rows.length/pageSize));page=Math.min(page,pages-1);
+    text('response-summary',rows.length+' matching synthetic responses. Displaying '+(rows.length?page*pageSize+1:0)+'–'+Math.min(rows.length,(page+1)*pageSize)+'.');
+    let printContext = $('response-print-context');
+    if (!printContext) { printContext=document.createElement('p');printContext.id='response-print-context';printContext.className='print-context note';$('response-summary').after(printContext); }
+    printContext.textContent='Response selection: '+($('response-scenario').value||'All scenarios')+'; choice: '+($('response-choice').value||'All choices')+'; search: '+(needle||'None')+'. Page '+(page+1)+' of '+pages+'. This printout contains this response page only; the evidence download contains every saved response.';
+    $('response-list').innerHTML=rows.slice(page*pageSize,(page+1)*pageSize).map(r=>'<details><summary>'+esc(r.persona_id)+' · '+esc(r.segment_id)+' · '+esc(r.response.choice==='keep_current'?'Kept current approach':'Selected '+r.response.choice)+'<span class="response-meta">Synthetic response · '+esc(r.audience_group)+'</span></summary><blockquote class="quote">'+esc(r.response.reason)+'</blockquote><h3>Conditions for switching</h3>'+list(r.response.conditions_for_switching)+'<h3>A question for real buyers</h3><p>'+esc(r.response.question_for_real_buyers)+'</p><details><summary>Objections by option</summary>'+r.response.options.map(o=>'<h3>'+esc(o.option_id)+'</h3>'+list(o.objections)).join('')+'</details></details>').join('')||'<p class="empty">No saved responses match these filters. Try a broader search or another option.</p>';
+    text('page-number','Page '+(page+1)+' of '+pages);$('previous').disabled=page===0;$('next').disabled=page>=pages-1;
+  }
+  ['response-scenario','response-choice','response-search'].forEach(id=>$(id).addEventListener(id==='response-search'?'input':'change',()=>{page=0;showResponses();}));
+  $('previous').addEventListener('click',()=>{page--;showResponses();});$('next').addEventListener('click',()=>{page++;showResponses();});
+  function evidence(item,tool=false) {
+    const fields=tool?['purpose','pricing','why_it_fits','first_step']:['offering','pricing','delivery_model','customer_overlap','problem_overlap','why_buyers_consider_it','comparison_limits'];
+    const descriptions=fields.filter(k=>item[k]).map(k=>'<h3>'+esc(k.replaceAll('_',' '))+'</h3><p>'+esc(item[k])+'</p>').join('');
+    const excerpts=(item.source_urls||[]).map(url=>{const s=data.sources.find(s=>s.url===url);const href=safeLink(url);return '<details><summary>'+esc(s?.title||url)+'</summary>'+(href?'<a class="source-link" href="'+esc(href)+'" target="_blank" rel="noopener noreferrer">Open original source</a>':'<p>Source URL unavailable.</p>')+'<pre class="source-excerpt">'+esc(s?.content||'No saved excerpt is available for this URL.')+'</pre></details>';}).join('');
+    return '<details><summary>'+esc(item.name)+'</summary>'+descriptions+'<h3>Saved source excerpts</h3>'+excerpts+'</details>';
+  }
+  $('competitors').innerHTML=data.competitors.map(x=>evidence(x)).join('')||'<p>No competitor evidence retained.</p>';
+  $('tools').innerHTML=data.tools.map(x=>evidence(x,true)).join('')||'<p>No tool evidence retained.</p>';
+  $('coverage').innerHTML=list(data.coverage);
+  $('limitations').innerHTML=list(data.caveats)+limitSections.map(s=>'<div class="prose">'+sectionHTML(s)+'</div>').join('')+list(data.release.scenario_review_issues||[]);
+  const record=[['Swarm run',data.runId],['Source advisory',data.sourceRun],['Responses',data.completed+' / '+data.requested],['Release status',data.release.status],['Persona model(s)',data.models.join(', ')],['Protocol',data.protocol],['Report assembled',data.builtAt],['Synthesis','Existing editorial client brief; no new AI analysis']];
+  $('run-record').innerHTML='<table><tbody>'+record.map(([k,v])=>'<tr><th>'+esc(k)+'</th><td>'+esc(v)+'</td></tr>').join('')+'</tbody></table><p class="note">Preferences are reported separately for each scenario. A selected offer does not necessarily mean readiness to switch. AI responses may overlook details already present in the message.</p>';
+  text('report-footer','Prepared with Kohort · '+data.runId+' · Saved evidence, editorial recommendation and synthetic comparisons.');
+  $('download').addEventListener('click',()=>{const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download='kohort-'+data.runId+'-evidence.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);text('status','Evidence download prepared. Includes source excerpts, synthetic responses and file hashes.');});
+  let printOpen=[];
+  window.addEventListener('beforeprint',()=>{printOpen=[...document.querySelectorAll('details')].filter(d=>d.open);document.querySelectorAll('details').forEach(d=>{d.open=true;});});
+  window.addEventListener('afterprint',()=>{document.querySelectorAll('details').forEach(d=>{d.open=printOpen.includes(d);});});
+  $('print').addEventListener('click',()=>{text('status','Print includes all report sections and the currently filtered response page. Download evidence for all responses.');window.print();});
+  compare();showResponses();route();
+})();
+</script>
+</body>
+</html>

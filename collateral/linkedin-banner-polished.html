@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1584px;
+    height: 396px;
+    background: #0A1A39;
+    color: #FAF9F5;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 38px 70px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Architectural subtle grid pattern */
+  .bg-grid {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 36px 36px;
+    pointer-events: none;
+  }
+
+  /* Subtle atmospheric glow */
+  .bg-glow {
+    position: absolute;
+    top: -120px;
+    right: 100px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(211, 255, 101, 0.06) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  /* Left margin creates the absolute safe zone for the round LinkedIn avatar */
+  .safe-content {
+    margin-left: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Top Row */
+  .top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-lockup {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logo-img {
+    height: 34px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .category-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: #94A3B8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 4px;
+  }
+
+  .sla-pill {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    background: rgba(211, 255, 101, 0.12);
+    border: 1px solid #D3FF65;
+    color: #D3FF65;
+    padding: 6px 14px;
+    text-transform: uppercase;
+  }
+
+  /* Hero Center */
+  .hero-headline {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 1.08;
+    letter-spacing: -1.2px;
+    color: #FAF9F5;
+    margin-bottom: 8px;
+  }
+
+  .hero-headline span {
+    color: #D3FF65;
+  }
+
+  .hero-sub {
+    font-size: 15px;
+    color: #94A3B8;
+    line-height: 1.4;
+    max-width: 860px;
+    font-weight: 500;
+  }
+
+  /* Bottom Row */
+  .bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 12px;
+    font-family: 'Space Mono', monospace;
+    font-size: 10.5px;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+
+  .spec-items {
+    display: flex;
+    gap: 28px;
+  }
+
+  .spec-items strong {
+    color: #FAF9F5;
+  }
+</style>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="bg-glow"></div>
+
+  <div class="safe-content">
+    <div class="top-row">
+      <div class="logo-lockup">
+        <img class="logo-img" src="kohort_logo_white.png" alt="kohort">
+        <span class="category-tag">[ Commercial Intelligence ]</span>
+      </div>
+      <div class="sla-pill">24 to 48-Hour Boardroom Delivery</div>
+    </div>
+
+    <div>
+      <h1 class="hero-headline">Pre-Flight Campaign Testing &amp;<br><span>Econometric Pricing.</span></h1>
+      <p class="hero-sub">Stress-test ad hooks, customer distrust, and willingness-to-pay against verified buyer cohorts before committing live media spend.</p>
+    </div>
+
+    <div class="bottom-row">
+      <div class="spec-items">
+        <div><span>Sample:</span> <strong>N=20 to N=40 Verified Buyers</strong></div>
+        <div><span>Pricing Engine:</span> <strong>Van Westendorp Elasticity</strong></div>
+      </div>
+      <div>Strictly Confidential &bull; Commercial Research</div>
+    </div>
+  </div>
+</body>
+</html>

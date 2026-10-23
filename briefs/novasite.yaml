@@ -1,0 +1,130 @@
+client: Nova Site
+product_name: Nova Site websites and custom web apps
+category: B2B web development and ongoing digital services
+one_liner: A Pretoria web studio offering custom websites, business web apps and ongoing digital support to small and medium businesses.
+
+description: |
+  OFFER AND CUSTOMER PROBLEM
+  Nova Site builds custom websites and business web apps, including booking
+  systems and internal dashboards. It also offers hosting, maintenance, SEO
+  and Google Ads management. The owner reports website delivery in 1–2 days
+  and web app delivery in 4–5 days; scope, prerequisites and exceptions are
+  not specified. These are reported delivery claims, not universal guarantees.
+  Target businesses may lack a website or have an outdated or ineffective site.
+  They may manage enquiries, quotes, bookings and client records through
+  WhatsApp, paper or spreadsheets. The owner reports missed enquiries,
+  follow-ups and double-bookings, plus several hours of weekly administration;
+  the frequency and financial impact have not been measured independently.
+
+  CURRENT PRICING AND OFFERS (ZAR)
+  Promotional website build: free. Hosting, SSL and maintenance: free for the
+  first year, then R1,000 per month. Changes: R450 per hour as standard or
+  R375 per hour for partner clients, with two free hours per month on partner
+  plans. Partner eligibility, plan fees, included maintenance, usage limits,
+  cancellation terms and VAT treatment are not specified.
+  Custom web apps are quoted per project; the owner is deciding between a
+  fixed project fee and a recurring build-plus-hosting-and-support subscription.
+  Web app prices and SEO/Google Ads retainers are undecided. Whether ad spend
+  is included in a retainer is not specified. Do not interpret the R1,000
+  website plan as the price of a custom web app or of the entire service bundle.
+
+  OWNER-REPORTED EVIDENCE (NOT INDEPENDENTLY VERIFIED)
+  The business started in September 2025 and reports 17 projects: 15 websites
+  and two web apps, specifically a booking system and an internal dashboard.
+  Three websites are live on client-owned domains. Two have five-star Google
+  reviews reported for September–October 2026. One client signed a branding
+  partnership agreement and one an international build-and-hosting agreement.
+  Paid client count, cash collected, contract values and recurring revenue
+  were not supplied. Project count must not be treated as paid sales count.
+  Several builds reportedly took 1–2 days; one was live in under a week with
+  a first draft a day early. The owner reports client feedback praising custom
+  builds and direct founder contact, with replies within an hour.
+  October 2026 LinkedIn outreach for the free website offer reportedly produced
+  3–4 interested replies within a day. Launch posts received approximately
+  200–1,000 impressions each; offer posts shared in groups received about 60.
+  Outreach denominator, comparable audiences, paid conversions and attribution
+  were not supplied. One prospective reseller expressed interest in selling
+  the booking system; this is an enquiry, not a reseller sale or agreement.
+
+  ASSUMPTIONS AND COUNTEREVIDENCE
+  The owner is testing whether the free build reduces purchase friction and
+  whether customers value one supplier for all digital services. Neither is
+  established. Some free-offer enquiries request ecommerce or complex platforms
+  outside the intended scope, or show no readiness to pay later. Most portfolio
+  sites are demos on Nova Site subdomains. Conversion to paid hosting,
+  maintenance, SEO or ads after the first free year remains unproven.
+  The owner estimates alternative agencies/freelancers take 2–8 weeks and cost
+  R10,000–R50,000+; treat this as an unverified market hypothesis, not a sourced
+  competitor benchmark. Do not generalise that all DIY sites are slow or poor.
+
+  DECISIONS AND CONSTRAINTS
+  Decide web app packaging and viable ZAR price points; test willingness to pay
+  R1,000 per month after the website's free year against lower monthly or annual
+  options; and compare the free website offer with a low-cost paid entry offer.
+  Resources: two founders and approximately 30 hours per week as reported;
+  whether this is combined capacity is unclear. Channels: LinkedIn outreach,
+  Google Business Profile, referrals and directories. The owner can contact
+  approximately 50–100 business owners per month. Available test budget,
+  delivery cost, support cost, gross margin and timeline are unspecified.
+  Focus on South African decision-makers first. International markets should
+  be assessed separately rather than mixed into South African price estimates.
+  Keep simulated persona responses separate from actual customer evidence.
+  Any recommended prices are hypotheses requiring real customer tests and
+  delivery/support cost checks, not demonstrated willingness to pay.
+
+  SUPPORTING LINKS SUPPLIED BY THE OWNER (NOT VERIFIED DURING INTAKE)
+  Portfolio: https://novasite.co.za/work.html
+  Services: https://novasite.co.za/services.html
+  Client examples: https://fluorescencesupplyptyltd.com
+  https://masekoprimeholdings.co.za
+  https://extragreenpta.co.za
+  The owner says the portfolio links to the public Google Business Profile.
+
+key_features:
+  - Custom website development, with owner-reported delivery of small sites in 1–2 days
+  - Custom booking systems and business dashboards, with owner-reported web app delivery in 4–5 days
+  - Direct contact with the founders who build the work
+  - Promotional free website build and first year of hosting, SSL and maintenance
+  - Website hosting, SSL and maintenance priced at R1,000/month after the free first year
+  - Optional paid changes, SEO and Google Ads management
+
+variants:
+  - id: var_status_quo
+    name: "Promotional Free Website Build"
+    hook_text: "Free website build with direct founder communication and 1–2 day turnaround."
+    angle: "zero_risk_friction_reduction"
+  - id: var_turnkey_fixed
+    name: "Done-in-5-Days Turnkey Package"
+    hook_text: "Professional Done-in-5-Days business website for R2,950 once-off with transparent hosting and zero lock-in."
+    angle: "transparent_pricing_ownership"
+  - id: var_booking_app
+    name: "Custom Booking Automation Web App"
+    hook_text: "Custom WhatsApp-integrated booking system that eliminates double-bookings and saves 5+ hours weekly."
+    angle: "high_roi_admin_automation"
+
+# Multiple offers have different prices. A single price would misrepresent them.
+price: null
+currency: ZAR
+price_unit: varies by offer; see description
+target_market: |
+  Owners, founders and managing directors of South African businesses with
+  1–100 staff, especially in mining support, construction, industrial supply,
+  IT, medical training, retail and services. They usually make the purchase
+  decision. Owners, office managers and administrative staff use the websites
+  or systems to manage bookings, quotes and enquiries. Separate businesses
+  seeking a basic website from businesses seeking a custom operational app.
+region: South Africa, primarily Pretoria, Johannesburg and Centurion in Gauteng; international demand is secondary and owner-reported.
+competitors:
+  - Local web development agencies and freelancers (specific suppliers not yet identified)
+  - Wix
+  - WordPress templates and associated hosting or development services
+  - Google Sites
+  - Off-the-shelf booking software (specific products not yet identified)
+  - WhatsApp, Facebook pages, word of mouth, paper diaries and Excel
+  - Keeping the existing website or doing nothing
+questions:
+  - For a defined booking system or business dashboard, would you choose an upfront project fee or a monthly build, hosting and support plan, and why? Specify required scope, acceptable terms and ZAR price expectations separately for each option.
+  - After a free website and first year of hosting, SSL and maintenance, what would justify paying R1,000/month? What inclusions, lower monthly price or annual payment option would change your decision?
+  - Would you choose a free website with later recurring fees or a low-cost paid website package with transparent ongoing costs? Explain trust concerns, budget and conditions for committing.
+  - What do you currently spend on websites, booking tools and administration, who approves the purchase, and what specific event would prompt you to switch?
+  - Which single service would you buy first, what measurable outcome would justify its cost, and what evidence would you need before paying?

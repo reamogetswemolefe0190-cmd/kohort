@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nova Site — 1-Page Client Summary</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 12mm 14mm;
+  }
+  * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1a1f2c;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    font-size: 11.5px;
+    line-height: 1.35;
+  }
+  .header {
+    border-bottom: 2px solid #2563eb;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .header h1 {
+    margin: 0;
+    font-size: 20px;
+    color: #0f172a;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+  .header .meta {
+    font-size: 10px;
+    color: #64748b;
+    text-align: right;
+  }
+  .verdict-banner {
+    background: #fef3c7;
+    border-left: 4px solid #f59e0b;
+    padding: 6px 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .verdict-tag {
+    font-weight: 800;
+    color: #b45309;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .verdict-text {
+    font-size: 11px;
+    color: #78350f;
+    margin-left: 10px;
+    flex-grow: 1;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .card {
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 10px;
+    background: #f8fafc;
+  }
+  .card h3 {
+    margin: 0 0 5px 0;
+    font-size: 12px;
+    color: #1e293b;
+    border-bottom: 1px solid #cbd5e1;
+    padding-bottom: 3px;
+    font-weight: 700;
+  }
+  ul {
+    margin: 0;
+    padding-left: 14px;
+  }
+  li {
+    margin-bottom: 3px;
+  }
+  li strong {
+    color: #0f172a;
+  }
+  .price-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 4px;
+    font-size: 11px;
+  }
+  .price-table th, .price-table td {
+    padding: 4px 6px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .price-table th {
+    background: #e2e8f0;
+    color: #334155;
+    font-weight: 600;
+  }
+  .badge-rec {
+    background: #dcfce7;
+    color: #15803d;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 9.5px;
+  }
+  .action-box {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 6px;
+    padding: 8px 10px;
+  }
+  .action-box h3 {
+    margin: 0 0 5px 0;
+    color: #1d4ed8;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .footer {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 9.5px;
+    color: #94a3b8;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 6px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>Nova Site — Customer Feedback & Action Plan</h1>
+    <div style="color: #64748b; font-size: 10.5px; margin-top: 2px;">Target: Small & Medium Business Owners in Gauteng (Pretoria & Johannesburg)</div>
+  </div>
+  <div class="meta">
+    <strong>Date:</strong> October 2026<br>
+    <strong>Panel:</strong> 20 Business Owners Tested
+  </div>
+</div>
+
+<div class="verdict-banner">
+  <div class="verdict-tag">Verdict: Iterate First</div>
+  <div class="verdict-text">
+    Business owners like you and your work, but they are skeptical of the <strong>"Free website now, R1,000/month later"</strong> offer. Tweaking the offer will drastically increase your sales.
+  </div>
+</div>
+
+<div class="grid-2">
+  <div class="card">
+    <h3>👍 What Buyers Liked</h3>
+    <ul>
+      <li><strong>Direct contact with the founders (85%):</strong> They hate dealing with account managers or call centers. Knowing you build it yourself is your biggest selling point.</li>
+      <li><strong>All-in-one package (50%):</strong> They want one reliable team handling domain, hosting, and updates.</li>
+      <li><strong>Fixing admin headaches (30%):</strong> High interest in booking systems that stop double-bookings and manual WhatsApp chaos.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>⚠️ What Made Buyers Hesitate</h3>
+    <ul>
+      <li><strong>"Free for 1 year, then R1,000/mo" feels like a trap (40%):</strong> Business owners worry: <em>"If I cancel, do I lose my domain and website?"</em></li>
+      <li><strong>Unbelievable speed claims (45%):</strong> Promising a custom site in 1–2 days makes them think it is a cheap, generic template.</li>
+      <li><strong>Subdomain demos (45%):</strong> Seeing demo links on <code>novasite.co.za</code> made them wonder if you have real paying clients.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="card" style="margin-bottom: 10px;">
+  <h3>💰 How You Should Price & Package Your Services</h3>
+  <table class="price-table">
+    <thead>
+      <tr>
+        <th>Service</th>
+        <th>What Customers Expect</th>
+        <th>Recommended Nova Site Price</th>
+        <th>Why</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Basic Business Website</strong></td>
+        <td>R1,500 – R5,500 once-off</td>
+        <td><strong>R2,950 – R3,500</strong> once-off <span class="badge-rec">Recommended</span></td>
+        <td>Ditch "Free". Let them pay a fair starter fee or offer: <em>"R0 deposit, pay only after you love the live preview."</em></td>
+      </tr>
+      <tr>
+        <td><strong>Website Hosting & Care</strong></td>
+        <td>R300 – R750 / month</td>
+        <td><strong>R395 / month</strong> (Basic Care)<br><strong>R950 / month</strong> (Growth Plan)</td>
+        <td>R1,000/mo is too high for just hosting. At R950, include 2 hours of monthly updates and Google Business tweaks.</td>
+      </tr>
+      <tr>
+        <td><strong>Custom Booking App</strong></td>
+        <td>R8,000 – R25,000 once-off</td>
+        <td><strong>R12,500 – R18,000</strong> once-off</td>
+        <td>90% of buyers want to <strong>own</strong> their software outright. Do not force an ongoing software subscription.</td>
+      </tr>
+      <tr>
+        <td><strong>Custom Dashboard / Web App</strong></td>
+        <td>R25,000 – R60,000 once-off</td>
+        <td><strong>R30,000 – R45,000</strong> once-off</td>
+        <td>Quote per project (50% deposit, 50% on handover) with an optional R850/mo support retainer.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="action-box">
+  <h3>🚀 3 Steps to Take This Week</h3>
+  <ul>
+    <li><strong>1. Fix the Portfolio:</strong> Move your 3 real client sites (<code>fluorescencesupplyptyltd.com</code>, etc.) right to the top of <code>novasite.co.za/work.html</code>. Clearly label demo links as <em>"Interactive Demo Prototypes"</em>.</li>
+    <li><strong>2. State Clear Ownership:</strong> Put a simple line on your site: <em>"You own your domain name, code, and content 100% from day one."</em> This immediately removes the biggest buyer fear.</li>
+    <li><strong>3. Sell Real Value Over "Free":</strong> Pitch: <em>"Professional 5-page website delivered in 5 days for R3,250 — zero deposit until you approve the live preview."</em></li>
+  </ul>
+</div>
+
+<div class="footer">
+  Kohort Market Intelligence · Confidential Client Summary for Nova Site · Page 1 of 1
+</div>
+
+</body>
+</html>

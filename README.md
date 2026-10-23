@@ -708,34 +708,56 @@ A user can inspect the raw outputs behind the final report rather than receiving
 ```text
 kohort/
 │
-├── briefs/
-│   └── example_loopa.yaml
+├── audiences/                 # Pre-computed and cached demographic panels
+│   ├── templates/             # Audience distribution specifications
+│   └── *.json                 # Compiled persona panel records
+│
+├── briefs/                    # Concept testing specifications
+│   ├── example_loopa.yaml     # Standard reference brief
+│   └── novasite.yaml          # Multi-variant Hook Shootout brief
+│
+├── collateral/                # Visual collateral & motion showcase
+│   └── kohort_motion_showcase.html # Interactive 5-scene timeline showcase
 │
 ├── config/
-│   └── models.yaml
+│   └── models.yaml            # Multi-model routing, pricing, & guardrails
+│
+├── deliverables/              # Client reports, executive briefs, & audited decks
+│
+├── docs/                      # Technical references & integration guides
+│   ├── audience-builder.md
+│   └── mcp-server.md
 │
 ├── kohort/
-│   │
 │   ├── stages/
-│   │   ├── research.py
-│   │   ├── personas.py
-│   │   ├── interviews.py
-│   │   └── synthesis.py
+│   │   ├── research.py        # Autonomous Perplexity market retrieval
+│   │   ├── personas.py        # Unprimed synthetic persona synthesis
+│   │   ├── interviews.py      # Two-stage concept & price reveal interviews
+│   │   └── synthesis.py       # Deterministic rollup & qualitative theme coding
 │   │
-│   ├── __main__.py
-│   ├── analysis.py
-│   ├── cli.py
-│   ├── config.py
-│   ├── llm.py
-│   ├── mock.py
-│   ├── pipeline.py
-│   ├── report.py
-│   ├── sampling.py
-│   └── schemas.py
+│   ├── advantage.py           # Competitive positioning & blue-ocean extraction
+│   ├── analysis.py            # Van Westendorp, NIS, and Wilson CI shootout math
+│   ├── audiences.py           # Persistent panel compilation & sampling
+│   ├── binding.py             # Deterministic Jinja2 deliverable binding
+│   ├── cli.py                 # Command-line interface orchestration
+│   ├── config.py              # Configuration loading & model routing
+│   ├── evidence_review.py     # Deterministic citation & claim provenance verification
+│   ├── guardrails.py          # Supervisor routing & pipeline gating
+│   ├── llm.py                 # Async OpenRouter gateway & budget enforcement
+│   ├── mcp_server.py          # Model Context Protocol stdio server
+│   ├── mock.py                # Zero-cost offline deterministic simulation
+│   ├── pipeline.py            # End-to-end multi-agent pipeline orchestrator
+│   ├── report.py              # Self-contained HTML & Markdown report generator
+│   ├── resilience.py          # 3-Tier audit suite & deliverable reconciliation
+│   ├── sampling.py            # Demographics, Rogers adoption, and hash variant allocator
+│   ├── schemas.py             # Pydantic v2 schemas for all pipeline artifacts
+│   ├── scraping.py            # SSRF-hardened competitor content scraper
+│   ├── supervisor.py          # Jev read-only audit boundary
+│   ├── swarm.py               # Multi-agent swarm consensus engine
+│   └── teardown.py            # Automated competitor deconstruction
 │
-├── marketing/
-│
-├── requirements.txt
+├── tests/                     # 113 automated unit, integration & resilience tests
+├── requirements.txt           # Production dependencies
 └── README.md
 ```
 
@@ -839,6 +861,88 @@ python -m kohort run briefs/example_loopa.yaml --personas 200 --seed 42
 ```
 
 This makes the deterministic persona sampling reproducible.
+
+---
+
+---
+
+## Hook Shootout (A/B Testing)
+
+Test multiple positioning angles or value propositions against isolated, hash-allocated synthetic panels with Wilson 95% confidence intervals and pairwise significance tests:
+
+```bash
+# Run a multi-variant shootout (e.g. 3 variants across 200 personas)
+python -m kohort run briefs/novasite.yaml --personas 200 --mock
+```
+
+---
+
+## Competitive Teardown
+
+Reverse-engineer a competitor or benchmark tool directly from their URL:
+
+```bash
+python -m kohort teardown getminds.ai
+python -m kohort teardown getminds.ai --mock
+```
+
+---
+
+## Persistent Audience Builder
+
+Create and reuse named demographic & psychographic panels across multiple concept tests without incurring re-sampling costs:
+
+```bash
+python -m kohort audience list
+python -m kohort audience show sa-tech-founders
+python -m kohort audience build sa-tech-founders --personas 50 --mock
+python -m kohort run briefs/example_loopa.yaml --audience sa-tech-founders --mock
+```
+
+---
+
+## Model Context Protocol (MCP) Server
+
+Connect Claude Desktop or Cursor directly to Kohort's market-research toolset:
+
+```bash
+python -m kohort mcp
+```
+
+```json
+{
+  "mcpServers": {
+    "kohort": {
+      "command": "python",
+      "args": ["-m", "kohort", "mcp"]
+    }
+  }
+}
+```
+
+---
+
+## 3-Tier Resilience Suite & Audit Reconciliation
+
+Verify mathematical invariants, claim citations, and deliverable numbers:
+
+```bash
+# Run the full test suite (113 passing tests)
+pytest tests/
+# or
+python -m unittest discover -s tests
+```
+
+---
+
+## Interactive Agentic Motion Showcase
+
+Open [`collateral/kohort_motion_showcase.html`](collateral/kohort_motion_showcase.html) directly in any modern browser for a zero-dependency, 5-scene timeline visualizing:
+1. Client Brief Ingestion
+2. Swarm Persona Dynamics
+3. Hook Shootout Progression
+4. Van Westendorp Pricing Curves & Optimal Price Point
+5. 3-Tier Resilience Suite Verdict
 
 ---
 

@@ -1,0 +1,426 @@
+{
+  "spec": {
+    "name": "sa-tech-founders",
+    "title": "South African Tech Founders & Engineering Leaders",
+    "region": "South Africa",
+    "category": "B2B Software, Developer Tools & Cloud Infrastructure",
+    "target_market": "Early-stage and growth founders, CTOs, and lead engineers in South Africa",
+    "description": "Technical decision makers building software businesses in South Africa, navigating local infrastructure realities, currency volatility, and remote hiring.\n",
+    "sample_size": 50,
+    "criteria": [
+      "Actively operating as a founder, CTO, or tech lead in South Africa",
+      "Responsible for software purchasing or architecture decisions"
+    ],
+    "sources": [
+      "South Africa Tech Ecosystem Survey 2025",
+      "Stats SA QLFS formal ICT employment indicators"
+    ],
+    "assumptions": [
+      "High familiarity with cloud tools and remote developer workflows",
+      "Price sensitivity exacerbated by ZAR/USD currency exchange swings"
+    ],
+    "segments": [
+      {
+        "name": "Bootstrapped SaaS Founders",
+        "description": "Lean founders building cashflow-positive software businesses with tight budgets and pragmatic tooling.",
+        "share": 0.4,
+        "age_min": 25,
+        "age_max": 48,
+        "income_levels": [
+          "middle",
+          "upper-middle"
+        ],
+        "key_needs": [
+          "cost efficiency",
+          "ease of maintenance",
+          "local payment support"
+        ],
+        "likely_objections": [
+          "expensive USD pricing",
+          "enterprise bloat",
+          "complex onboarding"
+        ],
+        "buying_habits": [],
+        "price_anchors": []
+      },
+      {
+        "name": "Venture-Backed Scaleup CTOs",
+        "description": "Tech leaders with institutional funding prioritizing rapid delivery, compliance, and cloud reliability.",
+        "share": 0.35,
+        "age_min": 28,
+        "age_max": 52,
+        "income_levels": [
+          "upper-middle",
+          "high"
+        ],
+        "key_needs": [
+          "security compliance",
+          "developer productivity",
+          "scalable architecture"
+        ],
+        "likely_objections": [
+          "vendor lock-in",
+          "unproven uptime",
+          "lack of SOC2 / POPIA compliance"
+        ],
+        "buying_habits": [],
+        "price_anchors": []
+      },
+      {
+        "name": "Agency & Dev Shop Directors",
+        "description": "Managing engineering teams delivering client solutions across web, mobile, and enterprise integrations.",
+        "share": 0.25,
+        "age_min": 28,
+        "age_max": 55,
+        "income_levels": [
+          "middle",
+          "upper-middle",
+          "high"
+        ],
+        "key_needs": [
+          "multi-tenant management",
+          "quick turnaround",
+          "predictable billing"
+        ],
+        "likely_objections": [
+          "steep learning curve for junior devs",
+          "client margin compression"
+        ],
+        "buying_habits": [],
+        "price_anchors": []
+      }
+    ]
+  },
+  "sample_size": 6,
+  "mock": true,
+  "seed": 42,
+  "created_at": "2026-10-23T22:22:03.493163+00:00",
+  "personas": [
+    {
+      "name": "Jonas Fischer",
+      "occupation": "business owner",
+      "bio": "54-year-old business owner living in a city (couple, kids left home). Cares about quality over quantity and health. [MOCK persona]",
+      "current_solution": "Buys the usual B2B Software, Developer Tools & Cloud Infrastructure from local shops or online.",
+      "values": [
+        "quality over quantity",
+        "health",
+        "convenience"
+      ],
+      "frustrations": [
+        "misleading marketing",
+        "clutter at home"
+      ],
+      "id": "P001",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "traits": {
+        "segment": "Agency & Dev Shop Directors",
+        "age": 54,
+        "gender": "man",
+        "income": "high",
+        "household": "couple, kids left home",
+        "location": "city",
+        "adopter_type": "late majority",
+        "price_sensitivity": "low",
+        "skepticism": "high"
+      },
+      "category_lens": {
+        "category": "B2B Software, Developer Tools & Cloud Infrastructure",
+        "segment": "Agency & Dev Shop Directors",
+        "buying_habits": [],
+        "price_anchors": [],
+        "status_quo_alternatives": [],
+        "real_frustrations": [
+          "steep learning curve for junior devs",
+          "client margin compression"
+        ],
+        "cultural_signals": [],
+        "evidence_urls": [
+          "South Africa Tech Ecosystem Survey 2025",
+          "Stats SA QLFS formal ICT employment indicators"
+        ]
+      },
+      "trait_provenance": {
+        "demographics": "modelled",
+        "psychographics": "modelled",
+        "category_habits": "sourced",
+        "price_anchors": "assumed",
+        "frustrations": "sourced"
+      }
+    },
+    {
+      "name": "Hanna Andersson",
+      "occupation": "lawyer",
+      "bio": "38-year-old lawyer living in a small town / rural (single). Cares about quality over quantity and reliability. [MOCK persona]",
+      "current_solution": "Buys the usual B2B Software, Developer Tools & Cloud Infrastructure from local shops or online.",
+      "values": [
+        "quality over quantity",
+        "reliability",
+        "health"
+      ],
+      "frustrations": [
+        "never enough time",
+        "complicated apps"
+      ],
+      "id": "P002",
+      "model": "openai/gpt-4.1-mini",
+      "traits": {
+        "segment": "Venture-Backed Scaleup CTOs",
+        "age": 38,
+        "gender": "woman",
+        "income": "high",
+        "household": "single",
+        "location": "small town / rural",
+        "adopter_type": "early adopter",
+        "price_sensitivity": "low",
+        "skepticism": "high"
+      },
+      "category_lens": {
+        "category": "B2B Software, Developer Tools & Cloud Infrastructure",
+        "segment": "Venture-Backed Scaleup CTOs",
+        "buying_habits": [],
+        "price_anchors": [],
+        "status_quo_alternatives": [],
+        "real_frustrations": [
+          "vendor lock-in",
+          "unproven uptime",
+          "lack of SOC2 / POPIA compliance"
+        ],
+        "cultural_signals": [],
+        "evidence_urls": [
+          "South Africa Tech Ecosystem Survey 2025",
+          "Stats SA QLFS formal ICT employment indicators"
+        ]
+      },
+      "trait_provenance": {
+        "demographics": "modelled",
+        "psychographics": "modelled",
+        "category_habits": "sourced",
+        "price_anchors": "assumed",
+        "frustrations": "sourced"
+      }
+    },
+    {
+      "name": "Noah Weber",
+      "occupation": "project manager",
+      "bio": "47-year-old project manager living in a suburb (couple, no kids). Cares about simplicity and health. [MOCK persona]",
+      "current_solution": "Buys the usual B2B Software, Developer Tools & Cloud Infrastructure from local shops or online.",
+      "values": [
+        "simplicity",
+        "health",
+        "community"
+      ],
+      "frustrations": [
+        "rising prices",
+        "misleading marketing"
+      ],
+      "id": "P003",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "traits": {
+        "segment": "Agency & Dev Shop Directors",
+        "age": 47,
+        "gender": "man",
+        "income": "upper-middle",
+        "household": "couple, no kids",
+        "location": "suburb",
+        "adopter_type": "late majority",
+        "price_sensitivity": "low",
+        "skepticism": "high"
+      },
+      "category_lens": {
+        "category": "B2B Software, Developer Tools & Cloud Infrastructure",
+        "segment": "Agency & Dev Shop Directors",
+        "buying_habits": [],
+        "price_anchors": [],
+        "status_quo_alternatives": [],
+        "real_frustrations": [
+          "steep learning curve for junior devs",
+          "client margin compression"
+        ],
+        "cultural_signals": [],
+        "evidence_urls": [
+          "South Africa Tech Ecosystem Survey 2025",
+          "Stats SA QLFS formal ICT employment indicators"
+        ]
+      },
+      "trait_provenance": {
+        "demographics": "modelled",
+        "psychographics": "modelled",
+        "category_habits": "sourced",
+        "price_anchors": "assumed",
+        "frustrations": "sourced"
+      }
+    },
+    {
+      "name": "David Ivanova",
+      "occupation": "architect",
+      "bio": "27-year-old architect living in a suburb (living with partner). Cares about quality over quantity and family time. [MOCK persona]",
+      "current_solution": "Buys the usual B2B Software, Developer Tools & Cloud Infrastructure from local shops or online.",
+      "values": [
+        "quality over quantity",
+        "family time",
+        "simplicity"
+      ],
+      "frustrations": [
+        "never enough time",
+        "too many subscriptions"
+      ],
+      "id": "P004",
+      "model": "openai/gpt-4.1-mini",
+      "traits": {
+        "segment": "Bootstrapped SaaS Founders",
+        "age": 27,
+        "gender": "man",
+        "income": "upper-middle",
+        "household": "living with partner",
+        "location": "suburb",
+        "adopter_type": "early adopter",
+        "price_sensitivity": "low",
+        "skepticism": "low"
+      },
+      "category_lens": {
+        "category": "B2B Software, Developer Tools & Cloud Infrastructure",
+        "segment": "Bootstrapped SaaS Founders",
+        "buying_habits": [],
+        "price_anchors": [],
+        "status_quo_alternatives": [],
+        "real_frustrations": [
+          "expensive USD pricing",
+          "enterprise bloat",
+          "complex onboarding"
+        ],
+        "cultural_signals": [],
+        "evidence_urls": [
+          "South Africa Tech Ecosystem Survey 2025",
+          "Stats SA QLFS formal ICT employment indicators"
+        ]
+      },
+      "trait_provenance": {
+        "demographics": "modelled",
+        "psychographics": "modelled",
+        "category_habits": "sourced",
+        "price_anchors": "assumed",
+        "frustrations": "sourced"
+      }
+    },
+    {
+      "name": "Mateo Schmidt",
+      "occupation": "nurse",
+      "bio": "45-year-old nurse living in a small town / rural (family with young children). Cares about trying new things and quality over quantity. [MOCK persona]",
+      "current_solution": "Buys the usual B2B Software, Developer Tools & Cloud Infrastructure from local shops or online.",
+      "values": [
+        "trying new things",
+        "quality over quantity",
+        "saving money"
+      ],
+      "frustrations": [
+        "poor customer service",
+        "too many subscriptions"
+      ],
+      "id": "P005",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "traits": {
+        "segment": "Bootstrapped SaaS Founders",
+        "age": 45,
+        "gender": "man",
+        "income": "middle",
+        "household": "family with young children",
+        "location": "small town / rural",
+        "adopter_type": "early adopter",
+        "price_sensitivity": "medium",
+        "skepticism": "low"
+      },
+      "category_lens": {
+        "category": "B2B Software, Developer Tools & Cloud Infrastructure",
+        "segment": "Bootstrapped SaaS Founders",
+        "buying_habits": [],
+        "price_anchors": [],
+        "status_quo_alternatives": [],
+        "real_frustrations": [
+          "expensive USD pricing",
+          "enterprise bloat",
+          "complex onboarding"
+        ],
+        "cultural_signals": [],
+        "evidence_urls": [
+          "South Africa Tech Ecosystem Survey 2025",
+          "Stats SA QLFS formal ICT employment indicators"
+        ]
+      },
+      "trait_provenance": {
+        "demographics": "modelled",
+        "psychographics": "modelled",
+        "category_habits": "sourced",
+        "price_anchors": "assumed",
+        "frustrations": "sourced"
+      }
+    },
+    {
+      "name": "Nina Jansen",
+      "occupation": "business owner",
+      "bio": "50-year-old business owner living in a suburb (single). Cares about sustainability and reliability. [MOCK persona]",
+      "current_solution": "Buys the usual B2B Software, Developer Tools & Cloud Infrastructure from local shops or online.",
+      "values": [
+        "sustainability",
+        "reliability",
+        "tradition"
+      ],
+      "frustrations": [
+        "products that break quickly",
+        "complicated apps"
+      ],
+      "id": "P006",
+      "model": "openai/gpt-4.1-mini",
+      "traits": {
+        "segment": "Venture-Backed Scaleup CTOs",
+        "age": 50,
+        "gender": "woman",
+        "income": "high",
+        "household": "single",
+        "location": "suburb",
+        "adopter_type": "early majority",
+        "price_sensitivity": "medium",
+        "skepticism": "medium"
+      },
+      "category_lens": {
+        "category": "B2B Software, Developer Tools & Cloud Infrastructure",
+        "segment": "Venture-Backed Scaleup CTOs",
+        "buying_habits": [],
+        "price_anchors": [],
+        "status_quo_alternatives": [],
+        "real_frustrations": [
+          "vendor lock-in",
+          "unproven uptime",
+          "lack of SOC2 / POPIA compliance"
+        ],
+        "cultural_signals": [],
+        "evidence_urls": [
+          "South Africa Tech Ecosystem Survey 2025",
+          "Stats SA QLFS formal ICT employment indicators"
+        ]
+      },
+      "trait_provenance": {
+        "demographics": "modelled",
+        "psychographics": "modelled",
+        "category_habits": "sourced",
+        "price_anchors": "assumed",
+        "frustrations": "sourced"
+      }
+    }
+  ],
+  "provenance": {
+    "models_used": [
+      "deepseek/deepseek-v4.1-flash",
+      "openai/gpt-4.1-mini"
+    ],
+    "cost_usd": 0.0,
+    "errors_count": 0,
+    "sources": [
+      "South Africa Tech Ecosystem Survey 2025",
+      "Stats SA QLFS formal ICT employment indicators"
+    ],
+    "assumptions": [
+      "High familiarity with cloud tools and remote developer workflows",
+      "Price sensitivity exacerbated by ZAR/USD currency exchange swings"
+    ]
+  }
+}

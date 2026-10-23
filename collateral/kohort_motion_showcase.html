@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kohort — Agentic Market Intelligence Motion Showcase</title>
+  <style>
+    :root {
+      --bg: #07080b;
+      --card-bg: rgba(18, 21, 28, 0.85);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-border-glow: rgba(99, 102, 241, 0.4);
+      --accent-indigo: #6366f1;
+      --accent-violet: #8b5cf6;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-rose: #f43f5e;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --spring-physics: cubic-bezier(0.16, 1, 0.3, 1);
+      --spring-bouncy: cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      perspective: 1000px;
+    }
+
+    /* Ambient background grid & glow */
+    .ambient-glow {
+      position: fixed;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(139, 92, 246, 0.05) 45%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(80px);
+      animation: pulseGlow 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulseGlow {
+      0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.6; }
+      100% { transform: translate(-50%, -50%) scale(1.15); opacity: 0.95; }
+    }
+
+    .bg-grid {
+      position: fixed;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Video / Showcase Stage */
+    .stage-container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 1080px;
+      aspect-ratio: 16 / 9;
+      background: #0d0f14;
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      box-shadow: 0 30px 100px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.06);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Stage Header */
+    .stage-header {
+      height: 64px;
+      border-bottom: 1px solid var(--card-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 28px;
+      background: rgba(13, 15, 20, 0.8);
+      backdrop-filter: blur(12px);
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      height: 24px;
+      filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.5));
+    }
+
+    .engine-badge {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: rgba(99, 102, 241, 0.12);
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      color: var(--accent-indigo);
+    }
+
+    .timeline-steps {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .t-step {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-dim);
+      transition: all 0.4s var(--spring-physics);
+    }
+
+    .t-step.active {
+      color: var(--text-main);
+    }
+
+    .t-step .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--text-dim);
+      transition: all 0.4s var(--spring-physics);
+    }
+
+    .t-step.active .dot {
+      background: var(--accent-indigo);
+      box-shadow: 0 0 10px var(--accent-indigo);
+      transform: scale(1.3);
+    }
+
+    .t-step.done .dot {
+      background: var(--accent-emerald);
+    }
+
+    /* Main Scene Area */
+    .scene-viewport {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .scene {
+      position: absolute;
+      inset: 0;
+      padding: 36px 44px;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0.96) translateY(12px);
+      transition: opacity 0.5s var(--spring-physics), transform 0.6s var(--spring-physics);
+    }
+
+    .scene.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: scale(1) translateY(0);
+    }
+
+    .scene-title-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .scene-title {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .scene-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* SCENE 1: Client Brief Ingestion */
+    .brief-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      height: calc(100% - 60px);
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .card-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--accent-indigo);
+      margin-bottom: 8px;
+    }
+
+    .card-title {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+    }
+
+    .pill {
+      font-size: 12px;
+      padding: 5px 10px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
+    }
+
+    .shimmer-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent-indigo), transparent);
+      animation: shimmerMove 2.5s infinite;
+    }
+
+    @keyframes shimmerMove {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    /* SCENE 2: Persona Swarm Allocation */
+    .swarm-visual {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+      height: calc(100% - 60px);
+    }
+
+    .swarm-canvas-wrap {
+      background: #090b0e;
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    canvas#swarmCanvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .segment-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .seg-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+
+    .seg-card.highlight {
+      border-color: var(--accent-indigo);
+      background: rgba(99, 102, 241, 0.1);
+      transform: translateX(4px);
+    }
+
+    .seg-name {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .seg-meta {
+      font-size: 11px;
+      color: var(--text-dim);
+    }
+
+    .seg-count {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent-indigo);
+      font-family: monospace;
+    }
+
+    /* SCENE 3: Hook Shootout In Action */
+    .shootout-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      height: calc(100% - 60px);
+      justify-content: center;
+    }
+
+    .hook-row {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: grid;
+      grid-template-columns: 240px 1fr 140px 100px;
+      align-items: center;
+      gap: 20px;
+      position: relative;
+      transition: all 0.4s var(--spring-physics);
+    }
+
+    .hook-row.winner {
+      border-color: var(--accent-emerald);
+      background: rgba(16, 185, 129, 0.06);
+      box-shadow: 0 0 24px rgba(16, 185, 129, 0.15);
+    }
+
+    .hook-meta .name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .hook-meta .hook-text {
+      font-size: 12px;
+      color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-top: 3px;
+    }
+
+    .progress-track {
+      height: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress-fill {
+      height: 100%;
+      border-radius: 6px;
+      background: linear-gradient(90deg, var(--accent-indigo), var(--accent-violet));
+      width: 0%;
+      transition: width 1.2s var(--spring-physics);
+    }
+
+    .hook-row.winner .progress-fill {
+      background: linear-gradient(90deg, var(--accent-emerald), #34d399);
+    }
+
+    .ci-badge {
+      font-size: 11px;
+      font-family: monospace;
+      color: var(--text-dim);
+      background: rgba(255, 255, 255, 0.03);
+      padding: 4px 8px;
+      border-radius: 6px;
+      text-align: center;
+      border: 1px solid var(--card-border);
+    }
+
+    .top2-stat {
+      font-size: 20px;
+      font-weight: 800;
+      font-family: monospace;
+      text-align: right;
+    }
+
+    .winner-tag {
+      position: absolute;
+      top: -10px;
+      right: 20px;
+      background: var(--accent-emerald);
+      color: #042f1a;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    /* SCENE 4: Dynamic Van Westendorp Pricing */
+    .pricing-wrap {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+      height: calc(100% - 60px);
+    }
+
+    .vw-chart-box {
+      background: #090b0e;
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      position: relative;
+      overflow: hidden;
+      padding: 16px;
+    }
+
+    canvas#vwCanvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .vw-metrics {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .metric-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 16px;
+      position: relative;
+    }
+
+    .metric-card.optimal {
+      border-color: var(--accent-indigo);
+      background: rgba(99, 102, 241, 0.08);
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.15);
+    }
+
+    .metric-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+    }
+
+    .metric-val {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-main);
+      font-family: monospace;
+      margin-top: 4px;
+    }
+
+    .metric-sub {
+      font-size: 11px;
+      color: var(--text-dim);
+      margin-top: 2px;
+    }
+
+    /* SCENE 5: Resilience Suite Verdict */
+    .verdict-scene {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: calc(100% - 60px);
+    }
+
+    .badge-verdict {
+      font-size: 38px;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      padding: 12px 36px;
+      border-radius: 16px;
+      background: rgba(16, 185, 129, 0.15);
+      border: 2px solid var(--accent-emerald);
+      color: var(--accent-emerald);
+      margin-bottom: 20px;
+      box-shadow: 0 0 40px rgba(16, 185, 129, 0.3);
+      animation: popIn 0.8s var(--spring-bouncy);
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.6); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .audit-checklist {
+      display: flex;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .audit-item {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+    }
+
+    .audit-item .check {
+      color: var(--accent-emerald);
+      font-weight: bold;
+    }
+
+    /* Stage Footer / Controls */
+    .stage-footer {
+      height: 54px;
+      border-top: 1px solid var(--card-border);
+      background: rgba(13, 15, 20, 0.8);
+      backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+    }
+
+    .btn-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .btn.primary {
+      background: var(--accent-indigo);
+      border-color: transparent;
+    }
+
+    .btn.primary:hover {
+      background: #4f46e5;
+    }
+
+    .scrubber-track {
+      flex: 1;
+      max-width: 480px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 2px;
+      position: relative;
+      cursor: pointer;
+      margin: 0 20px;
+    }
+
+    .scrubber-fill {
+      height: 100%;
+      background: var(--accent-indigo);
+      border-radius: 2px;
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ambient-glow"></div>
+  <div class="bg-grid"></div>
+
+  <div class="stage-container">
+    <!-- Header -->
+    <div class="stage-header">
+      <div class="brand-wrap">
+        <img src="kohort_logo_white.png" alt="Kohort Logo" class="brand-logo" onerror="this.outerHTML='<span style=\'font-weight:800;font-size:18px;letter-spacing:0.1em;color:#fff\'>KOHORT</span>'">
+        <span class="engine-badge">Agentic Motion Layer</span>
+      </div>
+      <div class="timeline-steps" id="timelineSteps">
+        <div class="t-step active" data-step="0"><span class="dot"></span> 1. Brief</div>
+        <div class="t-step" data-step="1"><span class="dot"></span> 2. Swarm</div>
+        <div class="t-step" data-step="2"><span class="dot"></span> 3. Shootout</div>
+        <div class="t-step" data-step="3"><span class="dot"></span> 4. Pricing</div>
+        <div class="t-step" data-step="4"><span class="dot"></span> 5. Audit</div>
+      </div>
+    </div>
+
+    <!-- Scene Viewport -->
+    <div class="scene-viewport">
+      
+      <!-- SCENE 1: Brief Ingestion -->
+      <div class="scene active" id="scene-0">
+        <div class="scene-title-row">
+          <div>
+            <div class="scene-title">Input Brief & Strategic Dilemma</div>
+            <div class="scene-subtitle">Ingesting Nova Site offer specifications into the agentic testing engine</div>
+          </div>
+          <span class="engine-badge">Stage 01 / Ingestion</span>
+        </div>
+        <div class="brief-grid">
+          <div class="card">
+            <div class="shimmer-bar"></div>
+            <div class="card-label">Client Brief</div>
+            <div class="card-title">Nova Site Websites & Custom Apps</div>
+            <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px;">
+              Bespoke web development and operational workflows in Gauteng. Testing whether promotional free builds drive high-margin web app retainers or cause early churn.
+            </p>
+            <div class="pill-list">
+              <span class="pill">Gauteng Region</span>
+              <span class="pill">SME Owners</span>
+              <span class="pill">ZAR Currency</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-label">Hypotheses Under Test</div>
+            <div class="card-title">Three Value Proposition Angles</div>
+            <div style="display:flex; flex-direction:column; gap:8px; margin-top:4px;">
+              <div style="font-size:12px; padding:8px 12px; border-radius:8px; background:rgba(255,255,255,0.03); border:1px solid var(--card-border);">
+                <strong>Hook A:</strong> Promotional Free Website Build
+              </div>
+              <div style="font-size:12px; padding:8px 12px; border-radius:8px; background:rgba(255,255,255,0.03); border:1px solid var(--card-border);">
+                <strong>Hook B:</strong> Turnkey R2,950 Website (No Lock-In)
+              </div>
+              <div style="font-size:12px; padding:8px 12px; border-radius:8px; background:rgba(255,255,255,0.03); border:1px solid var(--card-border);">
+                <strong>Hook C:</strong> Custom WhatsApp Booking Web App
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCENE 2: Persona Swarm Generation -->
+      <div class="scene" id="scene-1">
+        <div class="scene-title-row">
+          <div>
+            <div class="scene-title">Synthetic Buyer Swarm (N=200)</div>
+            <div class="scene-subtitle">Stratified sampling across Rogers adoption curves and income brackets</div>
+          </div>
+          <span class="engine-badge">Stage 02 / Swarm</span>
+        </div>
+        <div class="swarm-visual">
+          <div class="swarm-canvas-wrap">
+            <canvas id="swarmCanvas"></canvas>
+          </div>
+          <div class="segment-panel">
+            <div class="seg-card highlight" id="seg-0">
+              <div>
+                <div class="seg-name">Growth Seekers</div>
+                <div class="seg-meta">Early Majority · Med-High Inc</div>
+              </div>
+              <div class="seg-count">60</div>
+            </div>
+            <div class="seg-card" id="seg-1">
+              <div>
+                <div class="seg-name">Budget-Focused SMEs</div>
+                <div class="seg-meta">Late Majority · Price Sensitive</div>
+              </div>
+              <div class="seg-count">60</div>
+            </div>
+            <div class="seg-card" id="seg-2">
+              <div>
+                <div class="seg-name">Digital Pragmatists</div>
+                <div class="seg-meta">Early Adopter · Operations</div>
+              </div>
+              <div class="seg-count">50</div>
+            </div>
+            <div class="seg-card" id="seg-3">
+              <div>
+                <div class="seg-name">Traditionalists</div>
+                <div class="seg-meta">Laggards · High Skepticism</div>
+              </div>
+              <div class="seg-count">30</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCENE 3: Hook Shootout -->
+      <div class="scene" id="scene-2">
+        <div class="scene-title-row">
+          <div>
+            <div class="scene-title">The Hook Shootout (A/B Test)</div>
+            <div class="scene-subtitle">Between-subjects randomized isolation with Wilson 95% Confidence Intervals</div>
+          </div>
+          <span class="engine-badge">Stage 03 / Inference</span>
+        </div>
+        <div class="shootout-grid">
+          <div class="hook-row winner" id="hook-0">
+            <span class="winner-tag">Directional Lead</span>
+            <div class="hook-meta">
+              <div class="name">Promotional Free Build</div>
+              <div class="hook-text">"Free website build with direct founder communication"</div>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill" style="width: 29%"></div>
+            </div>
+            <div class="ci-badge">95% CI: 18.9% – 40.7%</div>
+            <div class="top2-stat" style="color:var(--accent-emerald);">29%</div>
+          </div>
+
+          <div class="hook-row" id="hook-1">
+            <div class="hook-meta">
+              <div class="name">Done-in-5-Days Turnkey</div>
+              <div class="hook-text">"R2,950 once-off with transparent hosting and zero lock-in"</div>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill" style="width: 21%"></div>
+            </div>
+            <div class="ci-badge">95% CI: 12.9% – 32.1%</div>
+            <div class="top2-stat">21%</div>
+          </div>
+
+          <div class="hook-row" id="hook-2">
+            <div class="hook-meta">
+              <div class="name">Custom Booking App</div>
+              <div class="hook-text">"WhatsApp-integrated booking system saves 5+ hours weekly"</div>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill" style="width: 20%"></div>
+            </div>
+            <div class="ci-badge">95% CI: 12.3% – 30.8%</div>
+            <div class="top2-stat">20%</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCENE 4: Van Westendorp Pricing -->
+      <div class="scene" id="scene-3">
+        <div class="scene-title-row">
+          <div>
+            <div class="scene-title">Van Westendorp Price Sensitivity Meter</div>
+            <div class="scene-subtitle">Empirical cumulative psychometric distributions & Optimal Price Point</div>
+          </div>
+          <span class="engine-badge">Stage 04 / Pricing</span>
+        </div>
+        <div class="pricing-wrap">
+          <div class="vw-chart-box">
+            <canvas id="vwCanvas"></canvas>
+          </div>
+          <div class="vw-metrics">
+            <div class="metric-card">
+              <div class="metric-label">Point of Marginal Cheapness</div>
+              <div class="metric-val">R1,500</div>
+              <div class="metric-sub">Quality suspicion floor</div>
+            </div>
+            <div class="metric-card optimal">
+              <div class="metric-label" style="color:var(--accent-indigo);">Optimal Price Point (OPP)</div>
+              <div class="metric-val" style="color:var(--accent-indigo);">R3,021</div>
+              <div class="metric-sub">Minimum resistance intersection</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Marginal Expensiveness</div>
+              <div class="metric-val">R5,200</div>
+              <div class="metric-sub">Severe demand cliff</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCENE 5: Resilience Suite Verdict -->
+      <div class="scene" id="scene-4">
+        <div class="verdict-scene">
+          <div class="badge-verdict">VERDICT: ITERATE</div>
+          <p style="font-size: 15px; max-width: 640px; color: var(--text-muted); line-height: 1.6;">
+            The synthetic panel revealed severe churn risk under recurring retainers without guaranteed dev hours. Replace the free website offer with a <strong>R2,950 entry package</strong> and deploy the <strong>R12,500 Booking System</strong> to operational businesses.
+          </p>
+          <div class="audit-checklist">
+            <div class="audit-item"><span class="check">✓</span> Tier-1 Math Invariants Passed</div>
+            <div class="audit-item"><span class="check">✓</span> 100% Provenance Lineage Verified</div>
+            <div class="audit-item"><span class="check">✓</span> Jev Passive Review Passed</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer Controls -->
+    <div class="stage-footer">
+      <div class="btn-group">
+        <button class="btn primary" id="btnPlayPause">⏸ Pause</button>
+        <button class="btn" id="btnRestart">↺ Restart</button>
+      </div>
+
+      <div class="scrubber-track" id="scrubberTrack">
+        <div class="scrubber-fill" id="scrubberFill"></div>
+      </div>
+
+      <div class="btn-group">
+        <span style="font-size:11px; color:var(--text-dim);" id="timeDisplay">0:00 / 0:20</span>
+        <button class="btn" id="btnSpeed">1.0x</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Animation Timeline Config
+    const TOTAL_DURATION = 20000; // 20s total
+    const SCENE_DURATIONS = [4000, 4000, 4500, 4500, 3000];
+    const SCENE_STARTS = [0, 4000, 8000, 12500, 17000];
+
+    let currentTime = 0;
+    let isPlaying = true;
+    let playSpeed = 1.0;
+    let lastTimestamp = performance.now();
+
+    const scenes = document.querySelectorAll('.scene');
+    const steps = document.querySelectorAll('.t-step');
+    const scrubberFill = document.getElementById('scrubberFill');
+    const timeDisplay = document.getElementById('timeDisplay');
+    const btnPlayPause = document.getElementById('btnPlayPause');
+    const btnRestart = document.getElementById('btnRestart');
+    const btnSpeed = document.getElementById('btnSpeed');
+    const scrubberTrack = document.getElementById('scrubberTrack');
+
+    // Particle Swarm Canvas (Scene 2)
+    const swarmCanvas = document.getElementById('swarmCanvas');
+    const sCtx = swarmCanvas.getContext('2d');
+    let particles = [];
+
+    function initSwarm() {
+      const rect = swarmCanvas.parentElement.getBoundingClientRect();
+      swarmCanvas.width = rect.width * window.devicePixelRatio;
+      swarmCanvas.height = rect.height * window.devicePixelRatio;
+      sCtx.scale(window.devicePixelRatio, window.devicePixelRatio);
+      
+      particles = [];
+      const colors = ['#6366f1', '#10b981', '#8b5cf6', '#f59e0b'];
+      for (let i = 0; i < 200; i++) {
+        particles.push({
+          x: Math.random() * rect.width,
+          y: Math.random() * rect.height,
+          vx: (Math.random() - 0.5) * 0.8,
+          vy: (Math.random() - 0.5) * 0.8,
+          color: colors[i % 4],
+          radius: 2 + Math.random() * 2,
+          clusterX: (rect.width / 4) * (i % 4) + rect.width / 8,
+          clusterY: rect.height / 2,
+        });
+      }
+    }
+
+    function renderSwarm(progress) {
+      const rect = swarmCanvas.parentElement.getBoundingClientRect();
+      sCtx.clearRect(0, 0, rect.width, rect.height);
+
+      particles.forEach((p, idx) => {
+        // Morph from chaotic random to clustered segments
+        const tx = p.clusterX + Math.sin(idx + currentTime * 0.003) * 24;
+        const ty = p.clusterY + Math.cos(idx + currentTime * 0.003) * 24;
+        p.x += (tx - p.x) * 0.05;
+        p.y += (ty - p.y) * 0.05;
+
+        sCtx.beginPath();
+        sCtx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        sCtx.fillStyle = p.color;
+        sCtx.shadowColor = p.color;
+        sCtx.shadowBlur = 8;
+        sCtx.fill();
+        sCtx.shadowBlur = 0;
+      });
+    }
+
+    // Van Westendorp Canvas (Scene 4)
+    const vwCanvas = document.getElementById('vwCanvas');
+    const vCtx = vwCanvas.getContext('2d');
+
+    function initVW() {
+      const rect = vwCanvas.parentElement.getBoundingClientRect();
+      vwCanvas.width = rect.width * window.devicePixelRatio;
+      vwCanvas.height = rect.height * window.devicePixelRatio;
+      vCtx.scale(window.devicePixelRatio, window.devicePixelRatio);
+    }
+
+    function renderVW(progress) {
+      const rect = vwCanvas.parentElement.getBoundingClientRect();
+      vCtx.clearRect(0, 0, rect.width, rect.height);
+      const w = rect.width - 40;
+      const h = rect.height - 40;
+
+      // Draw Grid Lines
+      vCtx.strokeStyle = 'rgba(255,255,255,0.06)';
+      vCtx.lineWidth = 1;
+      for (let i = 0; i <= 4; i++) {
+        const y = 20 + (h / 4) * i;
+        vCtx.beginPath();
+        vCtx.moveTo(20, y);
+        vCtx.lineTo(20 + w, y);
+        vCtx.stroke();
+      }
+
+      // Animated Curves
+      const t = Math.min(1, progress * 1.4);
+      
+      // Too Cheap Curve (starts high, slopes down)
+      vCtx.beginPath();
+      vCtx.moveTo(20, 20);
+      vCtx.bezierCurveTo(20 + w * 0.2, 20, 20 + w * 0.4, 20 + h * 0.8 * t, 20 + w, 20 + h * t);
+      vCtx.strokeStyle = '#3b82f6';
+      vCtx.lineWidth = 2.5;
+      vCtx.stroke();
+
+      // Too Expensive Curve (starts low, slopes up)
+      vCtx.beginPath();
+      vCtx.moveTo(20, 20 + h);
+      vCtx.bezierCurveTo(20 + w * 0.3, 20 + h, 20 + w * 0.6, 20 + h * (1 - 0.7 * t), 20 + w, 20 + (1 - t) * h);
+      vCtx.strokeStyle = '#f43f5e';
+      vCtx.lineWidth = 2.5;
+      vCtx.stroke();
+
+      // Optimal Price Point Dot (Intersection ~ 45% of width)
+      if (t > 0.6) {
+        const oppX = 20 + w * 0.46;
+        const oppY = 20 + h * 0.52;
+        vCtx.beginPath();
+        vCtx.arc(oppX, oppY, 6, 0, Math.PI * 2);
+        vCtx.fillStyle = '#6366f1';
+        vCtx.shadowColor = '#6366f1';
+        vCtx.shadowBlur = 12;
+        vCtx.fill();
+        vCtx.shadowBlur = 0;
+
+        // Label
+        vCtx.fillStyle = '#f8fafc';
+        vCtx.font = 'bold 11px monospace';
+        vCtx.fillText('OPP: R3,021', oppX - 32, oppY - 14);
+      }
+    }
+
+    // Main Animation Loop
+    function tick(timestamp) {
+      if (!lastTimestamp) lastTimestamp = timestamp;
+      const delta = (timestamp - lastTimestamp) * playSpeed;
+      lastTimestamp = timestamp;
+
+      if (isPlaying) {
+        currentTime += delta;
+        if (currentTime >= TOTAL_DURATION) {
+          currentTime = 0; // loop
+        }
+      }
+
+      // Calculate Current Scene
+      let activeSceneIndex = 0;
+      for (let i = SCENE_STARTS.length - 1; i >= 0; i--) {
+        if (currentTime >= SCENE_STARTS[i]) {
+          activeSceneIndex = i;
+          break;
+        }
+      }
+
+      // Update Active Scene
+      scenes.forEach((sc, idx) => {
+        sc.classList.toggle('active', idx === activeSceneIndex);
+      });
+
+      // Update Timeline Steps
+      steps.forEach((st, idx) => {
+        st.classList.toggle('active', idx === activeSceneIndex);
+        st.classList.toggle('done', idx < activeSceneIndex);
+      });
+
+      // Render Scene-specific dynamics
+      if (activeSceneIndex === 1) {
+        renderSwarm();
+      } else if (activeSceneIndex === 3) {
+        const sceneProg = (currentTime - SCENE_STARTS[3]) / SCENE_DURATIONS[3];
+        renderVW(sceneProg);
+      }
+
+      // Update Scrubber
+      const pct = (currentTime / TOTAL_DURATION) * 100;
+      scrubberFill.style.width = pct + '%';
+
+      // Update Timestamp
+      const curSec = Math.floor(currentTime / 1000);
+      const totalSec = Math.floor(TOTAL_DURATION / 1000);
+      timeDisplay.textContent = `0:${curSec < 10 ? '0' : ''}${curSec} / 0:${totalSec}`;
+
+      requestAnimationFrame(tick);
+    }
+
+    // UI Event Listeners
+    btnPlayPause.addEventListener('click', () => {
+      isPlaying = !isPlaying;
+      btnPlayPause.textContent = isPlaying ? '⏸ Pause' : '▶ Play';
+    });
+
+    btnRestart.addEventListener('click', () => {
+      currentTime = 0;
+      isPlaying = true;
+      btnPlayPause.textContent = '⏸ Pause';
+    });
+
+    btnSpeed.addEventListener('click', () => {
+      if (playSpeed === 1.0) playSpeed = 1.5;
+      else if (playSpeed === 1.5) playSpeed = 2.0;
+      else playSpeed = 1.0;
+      btnSpeed.textContent = playSpeed + 'x';
+    });
+
+    steps.forEach((st, idx) => {
+      st.addEventListener('click', () => {
+        currentTime = SCENE_STARTS[idx];
+      });
+    });
+
+    scrubberTrack.addEventListener('click', (e) => {
+      const rect = scrubberTrack.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const frac = Math.max(0, Math.min(1, clickX / rect.width));
+      currentTime = frac * TOTAL_DURATION;
+    });
+
+    window.addEventListener('resize', () => {
+      initSwarm();
+      initVW();
+    });
+
+    // Initialize
+    setTimeout(() => {
+      initSwarm();
+      initVW();
+      requestAnimationFrame(tick);
+    }, 100);
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+name: sa-tech-founders
+title: South African Tech Founders & Engineering Leaders
+region: South Africa
+category: B2B Software, Developer Tools & Cloud Infrastructure
+target_market: Early-stage and growth founders, CTOs, and lead engineers in South Africa
+description: >
+  Technical decision makers building software businesses in South Africa,
+  navigating local infrastructure realities, currency volatility, and remote hiring.
+sample_size: 50
+criteria:
+  - "Actively operating as a founder, CTO, or tech lead in South Africa"
+  - "Responsible for software purchasing or architecture decisions"
+sources:
+  - "South Africa Tech Ecosystem Survey 2025"
+  - "Stats SA QLFS formal ICT employment indicators"
+assumptions:
+  - "High familiarity with cloud tools and remote developer workflows"
+  - "Price sensitivity exacerbated by ZAR/USD currency exchange swings"
+segments:
+  - name: Bootstrapped SaaS Founders
+    description: Lean founders building cashflow-positive software businesses with tight budgets and pragmatic tooling.
+    share: 0.40
+    age_min: 25
+    age_max: 48
+    income_levels: [middle, upper-middle]
+    key_needs: [cost efficiency, ease of maintenance, local payment support]
+    likely_objections: [expensive USD pricing, enterprise bloat, complex onboarding]
+  - name: Venture-Backed Scaleup CTOs
+    description: Tech leaders with institutional funding prioritizing rapid delivery, compliance, and cloud reliability.
+    share: 0.35
+    age_min: 28
+    age_max: 52
+    income_levels: [upper-middle, high]
+    key_needs: [security compliance, developer productivity, scalable architecture]
+    likely_objections: [vendor lock-in, unproven uptime, lack of SOC2 / POPIA compliance]
+  - name: Agency & Dev Shop Directors
+    description: Managing engineering teams delivering client solutions across web, mobile, and enterprise integrations.
+    share: 0.25
+    age_min: 28
+    age_max: 55
+    income_levels: [middle, upper-middle, high]
+    key_needs: [multi-tenant management, quick turnaround, predictable billing]
+    likely_objections: [steep learning curve for junior devs, client margin compression]

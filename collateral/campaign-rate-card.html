@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kohort — Campaign Intelligence & Pre-Flight Ad Testing Rate Card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 14mm 18mm 12mm 18mm;
+    @top-left {
+      content: "KOHORT CAMPAIGN INTELLIGENCE";
+      font-family: 'Space Mono', monospace;
+      font-size: 6pt;
+      font-weight: 700;
+      color: #94A3B8;
+      letter-spacing: 1.5px;
+    }
+    @top-right {
+      content: "COMMERCIAL SCHEDULE & PROTOCOL — 2026/2027";
+      font-family: 'Space Mono', monospace;
+      font-size: 6pt;
+      color: #94A3B8;
+      letter-spacing: 0.8px;
+    }
+    @bottom-left {
+      content: "CONFIDENTIAL & PROPRIETARY — KOHORT ADVISORY (PTY) LTD";
+      font-family: 'Space Mono', monospace;
+      font-size: 5.5pt;
+      color: #94A3B8;
+      letter-spacing: 0.5px;
+    }
+    @bottom-right {
+      content: "PAGE " counter(page) " OF " counter(pages);
+      font-family: 'Space Mono', monospace;
+      font-size: 6pt;
+      font-weight: 700;
+      color: #101B2D;
+    }
+  }
+
+  :root {
+    --ink: #0A111C;
+    --navy: #101B2D;
+    --paper: #FAF9F5;
+    --white: #FFFFFF;
+    --slate: #475569;
+    --muted: #94A3B8;
+    --hairline: #E4E5DF;
+    --lime: #D3FF65;
+    --blue: #0284C7;
+    --red: #991B1B;
+  }
+
+  * {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    color: var(--ink);
+    background: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    font-size: 8.5pt;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page-break { page-break-after: always; }
+
+  /* =========================================================================
+     PAGE 1: ARCHITECTURAL OPEN OPENING & PACKAGE LEDGER
+     ========================================================================= */
+
+  .header-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 2px solid var(--navy);
+    padding-bottom: 8px;
+    margin-bottom: 14px;
+  }
+
+  .brand-lockup {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 18pt;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.6px;
+    text-transform: lowercase;
+    line-height: 1;
+  }
+
+  .brand-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--lime);
+    border: 1.2px solid var(--navy);
+    display: inline-block;
+  }
+
+  .brand-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 6.8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--slate);
+    margin-left: 6px;
+  }
+
+  .header-metadata {
+    text-align: right;
+    font-family: 'Space Mono', monospace;
+    font-size: 6.5pt;
+    color: var(--muted);
+    line-height: 1.35;
+  }
+
+  .header-metadata strong {
+    color: var(--navy);
+  }
+
+  /* Asymmetric Opening Statement */
+  .hero-statement {
+    display: grid;
+    grid-template-columns: 1.55fr 1fr;
+    gap: 24px;
+    margin-bottom: 16px;
+    align-items: start;
+  }
+
+  .hero-left h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 20pt;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--navy);
+    letter-spacing: -0.5px;
+    margin: 0 0 6px 0;
+  }
+
+  .hero-left p {
+    font-size: 8.5pt;
+    color: var(--slate);
+    margin: 0;
+    line-height: 1.45;
+  }
+
+  .hero-callout {
+    border-left: 2.5px solid var(--navy);
+    padding-left: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero-callout .callout-kicker {
+    font-family: 'Space Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--blue);
+    margin-bottom: 3px;
+  }
+
+  .hero-callout .callout-text {
+    font-size: 8.2pt;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.35;
+  }
+
+  .hero-callout .callout-text span {
+    background: var(--lime);
+    padding: 1px 4px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  /* Section Title Bar */
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1.5px solid var(--navy);
+    padding-bottom: 3px;
+    margin-bottom: 8px;
+    margin-top: 14px;
+  }
+
+  .section-header h2 {
+    font-family: 'Space Mono', monospace;
+    font-size: 8pt;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 0;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+
+  .section-header .section-meta {
+    font-family: 'Space Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 700;
+    color: var(--muted);
+  }
+
+  /* Open Package Ledger (Zero Card Boxes) */
+  .package-ledger {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--navy);
+    border-bottom: 1.5px solid var(--navy);
+    margin-bottom: 14px;
+  }
+
+  .pkg-row {
+    display: grid;
+    grid-template-columns: 145px 1fr 140px;
+    gap: 18px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--hairline);
+    align-items: center;
+  }
+
+  .pkg-row:last-child {
+    border-bottom: none;
+  }
+
+  .pkg-row.flagship {
+    background: #FAF9F5;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-left: 3px solid var(--navy);
+  }
+
+  .pkg-row-title {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pkg-row-code {
+    font-family: 'Space Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 700;
+    color: var(--muted);
+    margin-bottom: 1px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .pkg-row.flagship .pkg-row-code {
+    color: var(--blue);
+  }
+
+  .flagship-badge {
+    background: var(--lime);
+    color: var(--navy);
+    font-family: 'Space Mono', monospace;
+    font-size: 5.5pt;
+    font-weight: 700;
+    padding: 1px 4px;
+    letter-spacing: 0.5px;
+    display: inline-block;
+  }
+
+  .pkg-row-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 10pt;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1.15;
+    margin: 0;
+    letter-spacing: -0.2px;
+  }
+
+  .pkg-row-desc {
+    font-size: 7.8pt;
+    color: var(--slate);
+    line-height: 1.38;
+    margin: 0 0 3px 0;
+  }
+
+  .pkg-row-meta {
+    display: flex;
+    gap: 14px;
+    font-family: 'Space Mono', monospace;
+    font-size: 6.5pt;
+    color: var(--muted);
+  }
+
+  .pkg-row-meta strong {
+    color: var(--navy);
+  }
+
+  .pkg-row-pricing {
+    text-align: right;
+  }
+
+  .pkg-price-zar {
+    font-family: 'Space Mono', monospace;
+    font-size: 11pt;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1;
+    letter-spacing: -0.3px;
+  }
+
+  .pkg-price-usd {
+    font-family: 'Space Mono', monospace;
+    font-size: 6.5pt;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  .pkg-sla-tag {
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+    font-size: 6pt;
+    font-weight: 700;
+    color: var(--navy);
+    margin-top: 3px;
+    letter-spacing: 0.5px;
+  }
+
+  .pkg-row.flagship .pkg-sla-tag {
+    color: var(--blue);
+  }
+
+  /* Open Deliverables Ledger Table */
+  table.matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 7.2pt;
+    border-top: 1.5px solid var(--navy);
+    border-bottom: 1.5px solid var(--navy);
+    margin-top: 4px;
+    margin-bottom: 12px;
+  }
+
+  table.matrix-table th {
+    border-bottom: 1.2px solid var(--navy);
+    padding: 5px 6px;
+    text-align: left;
+    font-family: 'Space Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 700;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  table.matrix-table td {
+    border-bottom: 1px solid var(--hairline);
+    padding: 4.5px 6px;
+    color: var(--slate);
+    vertical-align: top;
+  }
+
+  table.matrix-table tr.highlight td {
+    background: #FAF9F5;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* Page 1 Folio */
+  .page-folio {
+    border-top: 1px solid var(--hairline);
+    padding-top: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 6pt;
+    color: var(--muted);
+  }
+
+  .signal-track {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .signal-box {
+    width: 4px;
+    height: 4px;
+    background: var(--navy);
+  }
+
+  .signal-box.active {
+    background: var(--lime);
+    border: 1px solid var(--navy);
+  }
+
+  /* =========================================================================
+     PAGE 2: DECISION ARCHITECTURE & TERMS (OPEN EDITORIAL COLUMNS)
+     ========================================================================= */
+
+  /* Open Process Columns (Zero Box Containers) */
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 18px;
+    margin-top: 6px;
+  }
+
+  .process-col {
+    border-top: 2px solid var(--navy);
+    padding-top: 8px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .process-step-idx {
+    font-family: 'Space Mono', monospace;
+    font-size: 6.8pt;
+    font-weight: 700;
+    color: var(--navy);
+    display: inline-block;
+    margin-bottom: 3px;
+  }
+
+  .process-col h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 9.2pt;
+    font-weight: 800;
+    color: var(--navy);
+    margin: 0 0 3px 0;
+    line-height: 1.2;
+    letter-spacing: -0.2px;
+  }
+
+  .process-col p {
+    font-size: 7.2pt;
+    color: var(--slate);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  /* Open Commercial Terms Ledger (Zero Card Boxes) */
+  .terms-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    margin-bottom: 16px;
+    margin-top: 6px;
+  }
+
+  .term-entry {
+    border-top: 1px solid var(--navy);
+    padding-top: 6px;
+  }
+
+  .term-header {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 3px;
+  }
+
+  .term-kicker {
+    font-family: 'Space Mono', monospace;
+    font-size: 6.8pt;
+    font-weight: 700;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .term-entry p {
+    font-size: 7.5pt;
+    color: var(--slate);
+    margin: 0;
+    line-height: 1.42;
+  }
+
+  .term-entry p strong {
+    color: var(--ink);
+  }
+
+  /* Editorial Action Banner */
+  .action-strip {
+    background: var(--navy);
+    color: var(--white);
+    padding: 12px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .action-strip h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 10.5pt;
+    font-weight: 800;
+    margin: 0 0 2px 0;
+    color: var(--white);
+    letter-spacing: -0.2px;
+  }
+
+  .action-strip p {
+    font-size: 7.5pt;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .action-btn {
+    background: var(--lime);
+    color: var(--navy);
+    font-family: 'Space Mono', monospace;
+    font-size: 7pt;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    padding: 6px 12px;
+    text-transform: uppercase;
+    border: none;
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+
+<!-- ========================================================================= -->
+<!-- PAGE 1: PRE-FLIGHT PACKAGES & DELIVERABLES MATRIX                         -->
+<!-- ========================================================================= -->
+
+<div class="header-block">
+  <div class="brand-lockup">
+    kohort<span class="brand-dot"></span>
+    <span class="brand-tag">[ Campaign Intelligence ]</span>
+  </div>
+  <div class="header-metadata">
+    <strong>DOCUMENT:</strong> KH-CAMPAIGN-RATE-V2<br>
+    <strong>CHANNELS:</strong> META / GOOGLE / LINKEDIN / OUTREACH<br>
+    <strong>TURNAROUND:</strong> 24 TO 48 HOURS DISPATCH
+  </div>
+</div>
+
+<div class="hero-statement">
+  <div class="hero-left">
+    <h1>Pre-Flight Campaign Testing Rate Card</h1>
+    <p>
+      Stress-test marketing hooks, advertising copy, landing page offers, and direct outreach messages against verified buyer cohorts before committing live media spend.
+    </p>
+  </div>
+  <div class="hero-callout">
+    <div class="callout-kicker">[ The Capital Efficiency Rule ]</div>
+    <div class="callout-text">
+      Never deploy R20,000+ in live media spend on unvalidated copy. <span>For R1,950</span>, Kohort identifies the winning hook and eliminates buyer distrust before launch.
+    </div>
+  </div>
+</div>
+
+<div class="section-header">
+  <h2>[ 01 // Pre-Flight Intelligence Packages ]</h2>
+  <div class="section-meta">FOUR STANDARDIZED TIERS</div>
+</div>
+
+<div class="package-ledger">
+
+  <!-- Package A -->
+  <div class="pkg-row">
+    <div class="pkg-row-title">
+      <div class="pkg-row-code">TIER A</div>
+      <h3 class="pkg-row-name">Creative Hook Shootout</h3>
+    </div>
+    <div>
+      <p class="pkg-row-desc">
+        A/B/C/D shoot-out of 3 to 4 advertising hooks, headlines, or cold messaging scripts. Pinpoints which angle stops the scroll and drives high click intent.
+      </p>
+      <div class="pkg-row-meta">
+        <span>SCOPE: <strong>Up to 4 Angles / Scripts</strong></span>
+        <span>COHORT: <strong>N=20 Verified Buyers</strong></span>
+      </div>
+    </div>
+    <div class="pkg-row-pricing">
+      <div class="pkg-price-zar">R1,950</div>
+      <div class="pkg-price-usd">$129 USD once-off</div>
+      <div class="pkg-sla-tag">24-HR DELIVERY</div>
+    </div>
+  </div>
+
+  <!-- Package B (Flagship) -->
+  <div class="pkg-row flagship">
+    <div class="pkg-row-title">
+      <div class="pkg-row-code">TIER B <span class="flagship-badge">FLAGSHIP</span></div>
+      <h3 class="pkg-row-name">Full Campaign Pre-Flight</h3>
+    </div>
+    <div>
+      <p class="pkg-row-desc">
+        End-to-end evaluation of your full campaign funnel: 3 Ad Angles + Landing Page Copy + Promotional Offer + Pricing. Diagnoses customer objections before launch.
+      </p>
+      <div class="pkg-row-meta">
+        <span>SCOPE: <strong>Full Funnel (Ads + Page + Offer)</strong></span>
+        <span>COHORT: <strong>N=20 Verified Buyers</strong></span>
+      </div>
+    </div>
+    <div class="pkg-row-pricing">
+      <div class="pkg-price-zar">R4,250</div>
+      <div class="pkg-price-usd">$279 USD once-off</div>
+      <div class="pkg-sla-tag">48-HR DELIVERY</div>
+    </div>
+  </div>
+
+  <!-- Package C -->
+  <div class="pkg-row">
+    <div class="pkg-row-title">
+      <div class="pkg-row-code">TIER C</div>
+      <h3 class="pkg-row-name">Multi-Segment Scale Matrix</h3>
+    </div>
+    <div>
+      <p class="pkg-row-desc">
+        Comprehensive matrix evaluation across 2 distinct demographic or industry buyer segments ($N=40$). Built for major product launches with media spend >R30,000.
+      </p>
+      <div class="pkg-row-meta">
+        <span>SCOPE: <strong>Multi-Segment Funnel Matrix</strong></span>
+        <span>COHORT: <strong>N=40 Dual-Segment Buyers</strong></span>
+      </div>
+    </div>
+    <div class="pkg-row-pricing">
+      <div class="pkg-price-zar">R7,500</div>
+      <div class="pkg-price-usd">$499 USD once-off</div>
+      <div class="pkg-sla-tag">72-HR DELIVERY</div>
+    </div>
+  </div>
+
+  <!-- Package D -->
+  <div class="pkg-row">
+    <div class="pkg-row-title">
+      <div class="pkg-row-code">TIER D</div>
+      <h3 class="pkg-row-name">High-Velocity Retainer</h3>
+    </div>
+    <div>
+      <p class="pkg-row-desc">
+        Continuous pre-flight capacity for growth agencies and active media buyers. Includes up to 3 complete campaign pre-flight tests every month.
+      </p>
+      <div class="pkg-row-meta">
+        <span>ALLOCATION: <strong>Up to 3 Complete Tests / Mo</strong></span>
+        <span>TERMS: <strong>Monthly Rolling (30-day notice)</strong></span>
+      </div>
+    </div>
+    <div class="pkg-row-pricing">
+      <div class="pkg-price-zar">R5,900<span style="font-size: 7.5pt; font-weight: normal;">/mo</span></div>
+      <div class="pkg-price-usd">$399 USD monthly</div>
+      <div class="pkg-sla-tag">PRIORITY EXPRESS</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section-header">
+  <h2>[ 02 // Deliverables Cross-Reference Matrix ]</h2>
+  <div class="section-meta">FEATURE INCLUSION</div>
+</div>
+
+<table class="matrix-table">
+  <thead>
+    <tr>
+      <th style="width: 36%;">Campaign Deliverable Component</th>
+      <th style="width: 16%;">Tier A (R1,950)</th>
+      <th style="width: 16%;">Tier B (R4,250)</th>
+      <th style="width: 16%;">Tier C (R7,500)</th>
+      <th style="width: 16%;">Tier D (Retainer)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Target Evaluator Cohort</td>
+      <td>20 Buyers</td>
+      <td>20 Buyers</td>
+      <td>40 Buyers (2 Segments)</td>
+      <td>Up to 60 Buyers / mo</td>
+    </tr>
+    <tr class="highlight">
+      <td>Resonance Index &amp; Winning Angle Rank</td>
+      <td>Included</td>
+      <td>Included</td>
+      <td>Included</td>
+      <td>Included</td>
+    </tr>
+    <tr>
+      <td>Verbatim Distrust Analysis ("Why I Scrolled Past")</td>
+      <td>Included</td>
+      <td>Included</td>
+      <td>Included</td>
+      <td>Included</td>
+    </tr>
+    <tr>
+      <td>Landing Page &amp; Offer Friction Analysis</td>
+      <td>&mdash;</td>
+      <td>Included</td>
+      <td>Included</td>
+      <td>Included</td>
+    </tr>
+    <tr>
+      <td>Price Sensitivity Corridor (Van Westendorp)</td>
+      <td>&mdash;</td>
+      <td>Included</td>
+      <td>Included</td>
+      <td>Included on offers</td>
+    </tr>
+    <tr>
+      <td>Executive 16:9 McKinsey Slide Deck (PDF)</td>
+      <td>3-Slide Executive Memo</td>
+      <td>Full 5-Slide Deck</td>
+      <td>7-Slide Matrix Deck</td>
+      <td>Bi-Weekly Decks</td>
+    </tr>
+    <tr>
+      <td>Turnaround SLA</td>
+      <td>24 Business Hours</td>
+      <td>48 Business Hours</td>
+      <td>72 Business Hours</td>
+      <td>24-Hour Express Queue</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="page-folio">
+  <div>KOHORT CAMPAIGN INTELLIGENCE &middot; COMMERCIAL SCHEDULE 2026/2027</div>
+  <div class="signal-track">
+    <span>EVALUATION SIGNAL:</span>
+    <span class="signal-box active"></span>
+    <span class="signal-box active"></span>
+    <span class="signal-box active"></span>
+    <span class="signal-box"></span>
+  </div>
+  <div>PAGE 1 OF 2</div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ========================================================================= -->
+<!-- PAGE 2: OPERATIONAL PROTOCOL & COMMERCIAL GOVERNANCE                      -->
+<!-- ========================================================================= -->
+
+<div class="header-block">
+  <div class="brand-lockup">
+    kohort<span class="brand-dot"></span>
+    <span class="brand-tag">[ Operational Protocol ]</span>
+  </div>
+  <div class="header-metadata">
+    <strong>PROTOCOL REF:</strong> KH-PROTOCOL-2026-V2<br>
+    <strong>GOVERNANCE:</strong> PRE-FLIGHT RISK MITIGATION<br>
+    <strong>JURISDICTION:</strong> SOUTH AFRICA &middot; GLOBAL DIGITAL B2B
+  </div>
+</div>
+
+<div class="section-header">
+  <h2>[ 03 // The Pre-Flight Decision Pathway ]</h2>
+  <div class="section-meta">SYSTEMATIC 4-STAGE FLOW</div>
+</div>
+
+<div class="process-grid">
+  <div class="process-col">
+    <span class="process-step-idx">[ 01 ]</span>
+    <h4>Submit Creative Drafts</h4>
+    <p>Provide your 3–4 draft ad hooks, body copy, video scripts, or staging landing page link via our 1-page intake form.</p>
+  </div>
+  <div class="process-col">
+    <span class="process-step-idx">[ 02 ]</span>
+    <h4>Calibrate Audience</h4>
+    <p>Specify demographic and psychographic boundaries (e.g. Gauteng SME Founders, Corporate Procurement, DTC Shoppers).</p>
+  </div>
+  <div class="process-col">
+    <span class="process-step-idx">[ 03 ]</span>
+    <h4>Simulate Buyer Response</h4>
+    <p>Kohort evaluates your angles across 20 verified decision-makers to predict CTR, uncover objections, and score resonance.</p>
+  </div>
+  <div class="process-col">
+    <span class="process-step-idx">[ 04 ]</span>
+    <h4>Deploy with Certainty</h4>
+    <p>Put your ad budget exclusively behind the validated winning angle with clear copy adjustments to maximize ROAS.</p>
+  </div>
+</div>
+
+<div class="section-header">
+  <h2>[ 04 // Commercial Terms &amp; Operating Standards ]</h2>
+  <div class="section-meta">CONFIDENTIALITY &middot; OWNERSHIP &middot; SLA</div>
+</div>
+
+<div class="terms-grid">
+
+  <div class="term-entry">
+    <div class="term-header">
+      <span class="term-kicker">01 // Accepted Creative Formats</span>
+    </div>
+    <p>
+      • <strong>Text &amp; Copy:</strong> Headlines, ad body variations, video scripts, LinkedIn/WhatsApp direct messaging templates, and email subject lines.<br>
+      • <strong>Visuals &amp; Funnels:</strong> Static concepts, storyboard scripts, video walk-throughs (Loom/MP4/screenshots), and live landing page staging URLs.
+    </p>
+  </div>
+
+  <div class="term-entry">
+    <div class="term-header">
+      <span class="term-kicker">02 // Invoicing &amp; Instant Dispatch</span>
+    </div>
+    <p>
+      • <strong>Individual Sprints (Tiers A, B, C):</strong> 100% upfront settlement upon brief submission ensures instantaneous queue dispatch.<br>
+      • <strong>Monthly Retainers (Tier D):</strong> Billed automatically on the 1st of each calendar month. Invoices payable via EFT, Card, or Stripe (USD).
+    </p>
+  </div>
+
+  <div class="term-entry">
+    <div class="term-header">
+      <span class="term-kicker">03 // Absolute Creative Confidentiality</span>
+    </div>
+    <p>
+      • Unreleased marketing angles, product teaser scripts, and promotional discount structures are safeguarded under <strong>strict institutional NDA standards</strong>.<br>
+      • We never disclose, repurpose, or share your creative hooks with competitors or third parties.
+    </p>
+  </div>
+
+  <div class="term-entry">
+    <div class="term-header">
+      <span class="term-kicker">04 // 24–48 Hour Turnaround SLA</span>
+    </div>
+    <p>
+      • Turnaround clocks begin immediately upon receipt of creative assets and cohort definitions.<br>
+      • Deliverables are delivered directly via secure download link in presentation-ready PDF slide deck format for immediate review by your media buying team.
+    </p>
+  </div>
+
+  <div class="term-entry">
+    <div class="term-header">
+      <span class="term-kicker">05 // Prescriptive Copy Rewrites</span>
+    </div>
+    <p>
+      • Beyond scoring which angle wins, every report includes <strong>actionable copy adjustments</strong> demonstrating exactly how to rephrase failing hooks to neutralize customer objections before media spend is committed.
+    </p>
+  </div>
+
+  <div class="term-entry">
+    <div class="term-header">
+      <span class="term-kicker">06 // Pre-Flight Decision Governance</span>
+    </div>
+    <p>
+      • Kohort deliverables provide empirical pre-flight sentiment calibration to prevent ad spend wastage.<br>
+      • Live algorithmic performance (CPM, CPC) depends on platform bidding, while Kohort guarantees resonance and hook engagement.
+    </p>
+  </div>
+
+</div>
+
+<div class="action-strip">
+  <div>
+    <h4>Ready to Pre-Flight Test Your Next Campaign?</h4>
+    <p>Submit your creative brief to receive your validated winning angle within 24 to 48 hours.</p>
+  </div>
+  <button class="action-btn">INITIATE CAMPAIGN SPRINT &rarr;</button>
+</div>
+
+<div class="page-folio" style="margin-top: 14px;">
+  <div>KOHORT CAMPAIGN INTELLIGENCE &middot; STRICTLY CONFIDENTIAL &middot; PRE-FLIGHT PROTOCOL</div>
+  <div>PAGE 2 OF 2</div>
+</div>
+
+</body>
+</html>

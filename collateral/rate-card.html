@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kohort Strategic Advisory — Master Commercial Rate Card & Terms (2026/2027)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 12mm 16mm 12mm 16mm;
+    @top-left { content: ""; }
+    @top-right { content: ""; }
+    @bottom-left { content: ""; }
+    @bottom-right { content: ""; }
+  }
+
+  * {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #101B2D;
+    background: #FAF9F5;
+    margin: 0;
+    padding: 0;
+    font-size: 8.5pt;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    width: 100%;
+    min-height: 271mm;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .page-break {
+    page-break-after: always;
+  }
+
+  /* -------------------------------------------------------------
+     FIGURES & FIGURES EDITORIAL MASTHEAD
+  ------------------------------------------------------------- */
+  .masthead {
+    border-bottom: 2px solid #101B2D;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .brand-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .brand-wordmark {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 22pt;
+    color: #101B2D;
+    letter-spacing: -1px;
+    text-transform: lowercase;
+    line-height: 1;
+  }
+
+  .brand-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #D3FF65;
+    border: 1.5px solid #101B2D;
+    display: inline-block;
+  }
+
+  .system-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 7.5pt;
+    color: #475569;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-left: 6px;
+  }
+
+  .masthead-meta {
+    font-family: 'Space Mono', monospace;
+    font-size: 6.8pt;
+    color: #475569;
+    text-align: right;
+    line-height: 1.4;
+    letter-spacing: 0.2px;
+  }
+
+  .masthead-meta strong {
+    color: #101B2D;
+  }
+
+  /* -------------------------------------------------------------
+     SECTION LABELS & EDITORIAL HEADINGS
+  ------------------------------------------------------------- */
+  .section-bracket {
+    font-family: 'Space Mono', monospace;
+    font-size: 7.5pt;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #101B2D;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 6px;
+    margin-top: 14px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #101B2D;
+  }
+
+  .section-bracket .bracket-right {
+    font-weight: 400;
+    color: #64748B;
+    font-size: 6.8pt;
+  }
+
+  .hero-headline {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 25pt;
+    line-height: 1.05;
+    letter-spacing: -1.2px;
+    color: #101B2D;
+    margin: 0 0 6px 0;
+  }
+
+  .hero-deck {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: 20px;
+    align-items: start;
+    margin-bottom: 12px;
+  }
+
+  .deck-copy {
+    font-size: 9pt;
+    color: #334155;
+    line-height: 1.45;
+  }
+
+  .callout-rule {
+    border-left: 2px solid #101B2D;
+    padding-left: 12px;
+    font-size: 8pt;
+    color: #334155;
+    line-height: 1.4;
+  }
+
+  .callout-rule strong {
+    color: #101B2D;
+  }
+
+  .pill-highlight {
+    background-color: #D3FF65;
+    color: #101B2D;
+    font-weight: 700;
+    padding: 1px 4px;
+    font-family: 'Space Mono', monospace;
+    font-size: 7.5pt;
+  }
+
+  /* -------------------------------------------------------------
+     OPEN PACKAGE LEDGER (ZERO CARD BOXES)
+  ------------------------------------------------------------- */
+  .package-ledger {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+  }
+
+  .ledger-row {
+    display: grid;
+    grid-template-columns: 2.5fr 5fr 2.8fr;
+    gap: 16px;
+    padding: 11px 0;
+    border-bottom: 1px solid #E2E8F0;
+    position: relative;
+  }
+
+  .ledger-row.flagship {
+    border-top: 1.5px solid #101B2D;
+    border-bottom: 1.5px solid #101B2D;
+    background: rgba(211, 255, 101, 0.08);
+    padding: 12px 6px;
+    margin: 1px 0;
+  }
+
+  .tier-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 6.8pt;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    color: #64748B;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  .flagship-badge {
+    background-color: #D3FF65;
+    color: #101B2D;
+    font-family: 'Space Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 700;
+    padding: 1px 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    margin-left: 6px;
+  }
+
+  .tier-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 11.5pt;
+    line-height: 1.15;
+    letter-spacing: -0.4px;
+    color: #101B2D;
+  }
+
+  .tier-desc {
+    font-size: 8pt;
+    color: #475569;
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+
+  .tier-specs {
+    font-family: 'Space Mono', monospace;
+    font-size: 6.8pt;
+    color: #101B2D;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .tier-specs span {
+    color: #64748B;
+    text-transform: uppercase;
+  }
+
+  .tier-price-block {
+    text-align: right;
+  }
+
+  .price-zar {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 15pt;
+    line-height: 1;
+    color: #101B2D;
+    letter-spacing: -0.5px;
+  }
+
+  .price-usd {
+    font-family: 'Space Mono', monospace;
+    font-size: 7.2pt;
+    color: #64748B;
+    display: block;
+    margin-top: 3px;
+  }
+
+  .turnaround-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 6.8pt;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #101B2D;
+    text-transform: uppercase;
+    margin-top: 6px;
+    display: inline-block;
+  }
+
+  /* -------------------------------------------------------------
+     CROSS-REFERENCE MATRIX (OPEN LEDGER TABLE)
+  ------------------------------------------------------------- */
+  .matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 7.8pt;
+    margin-top: 6px;
+    margin-bottom: 12px;
+  }
+
+  .matrix-table th {
+    font-family: 'Space Mono', monospace;
+    font-size: 6.8pt;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #101B2D;
+    border-bottom: 1.5px solid #101B2D;
+    padding: 6px 6px;
+    text-align: left;
+  }
+
+  .matrix-table td {
+    border-bottom: 1px solid #E2E8F0;
+    padding: 5px 6px;
+    color: #334155;
+    vertical-align: middle;
+  }
+
+  .matrix-table tr.highlight td {
+    background: rgba(211, 255, 101, 0.08);
+    font-weight: 600;
+    color: #101B2D;
+  }
+
+  .matrix-table td strong {
+    color: #101B2D;
+  }
+
+  /* -------------------------------------------------------------
+     PROTOCOL PATHWAY & COMMERCIAL TERMS (PAGE 2)
+  ------------------------------------------------------------- */
+  .protocol-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+  }
+
+  .protocol-step {
+    border-top: 2px solid #101B2D;
+    padding-top: 8px;
+  }
+
+  .step-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 7.5pt;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #101B2D;
+    margin-bottom: 4px;
+  }
+
+  .step-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 10.5pt;
+    letter-spacing: -0.3px;
+    color: #101B2D;
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+
+  .step-desc {
+    font-size: 7.8pt;
+    color: #475569;
+    line-height: 1.45;
+  }
+
+  .terms-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 6px;
+    margin-bottom: 14px;
+  }
+
+  .term-block {
+    border-top: 1px solid #101B2D;
+    padding-top: 6px;
+    margin-bottom: 10px;
+  }
+
+  .term-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 7.2pt;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #101B2D;
+    margin-bottom: 4px;
+  }
+
+  .term-body {
+    font-size: 7.6pt;
+    color: #475569;
+    line-height: 1.45;
+  }
+
+  .term-body strong {
+    color: #101B2D;
+  }
+
+  /* -------------------------------------------------------------
+     DARK FOOTER ACTION BANNER
+  ------------------------------------------------------------- */
+  .action-banner {
+    background-color: #101B2D;
+    color: #FAF9F5;
+    padding: 12px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+    margin-bottom: 10px;
+  }
+
+  .banner-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 11pt;
+    letter-spacing: -0.3px;
+    margin-bottom: 2px;
+  }
+
+  .banner-sub {
+    font-size: 7.5pt;
+    color: #94A3B8;
+  }
+
+  .btn-lime {
+    background-color: #D3FF65;
+    color: #101B2D;
+    font-family: 'Space Mono', monospace;
+    font-size: 7.5pt;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 7px 14px;
+    text-transform: uppercase;
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  /* -------------------------------------------------------------
+     RUNNING FOLIO FOOTER
+  ------------------------------------------------------------- */
+  .running-folio {
+    border-top: 1px solid #E2E8F0;
+    padding-top: 6px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Space Mono', monospace;
+    font-size: 6.5pt;
+    color: #64748B;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<!-- ========================================================================= -->
+<!-- PAGE 1: STRATEGIC ADVISORY PACKAGES & FEATURE MATRIX                     -->
+<!-- ========================================================================= -->
+<div class="page">
+  <div>
+    <!-- MASTHEAD -->
+    <div class="masthead">
+      <div>
+        <div class="brand-row">
+          <span class="brand-wordmark">kohort</span>
+          <span class="brand-dot"></span>
+          <span class="system-tag">[ Strategic Advisory ]</span>
+        </div>
+      </div>
+      <div class="masthead-meta">
+        <strong>DOCUMENT:</strong> KH-ADVISORY-RATE-2026<br>
+        <strong>CURRENCIES:</strong> ZAR (PRIMARY) / USD (CROSS-BORDER)<br>
+        <strong>GOVERNANCE:</strong> FIXED-FEE BOARDROOM SPRINT
+      </div>
+    </div>
+
+    <!-- HERO HEADER -->
+    <div class="hero-headline">Service Menu &amp;<br>Commercial Rate Card</div>
+    <div class="hero-deck">
+      <div class="deck-copy">
+        Empirical buyer sentiment calibration, econometric Van Westendorp pricing corridor analysis, and competitive positioning advisory designed for high-growth founders and B2B leadership.
+      </div>
+      <div class="callout-rule">
+        <strong style="font-family: 'Space Mono', monospace; font-size: 7.2pt; text-transform: uppercase; display: block; margin-bottom: 2px;">[ The Empirical Efficiency Rule ]</strong>
+        Traditional market research costs R65,000+ and takes 8 weeks. Kohort executes synthetic cohort evaluations with <span class="pill-highlight">48-hour delivery</span> at a fraction of agency cost.
+      </div>
+    </div>
+
+    <!-- SECTION: PACKAGES -->
+    <div class="section-bracket">
+      <span>[ 01 // Core Advisory Intelligence Packages ]</span>
+      <span class="bracket-right">Three Standardized Tiers</span>
+    </div>
+
+    <div class="package-ledger">
+
+      <!-- PACKAGE 1: PULSE SPRINT -->
+      <div class="ledger-row">
+        <div>
+          <span class="tier-tag">Package 01</span>
+          <div class="tier-title">Rapid Pre-Market<br>Pulse Calibration</div>
+        </div>
+        <div>
+          <div class="tier-desc">
+            A fast, focused stress-test for a single commercial asset before public distribution. Pinpoints why prospects scroll past your offer, ranks strongest messaging hooks, and detects friction.
+          </div>
+          <div class="tier-specs">
+            <div><span>Scope:</span> 1 Specific Asset (2 Scripts or 1 Landing Page)</div>
+            <div><span>Cohort:</span> N=20 Stratified Buyers</div>
+          </div>
+        </div>
+        <div class="tier-price-block">
+          <div class="price-zar">R2,250</div>
+          <span class="price-usd">$149 USD once-off</span>
+          <span class="turnaround-tag">24-Hr Boardroom Delivery</span>
+        </div>
+      </div>
+
+      <!-- PACKAGE 2: FULL STUDY (FLAGSHIP) -->
+      <div class="ledger-row flagship">
+        <div>
+          <span class="tier-tag">Package 02 <span class="flagship-badge">Flagship Study</span></span>
+          <div class="tier-title">Positioning &amp;<br>Econometric Pricing</div>
+        </div>
+        <div>
+          <div class="tier-desc">
+            Our comprehensive institutional deliverable. Evaluates concept resonance, decodes verbatim buyer distrust, establishes your exact Van Westendorp price elasticity corridor, audits regional competitor rate cards, and outlines a 60-day commercial execution roadmap.
+          </div>
+          <div class="tier-specs">
+            <div><span>Deliverable:</span> Full 7-Slide McKinsey Deck</div>
+            <div><span>Cohort:</span> N=20 Stratified B2B Buyers</div>
+          </div>
+        </div>
+        <div class="tier-price-block">
+          <div class="price-zar">R5,500</div>
+          <span class="price-usd">$349 USD once-off</span>
+          <span class="turnaround-tag" style="color: #0369A1;">48-Hr Boardroom Delivery</span>
+        </div>
+      </div>
+
+      <!-- PACKAGE 3: RETAINER -->
+      <div class="ledger-row">
+        <div>
+          <span class="tier-tag">Package 03</span>
+          <div class="tier-title">Continuous Optimization<br>Advisory Retainer</div>
+        </div>
+        <div>
+          <div class="tier-desc">
+            Continuous intelligence capacity for fast-moving agencies and B2B SaaS teams. Includes two dedicated sprint evaluations every month to continually calibrate messaging iterations, pricing shifts, and customer onboarding flows.
+          </div>
+          <div class="tier-specs">
+            <div><span>Allocation:</span> 2 Complete Sprints / Month</div>
+            <div><span>Terms:</span> Monthly Rolling (30-day notice)</div>
+          </div>
+        </div>
+        <div class="tier-price-block">
+          <div class="price-zar">R4,500<span style="font-family: 'Space Mono', monospace; font-size: 7.5pt; font-weight: 400; color: #64748B;">/mo</span></div>
+          <span class="price-usd">$299 USD monthly</span>
+          <span class="turnaround-tag">Guaranteed Priority Queue</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SECTION: FEATURE MATRIX -->
+    <div class="section-bracket">
+      <span>[ 02 // Deliverables Cross-Reference Matrix ]</span>
+      <span class="bracket-right">Institutional Feature Comparison</span>
+    </div>
+
+    <table class="matrix-table">
+      <thead>
+        <tr>
+          <th style="width: 38%;">Advisory Deliverable Component</th>
+          <th style="width: 20%;">Pulse Sprint (R2,250)</th>
+          <th style="width: 21%;">Full Study (R5,500)</th>
+          <th style="width: 21%;">Monthly Retainer (R4,500/mo)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Target Evaluator Cohort Sample</td>
+          <td>20 Verified Buyers</td>
+          <td>20 Verified Buyers</td>
+          <td>40 Verified Buyers / mo</td>
+        </tr>
+        <tr class="highlight">
+          <td>Executive Presentation Deck (16:9 McKinsey PDF)</td>
+          <td>3-Slide Summary Memo</td>
+          <td>Full 7-Slide Landscape Deck</td>
+          <td>Bi-Weekly Sprint Decks</td>
+        </tr>
+        <tr>
+          <td>Van Westendorp Price Sensitivity Curve (OPP / IPP)</td>
+          <td>&mdash;</td>
+          <td><strong>Included</strong> (Full Corridor)</td>
+          <td><strong>Included</strong> on new offers</td>
+        </tr>
+        <tr>
+          <td>Regional Competitor Rate-Card Audit</td>
+          <td>&mdash;</td>
+          <td><strong>Included</strong></td>
+          <td>Updated Monthly</td>
+        </tr>
+        <tr>
+          <td>Coded Buyer Verbatim Distrust &amp; Objections</td>
+          <td>Included</td>
+          <td><strong>Included</strong> (Thematic Analysis)</td>
+          <td><strong>Included</strong></td>
+        </tr>
+        <tr>
+          <td>60-Day Commercial Sprint Roadmap</td>
+          <td>&mdash;</td>
+          <td><strong>Included</strong></td>
+          <td>Continuously Refreshed</td>
+        </tr>
+        <tr>
+          <td>Delivery SLA &amp; Queue Commitment</td>
+          <td>24 Business Hours</td>
+          <td>48 Business Hours</td>
+          <td>Priority 24-Hr Queue</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- RUNNING FOLIO -->
+  <div class="running-folio">
+    <div>Kohort Strategic Advisory &middot; Commercial Schedule 2026/2027</div>
+    <div>Strictly Confidential &middot; Page 1 of 2</div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ========================================================================= -->
+<!-- PAGE 2: OPERATIONAL PROTOCOL & COMMERCIAL TERMS                           -->
+<!-- ========================================================================= -->
+<div class="page">
+  <div>
+    <!-- MASTHEAD -->
+    <div class="masthead">
+      <div>
+        <div class="brand-row">
+          <span class="brand-wordmark">kohort</span>
+          <span class="brand-dot"></span>
+          <span class="system-tag">[ Governance &amp; Operating Standards ]</span>
+        </div>
+      </div>
+      <div class="masthead-meta">
+        <strong>PROTOCOL REF:</strong> KH-PROTOCOL-2026-V1<br>
+        <strong>GOVERNANCE:</strong> FIXED-FEE ENGAGEMENT<br>
+        <strong>JURISDICTION:</strong> SOUTH AFRICA &middot; CROSS-BORDER B2B
+      </div>
+    </div>
+
+    <!-- SECTION: PROTOCOL -->
+    <div class="section-bracket">
+      <span>[ 03 // Three-Stage Advisory Protocol ]</span>
+      <span class="bracket-right">Systematic Engagement Flow</span>
+    </div>
+
+    <div class="protocol-grid">
+      <div class="protocol-step">
+        <div class="step-num">[ 01 ]</div>
+        <div class="step-title">Intake &amp;<br>Hypothesis Brief</div>
+        <div class="step-desc">
+          Complete our 1-page digital intake form detailing your core value proposition, target decision-maker profiles, and specific pricing or copy dilemmas under test.
+        </div>
+      </div>
+      <div class="protocol-step">
+        <div class="step-num">[ 02 ]</div>
+        <div class="step-title">Cohort Simulation &amp;<br>Econometric Analysis</div>
+        <div class="step-desc">
+          Kohort deploys regional competitive scrapers and runs 20 stratified decision-maker evaluations to establish empirical elasticity, distrust drivers, and resonance scoring.
+        </div>
+      </div>
+      <div class="protocol-step">
+        <div class="step-num">[ 03 ]</div>
+        <div class="step-title">Executive Handover &amp;<br>Roadmap Execution</div>
+        <div class="step-desc">
+          Receive your boardroom-ready McKinsey slide deck, data models, and concrete 60-day action plan within 48 hours for immediate go-to-market execution.
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION: COMMERCIAL TERMS -->
+    <div class="section-bracket">
+      <span>[ 04 // Commercial Terms &amp; Operating Standards ]</span>
+      <span class="bracket-right">Confidentiality &middot; Ownership &middot; SLA</span>
+    </div>
+
+    <div class="terms-columns">
+      <div>
+        <div class="term-block">
+          <div class="term-title">01 // Payment Terms &amp; Invoicing</div>
+          <div class="term-body">
+            &bull; <strong>Sprints (Packages 1 &amp; 2):</strong> 50% deposit upon brief confirmation; remaining 50% invoiced upon handover of final presentation deck.<br>
+            &bull; <strong>Retainers (Package 3):</strong> Invoiced in advance on the 1st of each calendar month via EFT or Stripe (USD). Invoices payable within 7 days.
+          </div>
+        </div>
+
+        <div class="term-block">
+          <div class="term-title">02 // Absolute Confidentiality &amp; NDA</div>
+          <div class="term-body">
+            &bull; All client concepts, pricing schedules, copy scripts, and company data are protected under <strong>institutional confidentiality</strong>.<br>
+            &bull; Materials are never shared, published, or sold. Mutual non-disclosure agreements (NDAs) are executed upon request.
+          </div>
+        </div>
+
+        <div class="term-block">
+          <div class="term-title">03 // Post-Delivery Clarification</div>
+          <div class="term-body">
+            &bull; Every sprint includes one round of advisory clarification and data recalibration within 14 calendar days of deliverable handover.<br>
+            &bull; Deep-dive strategy workshops or subsequent hypothesis evaluations are billed at standard sprint rates or accommodated via retainer.
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="term-block">
+          <div class="term-title">04 // Turnaround Guarantee &amp; SLA</div>
+          <div class="term-body">
+            &bull; Turnaround clocks (24h for Pulse; 48h for Full Studies) commence upon formal receipt of the completed Client Intake Brief.<br>
+            &bull; Should Kohort fail to deliver verified deliverables within the agreed window, a <strong>20% billing credit</strong> applies automatically.
+          </div>
+        </div>
+
+        <div class="term-block">
+          <div class="term-title">05 // 100% Client Ownership of IP</div>
+          <div class="term-body">
+            &bull; Upon invoice settlement, the client assumes <strong>complete, irrevocable ownership</strong> of all custom-generated strategy deliverables, slide decks, and data.<br>
+            &bull; Kohort retains underlying rights to its proprietary simulation engine and analytical frameworks.
+          </div>
+        </div>
+
+        <div class="term-block">
+          <div class="term-title">06 // Empirical Decision Governance</div>
+          <div class="term-body">
+            &bull; Kohort deliverables provide directional econometric evidence, risk mitigation, and empirical behavioral findings.<br>
+            &bull; While findings systematically de-risk market moves, ultimate commercial execution remains under client executive discretion.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACTION CALLOUT BANNER -->
+    <div class="action-banner">
+      <div>
+        <div class="banner-title">Ready to Stress-Test Your Commercial Proposition?</div>
+        <div class="banner-sub">Submit your brief to receive your validated pricing corridor and boardroom deck within 48 hours.</div>
+      </div>
+      <div>
+        <div class="btn-lime">Initiate Advisory Sprint &rarr;</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RUNNING FOLIO -->
+  <div class="running-folio">
+    <div>Confidential &amp; Proprietary &middot; Kohort Advisory (Pty) Ltd</div>
+    <div>Page 2 of 2</div>
+  </div>
+</div>
+
+</body>
+</html>

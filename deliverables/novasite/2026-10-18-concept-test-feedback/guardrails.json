@@ -1,0 +1,173 @@
+{
+  "model": "typesafe/jev-1.13",
+  "max_risk_probability": 0.2,
+  "threshold_calibrated": false,
+  "questions": {
+    "unsupported_claims": {
+      "type": "noul",
+      "instructions": "Does `narrative` fabricate external statistics or numeric results contradicted by `evidence`? Rounding, percentage conversions, synthesised `client_question_answers`, and proposed `action_plan` experiments, messaging, or price targets are expected and not a flaw.",
+      "criteria": {
+        "true": "At least one asserted finding has no support in the supplied evidence.",
+        "false": "Findings are supported, or explicitly framed as hypotheses; proposed test targets are not findings."
+      }
+    },
+    "contradictions": {
+      "type": "noul",
+      "instructions": "Does `narrative` directly and materially contradict the computed numbers in `evidence.quantitative_results` or the core facts of `evidence.brief`? Highlighting nuance across segments, themes, and multi-tier pricing is expected and not a contradiction.",
+      "criteria": {
+        "true": "An asserted result or conclusion conflicts with the supplied evidence.",
+        "false": "The narrative reflects the evidence and its limitations without material contradictions."
+      }
+    },
+    "overconfidence": {
+      "type": "noul",
+      "instructions": "Does `narrative` claim that synthetic personas are real human customers or guarantee commercial sales outcomes while omitting all limitations? Directional recommendations paired with real-customer validation steps and caveats are expected and not overconfident.",
+      "criteria": {
+        "true": "The narrative overstates certainty or omits important limitations when making its recommendation.",
+        "false": "The narrative is directional, acknowledges important caveats and calls for real customer validation."
+      }
+    }
+  },
+  "probabilities": {
+    "unsupported_claims": 0.14,
+    "contradictions": 0.06,
+    "overconfidence": 0.03
+  },
+  "reasons": [],
+  "response": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "unsupported_claims": {
+        "type": "noul",
+        "noul": 0.14
+      },
+      "contradictions": {
+        "type": "noul",
+        "noul": 0.06
+      },
+      "overconfidence": {
+        "type": "noul",
+        "noul": 0.03
+      }
+    },
+    "usage": {
+      "input_tokens": 24804,
+      "output_tokens": 61,
+      "cost": 0.001041768
+    },
+    "id": "gen-dec-1792313770-Nkm0SDFyqiNysEzObeed",
+    "provider": "TypeSafe"
+  },
+  "repairable_probability": 0,
+  "status": "passed",
+  "action": "continue",
+  "pipeline_checkpoints": [
+    {
+      "stage": "brief",
+      "attempt": 1,
+      "batch": 1,
+      "status": "passed",
+      "action": "continue"
+    },
+    {
+      "stage": "research",
+      "attempt": 1,
+      "batch": 1,
+      "status": "passed",
+      "action": "continue"
+    },
+    {
+      "stage": "personas",
+      "attempt": 1,
+      "batch": 1,
+      "status": "passed",
+      "action": "continue"
+    },
+    {
+      "stage": "interviews",
+      "attempt": 1,
+      "batch": 1,
+      "status": "passed",
+      "action": "continue"
+    },
+    {
+      "stage": "analysis",
+      "attempt": 1,
+      "batch": 1,
+      "status": "passed",
+      "action": "continue"
+    },
+    {
+      "stage": "analysis",
+      "attempt": 1,
+      "batch": 2,
+      "status": "passed",
+      "action": "continue"
+    },
+    {
+      "stage": "analysis",
+      "attempt": 1,
+      "batch": 3,
+      "status": "passed",
+      "action": "continue"
+    },
+    {
+      "stage": "analysis",
+      "attempt": 1,
+      "batch": 4,
+      "status": "passed",
+      "action": "continue"
+    },
+    {
+      "stage": "analysis",
+      "attempt": 1,
+      "batch": 5,
+      "status": "passed",
+      "action": "continue"
+    },
+    {
+      "stage": "analysis",
+      "attempt": 1,
+      "batch": 6,
+      "status": "passed",
+      "action": "continue"
+    },
+    {
+      "stage": "analysis",
+      "attempt": 1,
+      "batch": 7,
+      "status": "passed",
+      "action": "continue"
+    },
+    {
+      "stage": "critic",
+      "attempt": 1,
+      "batch": 1,
+      "status": "passed",
+      "action": "continue"
+    },
+    {
+      "stage": "report",
+      "attempt": 1,
+      "batch": 1,
+      "status": "passed",
+      "action": "continue"
+    }
+  ],
+  "integrity": {
+    "integrity_score": 0.864,
+    "mean_stage_max_risk": 0.1357,
+    "max_stage_risk": 0.21,
+    "stage_max_risks": {
+      "brief": 0.19,
+      "research": 0.17,
+      "personas": 0.1,
+      "interviews": 0.12,
+      "analysis": 0.08,
+      "critic": 0.08,
+      "report": 0.21
+    },
+    "self_healed_stages": [],
+    "advisory_warnings": []
+  }
+}

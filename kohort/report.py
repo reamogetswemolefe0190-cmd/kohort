@@ -30,7 +30,8 @@ def _bar(x: float, width: int = 20) -> str:
 
 
 def _esc(s: str) -> str:
-    return str(s).replace("|", "/").replace("\n", " ").strip()
+    escaped = html.escape(str(s))
+    return escaped.replace("|", "&#124;").replace("\n", " ").strip()
 
 
 def _money(brief: Brief, x: float | None) -> str:
@@ -90,7 +91,8 @@ def _group_table(title: str, groups: dict, order: list[str] | None = None, small
 
 def render_markdown(*, brief: Brief, research: MarketResearch, quant: dict, themes: dict,
                     critic: CriticReview, narrative: ReportNarrative, rows: list[InterviewResponse],
-                    personas: list[Persona], run_id: str, mock: bool, cost: dict) -> str:
+                    personas: list[Persona], run_id: str, mock: bool, cost: dict,
+                    guardrails: dict | None = None) -> str:
     m = quant["metrics"]
     w = quant["intent_weights"]
     L: list[str] = []
@@ -101,6 +103,16 @@ def render_markdown(*, brief: Brief, research: MarketResearch, quant: dict, them
     add(f"**Prepared for:** {brief.client} &nbsp;·&nbsp; **Date:** {date.today():%d %B %Y} &nbsp;·&nbsp; "
         f"**Run:** `{run_id}` &nbsp;·&nbsp; **Panel:** {quant['n']} synthetic consumers, {brief.region}")
     add("")
+    if guardrails:
+        status = guardrails["status"]
+        add(f"> **Report guardrail: {status.upper()}**")
+        if status in ("held", "error"):
+            add("> **DRAFT — review required before sharing or acting on this report.**")
+        if status == "passed":
+            add("> Jev checked this narrative against its supplied evidence. Passing does not validate real-world demand.")
+        for reason in guardrails.get("reasons", []):
+            add(f"> {_esc(reason)}")
+        add("")
     if mock:
         add("> [!WARNING]")
         add("> **MOCK RUN:** all responses below are simulated placeholders produced without AI. Use this only to "
@@ -149,6 +161,28 @@ def render_markdown(*, brief: Brief, research: MarketResearch, quant: dict, them
         share = m["purchase_intent"]["dist"].get(k, 0)
         add(f"| {INTENT_LABELS[k]} | {_pct(share)} | `{_bar(share)}` |")
     add("")
+
+    # Shootout (if variants tested)
+    shootout = quant.get("shootout")
+    if shootout and shootout.get("variants"):
+        add("### Hook Shootout (A/B Messaging Test)")
+        add("")
+        add("Between-subjects randomized stimulus test comparing value propositions under controlled persona isolation:")
+        add("")
+        add("| Variant | Hook / Angle | n | Top-2-Box | Wilson 95% CI | Mean Intent | Trial Est |")
+        add("|---|---|---:|---:|---:|---:|---:|")
+        for v in shootout["variants"]:
+            ci = v["wilson_ci"]
+            ci_str = f"[{ci['lower']:.1%}, {ci['upper']:.1%}]"
+            angle_str = f" ({v['angle']})" if v.get("angle") else ""
+            add(f"| **{_esc(v['variant_name'])}** | “{_esc(v['hook_text'])}”{angle_str} | {v['n']} | {_pct(v['intent_top2'])} | {ci_str} | {v['intent_mean']:.2f} | {_pct(v['trial_estimate'])} |")
+        add("")
+        if shootout.get("winner_rationale"):
+            add(f"> **Statistical Verdict:** {shootout['winner_rationale']}")
+            add("")
+        if shootout.get("recommendation"):
+            add(f"> **Action Recommendation:** {shootout['recommendation']}")
+            add("")
 
     # 4. Key findings
     add("## 4. Key Findings")
@@ -289,12 +323,15 @@ def render_markdown(*, brief: Brief, research: MarketResearch, quant: dict, them
     add(f"- **Panel:** {quant['n']} synthetic consumers across {len(research.segments)} segments. Demographics "
         f"and attitudes (age, income, household, adopter type, price sensitivity, skepticism) were sampled from "
         f"explicit distributions; an AI model then wrote each individual's background.")
-    add(f"- **Model diversity:** personas were split across {len(models)} AI model families "
-        f"({', '.join(models)}) to reduce single-model bias.")
+    if len(models) > 1:
+        add(f"- **Model diversity:** personas were split across {len(models)} models ({', '.join(models)}).")
+    else:
+        add(f"- **Model diversity:** only one persona model was used ({', '.join(models)}); single-model bias remains.")
     add("- **Interview design:** each persona first reacted to the concept *without* the price (including Van "
         "Westendorp price thresholds), then saw the price and gave value-for-money and purchase intent.")
     add("- **Analysis:** all numbers were computed directly from responses; open answers were coded into themes "
-        "by an analyst model; an independent reviewer model critiqued the results before the report was written.")
+        "by an analyst model; a critic reviewed results before drafting. Jev supervised the brief, research, "
+        "personas, interviews, analysis, critic and completed narrative (except in mock mode).")
     add(f"- **Market research:** {'live web search' if research.web_search_used else 'model knowledge (no live web search)'}.")
     add("")
     d = quant["diagnostics"]
@@ -302,9 +339,29 @@ def render_markdown(*, brief: Brief, research: MarketResearch, quant: dict, them
         f"{_pct(d['modal_share'])}, duplicate quotes {_pct(d['duplicate_quote_ratio'])}, model intent spread "
         f"{d['model_intent_spread']}.")
     add("")
-    if critic.issues:
-        add(f"**Independent review (confidence: {critic.confidence}).** {critic.confidence_rationale}")
+    add(f"**Quality review (confidence: {critic.confidence}).** {critic.confidence_rationale}")
+    add("")
+    if guardrails:
+        integrity = guardrails.get("integrity") or {}
+        score_str = f" · **Evidence Integrity: {integrity['integrity_score']:.0%}**" if "integrity_score" in integrity else ""
+        add(f"**Jev guardrail:** {guardrails['status']} · model `{guardrails['model']}`{score_str}. "
+            "Risk thresholds are initial policy settings, not empirically calibrated confidence.")
         add("")
+        for warn in integrity.get("advisory_warnings") or []:
+            add(f"- *Self-heal advisory:* {_esc(warn)}")
+        if integrity.get("advisory_warnings"):
+            add("")
+        checkpoints = guardrails.get("pipeline_checkpoints", [])
+        if checkpoints:
+            add("| Jev checkpoint | Attempts | Reviewed batches in final attempt | Status |")
+            add("|---|---:|---:|---|")
+            for stage in dict.fromkeys(c["stage"] for c in checkpoints):
+                events = [c for c in checkpoints if c["stage"] == stage]
+                last_attempt = max(c["attempt"] for c in events)
+                batches = sum(c["attempt"] == last_attempt for c in events)
+                add(f"| {stage} | {last_attempt} | {batches} | {events[-1]['status']} |")
+            add("")
+    if critic.issues:
         add("| Severity | Issue | Recommendation |")
         add("|---|---|---|")
         for i in sorted(critic.issues, key=lambda i: ["high", "medium", "low"].index(i.severity)):

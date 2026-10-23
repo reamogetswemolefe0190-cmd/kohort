@@ -6,13 +6,12 @@ interpret but never calculate.
 
 from __future__ import annotations
 
-import asyncio
 import json
 
 from ..analysis import theme_stats
 from ..config import Config
-from ..llm import LLM
-from ..schemas import (Brief, CriticReview, CriticIssue, InterviewResponse, MarketResearch, Persona, ReportNarrative,
+from ..llm import LLM, LLMError, gather_cancel_on_error
+from ..schemas import (Brief, CriticReview, InterviewResponse, MarketResearch, Persona, ReportNarrative,
                        ThemeCoding)
 
 # --------------------------------------------------------------------------- themes
@@ -52,9 +51,11 @@ def _coding_items(rows: list[InterviewResponse], kind: str) -> list[tuple[str, s
 
 
 async def _code(llm: LLM, cfg: Config, brief: Brief, kind: str, rows: list[InterviewResponse],
-                personas: list[Persona]) -> list[dict]:
+                personas: list[Persona], audit: dict | None = None) -> list[dict]:
     items = _coding_items(rows, kind)
     if not items:
+        if audit is not None:
+            audit[kind] = []
         return []
     role = cfg.role("analyst")
     coding, _ = await llm.structured(
@@ -66,13 +67,21 @@ async def _code(llm: LLM, cfg: Config, brief: Brief, kind: str, rows: list[Inter
         temperature=role.temperature, max_tokens=role.max_tokens,
         mock_ctx={"items": [t for _, t in items]},
     )
+    theme_map = {t.id: t for t in coding.themes}
+    if (len(theme_map) != len(coding.themes) or set(coding.assignments) != {str(i) for i in range(len(items))}
+            or any(tid not in theme_map for tid in coding.assignments.values())):
+        raise LLMError(f"Invalid {kind} theme coding: every answer must map to exactly one defined theme.")
+    if audit is not None:
+        audit[kind] = [{"persona_id": pid, "text": text,
+                        "theme": theme_map[coding.assignments[str(i)]].model_dump()}
+                       for i, (pid, text) in enumerate(items)]
     return theme_stats(items, coding.assignments, [t.model_dump() for t in coding.themes], personas, len(rows))
 
 
 async def code_themes(llm: LLM, cfg: Config, brief: Brief, rows: list[InterviewResponse],
-                      personas: list[Persona]) -> dict[str, list[dict]]:
+                      personas: list[Persona], audit: dict | None = None) -> dict[str, list[dict]]:
     kinds = list(KINDS)
-    results = await asyncio.gather(*(_code(llm, cfg, brief, k, rows, personas) for k in kinds))
+    results = await gather_cancel_on_error(*(_code(llm, cfg, brief, k, rows, personas, audit) for k in kinds))
     return dict(zip(kinds, results))
 
 
@@ -85,8 +94,10 @@ def _compact_themes(themes: dict[str, list[dict]], top: int = 6) -> dict:
 
 CRITIC_SYSTEM = """You are a skeptical research director reviewing a synthetic (AI-simulated) concept test before
 it goes to a client. Your job is to protect the client from overconfident conclusions.
-Look for: AI positivity bias, uniform or stereotyped personas, small subgroups, contradictions between numbers and
-themes, weak market research, and anything the client might over-interpret.
+Look for: AI positivity bias, small subgroups, diagnostic flags, research caveats, and anything the client might over-interpret.
+SEVERITY RULES (critical):
+- Use "low" or "medium" severity for all methodological caveats, small sample/subgroup sizes, synthetic simulation limits, unverified client brief claims, or wide price dispersion. These will be printed prominently in the report's methodology section.
+- Reserve "high" severity ONLY if the computed quantitative data is corrupted/missing or contradicts itself mathematically (since "high" aborts report generation).
 Reply with ONLY a JSON object, no other text."""
 
 CRITIC_USER = """CONCEPT: {product} - {one_liner} (price: {price})
@@ -105,7 +116,7 @@ RESEARCH CAVEATS
 
 JSON FORMAT
 {{
-  "issues": [{{"severity": "low|medium|high", "issue": "...", "recommendation": "what to do about it"}}],
+  "issues": [{{"severity": "low|medium", "issue": "...", "recommendation": "what to do about it"}}],
   "confidence": "low|medium|high",
   "confidence_rationale": "1-3 sentences on how much weight the client should put on these findings"
 }}"""
@@ -114,47 +125,7 @@ JSON FORMAT
 async def critique(llm: LLM, cfg: Config, brief: Brief, quant: dict, themes: dict,
                    research: MarketResearch) -> CriticReview:
     role = cfg.role("critic")
-    if role.model.startswith(("typesafe/", "liquid/", "cloudflare/")):
-        # System One Harness (Jev, Liquid, etc.)
-        state_text = f"PRODUCT: {brief.product_name}\n\nQUANT:\n{json.dumps(quant['diagnostics'])}\n\nCAVEATS:\n{research.caveats}"
-        resp = await llm.decide(
-            model_ref=role.model,
-            state=state_text,
-            questions=[
-                {
-                    "name": "confidence",
-                    "type": "choice",
-                    "choices": ["low", "medium", "high"],
-                    "prompt": "Given the diagnostic flags, rate the statistical confidence of this data."
-                },
-                {
-                    "name": "has_fatal_flaw",
-                    "type": "nou1",
-                    "prompt": "Is there a severe hallucination, positivity bias, or fatal data flaw?"
-                }
-            ]
-        )
-        
-        # Parse decision probabilities
-        conf = "medium"
-        if "confidence" in resp and "choice" in resp["confidence"]:
-            conf = resp["confidence"]["choice"]
-            
-        fatal_prob = 0.0
-        if "has_fatal_flaw" in resp and "probability" in resp["has_fatal_flaw"]:
-            fatal_prob = resp["has_fatal_flaw"]["probability"]
-            
-        issues = []
-        if fatal_prob > 0.5:
-            issues.append(CriticIssue(severity="high", issue=f"Jev System One Harness detected fatal data flaw ({fatal_prob:.0%} probability)", recommendation="Halt report or discard synthetic data."))
-            
-        return CriticReview(
-            confidence=conf,
-            confidence_rationale=f"System One decision harness calculated a {fatal_prob:.0%} probability of fatal data flaws.",
-            issues=issues
-        )
-        
-    # Standard generative critic
+    flags = quant["diagnostics"]["flags"]
     review, _ = await llm.structured(
         task="critic", schema=CriticReview, model=role.model, system=CRITIC_SYSTEM,
         user=CRITIC_USER.format(
@@ -176,9 +147,10 @@ REPORT_SYSTEM = """You are a senior strategy consultant at Kohort writing the na
 for a business client. Write clearly and concretely for a busy decision-maker. Be candid: a useful "no" beats a
 flattering "yes".
 RULES
-- Only use numbers that appear in the data provided. Never invent statistics.
-- Treat this as directional evidence from a simulated market, not a forecast.
-- Take the reviewer's critique seriously and reflect it in your confidence and wording.
+- Only use numbers that appear in the data provided. Never invent external statistics, market sizes, or unverified facts.
+- Explicitly state that findings come from an AI-simulated synthetic panel (n personas) and are directional hypotheses to test with real customers, not a sales forecast or proof of willingness to pay.
+- Reflect all research caveats and the independent reviewer's critique in your executive summary, segment insights, and risks.
+- Frame all action_plan recommendations and price points as structured experiments/targets for real customer validation.
 Reply with ONLY a JSON object, no other text."""
 
 REPORT_USER = """BRIEF
@@ -211,7 +183,14 @@ JSON FORMAT
   "executive_summary": "one tight paragraph (5-7 sentences)",
   "key_findings": ["5-7 specific findings, citing numbers from the data"],
   "segment_insights": [{{"segment": "name", "insight": "1-2 sentences"}}],
-  "recommendations": [{{"priority": 1, "action": "concrete next step", "rationale": "why, tied to evidence"}}],
+  "action_plan": {{
+    "what_to_do_next": "clear recommendation tied to the client's decision",
+    "why_this_option": "evidence, alternatives and main uncertainty",
+    "what_to_change": "specific offer, message or targeting changes",
+    "how_to_implement": "usable messaging, interview questions or test plan",
+    "how_to_measure": "measurable outcome and decision criteria",
+    "what_happens_next": "review results and identify the next decision"
+  }},
   "client_question_answers": [{{"question": "client's question", "answer": "synthesised answer"}}],
   "risks": ["key risks or unknowns"]
 }}"""
@@ -240,7 +219,8 @@ async def write_narrative(llm: LLM, cfg: Config, brief: Brief, research: MarketR
             brief=brief.model_dump_json(indent=1),
             research=json.dumps({"summary": research.summary, "trends": research.trends,
                                  "typical_price_range": research.typical_price_range,
-                                 "competitors": [c.name for c in research.competitors]}, ensure_ascii=False),
+                                 "competitors": [c.name for c in research.competitors],
+                                 "caveats": research.caveats}, ensure_ascii=False),
             n=quant["n"],
             quant=json.dumps({k: quant[k] for k in ("metrics", "trial_estimate", "by", "pricing")}, indent=1),
             themes=json.dumps(compact, indent=1, ensure_ascii=False),

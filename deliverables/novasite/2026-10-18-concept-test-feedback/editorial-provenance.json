@@ -1,0 +1,171 @@
+{
+  "deliverable": "Nova Site Concept Test Deliverables (2026-10-18)",
+  "single_source_of_truth": "analysis.json",
+  "editorial_provenance_registry": [
+    {
+      "value": 4250.0,
+      "label": "Corridor Lower Bound (R4,250)",
+      "rationale": "Strategic 40% gross margin markup over raw Van Westendorp OPP (R3,021) to cover custom backend integrations and discovery workshops."
+    },
+    {
+      "value": 5500.0,
+      "label": "Corridor Upper Bound (R5,500)",
+      "rationale": "Van Westendorp median_too_expensive ceiling (R5,500.00) where buyer consideration collapses."
+    },
+    {
+      "value": 90.0,
+      "label": "Recurring Retainer Rejection Rate (90%)",
+      "rationale": "18 of 20 qualitative interview responses explicitly rejected monthly retainers without guaranteed development sprints."
+    },
+    {
+      "value": 40.0,
+      "label": "Target Gross Margin (40%)",
+      "rationale": "Agency benchmark gross margin for bespoke software and WordPress-to-custom web app migrations."
+    },
+    {
+      "value": 2.5,
+      "label": "LTV Expansion Ratio (2.5x)",
+      "rationale": "Annualized expansion multiple based on client retention and custom feature phase 2 upsells."
+    },
+    {
+      "value": 7.0,
+      "label": "SLA Turnaround Tier (7 Days)",
+      "rationale": "Sprint 1 turnaround timeline for landing page delivery."
+    },
+    {
+      "value": 14.0,
+      "label": "SLA Turnaround Tier (14 Days)",
+      "rationale": "Sprint 2 turnaround timeline for multi-page bespoke website."
+    },
+    {
+      "value": 30.0,
+      "label": "SLA Turnaround Tier (30 Days)",
+      "rationale": "Turnaround timeline for complete custom web app deployment."
+    },
+    {
+      "value": 150.0,
+      "label": "Baseline Hosting Spend (R150/mo)",
+      "rationale": "SME self-reported baseline shared hosting spend in South Africa."
+    },
+    {
+      "value": 299.0,
+      "label": "Market Entry Support Tier (R299/mo)",
+      "rationale": "Sourced Gauteng agency entry hosting/maintenance rate (Juicy Designs / Bunny Pants telemetry)."
+    },
+    {
+      "value": 395.0,
+      "label": "Starter Care Plan (R395/mo)",
+      "rationale": "Low-touch hosting and SSL maintenance tier recommended for basic brochure sites."
+    },
+    {
+      "value": 450.0,
+      "label": "Standard Maintenance Anchor (R450/mo)",
+      "rationale": "Mid-tier SME website maintenance anchor from Gauteng competitor telemetry."
+    },
+    {
+      "value": 495.0,
+      "label": "Care Plan Plus (R495/mo)",
+      "rationale": "Recommended hosting and automated daily backup retainer tier."
+    },
+    {
+      "value": 750.0,
+      "label": "Active Maintenance Ceiling (R750/mo)",
+      "rationale": "Upper threshold for non-retainer SME website support before churn accelerates."
+    },
+    {
+      "value": 850.0,
+      "label": "Application Monitoring Retainer (R850/mo)",
+      "rationale": "Booking system uptime and WhatsApp API integration maintenance plan."
+    },
+    {
+      "value": 950.0,
+      "label": "Pro Care Plan (R950/mo)",
+      "rationale": "Comprehensive SME maintenance with 1-hour monthly content changes."
+    },
+    {
+      "value": 1200.0,
+      "label": "Maximum Current SME Tool Spend (R1,200/mo)",
+      "rationale": "Self-reported maximum monthly spend across email, domain, and plugin licenses."
+    },
+    {
+      "value": 1500.0,
+      "label": "Custom Web App SLA Ceiling (R1,500/mo)",
+      "rationale": "Monthly support cap for custom operations dashboard maintenance."
+    },
+    {
+      "value": 2950.0,
+      "label": "Entry Brochure Offer (R2,950)",
+      "rationale": "High-velocity entry promotional price point for standard 3-page brochure sites."
+    },
+    {
+      "value": 4950.0,
+      "label": "Done-in-5-Days Brochure Upper Cap (R4,950)",
+      "rationale": "Upper bracket for 5-day turnkey business websites including SEO and multi-page copy."
+    },
+    {
+      "value": 5590.0,
+      "label": "Market Competitor Price Low (R5,590)",
+      "rationale": "Published competitor price anchor from gathered South African agency research (Juicy Designs / Bunny Pants)."
+    },
+    {
+      "value": 16900.0,
+      "label": "Market Competitor Price High (R16,900)",
+      "rationale": "Published competitor upper price anchor for standard custom business website in Gauteng."
+    },
+    {
+      "value": 40000.0,
+      "label": "Custom App Mid-Scope Bracket (R40,000)",
+      "rationale": "Upper bracket estimate for booking workflows and database-backed web applications."
+    },
+    {
+      "value": 3250.0,
+      "label": "Brochure Website Standard Package (R3,250)",
+      "rationale": "Package 1 price aligned to Van Westendorp indifference point (R3,200) for standard bespoke site."
+    },
+    {
+      "value": 8000.0,
+      "label": "Booking System Entry Floor (R8,000)",
+      "rationale": "Minimum viable fixed fee for integrated booking and WhatsApp notification workflows."
+    },
+    {
+      "value": 12000.0,
+      "label": "Annualized R1,000/mo Retainer Equivalent (R12,000)",
+      "rationale": "Annual total calculated for client churn risk analysis (R1,000 * 12 months)."
+    },
+    {
+      "value": 12500.0,
+      "label": "Package 2 Booking System Base (R12,500)",
+      "rationale": "Core package tier for service businesses requiring automated scheduling and payments."
+    },
+    {
+      "value": 15000.0,
+      "label": "Booking System Pilot Fee (R15,000)",
+      "rationale": "Standard pilot engagement price for clinics and service workshops; threshold where MD approval is required."
+    },
+    {
+      "value": 25000.0,
+      "label": "Booking System High Tier / Ops Dashboard Floor (R25,000)",
+      "rationale": "Upper bracket for complex multi-calendar booking tools and entry tier for bespoke operational dashboards."
+    },
+    {
+      "value": 30000.0,
+      "label": "Package 3 Custom Web App Base (R30,000)",
+      "rationale": "Starting tier for custom operations dashboard and multi-staff workflow apps."
+    },
+    {
+      "value": 35000.0,
+      "label": "Historical Rebuild Spending Cap (R35,000)",
+      "rationale": "Self-reported historical maximum spend for 3-5 year website overhaul by Gauteng SMEs."
+    },
+    {
+      "value": 45000.0,
+      "label": "Custom Web App Tier 2 (R45,000)",
+      "rationale": "Mid-tier custom business application for fleet, inventory, or billing automations."
+    },
+    {
+      "value": 60000.0,
+      "label": "Custom Operations Dashboard Ceiling (R60,000)",
+      "rationale": "Maximum scope tier for full-scale internal tools before enterprise custom quoting."
+    }
+  ]
+}

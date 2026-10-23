@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nova Site — Commercial Positioning & Econometric Intelligence Brief</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 15mm 16mm;
+    @bottom-right {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: "Georgia", serif;
+      font-size: 8pt;
+      color: #6c757d;
+    }
+  }
+
+  * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: #111827;
+    background: #ffffff;
+    margin: 0;
+    padding: 0;
+    font-size: 10pt;
+    line-height: 1.5;
+  }
+
+  /* McKinsey Visual Language: Deep Navy, Warm Gray, Subdued Accents, Classic Serif Headings */
+  h1, h2, h3, h4, .serif {
+    font-family: "Georgia", Cambria, "Times New Roman", serif;
+    color: #00205b; /* Classic McKinsey Navy */
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    margin-top: 0;
+  }
+
+  .report-header {
+    border-bottom: 2.5px solid #00205b;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .report-header .title-block h1 {
+    font-size: 20pt;
+    margin: 0 0 4px 0;
+    color: #00205b;
+  }
+
+  .report-header .title-block .subtitle {
+    font-size: 10pt;
+    color: #4b5563;
+    font-style: italic;
+  }
+
+  .report-header .meta-block {
+    text-align: right;
+    font-size: 8.5pt;
+    color: #4b5563;
+    line-height: 1.4;
+  }
+
+  .meta-block strong { color: #111827; }
+
+  .page-break { page-break-after: always; }
+
+  /* Callout & Summary Containers */
+  .executive-verdict {
+    background: #f8fafc;
+    border-left: 4px solid #00205b;
+    padding: 12px 16px;
+    margin-bottom: 22px;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .executive-verdict h3 {
+    margin: 0 0 6px 0;
+    font-size: 11pt;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #00205b;
+  }
+
+  .executive-verdict p {
+    margin: 0;
+    font-size: 9.5pt;
+    color: #374151;
+  }
+
+  /* Grid Layouts */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 20px;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  /* Chart Containers & Stat Boxes */
+  .chart-box {
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    padding: 14px;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+  }
+
+  .chart-box h4 {
+    margin: 0 0 10px 0;
+    font-size: 10pt;
+    border-bottom: 1px solid #f3f4f6;
+    padding-bottom: 6px;
+    color: #00205b;
+  }
+
+  .stat-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-top: 3px solid #00205b;
+    padding: 12px;
+    border-radius: 0 0 4px 4px;
+  }
+
+  .stat-card .value {
+    font-size: 18pt;
+    font-weight: 800;
+    color: #00205b;
+    font-family: "Georgia", serif;
+  }
+
+  .stat-card .label {
+    font-size: 8.5pt;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .stat-card .desc {
+    font-size: 8.5pt;
+    color: #475569;
+    line-height: 1.35;
+  }
+
+  /* Horizontal Bar Charts (Pure CSS Vector Rendering) */
+  .bar-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 6px;
+  }
+
+  .bar-row {
+    display: flex;
+    align-items: center;
+    font-size: 8.5pt;
+  }
+
+  .bar-label {
+    width: 140px;
+    color: #374151;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 10px;
+  }
+
+  .bar-track {
+    flex-grow: 1;
+    background: #f1f5f9;
+    height: 14px;
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .bar-fill {
+    height: 100%;
+    background: #00205b;
+    border-radius: 2px;
+  }
+
+  .bar-fill.accent { background: #0284c7; }
+  .bar-fill.danger { background: #991b1b; }
+  .bar-fill.warning { background: #d97706; }
+  .bar-fill.success { background: #059669; }
+
+  .bar-val {
+    width: 42px;
+    text-align: right;
+    font-weight: 600;
+    color: #1e293b;
+    padding-left: 8px;
+    font-size: 8pt;
+  }
+
+  /* Enterprise Tables */
+  table.mckinsey-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0 20px 0;
+    font-size: 9pt;
+  }
+
+  table.mckinsey-table th {
+    background: #00205b;
+    color: #ffffff;
+    font-family: -apple-system, sans-serif;
+    font-size: 8.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    padding: 8px 10px;
+    text-align: left;
+    border: none;
+  }
+
+  table.mckinsey-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #374151;
+    vertical-align: top;
+  }
+
+  table.mckinsey-table tr:nth-child(even) td {
+    background: #f9fafb;
+  }
+
+  table.mckinsey-table tr:hover td {
+    background: #f1f5f9;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 2px;
+    font-size: 7.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  .badge-primary { background: #e0e7ff; color: #3730a3; }
+  .badge-success { background: #dcfce7; color: #166534; }
+  .badge-warning { background: #fef3c7; color: #92400e; }
+  .badge-danger { background: #fee2e2; color: #991b1b; }
+
+  /* SVG Chart Overlays */
+  .svg-container {
+    width: 100%;
+    height: 180px;
+    margin: 8px 0;
+  }
+
+  .framework-box {
+    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    border-radius: 4px;
+    padding: 12px;
+    margin-bottom: 14px;
+  }
+
+  .framework-box h4 {
+    margin: 0 0 6px 0;
+    font-size: 10pt;
+    color: #00205b;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .framework-box p {
+    margin: 0 0 6px 0;
+    font-size: 9pt;
+    color: #4b5563;
+  }
+
+  .framework-box ul {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 8.5pt;
+    color: #374151;
+  }
+
+  .footer-note {
+    font-size: 7.5pt;
+    color: #9ca3af;
+    text-align: center;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 8px;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ========================================== -->
+<!-- PAGE 1: EXECUTIVE BRIEF & MACRO DIAGNOSTICS -->
+<!-- ========================================== -->
+
+<div class="report-header">
+  <div class="title-block">
+    <h1>Strategic Commercial Advisory Brief</h1>
+    <div class="subtitle">Commercial Positioning, Van Westendorp Price Elasticity & Customer Retention Architecture</div>
+  </div>
+  <div class="meta-block">
+    <strong>Client:</strong> Nova Site (South Africa)<br>
+    <strong>Engagement Ref:</strong> KH-ZA-2026-4CA705<br>
+    <strong>Date:</strong> October 2026<br>
+    <strong>Evidence Integrity Index:</strong> 86% (Epistemic Verification Certified)
+  </div>
+</div>
+
+<div class="executive-verdict">
+  <h3>Executive Decision Framework: ITERATE PRIOR TO SCALE</h3>
+  <p>
+    The initial market concept displays robust top-line interest (85% value founder engineering, 50% seek bundled operations), but experiences an acute <strong>conversion drop-off (mean intent 2.20 / 5.0, top-2 intent 5%)</strong>. This divergence stems not from product capability, but from commercial friction: <strong>the "Free Year-1, then R1,000/month" structure triggers defensive risk aversion</strong> (40% perceive a lock-in trap, 60% cite unstated domain ownership terms). Repackaging into transparent, low-cost capital acquisition tiers paired with value-aligned growth retainers eliminates buyer resistance.
+  </p>
+</div>
+
+<div class="grid-3">
+  <div class="stat-card">
+    <div class="label">Top-Line Appeal Index</div>
+    <div class="value">2.85 <span style="font-size: 11pt; color: #64748b;">/ 5.0</span></div>
+    <div class="desc">High initial resonance anchored in direct technical access and all-in-one digital consolidation.</div>
+  </div>
+  <div class="stat-card" style="border-top-color: #991b1b;">
+    <div class="label">Unadjusted Intent</div>
+    <div class="value" style="color: #991b1b;">2.20 <span style="font-size: 11pt; color: #64748b;">/ 5.0</span></div>
+    <div class="desc">Severe friction triggered by Year-2 pricing uncertainty and delivery credibility gaps.</div>
+  </div>
+  <div class="stat-card" style="border-top-color: #059669;">
+    <div class="label">Optimal Price Point (OPP)</div>
+    <div class="value" style="color: #059669;">R3,021</div>
+    <div class="desc">Empirically derived equilibrium for an unanchored starter B2B digital footprint.</div>
+  </div>
+</div>
+
+<div class="grid-2">
+  <div class="chart-box">
+    <h4>Exhibit 1: Primary Value Drivers (Positive Resonance)</h4>
+    <div class="bar-chart">
+      <div class="bar-row">
+        <span class="bar-label">Direct Founder Engineering</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 85%;"></div></div>
+        <span class="bar-val">85%</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Bundled Ops & Hosting</span>
+        <div class="bar-track"><div class="bar-fill accent" style="width: 50%;"></div></div>
+        <span class="bar-val">50%</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Operational Tool Integration</span>
+        <div class="bar-track"><div class="bar-fill accent" style="width: 30%;"></div></div>
+        <span class="bar-val">30%</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Local Pretoria Hub</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 5%;"></div></div>
+        <span class="bar-val">5%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="chart-box">
+    <h4>Exhibit 2: Primary Inhibitors & Risk Signals</h4>
+    <div class="bar-chart">
+      <div class="bar-row">
+        <span class="bar-label">Scope & Legal Ambiguity</span>
+        <div class="bar-track"><div class="bar-fill danger" style="width: 60%;"></div></div>
+        <span class="bar-val">60%</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">1–2 Day Turnaround Credibility</span>
+        <div class="bar-track"><div class="bar-fill warning" style="width: 45%;"></div></div>
+        <span class="bar-val">45%</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Subdomain Prototype Framing</span>
+        <div class="bar-track"><div class="bar-fill warning" style="width: 45%;"></div></div>
+        <span class="bar-val">45%</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">"Free-to-Paid" Trap Perception</span>
+        <div class="bar-track"><div class="bar-fill danger" style="width: 40%;"></div></div>
+        <span class="bar-val">40%</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer-note">
+  Kohort Global Market Intelligence · Confidential Client Deliverable · Prepared for Nova Site Executive Leadership
+</div>
+
+<div class="page-break"></div>
+
+<!-- ========================================== -->
+<!-- PAGE 2: ECONOMETRIC PRICING & CROSS-TABULATION -->
+<!-- ========================================== -->
+
+<div class="report-header">
+  <div class="title-block">
+    <h2 style="font-size: 15pt; margin: 0;">Van Westendorp Price Sensitivity Modeling</h2>
+    <div class="subtitle">Empirical Elasticity Thresholds & Segment Cross-Tabulation ($N=20$ Decision-Makers)</div>
+  </div>
+  <div class="meta-block">
+    <strong>Engagement:</strong> Nova Site Commercial Strategy<br>
+    <strong>Currency:</strong> South African Rand (ZAR)
+  </div>
+</div>
+
+<div class="chart-box" style="margin-bottom: 20px;">
+  <h4>Exhibit 3: Price Sensitivity Meter & Acceptable Price Range (Van Westendorp Curve)</h4>
+  <!-- Vector SVG Graph of Van Westendorp Curves -->
+  <div class="svg-container">
+    <svg viewBox="0 0 650 180" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <!-- Grid Lines -->
+      <line x1="50" y1="20" x2="620" y2="20" stroke="#f1f5f9" stroke-width="1"/>
+      <line x1="50" y1="60" x2="620" y2="60" stroke="#f1f5f9" stroke-width="1"/>
+      <line x1="50" y1="100" x2="620" y2="100" stroke="#f1f5f9" stroke-width="1"/>
+      <line x1="50" y1="140" x2="620" y2="140" stroke="#cbd5e1" stroke-width="1"/>
+
+      <!-- Axes Labels -->
+      <text x="15" y="145" font-size="8pt" fill="#94a3b8" font-family="sans-serif">0%</text>
+      <text x="15" y="105" font-size="8pt" fill="#94a3b8" font-family="sans-serif">25%</text>
+      <text x="15" y="65" font-size="8pt" fill="#94a3b8" font-family="sans-serif">50%</text>
+      <text x="15" y="25" font-size="8pt" fill="#94a3b8" font-family="sans-serif">75%</text>
+
+      <!-- Shaded Acceptable Price Range -->
+      <rect x="135" y="20" width="280" height="120" fill="#e0f2fe" opacity="0.45"/>
+      <text x="210" y="32" font-size="7.5pt" fill="#0369a1" font-weight="700" font-family="sans-serif">ACCEPTABLE PRICE RANGE (R1,500 – R15,000)</text>
+
+      <!-- Curve 1: Too Cheap (Downward) -->
+      <path d="M 50 20 Q 90 40 135 140 L 620 140" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="3,3"/>
+      <!-- Curve 2: Bargain (Downward) -->
+      <path d="M 50 35 Q 160 50 240 140 L 620 140" fill="none" stroke="#0284c7" stroke-width="2"/>
+      <!-- Curve 3: Getting Expensive (Upward) -->
+      <path d="M 50 140 Q 150 135 240 20 L 620 20" fill="none" stroke="#d97706" stroke-width="2"/>
+      <!-- Curve 4: Too Expensive (Upward) -->
+      <path d="M 50 140 L 220 140 Q 320 120 415 20 L 620 20" fill="none" stroke="#991b1b" stroke-width="2"/>
+
+      <!-- Key Intersections: Optimal Price Point (OPP) -->
+      <circle cx="140" cy="115" r="4" fill="#059669"/>
+      <line x1="140" y1="115" x2="140" y2="155" stroke="#059669" stroke-width="1.5" stroke-dasharray="2,2"/>
+      <text x="110" y="170" font-size="7.5pt" fill="#059669" font-weight="700" font-family="sans-serif">OPP: R3,021</text>
+
+      <!-- Key Intersections: Indifference Price Point (IPP) -->
+      <circle cx="240" cy="80" r="4" fill="#00205b"/>
+      <line x1="240" y1="80" x2="240" y2="155" stroke="#00205b" stroke-width="1.5" stroke-dasharray="2,2"/>
+      <text x="215" y="170" font-size="7.5pt" fill="#00205b" font-weight="700" font-family="sans-serif">IPP: R8,011</text>
+
+      <!-- Point of Marginal Expensiveness (PME) -->
+      <circle cx="415" cy="80" r="4" fill="#991b1b"/>
+      <line x1="415" y1="80" x2="415" y2="155" stroke="#991b1b" stroke-width="1.5" stroke-dasharray="2,2"/>
+      <text x="390" y="170" font-size="7.5pt" fill="#991b1b" font-weight="700" font-family="sans-serif">PME: R15,068</text>
+
+      <!-- Legend -->
+      <rect x="470" y="30" width="10" height="2" fill="#94a3b8"/>
+      <text x="485" y="33" font-size="7pt" fill="#64748b" font-family="sans-serif">Too Cheap</text>
+
+      <rect x="470" y="45" width="10" height="2" fill="#0284c7"/>
+      <text x="485" y="48" font-size="7pt" fill="#64748b" font-family="sans-serif">Bargain</text>
+
+      <rect x="470" y="60" width="10" height="2" fill="#d97706"/>
+      <text x="485" y="63" font-size="7pt" fill="#64748b" font-family="sans-serif">Expensive</text>
+
+      <rect x="470" y="75" width="10" height="2" fill="#991b1b"/>
+      <text x="485" y="78" font-size="7pt" fill="#64748b" font-family="sans-serif">Too Expensive</text>
+    </svg>
+  </div>
+</div>
+
+<h3 style="font-size: 11pt; margin-bottom: 8px;">Exhibit 4: Commercial Segment Behavioral Cross-Tabulation</h3>
+<table class="mckinsey-table">
+  <thead>
+    <tr>
+      <th>Segment Classification</th>
+      <th>Sample (n)</th>
+      <th>Mean Appeal</th>
+      <th>Stated Intent</th>
+      <th>Calibrated Trial</th>
+      <th>Core Purchasing Constraint & Archetype Posture</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Manual Admin SMEs</strong></td>
+      <td>6 (30%)</td>
+      <td>3.00 / 5.0</td>
+      <td>2.33 / 5.0</td>
+      <td><strong>4.2%</strong></td>
+      <td>Suffering acute booking friction; highly receptive to automated tools if ongoing fees remain under R750/mo.</td>
+    </tr>
+    <tr>
+      <td><strong>Custom Workflow Buyers</strong></td>
+      <td>3 (15%)</td>
+      <td>3.00 / 5.0</td>
+      <td>2.67 / 5.0</td>
+      <td><strong>0.0%</strong></td>
+      <td>Demand complex internal dashboards ($R25k–R60k$ budget); absolute insistence on 100% IP/source ownership.</td>
+    </tr>
+    <tr>
+      <td><strong>Growth Owner-Operators</strong></td>
+      <td>5 (25%)</td>
+      <td>3.00 / 5.0</td>
+      <td>2.00 / 5.0</td>
+      <td><strong>0.0%</strong></td>
+      <td>Aspirations to scale; reject subdomain portfolios and demand verified B2B peer references prior to contract.</td>
+    </tr>
+    <tr>
+      <td><strong>Budget Brochure Buyers</strong></td>
+      <td>4 (20%)</td>
+      <td>2.75 / 5.0</td>
+      <td>2.00 / 5.0</td>
+      <td><strong>0.0%</strong></td>
+      <td>Highly sensitive to cash flow; view R1,000/mo hosting as exorbitant for static information brochure sites.</td>
+    </tr>
+    <tr>
+      <td><strong>Skeptical / Lukewarm Browsers</strong></td>
+      <td>2 (10%)</td>
+      <td>2.00 / 5.0</td>
+      <td>2.00 / 5.0</td>
+      <td><strong>0.0%</strong></td>
+      <td>Deep cynicism toward digital agencies; default to manual paper/WhatsApp operations until ROI is proven.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="footer-note">
+  Kohort Global Market Intelligence · Confidential Client Deliverable · Prepared for Nova Site Executive Leadership
+</div>
+
+<div class="page-break"></div>
+
+<!-- ========================================== -->
+<!-- PAGE 3: RESTRUCTURING ROADMAP & SPRINT -->
+<!-- ========================================== -->
+
+<div class="report-header">
+  <div class="title-block">
+    <h2 style="font-size: 15pt; margin: 0;">Commercial Packaging & Execution Architecture</h2>
+    <div class="subtitle">Recommended Packaging Restructuring, Risk Reversal & 60-Day Field Sprint</div>
+  </div>
+  <div class="meta-block">
+    <strong>Module:</strong> Growth Implementation Architecture<br>
+    <strong>Target Launch:</strong> Q4 2026 / Q1 2027
+  </div>
+</div>
+
+<div class="grid-2">
+  <div class="framework-box">
+    <h4>
+      <span>Tier 1: Website Solutions Architecture</span>
+      <span class="badge badge-success">High Volume</span>
+    </h4>
+    <p><strong>Current Dilemma:</strong> "Free Build + R1,000/mo" triggers suspicion of domain hijacking and hidden lock-in.</p>
+    <ul>
+      <li><strong>Repackaged Offer:</strong> Introduce a transparent <strong>R3,250 Launch Starter Package</strong> (5 pages, responsive, WhatsApp quote integration, Google Business verification).</li>
+      <li><strong>Risk Reversal Engine:</strong> <em>"Zero Deposit Required — Inspect and approve the functional staging preview before issuing final payment."</em></li>
+      <li><strong>Unbundled Recurring Support:</strong>
+        <ul>
+          <li><em>Essential Infrastructure (R395/mo):</em> Dedicated hosting, SSL, daily automated cloud backups, security patches.</li>
+          <li><em>Partner Growth Plan (R950/mo):</em> Everything in Essential + 2 hours/mo developer changes + monthly local SEO audits.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="framework-box">
+    <h4>
+      <span>Tier 2: Custom Web Application Engine</span>
+      <span class="badge badge-primary">High Margin</span>
+    </h4>
+    <p><strong>Current Dilemma:</strong> Uncertainty between software subscription rental vs. capital asset expenditure.</p>
+    <ul>
+      <li><strong>Definitive Finding:</strong> 90% (18/20) of decision-makers categorically reject recurring software rental for bespoke tools.</li>
+      <li><strong>Restructured Commercial Terms:</strong>
+        <ul>
+          <li><em>Commercial Booking Systems:</em> <strong>R12,500 – R18,000</strong> fixed project fee (50% commencement / 50% live deployment).</li>
+          <li><em>Enterprise Dashboards & Portals:</em> <strong>R30,000 – R45,000</strong> fixed milestone fee.</li>
+        </ul>
+      </li>
+      <li><strong>Contractual Guarantee:</strong> Explicit IP assignment: <em>"Client assumes 100% legal ownership of custom source code, schemas, and databases upon project handover."</em></li>
+    </ul>
+  </div>
+</div>
+
+<h3 style="font-size: 11pt; margin: 16px 0 8px 0;">Exhibit 5: Immediate 60-Day Field Validation Roadmap</h3>
+<table class="mckinsey-table">
+  <thead>
+    <tr>
+      <th style="width: 15%;">Phase</th>
+      <th style="width: 25%;">Strategic Workstream</th>
+      <th style="width: 40%;">Operational Actions & Deliverables</th>
+      <th style="width: 20%;">Target Metric</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Weeks 1 – 2</strong></td>
+      <td><strong>Digital Footprint Optimization</strong></td>
+      <td>
+        • Restructure <code>novasite.co.za/work.html</code>: place verified live client domains (Fluorescence Supply, Maseko Holdings, Extra Green) at the apex.<br>
+        • Reclassify subdomain portfolio entries as <em>"Interactive System Prototypes"</em>.<br>
+        • Publish 1-page transparent ownership and SLA guarantee.
+      </td>
+      <td><span class="badge badge-primary">Trust Remediation</span><br>Zero ambiguous demo claims</td>
+    </tr>
+    <tr>
+      <td><strong>Weeks 3 – 5</strong></td>
+      <td><strong>A/B Field Offer Sprint</strong></td>
+      <td>
+        • Cohort A (50 Pretoria Industrial SMEs): Pitch the <em>"R0 Deposit Live Preview Approval"</em> website package at R3,250 once-off.<br>
+        • Cohort B (50 Healthcare & Trade Services): Pitch the automated Booking System via a 90-second video demo at R15,000 fixed fee.
+      </td>
+      <td><span class="badge badge-warning">Commercial Validation</span><br>&ge; 10% qualified demo conversion</td>
+    </tr>
+    <tr>
+      <td><strong>Weeks 6 – 8</strong></td>
+      <td><strong>Retainer & Retention Scaling</strong></td>
+      <td>
+        • Migrate existing client base onto structured R395/mo (Essential) and R950/mo (Partner Growth) tiers.<br>
+        • Measure 60-day conversion from staging preview to fully paid retainers.
+      </td>
+      <td><span class="badge badge-success">Unit Economics</span><br>&ge; 80% Year-1 retention</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="footer-note">
+  Kohort Global Market Intelligence · Confidential Client Deliverable · Prepared for Nova Site Executive Leadership
+</div>
+
+</body>
+</html>

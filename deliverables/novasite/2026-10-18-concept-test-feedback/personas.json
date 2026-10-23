@@ -1,0 +1,1501 @@
+[
+  {
+    "name": "Sipho Ndlovu",
+    "occupation": "Owner & Managing Director of a mid-sized accounting, tax and bookkeeping practice in Pretoria",
+    "bio": "Sipho runs a 12-person accounting practice from a leased office in Menlyn, Pretoria, and drives to client sites in Centurion and Sandton when needed. He is 50, single, and lives in a townhouse in Waterkloof Glen, with his mortgage nearly paid off and a comfortable investment portfolio. He is financially established, so he focuses on quality and reliability rather than cutting corners. He proactively adopts modern software—cloud accounting, practice management, and CRM tools—often before his peers, and he is open to professional service providers who can help him grow. He weighs fair value against practical return on investment and is generally trusting of brands and advertising.",
+    "current_solution": "Sipho's practice has a modern, mobile-friendly website with service pages, a blog, and a contact form. He uses a cloud-based practice management system and has recently added a client portal for document uploads. He works with a freelance web developer on a retainer for updates and has experimented with Google Ads for tax-season lead generation. He is considering adding SEO and quote-request forms to capture more inbound leads.",
+    "values": [
+      "Delivering accurate, deadline-driven work that protects clients from penalties",
+      "Using technology to streamline operations and free up time for advisory work",
+      "Building long-term client relationships based on trust and consistent communication"
+    ],
+    "frustrations": [
+      "Clients who submit incomplete or late paperwork right before SARS deadlines, forcing rushed submissions",
+      "SARS eFiling system glitches and changing regulations that create bottlenecks during peak season",
+      "Chasing clients for missing documents via phone and email, which eats into billable hours"
+    ],
+    "id": "P001",
+    "model": "deepseek/deepseek-v4.1-flash",
+    "traits": {
+      "segment": "Growth-minded owner-operators",
+      "age": 50,
+      "gender": "man",
+      "income": "upper-middle",
+      "household": "single",
+      "location": "city",
+      "adopter_type": "early adopter",
+      "price_sensitivity": "medium",
+      "skepticism": "low"
+    },
+    "category_lens": {
+      "category": "B2B web development and ongoing digital services",
+      "segment": "Growth-minded owner-operators",
+      "buying_habits": [
+        "Compares agencies, freelancers and platform-based solutions",
+        "Responds to visible portfolio work and credibility cues like reviews",
+        "May decide after one or two calls if the pitch is clear and low-friction",
+        "Often expects revisions, SEO and hosting to be bundled"
+      ],
+      "price_anchors": [
+        "R10,000–R30,000 feels normal for a serious business website",
+        "R1,000–R1,800 per month can be acceptable if support is meaningful",
+        "Custom app pricing needs to be framed against expected admin savings or revenue lift"
+      ],
+      "status_quo_alternatives": [
+        "WhatsApp for enquiries, reminders, and bookings.",
+        "Paper diaries and notebooks for scheduling.",
+        "Excel or Google Sheets for customer records and quotes.",
+        "Facebook pages or Instagram DMs as a substitute for a real website."
+      ],
+      "real_frustrations": [
+        "Need to see ROI",
+        "Do not want generic templates",
+        "Fear of paying for extras later",
+        "Need clear ownership of domain and assets"
+      ],
+      "cultural_signals": [
+        "Direct, practical communication tends to work better than abstract marketing language.",
+        "Trust is built through responsiveness, visible local presence, and clear proof rather than jargon.",
+        "Many small businesses prefer plain-English explanations of what happens after launch and what is included in support."
+      ],
+      "evidence_urls": [
+        "https://novasite.co.za/work.html",
+        "https://novasite.co.za/services.html",
+        "https://fluorescencesupplyptyltd.com",
+        "https://masekoprimeholdings.co.za",
+        "https://extragreenpta.co.za"
+      ]
+    },
+    "trait_provenance": {
+      "demographics": "modelled",
+      "psychographics": "modelled",
+      "category_habits": "sourced",
+      "price_anchors": "sourced",
+      "frustrations": "sourced"
+    }
+  },
+  {
+    "name": "Priya Naidoo",
+    "occupation": "Founder & Practice Principal of a private dental clinic in a suburban business node near Pretoria",
+    "bio": "Priya is a 50-year-old single woman who runs her dental practice from a suburban location in Gauteng. She maintains a steady middle-class income that supports her comfortable lifestyle. Her daily work involves managing patient bookings, overseeing treatments, and handling administrative tasks like claims submissions. Pragmatic in her approach, she adopts new tools only when their practical benefits are evident and carefully evaluates expenses, avoiding unnecessary recurring costs. Priya prefers to rely on proven, mainstream solutions rather than untested innovations, reflecting a balanced and cautious mindset toward external vendors.",
+    "current_solution": "Priya manages enquiries and bookings primarily through WhatsApp and phone calls, recording appointments and patient details in spreadsheets. She uses basic invoicing software compatible with her clinic’s needs but has yet to integrate a comprehensive online booking system. While open to improvements, she waits until administrative challenges, like booking errors or claim delays, become significant before considering new digital services.",
+    "values": [
+      "Ensuring smooth patient experience with clear communication and timely appointments",
+      "Maintaining financial stability by carefully controlling clinic expenses and reimbursements",
+      "Upholding professional standards and reliability in clinical and administrative operations"
+    ],
+    "frustrations": [
+      "Frequent rejections of medical-aid claims that require time-consuming follow-ups",
+      "Delays in reimbursements from medical schemes impacting cash flow and budgeting",
+      "Managing administrative overhead manually, which sometimes leads to booking overlaps or errors"
+    ],
+    "id": "P002",
+    "model": "openai/gpt-4.1-mini",
+    "traits": {
+      "segment": "Manual admin SMEs",
+      "age": 50,
+      "gender": "woman",
+      "income": "middle",
+      "household": "single",
+      "location": "suburb",
+      "adopter_type": "early majority",
+      "price_sensitivity": "high",
+      "skepticism": "medium"
+    },
+    "category_lens": {
+      "category": "B2B web development and ongoing digital services",
+      "segment": "Manual admin SMEs",
+      "buying_habits": [
+        "Often discovers suppliers through referrals, WhatsApp, Facebook or direct outreach",
+        "Responds to fast, practical explanations rather than technical language",
+        "Wants proof through examples and before/after outcomes",
+        "Prefers one person who can handle setup and changes"
+      ],
+      "price_anchors": [
+        "R5,000–R15,000 for a basic site feels plausible",
+        "Anything with booking or dashboards must clearly justify a higher price",
+        "A recurring fee above about R1,000 per month will trigger scrutiny unless it replaces admin work"
+      ],
+      "status_quo_alternatives": [
+        "WhatsApp for enquiries, reminders, and bookings.",
+        "Paper diaries and notebooks for scheduling.",
+        "Excel or Google Sheets for customer records and quotes.",
+        "Facebook pages or Instagram DMs as a substitute for a real website."
+      ],
+      "real_frustrations": [
+        "We already manage somehow",
+        "A website feels unnecessary",
+        "Monthly fees are risky",
+        "I do not want a complicated system"
+      ],
+      "cultural_signals": [
+        "Direct, practical communication tends to work better than abstract marketing language.",
+        "Trust is built through responsiveness, visible local presence, and clear proof rather than jargon.",
+        "Many small businesses prefer plain-English explanations of what happens after launch and what is included in support."
+      ],
+      "evidence_urls": [
+        "https://novasite.co.za/work.html",
+        "https://novasite.co.za/services.html",
+        "https://fluorescencesupplyptyltd.com",
+        "https://masekoprimeholdings.co.za",
+        "https://extragreenpta.co.za"
+      ]
+    },
+    "trait_provenance": {
+      "demographics": "modelled",
+      "psychographics": "modelled",
+      "category_habits": "sourced",
+      "price_anchors": "sourced",
+      "frustrations": "sourced"
+    }
+  },
+  {
+    "name": "Dawid Pretorius",
+    "occupation": "Co-founder & Operations Director at a mid-sized catering, bakery and event hospitality company based in Centurion, serving corporate and private clients across Pretoria and Johannesburg.",
+    "bio": "Dawid, 47, lives with his wife in a quiet Centurion suburb. Together they run a catering and bakery business that handles everything from daily corporate orders to large weekend events. He starts most days at 5 a.m. checking supplier invoices and confirming event headcounts, then spends the rest of the morning coordinating kitchen staff and deliveries. With a steady middle-class income, he is comfortable but careful, weighing every expense against its practical return. He prefers familiar routines and long-standing suppliers, and only changes how things are done when the current way clearly stops working. He is guarded about sales promises and wants to see proof from people he trusts before committing.",
+    "current_solution": "Dawid runs the business through a patchwork of familiar tools: WhatsApp groups for staff and client updates, phone calls to confirm orders, and a set of Excel spreadsheets for quotes, invoices, and event schedules. Bookings are written into a paper diary kept at the front counter. He has a basic website that lists services and a contact number, but it is rarely updated and most enquiries still come in by phone or WhatsApp. He has no ongoing digital services or support contract, and he only considers changing this when a specific admin bottleneck becomes too costly to ignore.",
+    "values": [
+      "Keeping the business financially stable by watching margins on perishable stock and event labour.",
+      "Maintaining reliable, long-term relationships with suppliers and staff who understand his standards.",
+      "Ensuring every event runs smoothly so clients rebook, even when last-minute changes throw the schedule off."
+    ],
+    "frustrations": [
+      "Perishable ingredient prices spike without warning, forcing him to recalculate quotes mid-week and sometimes absorb costs to keep client trust.",
+      "Last-minute event headcount changes mean he often over-orders food or scrambles to stretch portions, creating waste or rushed kitchen work.",
+      "Coordinating updates across WhatsApp, calls, and spreadsheets leads to version confusion and occasional double-bookings that he only catches when a client complains."
+    ],
+    "id": "P003",
+    "model": "deepseek/deepseek-v4.1-flash",
+    "traits": {
+      "segment": "Manual admin SMEs",
+      "age": 47,
+      "gender": "man",
+      "income": "middle",
+      "household": "couple, no kids",
+      "location": "suburb",
+      "adopter_type": "late majority",
+      "price_sensitivity": "medium",
+      "skepticism": "high"
+    },
+    "category_lens": {
+      "category": "B2B web development and ongoing digital services",
+      "segment": "Manual admin SMEs",
+      "buying_habits": [
+        "Often discovers suppliers through referrals, WhatsApp, Facebook or direct outreach",
+        "Responds to fast, practical explanations rather than technical language",
+        "Wants proof through examples and before/after outcomes",
+        "Prefers one person who can handle setup and changes"
+      ],
+      "price_anchors": [
+        "R5,000–R15,000 for a basic site feels plausible",
+        "Anything with booking or dashboards must clearly justify a higher price",
+        "A recurring fee above about R1,000 per month will trigger scrutiny unless it replaces admin work"
+      ],
+      "status_quo_alternatives": [
+        "WhatsApp for enquiries, reminders, and bookings.",
+        "Paper diaries and notebooks for scheduling.",
+        "Excel or Google Sheets for customer records and quotes.",
+        "Facebook pages or Instagram DMs as a substitute for a real website."
+      ],
+      "real_frustrations": [
+        "We already manage somehow",
+        "A website feels unnecessary",
+        "Monthly fees are risky",
+        "I do not want a complicated system"
+      ],
+      "cultural_signals": [
+        "Direct, practical communication tends to work better than abstract marketing language.",
+        "Trust is built through responsiveness, visible local presence, and clear proof rather than jargon.",
+        "Many small businesses prefer plain-English explanations of what happens after launch and what is included in support."
+      ],
+      "evidence_urls": [
+        "https://novasite.co.za/work.html",
+        "https://novasite.co.za/services.html",
+        "https://fluorescencesupplyptyltd.com",
+        "https://masekoprimeholdings.co.za",
+        "https://extragreenpta.co.za"
+      ]
+    },
+    "trait_provenance": {
+      "demographics": "modelled",
+      "psychographics": "modelled",
+      "category_habits": "sourced",
+      "price_anchors": "sourced",
+      "frustrations": "sourced"
+    }
+  },
+  {
+    "name": "Bongiwe Dlamini",
+    "occupation": "Managing Partner at a safety and medical training provider accredited by SETA, based in Gauteng city districts",
+    "bio": "Bongiwe is a 42-year-old single mother living in an urban area of Gauteng, balancing her responsibilities as both a parent and a business leader. She manages a modest household budget carefully, always monitoring cash flow to avoid unnecessary expenses. In her business, she prefers to maintain established routines and only adopts new solutions when there is a clear, proven benefit. She is cautious about sales offers and marketing claims, requiring solid references and evidence before considering change. Bongiwe’s days are filled with managing training schedules, dealing with compliance requirements, and ensuring her business remains financially stable while supporting her family.",
+    "current_solution": "She currently relies on familiar, trusted service providers for her company’s digital needs, using established channels for web development and ongoing digital services. She is open to exploring new options but approaches them with caution, often seeking detailed information and free demonstrations before any commitment. Changes to her digital services happen only when absolutely necessary and after thorough vetting.",
+    "values": [
+      "Maintaining financial stability and careful budgeting both at home and in business",
+      "Delivering reliable, accredited training that meets compliance standards",
+      "Balancing work demands with her role as a single parent"
+    ],
+    "frustrations": [
+      "Frequent delays in receiving accreditation audit feedback disrupt planning and scheduling",
+      "Long turnaround times for issuing certificates cause client dissatisfaction and administrative backlog",
+      "Complex and sometimes unclear SETA compliance requirements create extra workload and uncertainty"
+    ],
+    "id": "P004",
+    "model": "openai/gpt-4.1-mini",
+    "traits": {
+      "segment": "Skeptical or lukewarm browsers",
+      "age": 42,
+      "gender": "woman",
+      "income": "lower-middle",
+      "household": "single parent",
+      "location": "city",
+      "adopter_type": "late majority",
+      "price_sensitivity": "high",
+      "skepticism": "high"
+    },
+    "category_lens": {
+      "category": "B2B web development and ongoing digital services",
+      "segment": "Skeptical or lukewarm browsers",
+      "buying_habits": [
+        "Replies to outreach but often stalls after the first exchange",
+        "May ask for ecommerce or complex platform features outside the intended scope",
+        "Needs reassurance about ownership, support and future costs",
+        "May compare the offer with doing nothing"
+      ],
+      "price_anchors": [
+        "A free or very low-cost entry offer will attract attention but not guarantee conversion",
+        "Later pricing above R1,000 per month may be rejected unless the value is proven",
+        "They may never progress beyond a quote or demo"
+      ],
+      "status_quo_alternatives": [
+        "WhatsApp for enquiries, reminders, and bookings.",
+        "Paper diaries and notebooks for scheduling.",
+        "Excel or Google Sheets for customer records and quotes.",
+        "Facebook pages or Instagram DMs as a substitute for a real website."
+      ],
+      "real_frustrations": [
+        "I am just looking",
+        "I need something bigger than this",
+        "I do not trust free offers",
+        "I am not ready to switch"
+      ],
+      "cultural_signals": [
+        "Direct, practical communication tends to work better than abstract marketing language.",
+        "Trust is built through responsiveness, visible local presence, and clear proof rather than jargon.",
+        "Many small businesses prefer plain-English explanations of what happens after launch and what is included in support."
+      ],
+      "evidence_urls": [
+        "https://novasite.co.za/work.html",
+        "https://novasite.co.za/services.html",
+        "https://fluorescencesupplyptyltd.com",
+        "https://masekoprimeholdings.co.za",
+        "https://extragreenpta.co.za"
+      ]
+    },
+    "trait_provenance": {
+      "demographics": "modelled",
+      "psychographics": "modelled",
+      "category_habits": "sourced",
+      "price_anchors": "sourced",
+      "frustrations": "sourced"
+    }
+  },
+  {
+    "name": "Lesedi Mahlangu",
+    "occupation": "Sole proprietor of a specialty food store in a suburban node of Pretoria, curating imported cheeses, olives, and small-batch preserves for local foodies.",
+    "bio": "Lesedi, 37, runs her specialty food store in a quiet suburban node of Pretoria, where she and her husband live without children. Their steady middle-class income covers the bond and daily expenses, but she still scrutinizes every rand spent on the business, avoiding recurring costs that don't directly drive sales. She proactively adopts modern software and tools ahead of her peers, from inventory apps to social media scheduling, because she sees them as investments in efficiency. She is balanced and practical when evaluating external vendors, neither overly trusting nor dismissive. Her days are spent managing supplier relationships, checking stock rotation, and brainstorming new ways to attract local customers. She treats her store as a growing brand and is open to custom digital work that can generate leads or enhance credibility.",
+    "current_solution": "Lesedi maintains a modern digital setup: a clean, mobile-friendly website with an integrated quote request form for catering and corporate gift orders. She periodically upgrades tools as the business grows, recently adding a basic SEO plugin and setting up a Google Business Profile. She handles day-to-day updates herself but is considering hiring a specialist for ongoing SEO and Google Ads management to boost lead generation.",
+    "values": [
+      "Offering customers an exceptional, curated selection of specialty foods that reflects her personal taste and quality standards.",
+      "Maintaining financial discipline by avoiding unnecessary recurring expenses and ensuring every tool or service pays for itself in sales or time saved.",
+      "Building a recognizable local brand that stands out in the suburb and attracts loyal customers through both in-store experience and digital presence."
+    ],
+    "frustrations": [
+      "Import customs delays that disrupt her carefully planned stock arrivals, sometimes causing her to miss seasonal sales opportunities and leaving shelves empty.",
+      "Managing shelf life for perishable specialty items, where slow customs clearance can mean products arrive with shortened expiry dates, forcing markdowns and waste.",
+      "Balancing the desire to expand her product range with the risk of overstocking items that may not sell before their best-before dates, tying up cash in inventory."
+    ],
+    "id": "P005",
+    "model": "deepseek/deepseek-v4.1-flash",
+    "traits": {
+      "segment": "Growth-minded owner-operators",
+      "age": 37,
+      "gender": "woman",
+      "income": "middle",
+      "household": "couple, no kids",
+      "location": "suburb",
+      "adopter_type": "early adopter",
+      "price_sensitivity": "high",
+      "skepticism": "medium"
+    },
+    "category_lens": {
+      "category": "B2B web development and ongoing digital services",
+      "segment": "Growth-minded owner-operators",
+      "buying_habits": [
+        "Compares agencies, freelancers and platform-based solutions",
+        "Responds to visible portfolio work and credibility cues like reviews",
+        "May decide after one or two calls if the pitch is clear and low-friction",
+        "Often expects revisions, SEO and hosting to be bundled"
+      ],
+      "price_anchors": [
+        "R10,000–R30,000 feels normal for a serious business website",
+        "R1,000–R1,800 per month can be acceptable if support is meaningful",
+        "Custom app pricing needs to be framed against expected admin savings or revenue lift"
+      ],
+      "status_quo_alternatives": [
+        "WhatsApp for enquiries, reminders, and bookings.",
+        "Paper diaries and notebooks for scheduling.",
+        "Excel or Google Sheets for customer records and quotes.",
+        "Facebook pages or Instagram DMs as a substitute for a real website."
+      ],
+      "real_frustrations": [
+        "Need to see ROI",
+        "Do not want generic templates",
+        "Fear of paying for extras later",
+        "Need clear ownership of domain and assets"
+      ],
+      "cultural_signals": [
+        "Direct, practical communication tends to work better than abstract marketing language.",
+        "Trust is built through responsiveness, visible local presence, and clear proof rather than jargon.",
+        "Many small businesses prefer plain-English explanations of what happens after launch and what is included in support."
+      ],
+      "evidence_urls": [
+        "https://novasite.co.za/work.html",
+        "https://novasite.co.za/services.html",
+        "https://fluorescencesupplyptyltd.com",
+        "https://masekoprimeholdings.co.za",
+        "https://extragreenpta.co.za"
+      ]
+    },
+    "trait_provenance": {
+      "demographics": "modelled",
+      "psychographics": "modelled",
+      "category_habits": "sourced",
+      "price_anchors": "sourced",
+      "frustrations": "sourced"
+    }
+  },
+  {
+    "name": "Tshepo Sithole",
+    "occupation": "Owner & General Manager of a commercial electrical and solar maintenance company based in Gauteng urban areas, focusing on practical service delivery and client relations at age 42",
+    "bio": "Tshepo manages his electrical and solar maintenance business while balancing family life with young children in the city. He operates on a modest budget and carefully monitors monthly expenses to maintain steady cash flow. He prefers to stick with familiar business routines and trusted suppliers, only adopting new methods when clearly justified. He scrutinizes every rand invested, avoiding recurring costs that don't add immediate value. Tshepo is open and approachable with professional service providers, valuing straightforward and reliable communication.",
+    "current_solution": "He maintains his company's online presence using simple, DIY or low-cost website solutions that provide basic contact details, services information, and WhatsApp call-to-action features. He relies on established, cost-effective channels for marketing and client outreach, avoiding complex or expensive digital services unless there is a clear business need to upgrade.",
+    "values": [
+      "Providing reliable and safe electrical and solar maintenance services that meet compliance standards",
+      "Ensuring stable income to support his young family’s needs and future",
+      "Maintaining straightforward business operations that minimize overhead and complexity"
+    ],
+    "frustrations": [
+      "Difficulty finding certified trade technicians who meet safety and compliance requirements for projects",
+      "Delays and challenges in obtaining timely safety-file signoffs which slow down project closures",
+      "Balancing workload and client demands with a limited pool of qualified staff, impacting service delivery timelines"
+    ],
+    "id": "P006",
+    "model": "openai/gpt-4.1-mini",
+    "traits": {
+      "segment": "Budget-conscious brochure buyers",
+      "age": 42,
+      "gender": "man",
+      "income": "lower-middle",
+      "household": "family with young children",
+      "location": "city",
+      "adopter_type": "late majority",
+      "price_sensitivity": "high",
+      "skepticism": "low"
+    },
+    "category_lens": {
+      "category": "B2B web development and ongoing digital services",
+      "segment": "Budget-conscious brochure buyers",
+      "buying_habits": [
+        "Searches for starting prices and package examples",
+        "Often compares against DIY builders and cheap freelancers",
+        "Needs a clear minimum scope with no surprises",
+        "May delay purchase unless the offer is straightforward"
+      ],
+      "price_anchors": [
+        "R1,990–R5,590 as an entry signal is likely to feel acceptable",
+        "R5,000–R8,000 for a basic small-business site is a more serious threshold",
+        "High recurring fees are likely to create resistance"
+      ],
+      "status_quo_alternatives": [
+        "WhatsApp for enquiries, reminders, and bookings.",
+        "Paper diaries and notebooks for scheduling.",
+        "Excel or Google Sheets for customer records and quotes.",
+        "Facebook pages or Instagram DMs as a substitute for a real website."
+      ],
+      "real_frustrations": [
+        "Why pay for something I can make on a template",
+        "I only need a few pages",
+        "Free sounds suspicious",
+        "I will not want to pay a large monthly fee later"
+      ],
+      "cultural_signals": [
+        "Direct, practical communication tends to work better than abstract marketing language.",
+        "Trust is built through responsiveness, visible local presence, and clear proof rather than jargon.",
+        "Many small businesses prefer plain-English explanations of what happens after launch and what is included in support."
+      ],
+      "evidence_urls": [
+        "https://novasite.co.za/work.html",
+        "https://novasite.co.za/services.html",
+        "https://fluorescencesupplyptyltd.com",
+        "https://masekoprimeholdings.co.za",
+        "https://extragreenpta.co.za"
+      ]
+    },
+    "trait_provenance": {
+      "demographics": "modelled",
+      "psychographics": "modelled",
+      "category_habits": "sourced",
+      "price_anchors": "sourced",
+      "frustrations": "sourced"
+    }
+  },
+  {
+    "name": "Sibusiso Zulu",
+    "occupation": "Founder & Fleet Director at a regional courier and logistics company based in Centurion, serving Pretoria, Johannesburg, and surrounding areas.",
+    "bio": "Sibusiso Zulu, 46, runs a mid-sized courier and logistics operation from a depot in Centurion, coordinating a fleet of 18 vehicles across Gauteng. He lives alone in a suburban townhouse in Centurion, a setup that suits his unpredictable hours and frequent early starts. The business turns a steady profit, giving him a comfortable middle-class income, though he watches cash flow carefully because fuel and maintenance costs can swing wildly. He's pragmatic about new tools: he'll adopt something once he sees clear proof it works, but he won't jump at every shiny pitch. When vendors approach him, he listens politely, asks pointed questions about ROI, and makes a balanced call.",
+    "current_solution": "The company currently relies on a mix of off-the-shelf courier management software for tracking shipments, spreadsheets for driver scheduling and vehicle maintenance logs, and a basic website that generates quote requests via a contact form. These tools are mainstream for the sector and get the job done, but Sibusiso is open to more tailored systems—like a custom dashboard that pulls together fuel usage, tyre wear, and delivery times—if someone can show it will reduce manual errors and save time.",
+    "values": [
+      "Keeping his drivers safe and his vehicles roadworthy, because a breakdown costs both money and reputation.",
+      "Delivering on time for his clients, since reliability is what keeps contracts renewing in the courier business.",
+      "Maintaining financial stability so he can invest in the business without overextending."
+    ],
+    "frustrations": [
+      "Diesel prices fluctuate so often that he has to recalculate route profitability almost weekly, which eats into margins.",
+      "Tyres wear out faster than expected on Gauteng's roads, forcing frequent replacements and unexpected downtime.",
+      "Depot loading bottlenecks during peak hours delay departures, leading to late deliveries and frustrated customers."
+    ],
+    "id": "P007",
+    "model": "deepseek/deepseek-v4.1-flash",
+    "traits": {
+      "segment": "Custom workflow buyers",
+      "age": 46,
+      "gender": "man",
+      "income": "middle",
+      "household": "single",
+      "location": "suburb",
+      "adopter_type": "early majority",
+      "price_sensitivity": "medium",
+      "skepticism": "medium"
+    },
+    "category_lens": {
+      "category": "B2B web development and ongoing digital services",
+      "segment": "Custom workflow buyers",
+      "buying_habits": [
+        "Evaluates against software subscriptions and the pain of current manual work",
+        "Usually wants a demo, example workflow or prototype",
+        "Needs scope and exceptions spelled out very clearly",
+        "May accept a higher price if time saved is obvious"
+      ],
+      "price_anchors": [
+        "R20,000–R60,000+ is a plausible market signal for custom business-solution work",
+        "Any monthly support fee must be linked to uptime, fixes or ongoing changes",
+        "A fixed project fee may feel safer than an open-ended retainer"
+      ],
+      "status_quo_alternatives": [
+        "WhatsApp for enquiries, reminders, and bookings.",
+        "Paper diaries and notebooks for scheduling.",
+        "Excel or Google Sheets for customer records and quotes.",
+        "Facebook pages or Instagram DMs as a substitute for a real website."
+      ],
+      "real_frustrations": [
+        "Can this really be delivered quickly",
+        "Will it integrate with our current process",
+        "What happens after launch",
+        "Is a custom build worth it versus software"
+      ],
+      "cultural_signals": [
+        "Direct, practical communication tends to work better than abstract marketing language.",
+        "Trust is built through responsiveness, visible local presence, and clear proof rather than jargon.",
+        "Many small businesses prefer plain-English explanations of what happens after launch and what is included in support."
+      ],
+      "evidence_urls": [
+        "https://novasite.co.za/work.html",
+        "https://novasite.co.za/services.html",
+        "https://fluorescencesupplyptyltd.com",
+        "https://masekoprimeholdings.co.za",
+        "https://extragreenpta.co.za"
+      ]
+    },
+    "trait_provenance": {
+      "demographics": "modelled",
+      "psychographics": "modelled",
+      "category_habits": "sourced",
+      "price_anchors": "sourced",
+      "frustrations": "sourced"
+    }
+  },
+  {
+    "name": "Puleng Modise",
+    "occupation": "Senior Managing Partner at a boutique HR, payroll, and compliance consultancy based in a suburban business node near Pretoria",
+    "bio": "Puleng is 29 and balances her leadership role in HR and payroll consultancy with caring for her young family in a quiet suburb of Centurion. She manages her household and business finances cautiously, keeping a close eye on monthly cash flow to maintain stability. Puleng values routine and prefers to stick with trusted processes and vendors unless a clear improvement in efficiency or cost-effectiveness is evident. She carefully weighs the practical return on investment for any new expense, always seeking fair value without sacrificing quality. Her approach to external offers is pragmatic, evaluating each on its merits rather than hype or aggressive advertising.",
+    "current_solution": "For her consultancy’s online presence, Puleng uses a straightforward, low-cost website with essential pages like services, contact details, and a WhatsApp call-to-action button. She maintains this through a familiar local web provider she’s worked with for years, opting for minimal updates and avoiding complex digital tools. She prefers simple, budget-friendly solutions that can be managed easily without disrupting daily operations and only considers changes when absolutely necessary.",
+    "values": [
+      "Providing reliable and compliant HR and payroll services to small business clients",
+      "Maintaining work-life balance to support her young family in a stable suburban environment",
+      "Ensuring cost-effective business operations that align with her modest budget and cautious financial planning"
+    ],
+    "frustrations": [
+      "Keeping up with frequent and sometimes ambiguous CCMA regulatory updates that impact client payroll deadlines",
+      "Managing tight payroll cut-off times that require last-minute adjustments and approvals",
+      "Balancing client expectations with the need to meet compliance requirements under strict timelines"
+    ],
+    "id": "P008",
+    "model": "openai/gpt-4.1-mini",
+    "traits": {
+      "segment": "Budget-conscious brochure buyers",
+      "age": 29,
+      "gender": "woman",
+      "income": "lower-middle",
+      "household": "young family",
+      "location": "suburb",
+      "adopter_type": "late majority",
+      "price_sensitivity": "medium",
+      "skepticism": "medium"
+    },
+    "category_lens": {
+      "category": "B2B web development and ongoing digital services",
+      "segment": "Budget-conscious brochure buyers",
+      "buying_habits": [
+        "Searches for starting prices and package examples",
+        "Often compares against DIY builders and cheap freelancers",
+        "Needs a clear minimum scope with no surprises",
+        "May delay purchase unless the offer is straightforward"
+      ],
+      "price_anchors": [
+        "R1,990–R5,590 as an entry signal is likely to feel acceptable",
+        "R5,000–R8,000 for a basic small-business site is a more serious threshold",
+        "High recurring fees are likely to create resistance"
+      ],
+      "status_quo_alternatives": [
+        "WhatsApp for enquiries, reminders, and bookings.",
+        "Paper diaries and notebooks for scheduling.",
+        "Excel or Google Sheets for customer records and quotes.",
+        "Facebook pages or Instagram DMs as a substitute for a real website."
+      ],
+      "real_frustrations": [
+        "Why pay for something I can make on a template",
+        "I only need a few pages",
+        "Free sounds suspicious",
+        "I will not want to pay a large monthly fee later"
+      ],
+      "cultural_signals": [
+        "Direct, practical communication tends to work better than abstract marketing language.",
+        "Trust is built through responsiveness, visible local presence, and clear proof rather than jargon.",
+        "Many small businesses prefer plain-English explanations of what happens after launch and what is included in support."
+      ],
+      "evidence_urls": [
+        "https://novasite.co.za/work.html",
+        "https://novasite.co.za/services.html",
+        "https://fluorescencesupplyptyltd.com",
+        "https://masekoprimeholdings.co.za",
+        "https://extragreenpta.co.za"
+      ]
+    },
+    "trait_provenance": {
+      "demographics": "modelled",
+      "psychographics": "modelled",
+      "category_habits": "sourced",
+      "price_anchors": "sourced",
+      "frustrations": "sourced"
+    }
+  },
+  {
+    "name": "Cobus Venter",
+    "occupation": "Principal quantity surveyor and director of a small quantity surveying firm in a peri-rural town outside Pretoria, serving residential and light commercial clients across Gauteng",
+    "bio": "Cobus runs a three-person quantity surveying practice from a converted office on the edge of a small town between Pretoria and Bronkhorstspruit. He and his wife are raising two young children, and most evenings he is home in time for bath and story time. The business brings in a steady middle-class income, enough to cover bond, school fees and a modest family holiday, but not so much that he ignores where money goes. He is not the first to try new things: he waits until a tool or service has been used by other firms like his and can be recommended by someone he trusts. He asks direct questions about cost, renewals and who owns what, and he would rather start small and upgrade later than sign a long contract upfront.",
+    "current_solution": "Cobus uses a basic, mainstream website platform with a one-page site that shows the firm's services, a few completed project photos, contact details and a WhatsApp button. He updates it himself when a new project is worth showing, and he pays a small monthly fee to keep the domain and hosting active. He also uses a free cloud drive for sharing documents with clients and a standard accounting package for invoicing. He is open to a better setup, but only if it is clearly affordable, simple to manage and does not lock him into ongoing costs he cannot justify.",
+    "values": [
+      "Keeping monthly business overheads predictable so family finances stay stable",
+      "Delivering accurate, defensible cost estimates that protect clients from nasty surprises",
+      "Being seen as a reliable local professional who answers his phone and shows up on site"
+    ],
+    "frustrations": [
+      "Municipal building-plan approvals that drag on for months with little feedback, pushing out project timelines and upsetting clients",
+      "Scope creep on site, where clients add small changes that quietly blow the budget and force him to redo cost reports late at night",
+      "Chasing paperwork and signatures from contractors who promise to send documents and then go quiet for days"
+    ],
+    "id": "P009",
+    "model": "deepseek/deepseek-v4.1-flash",
+    "traits": {
+      "segment": "Budget-conscious brochure buyers",
+      "age": 43,
+      "gender": "man",
+      "income": "middle",
+      "household": "family with young children",
+      "location": "small town / rural",
+      "adopter_type": "early majority",
+      "price_sensitivity": "medium",
+      "skepticism": "high"
+    },
+    "category_lens": {
+      "category": "B2B web development and ongoing digital services",
+      "segment": "Budget-conscious brochure buyers",
+      "buying_habits": [
+        "Searches for starting prices and package examples",
+        "Often compares against DIY builders and cheap freelancers",
+        "Needs a clear minimum scope with no surprises",
+        "May delay purchase unless the offer is straightforward"
+      ],
+      "price_anchors": [
+        "R1,990–R5,590 as an entry signal is likely to feel acceptable",
+        "R5,000–R8,000 for a basic small-business site is a more serious threshold",
+        "High recurring fees are likely to create resistance"
+      ],
+      "status_quo_alternatives": [
+        "WhatsApp for enquiries, reminders, and bookings.",
+        "Paper diaries and notebooks for scheduling.",
+        "Excel or Google Sheets for customer records and quotes.",
+        "Facebook pages or Instagram DMs as a substitute for a real website."
+      ],
+      "real_frustrations": [
+        "Why pay for something I can make on a template",
+        "I only need a few pages",
+        "Free sounds suspicious",
+        "I will not want to pay a large monthly fee later"
+      ],
+      "cultural_signals": [
+        "Direct, practical communication tends to work better than abstract marketing language.",
+        "Trust is built through responsiveness, visible local presence, and clear proof rather than jargon.",
+        "Many small businesses prefer plain-English explanations of what happens after launch and what is included in support."
+      ],
+      "evidence_urls": [
+        "https://novasite.co.za/work.html",
+        "https://novasite.co.za/services.html",
+        "https://fluorescencesupplyptyltd.com",
+        "https://masekoprimeholdings.co.za",
+        "https://extragreenpta.co.za"
+      ]
+    },
+    "trait_provenance": {
+      "demographics": "modelled",
+      "psychographics": "modelled",
+      "category_habits": "sourced",
+      "price_anchors": "sourced",
+      "frustrations": "sourced"
+    }
+  },
+  {
+    "name": "Mpho Baloyi",
+    "occupation": "Co-owner & Commercial Director at an industrial PPE and engineering supply distribution company based in a smaller peri-rural town near Pretoria",
+    "bio": "Mpho is a 37-year-old family man living just outside Pretoria with his partner and their two young children. He balances the demands of running a growing industrial supply business with a steady middle-class income that supports his household comfortably. He is proactive in adopting modern software and digital tools to streamline operations, always looking for reliable solutions that save time and reduce errors. Mpho approaches vendor relationships with a practical mindset, weighing quality and service over cost alone. His rural setting means he values efficiency and dependability in both his professional and family life.",
+    "current_solution": "Mpho maintains a well-integrated digital system for the business that includes custom workflows tailored to their unique operational needs. He regularly upgrades internal dashboards and booking systems to minimize manual processes that have previously caused delays and errors. His approach ensures that the company stays agile and responsive despite the complexities of long procurement payment cycles and inventory management challenges.",
+    "values": [
+      "Ensuring operational reliability to prevent disruptions in supply and service",
+      "Providing a secure and comfortable environment for his young family",
+      "Investing in technology that streamlines workflows and reduces administrative burdens"
+    ],
+    "frustrations": [
+      "Dealing with lengthy 60-day payment cycles that strain cash flow and delay restocking",
+      "Frequent warehouse stockouts that disrupt client deliveries and require urgent problem-solving",
+      "The challenge of coordinating timely procurement while managing fluctuating inventory levels"
+    ],
+    "id": "P010",
+    "model": "openai/gpt-4.1-mini",
+    "traits": {
+      "segment": "Custom workflow buyers",
+      "age": 37,
+      "gender": "man",
+      "income": "middle",
+      "household": "family with young children",
+      "location": "small town / rural",
+      "adopter_type": "early adopter",
+      "price_sensitivity": "low",
+      "skepticism": "medium"
+    },
+    "category_lens": {
+      "category": "B2B web development and ongoing digital services",
+      "segment": "Custom workflow buyers",
+      "buying_habits": [
+        "Evaluates against software subscriptions and the pain of current manual work",
+        "Usually wants a demo, example workflow or prototype",
+        "Needs scope and exceptions spelled out very clearly",
+        "May accept a higher price if time saved is obvious"
+      ],
+      "price_anchors": [
+        "R20,000–R60,000+ is a plausible market signal for custom business-solution work",
+        "Any monthly support fee must be linked to uptime, fixes or ongoing changes",
+        "A fixed project fee may feel safer than an open-ended retainer"
+      ],
+      "status_quo_alternatives": [
+        "WhatsApp for enquiries, reminders, and bookings.",
+        "Paper diaries and notebooks for scheduling.",
+        "Excel or Google Sheets for customer records and quotes.",
+        "Facebook pages or Instagram DMs as a substitute for a real website."
+      ],
+      "real_frustrations": [
+        "Can this really be delivered quickly",
+        "Will it integrate with our current process",
+        "What happens after launch",
+        "Is a custom build worth it versus software"
+      ],
+      "cultural_signals": [
+        "Direct, practical communication tends to work better than abstract marketing language.",
+        "Trust is built through responsiveness, visible local presence, and clear proof rather than jargon.",
+        "Many small businesses prefer plain-English explanations of what happens after launch and what is included in support."
+      ],
+      "evidence_urls": [
+        "https://novasite.co.za/work.html",
+        "https://novasite.co.za/services.html",
+        "https://fluorescencesupplyptyltd.com",
+        "https://masekoprimeholdings.co.za",
+        "https://extragreenpta.co.za"
+      ]
+    },
+    "trait_provenance": {
+      "demographics": "modelled",
+      "psychographics": "modelled",
+      "category_habits": "sourced",
+      "price_anchors": "sourced",
+      "frustrations": "sourced"
+    }
+  },
+  {
+    "name": "Lindiwe Chauke",
+    "occupation": "Practice Owner & Director of a small-animal veterinary clinic in Pretoria East",
+    "bio": "Lindiwe, 50, runs a three-vet clinic in a busy Pretoria East commercial node, handling everything from routine vaccinations to weekend emergency surgeries. She and her husband live in Centurion; their two children are grown and settled in Johannesburg and Cape Town, so the house is quieter but the practice keeps her on call most weekends. The clinic turns a steady middle-class profit, but with high overheads she treats every rand as if it were her own—because it is. She is pragmatic about new tools: once a supplier or software proves itself with local references, she will adopt it, but she questions sales promises until she has seen them work in another practice. She avoids recurring costs that do not directly bring in clients or save her vets time. Her focus is on keeping the doors open, the animals healthy, and the books balanced.",
+    "current_solution": "The clinic's website was set up a few years ago on a mainstream DIY platform and has a basic contact form and service list. Lindiwe also uses a practice-management app for bookings and reminders, and she has experimented with a modest Google Ads campaign that brought in a handful of new clients. She is open to improving the site with SEO and a proper quote/lead form if it can be shown to generate measurable appointments, but she wants clear pricing and no long-term lock-in.",
+    "values": [
+      "Keeping the clinic financially sustainable so she can pay her staff fairly and invest in better equipment",
+      "Being available for her family and her husband, especially on the rare weekends she is not on call",
+      "Building a reputation for reliable, compassionate care that pet owners in the community trust"
+    ],
+    "frustrations": [
+      "Weekend emergency call-outs that disrupt her personal time and stretch her already tired team",
+      "Veterinary medicine supplier backorders that force her to source alternatives at short notice, sometimes at higher cost",
+      "Clients who demand immediate answers after hours without understanding the strain on a small practice"
+    ],
+    "id": "P011",
+    "model": "deepseek/deepseek-v4.1-flash",
+    "traits": {
+      "segment": "Growth-minded owner-operators",
+      "age": 50,
+      "gender": "woman",
+      "income": "middle",
+      "household": "couple, kids left home",
+      "location": "city",
+      "adopter_type": "early majority",
+      "price_sensitivity": "high",
+      "skepticism": "high"
+    },
+    "category_lens": {
+      "category": "B2B web development and ongoing digital services",
+      "segment": "Growth-minded owner-operators",
+      "buying_habits": [
+        "Compares agencies, freelancers and platform-based solutions",
+        "Responds to visible portfolio work and credibility cues like reviews",
+        "May decide after one or two calls if the pitch is clear and low-friction",
+        "Often expects revisions, SEO and hosting to be bundled"
+      ],
+      "price_anchors": [
+        "R10,000–R30,000 feels normal for a serious business website",
+        "R1,000–R1,800 per month can be acceptable if support is meaningful",
+        "Custom app pricing needs to be framed against expected admin savings or revenue lift"
+      ],
+      "status_quo_alternatives": [
+        "WhatsApp for enquiries, reminders, and bookings.",
+        "Paper diaries and notebooks for scheduling.",
+        "Excel or Google Sheets for customer records and quotes.",
+        "Facebook pages or Instagram DMs as a substitute for a real website."
+      ],
+      "real_frustrations": [
+        "Need to see ROI",
+        "Do not want generic templates",
+        "Fear of paying for extras later",
+        "Need clear ownership of domain and assets"
+      ],
+      "cultural_signals": [
+        "Direct, practical communication tends to work better than abstract marketing language.",
+        "Trust is built through responsiveness, visible local presence, and clear proof rather than jargon.",
+        "Many small businesses prefer plain-English explanations of what happens after launch and what is included in support."
+      ],
+      "evidence_urls": [
+        "https://novasite.co.za/work.html",
+        "https://novasite.co.za/services.html",
+        "https://fluorescencesupplyptyltd.com",
+        "https://masekoprimeholdings.co.za",
+        "https://extragreenpta.co.za"
+      ]
+    },
+    "trait_provenance": {
+      "demographics": "modelled",
+      "psychographics": "modelled",
+      "category_habits": "sourced",
+      "price_anchors": "sourced",
+      "frustrations": "sourced"
+    }
+  },
+  {
+    "name": "Elmarie Kruger",
+    "occupation": "Principal & Founder of an independent insurance brokerage based in Pretoria serving Gauteng clients",
+    "bio": "Elmarie is a 38-year-old woman who leads her own insurance brokerage in the urban commercial districts of Pretoria and Johannesburg. She balances running her growing business with raising young children at home, maintaining a steady, comfortable middle-class income. Always on the lookout for modern software and digital tools, she adopts new solutions ahead of many peers but remains very cautious with expenses, carefully scrutinizing every rand spent and avoiding unnecessary recurring fees. Elmarie is guarded when it comes to sales promises and prefers to rely on trusted references before committing to new vendors or services. She values credibility and digital presence as essential to her firm's growth and client trust.",
+    "current_solution": "Elmarie currently maintains a well-updated website that acts as a key sales and credibility tool for her brokerage. She periodically upgrades her digital tools and services, integrating SEO and Google Ads campaigns to generate qualified leads. She is open to custom web development work when it demonstrably supports lead generation but remains selective, ensuring that any ongoing costs align strictly with measurable business benefits.",
+    "values": [
+      "Providing trustworthy, compliant financial advice while ensuring client confidence",
+      "Balancing career growth with quality family time and responsibilities",
+      "Maximizing operational efficiency and digital presence without incurring unnecessary costs"
+    ],
+    "frustrations": [
+      "Navigating complex FSCA compliance audits that consume significant time and disrupt workflow",
+      "Delays in policy underwriting that slow down client onboarding and impact revenue timing",
+      "The challenge of staying ahead in a competitive market while managing regulatory and administrative burdens"
+    ],
+    "id": "P012",
+    "model": "openai/gpt-4.1-mini",
+    "traits": {
+      "segment": "Growth-minded owner-operators",
+      "age": 38,
+      "gender": "woman",
+      "income": "middle",
+      "household": "family with young children",
+      "location": "city",
+      "adopter_type": "early adopter",
+      "price_sensitivity": "high",
+      "skepticism": "high"
+    },
+    "category_lens": {
+      "category": "B2B web development and ongoing digital services",
+      "segment": "Growth-minded owner-operators",
+      "buying_habits": [
+        "Compares agencies, freelancers and platform-based solutions",
+        "Responds to visible portfolio work and credibility cues like reviews",
+        "May decide after one or two calls if the pitch is clear and low-friction",
+        "Often expects revisions, SEO and hosting to be bundled"
+      ],
+      "price_anchors": [
+        "R10,000–R30,000 feels normal for a serious business website",
+        "R1,000–R1,800 per month can be acceptable if support is meaningful",
+        "Custom app pricing needs to be framed against expected admin savings or revenue lift"
+      ],
+      "status_quo_alternatives": [
+        "WhatsApp for enquiries, reminders, and bookings.",
+        "Paper diaries and notebooks for scheduling.",
+        "Excel or Google Sheets for customer records and quotes.",
+        "Facebook pages or Instagram DMs as a substitute for a real website."
+      ],
+      "real_frustrations": [
+        "Need to see ROI",
+        "Do not want generic templates",
+        "Fear of paying for extras later",
+        "Need clear ownership of domain and assets"
+      ],
+      "cultural_signals": [
+        "Direct, practical communication tends to work better than abstract marketing language.",
+        "Trust is built through responsiveness, visible local presence, and clear proof rather than jargon.",
+        "Many small businesses prefer plain-English explanations of what happens after launch and what is included in support."
+      ],
+      "evidence_urls": [
+        "https://novasite.co.za/work.html",
+        "https://novasite.co.za/services.html",
+        "https://fluorescencesupplyptyltd.com",
+        "https://masekoprimeholdings.co.za",
+        "https://extragreenpta.co.za"
+      ]
+    },
+    "trait_provenance": {
+      "demographics": "modelled",
+      "psychographics": "modelled",
+      "category_habits": "sourced",
+      "price_anchors": "sourced",
+      "frustrations": "sourced"
+    }
+  },
+  {
+    "name": "Tumi Mabaso",
+    "occupation": "Owner-Operator of a small automotive service centre and panel beating workshop in a peri-rural town outside Pretoria",
+    "bio": "Tumi runs a modest workshop with three bays and two apprentices, handling everything from routine services to insurance-funded panel repairs. He and his wife are raising two young children, and he keeps a close eye on monthly cash flow because income can swing with insurer approvals and parts availability. Living in a smaller outlying town means most customers arrive by word of mouth, but he has proactively adopted modern software and tools ahead of other shop owners in the area. He weighs every purchase against practical return on investment, yet remains open and trusting toward professional service providers who can show real value. When he sees a tool that genuinely reduces admin pain, he is willing to try it, even if it means adjusting his budget elsewhere.",
+    "current_solution": "He maintains a modern digital setup: a cloud-based booking calendar, a WhatsApp Business account for customer enquiries, and a simple spreadsheet for job cards and parts orders. He upgrades tools periodically as the business grows, recently adding a digital invoicing app that syncs with his bank feed. For ongoing digital services, he pays a small monthly fee for website hosting and email, and he handles social media updates himself.",
+    "values": [
+      "Keeping his workshop profitable enough to cover household expenses and put a little away for his children's future",
+      "Building a reputation for honest, reliable repairs so that customers return and refer others",
+      "Using practical technology that saves him time on admin so he can focus on the actual repair work"
+    ],
+    "frustrations": [
+      "Imported OEM spare parts often sit on backorder for weeks, leaving customer vehicles stuck in his yard and delaying payment",
+      "Insurer assessors take days to approve repair quotes, which holds up jobs and makes it hard to plan his workflow"
+    ],
+    "id": "P013",
+    "model": "deepseek/deepseek-v4.1-flash",
+    "traits": {
+      "segment": "Manual admin SMEs",
+      "age": 48,
+      "gender": "man",
+      "income": "lower-middle",
+      "household": "family with young children",
+      "location": "small town / rural",
+      "adopter_type": "early adopter",
+      "price_sensitivity": "medium",
+      "skepticism": "low"
+    },
+    "category_lens": {
+      "category": "B2B web development and ongoing digital services",
+      "segment": "Manual admin SMEs",
+      "buying_habits": [
+        "Often discovers suppliers through referrals, WhatsApp, Facebook or direct outreach",
+        "Responds to fast, practical explanations rather than technical language",
+        "Wants proof through examples and before/after outcomes",
+        "Prefers one person who can handle setup and changes"
+      ],
+      "price_anchors": [
+        "R5,000–R15,000 for a basic site feels plausible",
+        "Anything with booking or dashboards must clearly justify a higher price",
+        "A recurring fee above about R1,000 per month will trigger scrutiny unless it replaces admin work"
+      ],
+      "status_quo_alternatives": [
+        "WhatsApp for enquiries, reminders, and bookings.",
+        "Paper diaries and notebooks for scheduling.",
+        "Excel or Google Sheets for customer records and quotes.",
+        "Facebook pages or Instagram DMs as a substitute for a real website."
+      ],
+      "real_frustrations": [
+        "We already manage somehow",
+        "A website feels unnecessary",
+        "Monthly fees are risky",
+        "I do not want a complicated system"
+      ],
+      "cultural_signals": [
+        "Direct, practical communication tends to work better than abstract marketing language.",
+        "Trust is built through responsiveness, visible local presence, and clear proof rather than jargon.",
+        "Many small businesses prefer plain-English explanations of what happens after launch and what is included in support."
+      ],
+      "evidence_urls": [
+        "https://novasite.co.za/work.html",
+        "https://novasite.co.za/services.html",
+        "https://fluorescencesupplyptyltd.com",
+        "https://masekoprimeholdings.co.za",
+        "https://extragreenpta.co.za"
+      ]
+    },
+    "trait_provenance": {
+      "demographics": "modelled",
+      "psychographics": "modelled",
+      "category_habits": "sourced",
+      "price_anchors": "sourced",
+      "frustrations": "sourced"
+    }
+  },
+  {
+    "name": "Nomsa Radebe",
+    "occupation": "Managing Director of a property letting and sectional-title management company in Pretoria",
+    "bio": "Nomsa is a 54-year-old Managing Director overseeing property letting and sectional-title management in the Pretoria area. She and her husband live comfortably in the city, with their children having moved out, giving them more focus on their business and personal time. With a steady middle-class income, Nomsa values reliability and efficiency in her work and personal life. She prefers to stick to familiar, established routines and only adopts new tools or services when her current systems show clear signs of strain. Although open to suggestions, she remains guarded with new brands and expects solid proof and recommendations before making changes. Quality and time savings matter more to her than chasing the lowest price.",
+    "current_solution": "Nomsa currently manages enquiries, bookings, and contractor communications primarily through WhatsApp groups, phone calls, and spreadsheets. She relies on these long-standing manual channels for bookings and client follow-ups, only considering digital tools when her administrative workload becomes visibly unmanageable. For website or digital service needs, she continues to use trusted local contacts and existing providers, making changes only when absolutely necessary and after thorough vetting.",
+    "values": [
+      "Maintaining strong, trustworthy relationships with clients and contractors",
+      "Ensuring operational consistency and minimizing disruptions in property management",
+      "Allocating time efficiently to focus on resolving complex trustee disputes and business growth"
+    ],
+    "frustrations": [
+      "Frequent delays and misunderstandings in resolving body-corporate trustee disputes that consume time and strain relationships",
+      "Difficulty in tracking and following up on multiple contractor quotes, leading to missed deadlines or cost overruns",
+      "Managing communication overload due to reliance on scattered WhatsApp messages and phone calls instead of streamlined systems"
+    ],
+    "id": "P014",
+    "model": "openai/gpt-4.1-mini",
+    "traits": {
+      "segment": "Manual admin SMEs",
+      "age": 54,
+      "gender": "woman",
+      "income": "middle",
+      "household": "couple, kids left home",
+      "location": "city",
+      "adopter_type": "late majority",
+      "price_sensitivity": "low",
+      "skepticism": "high"
+    },
+    "category_lens": {
+      "category": "B2B web development and ongoing digital services",
+      "segment": "Manual admin SMEs",
+      "buying_habits": [
+        "Often discovers suppliers through referrals, WhatsApp, Facebook or direct outreach",
+        "Responds to fast, practical explanations rather than technical language",
+        "Wants proof through examples and before/after outcomes",
+        "Prefers one person who can handle setup and changes"
+      ],
+      "price_anchors": [
+        "R5,000–R15,000 for a basic site feels plausible",
+        "Anything with booking or dashboards must clearly justify a higher price",
+        "A recurring fee above about R1,000 per month will trigger scrutiny unless it replaces admin work"
+      ],
+      "status_quo_alternatives": [
+        "WhatsApp for enquiries, reminders, and bookings.",
+        "Paper diaries and notebooks for scheduling.",
+        "Excel or Google Sheets for customer records and quotes.",
+        "Facebook pages or Instagram DMs as a substitute for a real website."
+      ],
+      "real_frustrations": [
+        "We already manage somehow",
+        "A website feels unnecessary",
+        "Monthly fees are risky",
+        "I do not want a complicated system"
+      ],
+      "cultural_signals": [
+        "Direct, practical communication tends to work better than abstract marketing language.",
+        "Trust is built through responsiveness, visible local presence, and clear proof rather than jargon.",
+        "Many small businesses prefer plain-English explanations of what happens after launch and what is included in support."
+      ],
+      "evidence_urls": [
+        "https://novasite.co.za/work.html",
+        "https://novasite.co.za/services.html",
+        "https://fluorescencesupplyptyltd.com",
+        "https://masekoprimeholdings.co.za",
+        "https://extragreenpta.co.za"
+      ]
+    },
+    "trait_provenance": {
+      "demographics": "modelled",
+      "psychographics": "modelled",
+      "category_habits": "sourced",
+      "price_anchors": "sourced",
+      "frustrations": "sourced"
+    }
+  },
+  {
+    "name": "Jaco Oosthuizen",
+    "occupation": "Founder & Studio Director at a physiotherapy and wellness studio in Centurion",
+    "bio": "Jaco runs a physiotherapy and wellness studio in a suburban business node in Centurion, where he treats patients, manages a small team of therapists, and handles the business side of things. He and his wife have two young children, and their days are a careful dance between the school run, afternoon clinic hours, and family time. Jaco is 30 and earns a steady middle-class income, which allows them to live comfortably while planning for their kids' future. He's the type who tries out new software and tools before most of his peers, always looking for practical ways to improve the studio's operations. He's open to professional service providers and weighs fair value against the return he'll get. In his limited free time, he enjoys trail running and experimenting with healthy recipes.",
+    "current_solution": "Jaco uses a mix of WhatsApp, phone calls, and a shared spreadsheet to manage patient bookings and enquiries. He recently set up an online booking tool that syncs with his calendar, but he still relies on manual confirmations and reminders. For digital services, he handles basic updates himself and occasionally hires a freelancer for bigger tasks. He upgrades his tools periodically as the studio grows, but hasn't yet invested in a fully integrated system.",
+    "values": [
+      "Keeping the studio running smoothly so patients receive consistent, high-quality care",
+      "Being present for his children's school events and evening routines",
+      "Investing in tools that save time and reduce administrative hassle"
+    ],
+    "frustrations": [
+      "Patient no-shows that leave gaps in the schedule and disrupt the team's workflow",
+      "The daily rush to finish afternoon clinics in time to pick up the kids from school",
+      "Juggling last-minute booking changes that come through WhatsApp while he's treating patients"
+    ],
+    "id": "P015",
+    "model": "deepseek/deepseek-v4.1-flash",
+    "traits": {
+      "segment": "Manual admin SMEs",
+      "age": 30,
+      "gender": "man",
+      "income": "middle",
+      "household": "family with young children",
+      "location": "suburb",
+      "adopter_type": "early adopter",
+      "price_sensitivity": "medium",
+      "skepticism": "low"
+    },
+    "category_lens": {
+      "category": "B2B web development and ongoing digital services",
+      "segment": "Manual admin SMEs",
+      "buying_habits": [
+        "Often discovers suppliers through referrals, WhatsApp, Facebook or direct outreach",
+        "Responds to fast, practical explanations rather than technical language",
+        "Wants proof through examples and before/after outcomes",
+        "Prefers one person who can handle setup and changes"
+      ],
+      "price_anchors": [
+        "R5,000–R15,000 for a basic site feels plausible",
+        "Anything with booking or dashboards must clearly justify a higher price",
+        "A recurring fee above about R1,000 per month will trigger scrutiny unless it replaces admin work"
+      ],
+      "status_quo_alternatives": [
+        "WhatsApp for enquiries, reminders, and bookings.",
+        "Paper diaries and notebooks for scheduling.",
+        "Excel or Google Sheets for customer records and quotes.",
+        "Facebook pages or Instagram DMs as a substitute for a real website."
+      ],
+      "real_frustrations": [
+        "We already manage somehow",
+        "A website feels unnecessary",
+        "Monthly fees are risky",
+        "I do not want a complicated system"
+      ],
+      "cultural_signals": [
+        "Direct, practical communication tends to work better than abstract marketing language.",
+        "Trust is built through responsiveness, visible local presence, and clear proof rather than jargon.",
+        "Many small businesses prefer plain-English explanations of what happens after launch and what is included in support."
+      ],
+      "evidence_urls": [
+        "https://novasite.co.za/work.html",
+        "https://novasite.co.za/services.html",
+        "https://fluorescencesupplyptyltd.com",
+        "https://masekoprimeholdings.co.za",
+        "https://extragreenpta.co.za"
+      ]
+    },
+    "trait_provenance": {
+      "demographics": "modelled",
+      "psychographics": "modelled",
+      "category_habits": "sourced",
+      "price_anchors": "sourced",
+      "frustrations": "sourced"
+    }
+  },
+  {
+    "name": "Sanet Pretorius",
+    "occupation": "Co-owner & Master Partner at a custom furniture and joinery workshop in Gauteng",
+    "bio": "Sanet is 31 and balances her role co-managing a bespoke furniture and joinery business with raising young children in an urban setting around Pretoria, Johannesburg, and Centurion. Financially comfortable and well-established, she prefers sticking to trusted, manual processes and personal relationships over adopting new technology. She carefully evaluates any investment, seeking fair value and practical returns, and remains cautious about marketing claims until she sees credible proof or references. Her family life and business demands keep her time well-structured, and she values reliability and predictability in both spheres.",
+    "current_solution": "Sanet’s workshop currently handles B2B communications and record-keeping primarily through direct personal contacts, phone calls, and manual documentation. While occasionally curious about digital tools and ecommerce, she remains hesitant to implement new systems without clear, proven benefits and tends to respond to outreach only when seeking information or free offers.",
+    "values": [
+      "Maintaining strong, trustworthy relationships with suppliers and clients",
+      "Balancing quality craftsmanship with efficient workshop management",
+      "Ensuring stability and predictability to support her young family’s needs"
+    ],
+    "frustrations": [
+      "Frequent delays and unpredictability in receiving kiln-dried timber impact project scheduling",
+      "Ongoing maintenance challenges with the workshop’s dust-extraction system affect daily operations and air quality",
+      "Coordinating material deliveries and equipment upkeep while managing hands-on work in the busy urban workshop environment"
+    ],
+    "id": "P016",
+    "model": "openai/gpt-4.1-mini",
+    "traits": {
+      "segment": "Skeptical or lukewarm browsers",
+      "age": 31,
+      "gender": "woman",
+      "income": "upper-middle",
+      "household": "family with young children",
+      "location": "city",
+      "adopter_type": "laggard",
+      "price_sensitivity": "medium",
+      "skepticism": "high"
+    },
+    "category_lens": {
+      "category": "B2B web development and ongoing digital services",
+      "segment": "Skeptical or lukewarm browsers",
+      "buying_habits": [
+        "Replies to outreach but often stalls after the first exchange",
+        "May ask for ecommerce or complex platform features outside the intended scope",
+        "Needs reassurance about ownership, support and future costs",
+        "May compare the offer with doing nothing"
+      ],
+      "price_anchors": [
+        "A free or very low-cost entry offer will attract attention but not guarantee conversion",
+        "Later pricing above R1,000 per month may be rejected unless the value is proven",
+        "They may never progress beyond a quote or demo"
+      ],
+      "status_quo_alternatives": [
+        "WhatsApp for enquiries, reminders, and bookings.",
+        "Paper diaries and notebooks for scheduling.",
+        "Excel or Google Sheets for customer records and quotes.",
+        "Facebook pages or Instagram DMs as a substitute for a real website."
+      ],
+      "real_frustrations": [
+        "I am just looking",
+        "I need something bigger than this",
+        "I do not trust free offers",
+        "I am not ready to switch"
+      ],
+      "cultural_signals": [
+        "Direct, practical communication tends to work better than abstract marketing language.",
+        "Trust is built through responsiveness, visible local presence, and clear proof rather than jargon.",
+        "Many small businesses prefer plain-English explanations of what happens after launch and what is included in support."
+      ],
+      "evidence_urls": [
+        "https://novasite.co.za/work.html",
+        "https://novasite.co.za/services.html",
+        "https://fluorescencesupplyptyltd.com",
+        "https://masekoprimeholdings.co.za",
+        "https://extragreenpta.co.za"
+      ]
+    },
+    "trait_provenance": {
+      "demographics": "modelled",
+      "psychographics": "modelled",
+      "category_habits": "sourced",
+      "price_anchors": "sourced",
+      "frustrations": "sourced"
+    }
+  },
+  {
+    "name": "Kavitha Pillay",
+    "occupation": "Managing Director & Co-owner at a borehole and agricultural equipment supply company in a small town outside Pretoria",
+    "bio": "Kavitha runs the day-to-day operations of a borehole and agricultural equipment supply business from a small town on the outskirts of Pretoria, where she and her husband also live now that their kids have left home. She handles supplier negotiations, quotes, and customer relationships, often driving between smallholdings and farms across Gauteng to check on installations. The business brings in a steady middle-class income, enough to be comfortable but not so much that she ignores a poor return on investment. She is pragmatic about new tools, adopting them once she sees clear practical value rather than chasing every trend. Because she's generally open to professional service providers, she listens when someone can show her how a change will bring in more qualified leads or save her team time.",
+    "current_solution": "Kavitha's company has a basic but functional website built on a mainstream platform, with a contact form and a product catalogue that she updates herself when new borehole pumps or irrigation fittings arrive. She also runs a simple Google Ads campaign that a freelancer set up a couple of years ago, and she tracks enquiries in a spreadsheet shared with her sales assistant. She's open to improving the site with better SEO or a proper quote request system if it can be shown to generate more leads from farmers and smallholders.",
+    "values": [
+      "Keeping the business reliable for farming customers who depend on equipment working when it matters most",
+      "Maintaining a comfortable, low-drama home life with her husband now that the children are grown and living elsewhere",
+      "Making decisions based on clear, practical returns rather than hype or untested ideas"
+    ],
+    "frustrations": [
+      "Seasonal rainfall swings make demand for borehole and irrigation equipment unpredictable, so she often has too much stock in dry spells and not enough when the rains finally come",
+      "Courier routes to outlying farms become slow and unreliable after heavy rain, delaying deliveries and frustrating customers who are waiting on urgent repairs",
+      "Balancing the need to quote quickly for time-sensitive farm jobs with the reality that her small team can only process so many enquiries in a day"
+    ],
+    "id": "P017",
+    "model": "deepseek/deepseek-v4.1-flash",
+    "traits": {
+      "segment": "Growth-minded owner-operators",
+      "age": 52,
+      "gender": "woman",
+      "income": "middle",
+      "household": "couple, kids left home",
+      "location": "small town / rural",
+      "adopter_type": "early majority",
+      "price_sensitivity": "medium",
+      "skepticism": "low"
+    },
+    "category_lens": {
+      "category": "B2B web development and ongoing digital services",
+      "segment": "Growth-minded owner-operators",
+      "buying_habits": [
+        "Compares agencies, freelancers and platform-based solutions",
+        "Responds to visible portfolio work and credibility cues like reviews",
+        "May decide after one or two calls if the pitch is clear and low-friction",
+        "Often expects revisions, SEO and hosting to be bundled"
+      ],
+      "price_anchors": [
+        "R10,000–R30,000 feels normal for a serious business website",
+        "R1,000–R1,800 per month can be acceptable if support is meaningful",
+        "Custom app pricing needs to be framed against expected admin savings or revenue lift"
+      ],
+      "status_quo_alternatives": [
+        "WhatsApp for enquiries, reminders, and bookings.",
+        "Paper diaries and notebooks for scheduling.",
+        "Excel or Google Sheets for customer records and quotes.",
+        "Facebook pages or Instagram DMs as a substitute for a real website."
+      ],
+      "real_frustrations": [
+        "Need to see ROI",
+        "Do not want generic templates",
+        "Fear of paying for extras later",
+        "Need clear ownership of domain and assets"
+      ],
+      "cultural_signals": [
+        "Direct, practical communication tends to work better than abstract marketing language.",
+        "Trust is built through responsiveness, visible local presence, and clear proof rather than jargon.",
+        "Many small businesses prefer plain-English explanations of what happens after launch and what is included in support."
+      ],
+      "evidence_urls": [
+        "https://novasite.co.za/work.html",
+        "https://novasite.co.za/services.html",
+        "https://fluorescencesupplyptyltd.com",
+        "https://masekoprimeholdings.co.za",
+        "https://extragreenpta.co.za"
+      ]
+    },
+    "trait_provenance": {
+      "demographics": "modelled",
+      "psychographics": "modelled",
+      "category_habits": "sourced",
+      "price_anchors": "sourced",
+      "frustrations": "sourced"
+    }
+  },
+  {
+    "name": "Palesa Sithole",
+    "occupation": "Founder & Centre Director of a private tutoring and early-childhood education centre in a peri-rural area near Pretoria",
+    "bio": "Palesa is 38 years old and runs a small, community-focused tutoring centre outside of Johannesburg in a peri-rural setting. She lives alone and enjoys the independence of managing her own business with a steady, comfortable middle-class income. Palesa is proactive about adopting new software tools that improve her centre’s efficiency but is careful to invest only when she sees clear practical benefits. She approaches sales offers with caution, preferring to rely on trusted recommendations and proven results before committing. Her daily routine balances hands-on work with parents and students alongside managing administrative tasks.",
+    "current_solution": "She currently handles enquiries and bookings mainly through WhatsApp and phone calls, tracking attendance and payments with spreadsheets and occasional paper records. While she has integrated some digital tools for scheduling and communication, she upgrades her systems incrementally as the business grows and when manual processes become too cumbersome, especially to manage fee tracking and tutor schedules more reliably.",
+    "values": [
+      "Providing a nurturing and academically supportive environment for children",
+      "Maintaining transparent and professional communication with parents",
+      "Ensuring operational efficiency to balance quality education with manageable workload"
+    ],
+    "frustrations": [
+      "Dealing with irregular fee payments and parent fee arrears that disrupt cash flow",
+      "Finding and retaining dependable subject tutors for afternoon sessions who align with centre values",
+      "Managing administrative overload caused by juggling bookings and payments through informal channels"
+    ],
+    "id": "P018",
+    "model": "openai/gpt-4.1-mini",
+    "traits": {
+      "segment": "Manual admin SMEs",
+      "age": 38,
+      "gender": "woman",
+      "income": "middle",
+      "household": "single",
+      "location": "small town / rural",
+      "adopter_type": "early adopter",
+      "price_sensitivity": "medium",
+      "skepticism": "high"
+    },
+    "category_lens": {
+      "category": "B2B web development and ongoing digital services",
+      "segment": "Manual admin SMEs",
+      "buying_habits": [
+        "Often discovers suppliers through referrals, WhatsApp, Facebook or direct outreach",
+        "Responds to fast, practical explanations rather than technical language",
+        "Wants proof through examples and before/after outcomes",
+        "Prefers one person who can handle setup and changes"
+      ],
+      "price_anchors": [
+        "R5,000–R15,000 for a basic site feels plausible",
+        "Anything with booking or dashboards must clearly justify a higher price",
+        "A recurring fee above about R1,000 per month will trigger scrutiny unless it replaces admin work"
+      ],
+      "status_quo_alternatives": [
+        "WhatsApp for enquiries, reminders, and bookings.",
+        "Paper diaries and notebooks for scheduling.",
+        "Excel or Google Sheets for customer records and quotes.",
+        "Facebook pages or Instagram DMs as a substitute for a real website."
+      ],
+      "real_frustrations": [
+        "We already manage somehow",
+        "A website feels unnecessary",
+        "Monthly fees are risky",
+        "I do not want a complicated system"
+      ],
+      "cultural_signals": [
+        "Direct, practical communication tends to work better than abstract marketing language.",
+        "Trust is built through responsiveness, visible local presence, and clear proof rather than jargon.",
+        "Many small businesses prefer plain-English explanations of what happens after launch and what is included in support."
+      ],
+      "evidence_urls": [
+        "https://novasite.co.za/work.html",
+        "https://novasite.co.za/services.html",
+        "https://fluorescencesupplyptyltd.com",
+        "https://masekoprimeholdings.co.za",
+        "https://extragreenpta.co.za"
+      ]
+    },
+    "trait_provenance": {
+      "demographics": "modelled",
+      "psychographics": "modelled",
+      "category_habits": "sourced",
+      "price_anchors": "sourced",
+      "frustrations": "sourced"
+    }
+  },
+  {
+    "name": "Imran Cassim",
+    "occupation": "Owner & Technical Director at a small security systems and access-control installer serving Pretoria, Johannesburg, and Centurion, with occasional owner-reported international enquiries",
+    "bio": "Imran Cassim is 34 and runs a small security systems and access-control installation business from a suburban base in Centurion, with most jobs across Pretoria, Johannesburg, and Centurion. As owner and technical director, he does site surveys, quotes, installs, and after-sales support for alarms, CCTV, intercoms, gate motors, and access control, often working alongside one technician. He is a single parent and plans his day around school drop-offs and pick-ups, so evening callouts and weekend emergency repairs need to be worth the disruption. The business brings in a steady middle-class income that covers the household and operating costs, but he watches every rand and avoids recurring expenses that don't clearly help win or keep work. He is pragmatic rather than trend-driven: once a tool proves useful in his sector, he'll adopt it, and he is generally open and trusting with professional service providers who explain costs plainly.",
+    "current_solution": "He currently has a basic five-page WordPress site with a home page, services list, contact details, and a WhatsApp click-to-chat button, hosted on a low-cost local package. He updates service descriptions and photos himself when he remembers, and relies on a Google Business Profile for directions, calls, and reviews. For quotes and follow-ups he uses WhatsApp Business with saved replies and a simple PDF service sheet, and he tracks jobs in a spreadsheet. He has looked at low-cost paid entry offers for web presence but has not signed up for ongoing SEO, content, or social retainers because he doesn't want extra monthly overhead. He is open to a proven improvement if it saves admin time or makes it easier for local clients to call or WhatsApp him.",
+    "values": [
+      "Keeping response times reliable for local clients so repeat work and referrals keep coming in.",
+      "Protecting school-run and evening time with his child, even when after-hours alarm issues come up.",
+      "Spending only on practical tools, parts, and marketing that directly support installs or reduce admin."
+    ],
+    "frustrations": [
+      "Late-night false-alarm callouts from a poorly positioned outdoor sensor or a client's pet triggering a PIR, which cuts into sleep and forces him to rearrange the next morning's school run.",
+      "Chasing suppliers for warranty replacements on failed keypads, gate motors, or power supplies, then managing a client's expectations while the replacement is delayed.",
+      "The paperwork, courier costs, and lost time involved in returning faulty hardware, which eats into the margin on tight installation quotes."
+    ],
+    "id": "P019",
+    "model": "deepseek/deepseek-v4.1-flash",
+    "traits": {
+      "segment": "Budget-conscious brochure buyers",
+      "age": 34,
+      "gender": "man",
+      "income": "middle",
+      "household": "single parent",
+      "location": "suburb",
+      "adopter_type": "early majority",
+      "price_sensitivity": "high",
+      "skepticism": "low"
+    },
+    "category_lens": {
+      "category": "B2B web development and ongoing digital services",
+      "segment": "Budget-conscious brochure buyers",
+      "buying_habits": [
+        "Searches for starting prices and package examples",
+        "Often compares against DIY builders and cheap freelancers",
+        "Needs a clear minimum scope with no surprises",
+        "May delay purchase unless the offer is straightforward"
+      ],
+      "price_anchors": [
+        "R1,990–R5,590 as an entry signal is likely to feel acceptable",
+        "R5,000–R8,000 for a basic small-business site is a more serious threshold",
+        "High recurring fees are likely to create resistance"
+      ],
+      "status_quo_alternatives": [
+        "WhatsApp for enquiries, reminders, and bookings.",
+        "Paper diaries and notebooks for scheduling.",
+        "Excel or Google Sheets for customer records and quotes.",
+        "Facebook pages or Instagram DMs as a substitute for a real website."
+      ],
+      "real_frustrations": [
+        "Why pay for something I can make on a template",
+        "I only need a few pages",
+        "Free sounds suspicious",
+        "I will not want to pay a large monthly fee later"
+      ],
+      "cultural_signals": [
+        "Direct, practical communication tends to work better than abstract marketing language.",
+        "Trust is built through responsiveness, visible local presence, and clear proof rather than jargon.",
+        "Many small businesses prefer plain-English explanations of what happens after launch and what is included in support."
+      ],
+      "evidence_urls": [
+        "https://novasite.co.za/work.html",
+        "https://novasite.co.za/services.html",
+        "https://fluorescencesupplyptyltd.com",
+        "https://masekoprimeholdings.co.za",
+        "https://extragreenpta.co.za"
+      ]
+    },
+    "trait_provenance": {
+      "demographics": "modelled",
+      "psychographics": "modelled",
+      "category_habits": "sourced",
+      "price_anchors": "sourced",
+      "frustrations": "sourced"
+    }
+  },
+  {
+    "name": "Busisiwe Zulu",
+    "occupation": "Founder & Wholesale Director at a mid-sized import/export wholesale distribution company based in a peri-rural area near Pretoria",
+    "bio": "Busisiwe is a 47-year-old single mother who runs a wholesale import/export business from a small town outside Johannesburg. She maintains a steady, comfortable middle-class income and is deeply involved in managing both the operational and strategic sides of her company. Living in a peri-rural setting allows her to balance family responsibilities with the demands of her business. She is pragmatic and tends to adopt new tools once their practical benefits are clear, focusing on solutions that save time and improve reliability. When evaluating vendors, she prefers quality and dependable service over the cheapest option, approaching offers with a balanced and practical mindset.",
+    "current_solution": "Busisiwe currently uses established, mainstream digital tools tailored for wholesale and logistics management, including common booking systems and dashboards. She integrates these with custom workflows where necessary to handle specific needs like waybill processing and freight tracking. While her systems are functional, she remains open to proven improvements that reduce manual errors and streamline cross-border paperwork, as these areas create bottlenecks and inefficiencies in her daily operations.",
+    "values": [
+      "Ensuring smooth, error-free management of cross-border shipments to avoid costly delays",
+      "Maintaining a reliable business operation that supports her responsibilities as a single parent",
+      "Investing in tools and services that offer clear, practical improvements in efficiency and accuracy"
+    ],
+    "frustrations": [
+      "Frequent changes and unpredictability in container freight rates complicate budgeting and pricing decisions",
+      "Manual handling of cross-border waybill paperwork is time-consuming and prone to errors, slowing down shipment clearances",
+      "Difficulty in quickly accessing accurate, up-to-date information on shipment status due to fragmented systems"
+    ],
+    "id": "P020",
+    "model": "openai/gpt-4.1-mini",
+    "traits": {
+      "segment": "Custom workflow buyers",
+      "age": 47,
+      "gender": "woman",
+      "income": "middle",
+      "household": "single parent",
+      "location": "small town / rural",
+      "adopter_type": "early majority",
+      "price_sensitivity": "low",
+      "skepticism": "medium"
+    },
+    "category_lens": {
+      "category": "B2B web development and ongoing digital services",
+      "segment": "Custom workflow buyers",
+      "buying_habits": [
+        "Evaluates against software subscriptions and the pain of current manual work",
+        "Usually wants a demo, example workflow or prototype",
+        "Needs scope and exceptions spelled out very clearly",
+        "May accept a higher price if time saved is obvious"
+      ],
+      "price_anchors": [
+        "R20,000–R60,000+ is a plausible market signal for custom business-solution work",
+        "Any monthly support fee must be linked to uptime, fixes or ongoing changes",
+        "A fixed project fee may feel safer than an open-ended retainer"
+      ],
+      "status_quo_alternatives": [
+        "WhatsApp for enquiries, reminders, and bookings.",
+        "Paper diaries and notebooks for scheduling.",
+        "Excel or Google Sheets for customer records and quotes.",
+        "Facebook pages or Instagram DMs as a substitute for a real website."
+      ],
+      "real_frustrations": [
+        "Can this really be delivered quickly",
+        "Will it integrate with our current process",
+        "What happens after launch",
+        "Is a custom build worth it versus software"
+      ],
+      "cultural_signals": [
+        "Direct, practical communication tends to work better than abstract marketing language.",
+        "Trust is built through responsiveness, visible local presence, and clear proof rather than jargon.",
+        "Many small businesses prefer plain-English explanations of what happens after launch and what is included in support."
+      ],
+      "evidence_urls": [
+        "https://novasite.co.za/work.html",
+        "https://novasite.co.za/services.html",
+        "https://fluorescencesupplyptyltd.com",
+        "https://masekoprimeholdings.co.za",
+        "https://extragreenpta.co.za"
+      ]
+    },
+    "trait_provenance": {
+      "demographics": "modelled",
+      "psychographics": "modelled",
+      "category_habits": "sourced",
+      "price_anchors": "sourced",
+      "frustrations": "sourced"
+    }
+  }
+]

@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kohort — Official Brand Board & Design System Specs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  @page {
+    size: A3 landscape;
+    margin: 10mm;
+  }
+
+  * {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: #FAF9F5;
+    color: #101B2D;
+    width: 1560px;
+    margin: 0 auto;
+    padding: 32px 40px;
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* -------------------------------------------------------------
+     TOP MASTHEAD
+  ------------------------------------------------------------- */
+  .masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 2px solid #101B2D;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+  }
+
+  .brand-group {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .brand-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 32px;
+    letter-spacing: -1.2px;
+    color: #101B2D;
+    text-transform: lowercase;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .brand-dot {
+    width: 9px;
+    height: 9px;
+    background-color: #D3FF65;
+    border: 1.5px solid #101B2D;
+    display: inline-block;
+  }
+
+  .system-spec {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+
+  .masthead-meta {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: #64748B;
+    text-align: right;
+    line-height: 1.45;
+  }
+
+  .masthead-meta strong {
+    color: #101B2D;
+  }
+
+  /* -------------------------------------------------------------
+     SECTION BRACKETS
+  ------------------------------------------------------------- */
+  .section-bracket {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #101B2D;
+    border-bottom: 1.5px solid #101B2D;
+    padding-bottom: 6px;
+    margin-bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .section-bracket span.note {
+    font-weight: 400;
+    color: #64748B;
+  }
+
+  /* -------------------------------------------------------------
+     GRID ARCHITECTURE (4 COLUMNS)
+  ------------------------------------------------------------- */
+  .board-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 1.1fr 1.2fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .board-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* -------------------------------------------------------------
+     POSITIONING STATEMENT
+  ------------------------------------------------------------- */
+  .positioning-block {
+    border-left: 2px solid #101B2D;
+    padding-left: 12px;
+    margin-bottom: 10px;
+  }
+
+  .positioning-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    font-weight: 700;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 4px;
+  }
+
+  .positioning-text {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.35;
+    color: #101B2D;
+  }
+
+  .attributes-list {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+  }
+
+  .attr-pill {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    background: #E2E8F0;
+    padding: 2px 7px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #101B2D;
+    font-weight: 700;
+  }
+
+  /* -------------------------------------------------------------
+     LOGO CONCEPTS
+  ------------------------------------------------------------- */
+  .logo-card-open {
+    padding-bottom: 12px;
+    border-bottom: 1px solid #E2E8F0;
+  }
+
+  .logo-preview-box {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6px;
+  }
+
+  .logo-preview-box.dark {
+    background: #101B2D;
+    color: #FAF9F5;
+  }
+
+  .logo-preview-box.light {
+    background: #FAF9F5;
+    border: 1px dashed #CBD5E1;
+  }
+
+  .logo-desc {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    color: #64748B;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* -------------------------------------------------------------
+     COLOR PALETTE
+  ------------------------------------------------------------- */
+  .color-swatch-ledger {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .swatch-row {
+    display: grid;
+    grid-template-columns: 44px 1fr auto;
+    gap: 12px;
+    align-items: center;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #E2E8F0;
+  }
+
+  .swatch-box {
+    width: 44px;
+    height: 32px;
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+
+  .swatch-meta strong {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    display: block;
+    color: #101B2D;
+  }
+
+  .swatch-meta span {
+    font-size: 9px;
+    color: #64748B;
+  }
+
+  .swatch-hex {
+    font-family: 'Space Mono', monospace;
+    font-size: 9.5px;
+    font-weight: 700;
+    color: #101B2D;
+    text-align: right;
+  }
+
+  .swatch-ratio {
+    font-size: 8.5px;
+    color: #059669;
+    display: block;
+    font-weight: 600;
+  }
+
+  /* -------------------------------------------------------------
+     TYPOGRAPHY SCALE
+  ------------------------------------------------------------- */
+  .type-sample {
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #E2E8F0;
+  }
+
+  .type-meta {
+    font-family: 'Space Mono', monospace;
+    font-size: 8.5px;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+  }
+
+  .type-display {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 26px;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    color: #101B2D;
+  }
+
+  .type-headline {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.5px;
+    color: #101B2D;
+  }
+
+  .type-body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 11px;
+    line-height: 1.45;
+    color: #334155;
+  }
+
+  .type-mono {
+    font-family: 'Space Mono', monospace;
+    font-size: 9.5px;
+    color: #101B2D;
+  }
+
+  /* -------------------------------------------------------------
+     MOCKUPS & APPLICATIONS
+  ------------------------------------------------------------- */
+  .mockup-item {
+    margin-bottom: 14px;
+    border: 1px solid #101B2D;
+  }
+
+  .mockup-header {
+    background: #101B2D;
+    color: #FAF9F5;
+    font-family: 'Space Mono', monospace;
+    font-size: 8.5px;
+    padding: 3px 8px;
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+  }
+
+  .mockup-body {
+    padding: 10px;
+    background: #FFFFFF;
+  }
+
+  /* Mockup 1: Slide Mini */
+  .slide-mini {
+    background: #FAF9F5;
+    padding: 10px;
+    border-bottom: 2px solid #101B2D;
+  }
+
+  .slide-mini .mini-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    line-height: 1.1;
+    color: #101B2D;
+  }
+
+  .slide-mini .mini-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 7.5px;
+    color: #64748B;
+    text-transform: uppercase;
+  }
+
+  .slide-mini .mini-stat {
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+    font-weight: 700;
+    color: #101B2D;
+    background: #D3FF65;
+    display: inline-block;
+    padding: 1px 4px;
+    margin-top: 4px;
+  }
+
+  /* Mockup 2: Business Card */
+  .card-mini {
+    background: #101B2D;
+    color: #FAF9F5;
+    padding: 12px;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .card-mini .card-top {
+    display: flex;
+    justify-content: space-between;
+    font-size: 7.5px;
+    font-family: 'Space Mono', monospace;
+    color: #94A3B8;
+  }
+
+  .card-mini .card-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 11px;
+    color: #FAF9F5;
+    letter-spacing: -0.3px;
+  }
+
+  .card-mini .card-role {
+    font-size: 8px;
+    color: #D3FF65;
+    font-family: 'Space Mono', monospace;
+  }
+
+  /* -------------------------------------------------------------
+     BRAND DON'TS
+  ------------------------------------------------------------- */
+  .dont-ledger {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .dont-item {
+    font-size: 9px;
+    color: #475569;
+    border-left: 2px solid #EF4444;
+    padding-left: 8px;
+    line-height: 1.35;
+  }
+
+  .dont-item strong {
+    color: #101B2D;
+    font-family: 'Space Mono', monospace;
+    font-size: 8.5px;
+    text-transform: uppercase;
+    display: block;
+  }
+
+  /* -------------------------------------------------------------
+     BOTTOM FOOTER
+  ------------------------------------------------------------- */
+  .board-footer {
+    border-top: 1.5px solid #101B2D;
+    margin-top: 20px;
+    padding-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Space Mono', monospace;
+    font-size: 8.5px;
+    color: #64748B;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <div class="masthead">
+    <div>
+      <div class="brand-group">
+        <span class="brand-logo">kohort <span class="brand-dot"></span></span>
+        <span class="system-spec">[ Official Brand Board &amp; Design Architecture ]</span>
+      </div>
+    </div>
+    <div class="masthead-meta">
+      <strong>SPECIFICATION:</strong> KH-BRANDKIT-V1 &bull; 2026/2027<br>
+      <strong>SYSTEM:</strong> FIGURES &amp; FIGURES &times; PENTAGRAM EDITORIAL<br>
+      <strong>LICENSE:</strong> SIL OPEN FONT &bull; CONFIDENTIAL &amp; PROPRIETARY
+    </div>
+  </div>
+
+  <!-- MAIN 4-COLUMN BOARD -->
+  <div class="board-grid">
+
+    <!-- ========================================== -->
+    <!-- COLUMN 1: IDENTITY & LOGO CONCEPTS        -->
+    <!-- ========================================== -->
+    <div class="board-col">
+      <div>
+        <div class="section-bracket">
+          <span>01 // Brand Identity</span>
+          <span class="note">Wordmark &amp; Icons</span>
+        </div>
+
+        <div class="positioning-block">
+          <div class="positioning-label">Core Positioning Statement</div>
+          <div class="positioning-text">
+            &ldquo;For B2B founders and media buyers, Kohort is the commercial intelligence platform that stress-tests marketing angles, customer distrust, and willingness-to-pay against verified buyer cohorts before committing live media spend.&rdquo;
+          </div>
+          <div class="attributes-list">
+            <span class="attr-pill">Empirical</span>
+            <span class="attr-pill">Editorial</span>
+            <span class="attr-pill">High-Velocity</span>
+          </div>
+        </div>
+
+        <!-- LOGO VARIANT 1: PRIMARY -->
+        <div class="logo-card-open">
+          <div class="logo-preview-box light">
+            <span style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 32px; letter-spacing: -1.5px; color: #101B2D; display: flex; align-items: center; gap: 6px;">
+              kohort <span style="width: 9px; height: 9px; background: #D3FF65; border: 1.5px solid #101B2D; display: inline-block;"></span>
+            </span>
+          </div>
+          <div class="logo-desc">
+            <span>Primary Lockup (Light Ground)</span>
+            <span>Syne 800 + Acid Dot</span>
+          </div>
+        </div>
+
+        <!-- LOGO VARIANT 2: INVERTED -->
+        <div class="logo-card-open">
+          <div class="logo-preview-box dark">
+            <span style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 32px; letter-spacing: -1.5px; color: #FAF9F5; display: flex; align-items: center; gap: 6px;">
+              kohort <span style="width: 9px; height: 9px; background: #D3FF65; border: 1px solid #FAF9F5; display: inline-block;"></span>
+            </span>
+          </div>
+          <div class="logo-desc">
+            <span>Inverted Lockup (Midnight Ground)</span>
+            <span>Boardroom / Dark Surface</span>
+          </div>
+        </div>
+
+        <!-- LOGO VARIANT 3: SYSTEM BRACKET -->
+        <div class="logo-card-open">
+          <div class="logo-preview-box light" style="height: 48px;">
+            <span style="font-family: 'Space Mono', monospace; font-size: 13px; font-weight: 700; color: #101B2D; letter-spacing: 1px;">
+              [ kohort // commercial intelligence ]
+            </span>
+          </div>
+          <div class="logo-desc">
+            <span>Technical System Tag</span>
+            <span>Headers &amp; Metadata</span>
+          </div>
+        </div>
+
+        <!-- LOGO VARIANT 4: 24PX MICRO FAVICON -->
+        <div class="logo-card-open" style="border-bottom: none;">
+          <div style="display: flex; align-items: center; gap: 14px; padding: 6px 0;">
+            <div style="width: 32px; height: 32px; background: #101B2D; display: flex; align-items: center; justify-content: center;">
+              <div style="width: 8px; height: 8px; background: #D3FF65;"></div>
+            </div>
+            <div style="width: 24px; height: 24px; background: #101B2D; display: flex; align-items: center; justify-content: center;">
+              <div style="width: 6px; height: 6px; background: #D3FF65;"></div>
+            </div>
+            <div style="font-family: 'Space Mono', monospace; font-size: 8.5px; color: #64748B;">
+              24px / 32px Favicon &amp; App Glyph &bull; 100% vector scalability
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- COLUMN 2: COLOR ARCHITECTURE & CONTRAST   -->
+    <!-- ========================================== -->
+    <div class="board-col">
+      <div>
+        <div class="section-bracket">
+          <span>02 // Color Architecture</span>
+          <span class="note">Verified Contrast &ge; 4.5:1</span>
+        </div>
+
+        <div class="color-swatch-ledger">
+
+          <!-- SWATCH 1 -->
+          <div class="swatch-row">
+            <div class="swatch-box" style="background-color: #101B2D;"></div>
+            <div class="swatch-meta">
+              <strong>Midnight Navy</strong>
+              <span>Primary Brand Ink &bull; Deep Structure</span>
+            </div>
+            <div class="swatch-hex">
+              #101B2D
+              <span class="swatch-ratio">14.2:1 (AAA)</span>
+            </div>
+          </div>
+
+          <!-- SWATCH 2 -->
+          <div class="swatch-row">
+            <div class="swatch-box" style="background-color: #FAF9F5; border-color: #CBD5E1;"></div>
+            <div class="swatch-meta">
+              <strong>Warm Paper</strong>
+              <span>Neutral Base Canvas &bull; Anti-Glare</span>
+            </div>
+            <div class="swatch-hex">
+              #FAF9F5
+              <span class="swatch-ratio">Base Surface</span>
+            </div>
+          </div>
+
+          <!-- SWATCH 3 -->
+          <div class="swatch-row">
+            <div class="swatch-box" style="background-color: #D3FF65;"></div>
+            <div class="swatch-meta">
+              <strong>Acid Lime</strong>
+              <span>Active Signal &bull; Verification Pill</span>
+            </div>
+            <div class="swatch-hex">
+              #D3FF65
+              <span class="swatch-ratio">11.4:1 on Navy</span>
+            </div>
+          </div>
+
+          <!-- SWATCH 4 -->
+          <div class="swatch-row">
+            <div class="swatch-box" style="background-color: #475569;"></div>
+            <div class="swatch-meta">
+              <strong>Graphite Slate</strong>
+              <span>Secondary Body &bull; Paragraph Text</span>
+            </div>
+            <div class="swatch-hex">
+              #475569
+              <span class="swatch-ratio">6.8:1 (AAA)</span>
+            </div>
+          </div>
+
+          <!-- SWATCH 5 -->
+          <div class="swatch-row">
+            <div class="swatch-box" style="background-color: #E2E8F0;"></div>
+            <div class="swatch-meta">
+              <strong>Hairline Slate</strong>
+              <span>Architectural Dividers &bull; Ledgers</span>
+            </div>
+            <div class="swatch-hex">
+              #E2E8F0
+              <span class="swatch-ratio">Grid Accent</span>
+            </div>
+          </div>
+
+          <!-- SWATCH 6 -->
+          <div class="swatch-row">
+            <div class="swatch-box" style="background-color: #FFFFFF; border-color: #CBD5E1;"></div>
+            <div class="swatch-meta">
+              <strong>Pure White</strong>
+              <span>High-Contrast Highlight Overlay</span>
+            </div>
+            <div class="swatch-hex">
+              #FFFFFF
+              <span class="swatch-ratio">Secondary Highlight</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="margin-top: 16px; border-left: 2px solid #D3FF65; padding-left: 10px; font-size: 8.5px; color: #475569;">
+          <strong style="color: #101B2D; font-family: 'Space Mono', monospace; text-transform: uppercase;">Contrast Compliance:</strong><br>
+          All text pairings exceed WCAG Level AAA requirements (14.2:1 against paper background). No soft low-contrast grays permitted.
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- COLUMN 3: TYPOGRAPHY HIERARCHY            -->
+    <!-- ========================================== -->
+    <div class="board-col">
+      <div>
+        <div class="section-bracket">
+          <span>03 // Typography Hierarchy</span>
+          <span class="note">Google Fonts &bull; 1.25 Ratio</span>
+        </div>
+
+        <div class="type-sample">
+          <div class="type-meta">Display Large &bull; Syne 800 (28pt / 38px)</div>
+          <div class="type-display">Pre-Flight Testing &amp; Econometric Pricing</div>
+        </div>
+
+        <div class="type-sample">
+          <div class="type-meta">Headline H2 &bull; Syne 700 (18pt / 24px)</div>
+          <div class="type-headline">Positioning &amp; Pricing Diagnostic</div>
+        </div>
+
+        <div class="type-sample">
+          <div class="type-meta">Editorial Quote &bull; Newsreader Italic (12pt / 16px)</div>
+          <div style="font-family: 'Newsreader', serif; font-style: italic; font-size: 13px; color: #334155;">
+            &ldquo;65% of evaluated buyers abandoned the offer at R7,500 due to ambiguous timeline guarantees.&rdquo;
+          </div>
+        </div>
+
+        <div class="type-sample">
+          <div class="type-meta">Primary Body &bull; Plus Jakarta Sans (9.5pt / 13px)</div>
+          <div class="type-body">
+            Kohort deploys regional competitive scrapers and simulates 20 stratified decision-makers to establish empirical price elasticity and coded distrust.
+          </div>
+        </div>
+
+        <div class="type-sample" style="border-bottom: none;">
+          <div class="type-meta">System Metadata &bull; Space Mono (8.5pt / 11px)</div>
+          <div class="type-mono">
+            [ 01 // PULSE SPRINT ] &bull; SLA: 24-HR &bull; R1,950 / $129 USD
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- COLUMN 4: MOCKUPS & BRAND DON'TS          -->
+    <!-- ========================================== -->
+    <div class="board-col">
+      <div>
+        <div class="section-bracket">
+          <span>04 // Applications &amp; Don'ts</span>
+          <span class="note">Mockups &amp; Guardrails</span>
+        </div>
+
+        <!-- MOCKUP 1: EXECUTIVE SLIDE MINI -->
+        <div class="mockup-item">
+          <div class="mockup-header">
+            <span>Application: 16:9 McKinsey Landscape Slide</span>
+            <span>Boardroom PDF</span>
+          </div>
+          <div class="mockup-body" style="background: #FAF9F5; padding: 10px;">
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #101B2D; padding-bottom: 4px; margin-bottom: 6px;">
+              <span style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 11px;">kohort <span style="display: inline-block; width: 4px; height: 4px; background: #D3FF65;"></span></span>
+              <span style="font-family: 'Space Mono', monospace; font-size: 6.5px; color: #64748B;">[ 04 // ECONOMETRIC PRICING CORRIDOR ]</span>
+            </div>
+            <div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 12px; margin-bottom: 4px;">Optimal Price Window: R4,250 &ndash; R5,500</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+              <div style="border-top: 1px solid #101B2D; padding-top: 2px;">
+                <div style="font-family: 'Space Mono', monospace; font-size: 6px; color: #64748B;">OPTIMAL POINT</div>
+                <div style="font-family: 'Space Mono', monospace; font-weight: 700; font-size: 11px; background: #D3FF65; display: inline-block; padding: 0 2px;">R4,250</div>
+              </div>
+              <div style="border-top: 1px solid #101B2D; padding-top: 2px;">
+                <div style="font-family: 'Space Mono', monospace; font-size: 6px; color: #64748B;">INDIFFERENCE POINT</div>
+                <div style="font-family: 'Space Mono', monospace; font-weight: 700; font-size: 11px;">R5,500</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MOCKUP 2: BUSINESS CARD -->
+        <div class="mockup-item">
+          <div class="mockup-header">
+            <span>Application: Executive Business Card</span>
+            <span>Matte Silk 400gsm</span>
+          </div>
+          <div class="card-mini">
+            <div class="card-top">
+              <span>KOHORT STRATEGIC ADVISORY</span>
+              <span style="color: #D3FF65;">KH-2026</span>
+            </div>
+            <div>
+              <div class="card-name">Reamogetswe Molefe</div>
+              <div class="card-role">Managing Director &bull; Commercial Research</div>
+            </div>
+            <div style="font-family: 'Space Mono', monospace; font-size: 6.5px; color: #94A3B8; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2px;">
+              JOHANNESBURG &bull; LONDON &bull; PRE-FLIGHT INTELLIGENCE
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 STRICT DON'TS -->
+        <div style="margin-top: 12px;">
+          <div style="font-family: 'Space Mono', monospace; font-size: 9px; font-weight: 700; color: #EF4444; text-transform: uppercase; margin-bottom: 6px;">
+            Strict Brand Don'ts (Quality Guardrails)
+          </div>
+          <div class="dont-ledger">
+            <div class="dont-item">
+              <strong>1. No Floating Card Boxes</strong>
+              Never wrap copy in enclosed shaded dashboard boxes with heavy dropshadows (&ldquo;boxes bafanas&rdquo;). Content must breathe along open horizontal ledger rules.
+            </div>
+            <div class="dont-item">
+              <strong>2. No Generic Tech Gradients</strong>
+              Never use SaaS purple/blue gradients or generic corporate cyan. Palette is strictly Midnight Navy (#101B2D), Warm Paper (#FAF9F5), and Acid Lime (#D3FF65).
+            </div>
+            <div class="dont-item">
+              <strong>3. Never Capitalize Logo Lockup</strong>
+              The brand wordmark is strictly lowercase &ldquo;kohort&rdquo; with the acid lime square dot. Never write &ldquo;KOHORT&rdquo; or &ldquo;Kohort&rdquo; inside logo treatments.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RUNNING BOARD FOOTER -->
+  <div class="board-footer">
+    <div>Kohort Strategic Advisory &bull; Brand Architecture &amp; Identity Guidelines</div>
+    <div>Curated &amp; Maintained under Brandkit Protocol &bull; 2026/2027</div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+<link href='https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700&family=Space+Mono:wght@400;700&family=Syne:wght@800&display=swap' rel='stylesheet'>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1584px;
+    height: 396px;
+    background: #101B2D;
+    color: #FAF9F5;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 36px 64px;
+    position: relative;
+    overflow: hidden;
+  }
+  .bg-grid {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size: 36px 36px;
+    pointer-events: none;
+  }
+  .top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    padding-left: 320px; /* Safe from avatar top overlap */
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .wordmark {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 28px;
+    letter-spacing: -1px;
+    color: #FAF9F5;
+    text-transform: lowercase;
+  }
+  .dot {
+    width: 9px;
+    height: 9px;
+    background: #D3FF65;
+  }
+  .tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: #94A3B8;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-left: 6px;
+  }
+  .sla-badge {
+    font-family: 'Space Mono', monospace;
+    font-size: 10.5px;
+    background: rgba(211, 255, 101, 0.12);
+    border: 1px solid #D3FF65;
+    color: #D3FF65;
+    padding: 5px 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: 700;
+  }
+  .hero-block {
+    position: relative;
+    z-index: 1;
+    padding-left: 320px; /* Shifts right of circular profile picture */
+  }
+  .headline {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 38px;
+    line-height: 1.1;
+    letter-spacing: -1.2px;
+    margin-bottom: 8px;
+    color: #FAF9F5;
+  }
+  .headline span {
+    color: #D3FF65;
+  }
+  .sub {
+    font-size: 14.5px;
+    color: #94A3B8;
+    font-weight: 500;
+    max-width: 920px;
+    line-height: 1.4;
+  }
+  .bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 12px;
+    padding-left: 320px; /* Aligns with hero */
+    position: relative;
+    z-index: 1;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+  .specs {
+    display: flex;
+    gap: 28px;
+  }
+  .specs strong {
+    color: #FAF9F5;
+  }
+</style>
+</head>
+<body>
+  <div class='bg-grid'></div>
+  <div class='top-row'>
+    <div class='brand'>
+      <span class='wordmark'>kohort</span>
+      <span class='dot'></span>
+      <span class='tag'>[ Strategic Market Advisory ]</span>
+    </div>
+    <div class='sla-badge'>24 to 48-Hour Boardroom Delivery</div>
+  </div>
+  <div class='hero-block'>
+    <div class='headline'>Pre-Flight Campaign Testing &amp; <span>Econometric Pricing.</span></div>
+    <div class='sub'>Stress-test ad hooks, customer distrust, and willingness-to-pay against verified buyer cohorts before committing live media spend.</div>
+  </div>
+  <div class='bottom-row'>
+    <div class='specs'>
+      <div><span>Sample:</span> <strong>N=20 to N=40 Verified Buyers</strong></div>
+      <div><span>Core Engine:</span> <strong>Van Westendorp Pricing Models</strong></div>
+      <div><span>TIERS:</span> <strong>FROM R1,950 / USD 129</strong></div>
+    </div>
+    <div>Strictly Confidential &bull; Commercial Intelligence</div>
+  </div>
+</body>
+</html>

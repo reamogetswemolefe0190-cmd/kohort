@@ -1,0 +1,53 @@
+{
+  "buying_habits": [
+    "South African SME buyers in Gauteng often compare several routes at once: a freelancer, a local agency, DIY tools, and existing manual methods.",
+    "Many purchases are triggered by visible friction such as missed enquiries, delayed responses, lost bookings, or awkward quote handling.",
+    "Direct access to the person building the work is a strong trust signal, especially for smaller firms that do not want to manage an account layer.",
+    "Buyers frequently want the website, hosting, SSL, email, and support explained separately so they can compare total monthly cost.",
+    "For booking or workflow tools, buyers care less about visual design and more about whether the system mirrors their real process and reduces admin.",
+    "Some enquiries are curiosity-led rather than purchase-led, especially when the offer is free or unusually low-friction."
+  ],
+  "real_frustrations": [
+    "Missed enquiries when messages arrive at the wrong time or get buried in WhatsApp.",
+    "Double-bookings and manual scheduling mistakes.",
+    "Having to chase clients repeatedly for follow-up, approvals, or payments.",
+    "Spending hours each week on admin that could be automated.",
+    "Websites that look fine but do not generate leads or feel credible on mobile.",
+    "Difficulty knowing whether a provider’s quoted price includes hosting, maintenance, edits, or support."
+  ],
+  "price_anchors": [
+    "Basic South African business websites are often advertised or discussed in the low-thousands once-off, with some guides placing business sites around R7,500 to R20,000.",
+    "Ongoing maintenance is commonly signaled around R299 to R1,500 per month for simpler sites, with higher-support plans around R2,500 to R5,000+ per month for more active or complex sites.",
+    "Custom web apps and booking systems are often discussed from roughly R27,980+ and can reach R60,000+ or far more depending on scope.",
+    "A monthly R1,000 support-and-hosting plan for a simple site is plausible as a market signal, but it is not established as a universal benchmark.",
+    "The brief’s unverified alternative benchmark of R10,000 to R50,000+ for agencies or freelancers should be treated as a hypothesis, not a market fact."
+  ],
+  "status_quo_alternatives": [
+    "WhatsApp for enquiries, reminders, and bookings.",
+    "Paper diaries and notebooks for scheduling.",
+    "Excel or Google Sheets for customer records and quotes.",
+    "Facebook pages or Instagram DMs as a substitute for a real website.",
+    "Doing nothing and relying on word of mouth or existing contacts.",
+    "Off-the-shelf booking tools instead of custom software."
+  ],
+  "cultural_signals": [
+    "Direct, practical communication tends to work better than abstract marketing language.",
+    "Trust is built through responsiveness, visible local presence, and clear proof rather than jargon.",
+    "Many small businesses prefer plain-English explanations of what happens after launch and what is included in support.",
+    "South African buyers often use WhatsApp heavily and may expect quick replies outside formal office hours.",
+    "Local relevance matters: Gauteng references, Pretoria/Johannesburg/Centurion examples, and South African pricing in rand reduce perceived risk."
+  ],
+  "scraped_urls": [
+    "https://novasite.co.za/work.html",
+    "https://novasite.co.za/services.html",
+    "https://fluorescencesupplyptyltd.com",
+    "https://masekoprimeholdings.co.za",
+    "https://extragreenpta.co.za",
+    "https://www.syniqsolutions.co.za/blog/web-app-development-cost-south-africa",
+    "https://www.newperspectivestudio.co.za/wp/what-is-the-cost-of-creating-a-website-in-south-africa/",
+    "https://www.bunnypants.co.za/how-much-does-web-design-cost-in-south-africa/",
+    "https://www.marketwithboost.com/insights/website-design-cost-south-africa",
+    "https://www.juicydesigns.co.za/services/web-design/pricing/",
+    "https://www.procompare.co.za/prices/web-design/website-development"
+  ]
+}

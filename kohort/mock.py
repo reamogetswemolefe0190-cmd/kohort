@@ -70,11 +70,12 @@ def _clamp(x: float) -> int:
 
 
 class Mocker:
-    def __init__(self, seed: int, brief: Brief):
+    def __init__(self, seed: int, brief: Brief | None = None):
         self.seed = seed
         self.brief = brief
         self.phrase_theme: dict[str, str] = {}
-        self.likes = {**LIKES, "Specific features": [f"The '{f}' part sounds useful" for f in brief.key_features[:4]]
+        features = brief.key_features[:4] if brief and brief.key_features else []
+        self.likes = {**LIKES, "Specific features": [f"The '{f}' part sounds useful" for f in features]
                       or ["The main feature sounds useful"]}
 
     def _rng(self, key: str) -> random.Random:
@@ -82,6 +83,112 @@ class Mocker:
 
     def respond(self, task: str, ctx: dict) -> dict:
         return getattr(self, f"_{task}")(ctx)
+
+    def _alternative_map(self, ctx: dict) -> dict:
+        brief = ctx.get('brief') or self.brief.model_dump()
+        return {'buyer': brief['target_market'],
+                'problem_and_desired_outcome': '[MOCK] ' + brief['one_liner'],
+                'categories': [{'name': '[MOCK] Brief-supplied alternative: ' + name,
+                                'buyer_problem_overlap': '[MOCK] Investigate overlap with ' + brief['category'],
+                                'relevance_hypothesis': '[MOCK] Candidate supplied by the client, not researched.',
+                                'search_query': name + ' ' + brief['region']}
+                               for name in (brief.get('competitors') or ['Current solution'])[:4]],
+                'unknowns': ['[MOCK] Category relevance and coverage have not been researched.']}
+
+    def _competitive_scan(self, ctx: dict) -> dict:
+        return {"competitors": [{
+            "name": f"[MOCK] {name}", "offering": "[MOCK] Existing alternative; not researched.",
+            "pricing": "Unknown; no live research in this demo.",
+            "positioning": "[MOCK] Established alternative.", "observed_strengths": [],
+            "possible_gaps": ["[MOCK] Investigate switching friction; no evidence collected."], "source_urls": [],
+        } for name in (self.brief.competitors or ["Current solution"])],
+                "coverage_limits": ["[MOCK] Competitor names came from the brief, not internet research."]}
+
+    def _tool_scan(self, ctx: dict) -> dict:
+        return {"tools": [{"name": "[MOCK] Landing page builder", "purpose": "[MOCK] Test a proposition.",
+                           "pricing": "Unknown", "why_it_fits": "[MOCK] Collect interest before building.",
+                           "first_step": "[MOCK] Draft two positioning variants.", "source_urls": []},
+                          {"name": "[MOCK] Interview scheduling tool", "purpose": "[MOCK] Recruit customer interviews.",
+                           "pricing": "Unknown", "why_it_fits": "[MOCK] Explore existing habits and barriers.",
+                           "first_step": "[MOCK] Prepare neutral interview questions.", "source_urls": []}],
+                "coverage_limits": ["[MOCK] No actual tools or prices were researched."]}
+
+    def _positioning(self, ctx: dict) -> dict:
+        return {"summary": "[MOCK] Demonstration of a competitive positioning plan, without researched findings.",
+                "opportunities": [{"target_audience": self.brief.target_market if self.brief else "Target buyers",
+                                    "positioning_statement": "[MOCK] A simpler way to meet an existing need.",
+                                    "rationale": "[MOCK] Investigate whether current alternatives create avoidable friction.",
+                                    "tradeoff": "[MOCK] A narrow proposition may exclude other customers.",
+                                    "assumptions": ["[MOCK] The proposed friction is real and worth paying to remove."],
+                                    "validation_test": "[MOCK] Interview customers, then compare two landing page messages.",
+                                    "decision_criteria": "[MOCK] Define a meaningful improvement before testing; do not assume demand.",
+                                    "source_urls": []}],
+                "next_actions": ["[MOCK] Run live research.", "[MOCK] Validate the opportunity with real customers."],
+                "caveats": ["[MOCK] This plan contains no internet evidence and should not guide purchasing decisions."]}
+
+    def _teardown(self, ctx: dict) -> dict:
+        name = ctx.get("competitor_name", "Competitor")
+        url = ctx.get("target_url", f"https://{name.lower()}.com")
+        return {
+            "competitor_name": name,
+            "target_url": url,
+            "summary": f"[MOCK] Competitive deconstruction of {name}.",
+            "positioning": {
+                "target_audiences": ["[MOCK] Product managers and marketing agencies"],
+                "value_proposition": f"[MOCK] Fast synthetic audience research for {name}.",
+                "user_objections_and_complaints": [
+                    "[MOCK] High credit pack pricing and lack of verifiable citations."
+                ],
+            },
+            "pricing": {
+                "model_type": "Usage-based credit tiers",
+                "tiers": [
+                    {
+                        "name": "Pay As You Go",
+                        "price": "$0.12 / response",
+                        "features": ["[MOCK] Standard synthetic panel responses"],
+                        "limits": ["200 profiles max"],
+                    },
+                    {
+                        "name": "Pro",
+                        "price": "$199 / seat / month",
+                        "features": ["[MOCK] 5,000 pooled responses", "Shared workspaces"],
+                        "limits": ["25 saved audiences"],
+                    },
+                ],
+                "estimated_margins_and_markup": (
+                    "[MOCK] Charges $0.12 per response vs estimated underlying LLM cost of $0.0005 (approx 240x markup)."
+                ),
+                "vulnerabilities": ["[MOCK] High per-response charges deter iterative hypothesis testing."],
+            },
+            "architecture": {
+                "summary": "[MOCK] Client-facing web app with MCP server gateway to LLM agent generation.",
+                "integrations_and_apis": ["[MOCK] Model Context Protocol (MCP) server", "REST export API"],
+                "strengths": ["[MOCK] Seamless IDE/chat client integration via MCP."],
+                "limitations": [
+                    "[MOCK] Lacks mathematical hallucination gating or claim-level citation audits."
+                ],
+            },
+            "roadmap": {
+                "features_to_adopt": [
+                    "Expose a lightweight MCP server endpoint for IDE and chat agent execution.",
+                    "Save and reuse named audience profiles to avoid repeated generation.",
+                ],
+                "differentiators_to_exploit": [
+                    "Transparent flat pricing instead of 200x marked-up response credits.",
+                    "Jev System One mathematical guardrails preventing ungrounded hallucinations.",
+                ],
+                "client_pitch_angles": [
+                    "Why pay $240+ for 2,000 synthetic responses when Kohort gives you audited decision roadmaps?",
+                    "Audited claim-level citation evidence instead of black-box synthetic numbers.",
+                ],
+                "kohort_implementation_spec": [
+                    "Add `--audience` caching and reuse flag to pipeline.",
+                    "Package kohort as an MCP server with tools for concept testing and teardowns.",
+                ],
+            },
+            "evidence_sources": [url],
+        }
 
     def _pick_phrases(self, pool: dict[str, list[str]], k: int, rng: random.Random,
                       weights: dict[str, float] | None = None) -> list[str]:
@@ -100,6 +207,35 @@ class Mocker:
 
     # ------------------------------------------------------------------ stages
 
+    def _buyer_discovery(self, ctx: dict) -> dict:
+        b = self.brief
+        return {
+            "buyer_persona_hypothesis": f"[MOCK] Buyers of {b.category} in {b.region} weigh routine habits against price.",
+            "category_context_needed": f"[MOCK] Buying occasions, price anchors, and frustrations in {b.category}.",
+            "queries": [
+                {
+                    "focus": "buying_habits",
+                    "rationale": "Understand where and how often buyers purchase in this category.",
+                    "search_query": f"{b.category} buying habits {b.region}",
+                },
+                {
+                    "focus": "frustrations",
+                    "rationale": "Identify common complaints and packaging/product annoyances.",
+                    "search_query": f"{b.category} customer complaints reviews {b.region}",
+                },
+                {
+                    "focus": "price_anchors",
+                    "rationale": "Establish typical retail price expectations.",
+                    "search_query": f"{b.category} typical price {b.region}",
+                },
+                {
+                    "focus": "switching_triggers",
+                    "rationale": "Learn what triggers switching from status-quo brands.",
+                    "search_query": f"why consumers switch {b.category} brands {b.region}",
+                },
+            ],
+        }
+
     def _research(self, ctx: dict) -> dict:
         b = self.brief
         comps = b.competitors or ["Existing supermarket alternatives"]
@@ -114,20 +250,44 @@ class Mocker:
             "segments": [
                 {"name": "Busy young families", "description": "Time-poor parents juggling work and kids",
                  "share": 0.30, "age_min": 28, "age_max": 45,
-                 "income_levels": ["lower-middle", "middle", "upper-middle"]},
+                 "income_levels": ["lower-middle", "middle", "upper-middle"],
+                 "buying_habits": [f"[MOCK] Buys {b.category} during weekly family grocery runs"],
+                 "price_anchors": ["[MOCK] Looks for multi-pack or family value pricing"]},
                 {"name": "Eco-minded urban professionals", "description": "City dwellers who care about impact",
-                 "share": 0.25, "age_min": 24, "age_max": 40, "income_levels": ["middle", "upper-middle", "high"]},
+                 "share": 0.25, "age_min": 24, "age_max": 40, "income_levels": ["middle", "upper-middle", "high"],
+                 "buying_habits": [f"[MOCK] Picks up {b.category} on commute or via quick-commerce apps"],
+                 "price_anchors": ["[MOCK] Willing to pay a modest premium for quality"]},
                 {"name": "Budget-focused households", "description": "Price comes first",
-                 "share": 0.30, "age_min": 22, "age_max": 65, "income_levels": ["low", "lower-middle"]},
+                 "share": 0.30, "age_min": 22, "age_max": 65, "income_levels": ["low", "lower-middle"],
+                 "buying_habits": [f"[MOCK] Compares unit prices and sticks to discounted {b.category}"],
+                 "price_anchors": ["[MOCK] Strict unit-price ceiling; suspicious of shrinkflation"]},
                 {"name": "Established empty-nesters", "description": "Settled habits, quality-oriented",
-                 "share": 0.15, "age_min": 52, "age_max": 75, "income_levels": ["middle", "upper-middle", "high"]},
+                 "share": 0.15, "age_min": 52, "age_max": 75, "income_levels": ["middle", "upper-middle", "high"],
+                 "buying_habits": [f"[MOCK] Loyal to familiar {b.category} brands for years"],
+                 "price_anchors": ["[MOCK] Expects consistent size and quality for the price"]},
             ],
+            "buyer_dossier": {
+                "buying_habits": [
+                    f"[MOCK] Buyers purchase {b.category} as part of weekly shopping or on-the-go convenience.",
+                ],
+                "real_frustrations": [
+                    "[MOCK] Rising prices and suspected shrinkflation when packaging changes.",
+                    "[MOCK] Inconsistent quality or inconvenient storage.",
+                ],
+                "price_anchors": [
+                    f"[MOCK] Anchored to mainstream {b.category} pricing in {b.region}.",
+                ],
+                "status_quo_alternatives": list(comps),
+                "cultural_signals": [f"[MOCK] Everyday consumer habits in {b.region}"],
+                "scraped_urls": [],
+            },
             "sources": [],
             "caveats": ["Mock mode: no real research was performed."],
         }
 
     def _persona(self, ctx: dict) -> dict:
         t = ctx["traits"]
+        lens = ctx.get("category_lens") or {}
         rng = self._rng(f"persona:{ctx['persona_id']}")
         first = rng.choice(FIRST.get(t["gender"], FIRST["non-binary"]))
         occ = rng.choice(OCCUPATIONS[t["income"]])
@@ -136,25 +296,32 @@ class Mocker:
         elif t["age"] >= 67:
             occ = f"retired {occ}"
         values = rng.sample(VALUES, 3)
+        habit_hint = (lens.get("buying_habits") or [f"Buys the usual {self.brief.category} from local shops or online."])[0]
         return {
             "name": f"{first} {rng.choice(LAST)}",
             "occupation": occ,
             "bio": f"{t['age']}-year-old {occ} living in a {t['location']} ({t['household']}). "
                    f"Cares about {values[0]} and {values[1]}. [MOCK persona]",
-            "current_solution": f"Buys the usual {self.brief.category} from local shops or online.",
+            "current_solution": habit_hint,
             "values": values,
             "frustrations": rng.sample(FRUSTRATIONS, 2),
         }
 
-    def _latent(self, persona_id: str, t: dict) -> float:
+    def _latent(self, persona_id: str, t: dict, variant: dict | None = None) -> float:
         rng = self._rng(f"latent:{persona_id}")
-        return (3.0 + ADOPTER_EFFECT[t["adopter_type"]] + LEVEL_EFFECT[t["price_sensitivity"]] * 0.8
+        val = (3.0 + ADOPTER_EFFECT[t["adopter_type"]] + LEVEL_EFFECT[t["price_sensitivity"]] * 0.8
                 + LEVEL_EFFECT[t["skepticism"]] * 0.7 + rng.gauss(0, 0.8))
+        if variant and variant.get("id"):
+            import hashlib
+            var_hash = int(hashlib.sha256(f"{self.seed}:{variant['id']}".encode()).hexdigest()[:4], 16) % 100
+            val += (var_hash - 50) / 100.0 * 0.6
+        return val
 
     def _interview1(self, ctx: dict) -> dict:
         t, pid = ctx["traits"], ctx["persona_id"]
+        variant = ctx.get("variant")
         rng = self._rng(f"int1:{pid}")
-        latent = self._latent(pid, t)
+        latent = self._latent(pid, t, variant=variant)
         positive = latent >= 3.0
         concern_w = {"Price": 2.5 if t["price_sensitivity"] == "high" else 1.0,
                      "Doubts it works": 2.0 if t["skepticism"] == "high" else 1.0}
@@ -263,14 +430,14 @@ class Mocker:
                              "[MOCK] Price perception varies strongly by income."],
             "segment_insights": [{"segment": s, "insight": f"[MOCK] Trial estimate {v['trial_estimate']:.0%}."}
                                  for s, v in segs.items()],
-            "recommendations": [
-                {"priority": 1, "action": f"[MOCK] Address '{top_concern}' in messaging and offer design.",
-                 "rationale": "Most frequent barrier."},
-                {"priority": 2, "action": f"[MOCK] Focus launch marketing on '{best}'.",
-                 "rationale": "Highest calibrated trial."},
-                {"priority": 3, "action": "[MOCK] Validate with 30-50 real customers before launch.",
-                 "rationale": "Synthetic findings need real-world calibration."},
-            ],
+            "action_plan": {
+                "what_to_do_next": "[MOCK] Validate with real customers before launch.",
+                "why_this_option": "[MOCK] Simulated placeholders cannot support a business decision.",
+                "what_to_change": f"[MOCK] Explore '{top_concern}' in offer design.",
+                "how_to_implement": "[MOCK] Interview customers about their current solution and barriers.",
+                "how_to_measure": "[MOCK] Set decision criteria before collecting real responses.",
+                "what_happens_next": "[MOCK] Review actual responses and update the recommendation.",
+            },
             "client_question_answers": [{"question": qq, "answer": "[MOCK] Placeholder answer."}
                                         for qq in self.brief.questions],
             "risks": ["[MOCK] Results are simulated placeholders."],

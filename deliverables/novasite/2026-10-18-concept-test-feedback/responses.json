@@ -1,0 +1,999 @@
+[
+  {
+    "persona_id": "P001",
+    "model": "deepseek/deepseek-v4.1-flash",
+    "first_reaction": "Free website sounds tempting, but free usually means I'm the product or the quality is thin. The 1-2 day build claim makes me nervous — my practice runs on accuracy, not speed.",
+    "appeal": 3,
+    "uniqueness": 2,
+    "believability": 2,
+    "purchase_intent": 2,
+    "value_for_money": null,
+    "price_reaction": "",
+    "likes": [
+      "Direct contact with the founders who actually build the work",
+      "Bundling hosting, SSL and maintenance into one monthly fee is convenient",
+      "They're local in Pretoria, which makes support easier to chase"
+    ],
+    "concerns": [
+      "1-2 day delivery for a proper website is not realistic for anything I'd put my firm's name on",
+      "Free first year then R1,000/month with no clear scope, usage limits or cancellation terms feels like a trap",
+      "Portfolio is mostly demos on their own subdomain — only three live on client domains, and two Google reviews isn't proof"
+    ],
+    "would_buy_if": "They showed me a working demo of the booking system or dashboard, gave me three contactable references, priced it as a fixed project fee with clear ownership of the domain and code, and the monthly support was under R800 with a written cancellation clause.",
+    "quote": "Free website sounds nice until you read the fine print — I'd rather pay properly and own my own site.",
+    "client_questions": [
+      {
+        "question": "For a defined booking system or business dashboard, would you choose an upfront project fee or a monthly build, hosting and support plan, and why? Specify required scope, acceptable terms and ZAR price expectations separately for each option.",
+        "answer": "Upfront project fee, definitely. I want to own the asset and know exactly what I've paid for. A monthly plan on a custom app means I'm renting something I could be locked out of. For a booking system or dashboard for my practice, I'd expect to pay R25,000–R40,000 once, with a separate support retainer of maybe R1,500–R2,500 a month if it's genuinely maintained. Monthly-only build plans I'd only consider if the total over 24 months came in under the upfront price and I had clear exit terms and full data ownership."
+      },
+      {
+        "question": "After a free website and first year of hosting, SSL and maintenance, what would justify paying R1,000/month? What inclusions, lower monthly price or annual payment option would change your decision?",
+        "answer": "R1,000 a month only makes sense if it includes real maintenance — security patches, backups, uptime monitoring, a couple of content edits a month, and someone answering within a business day. If it's just hosting and SSL, that's a R200–R300 a month service, not R1,000. An annual option at around R9,000–R10,000 paid upfront would suit me better for cash flow and would show they're confident in the service. Without a clear scope, I'd walk before the free year ends."
+      },
+      {
+        "question": "Would you choose a free website with later recurring fees or a low-cost paid website package with transparent ongoing costs? Explain trust concerns, budget and conditions for committing.",
+        "answer": "Low-cost paid package with transparent ongoing costs. Free-then-fee models make me suspicious — the real price is hidden in the second year, and I've seen too many businesses held hostage over their domain or hosting. I'd rather pay R8,000–R15,000 upfront for a proper site and know my monthly hosting and support is R500–R800 from day one. Conditions: I own the domain and code, I can export my content, and there's a written cancellation clause."
+      },
+      {
+        "question": "What do you currently spend on websites, booking tools and administration, who approves the purchase, and what specific event would prompt you to switch?",
+        "answer": "I spend about R1,200 a month on a freelance developer retainer, plus maybe R3,000–R5,000 a year on ad hoc updates. I'm the sole owner, so I approve everything. What would make me switch is a system that actually cuts the hours I lose chasing clients for documents and double-checking bookings — if a dashboard or booking tool saved me five billable hours a month, that's R7,500–R10,000 of my time, and I'd move quickly. A SARS-season meltdown or my current developer going quiet for a week would also push me to look elsewhere."
+      },
+      {
+        "question": "Which single service would you buy first, what measurable outcome would justify its cost, and what evidence would you need before paying?",
+        "answer": "The booking system or client dashboard first — that's where my real pain is. The measurable outcome is fewer missed appointments and less admin time per client, say two hours a week saved across the practice. Evidence I'd need: a live demo I can click through, at least three reference clients I can phone, a written scope with milestones, and a clear price. I would not pay a cent based on a 1-2 day delivery claim and two Google reviews."
+      }
+    ],
+    "price_too_cheap": 3000.0,
+    "price_bargain": 8000.0,
+    "price_getting_expensive": 25000.0,
+    "price_too_expensive": 45000.0,
+    "price_points_repaired": false
+  },
+  {
+    "persona_id": "P002",
+    "model": "openai/gpt-4.1-mini",
+    "first_reaction": "Sounds interesting but I’m cautious about the monthly fees and unclear ongoing costs.",
+    "appeal": 3,
+    "uniqueness": 3,
+    "believability": 3,
+    "purchase_intent": 2,
+    "value_for_money": null,
+    "price_reaction": "",
+    "likes": [
+      "Quick delivery times for websites",
+      "Direct contact with the founders",
+      "Free first year hosting and maintenance"
+    ],
+    "concerns": [
+      "R1000 per month after free year feels high",
+      "Unclear scope and pricing for custom web apps",
+      "No clear cancellation or usage limits mentioned"
+    ],
+    "would_buy_if": "The monthly fees were lower or optional, the scope and pricing were crystal clear, and I could see real examples from similar businesses with positive reviews.",
+    "quote": "It could work if they prove it’s easy and affordable, but I’m not jumping in without more clarity.",
+    "client_questions": [
+      {
+        "question": "For a defined booking system or business dashboard, would you choose an upfront project fee or a monthly build, hosting and support plan, and why? Specify required scope, acceptable terms and ZAR price expectations separately for each option.",
+        "answer": "I’d prefer an upfront project fee with clear deliverables and a warranty period. Maybe around R7,000 to R10,000 depending on complexity. Monthly plans only if hosting and support are comprehensive and under R1,000/month with clear limits."
+      },
+      {
+        "question": "After a free website and first year of hosting, SSL and maintenance, what would justify paying R1,000/month? What inclusions, lower monthly price or annual payment option would change your decision?",
+        "answer": "R1000/month is only justifiable if it includes regular updates, backups, fast support, and some SEO help. Lowering to R700-R800 or offering a discounted annual payment would make it more acceptable."
+      },
+      {
+        "question": "Would you choose a free website with later recurring fees or a low-cost paid website package with transparent ongoing costs? Explain trust concerns, budget and conditions for committing.",
+        "answer": "I’d lean toward a low-cost paid package with all costs upfront to avoid surprises. Free offers feel risky because I’d worry about hidden fees later or the quality of the site."
+      },
+      {
+        "question": "What do you currently spend on websites, booking tools and administration, who approves the purchase, and what specific event would prompt you to switch?",
+        "answer": "I spend around R5,000–R10,000 on website updates and about R500 monthly on admin tools. I approve all purchases myself. I’d switch if my current system caused too many booking errors or delayed claims affecting cash flow."
+      },
+      {
+        "question": "Which single service would you buy first, what measurable outcome would justify its cost, and what evidence would you need before paying?",
+        "answer": "I’d try the booking system first, expecting fewer double bookings and saved admin time. I’d want to see a demo and references from similar clinics before committing."
+      }
+    ],
+    "price_too_cheap": 1000.0,
+    "price_bargain": 5000.0,
+    "price_getting_expensive": 10000.0,
+    "price_too_expensive": 15000.0,
+    "price_points_repaired": false
+  },
+  {
+    "persona_id": "P003",
+    "model": "deepseek/deepseek-v4.1-flash",
+    "first_reaction": "Free website sounds too good to be true, and I've been burned by 'free' before. But the booking system idea is interesting because double-bookings cost me real money.",
+    "appeal": 2,
+    "uniqueness": 2,
+    "believability": 2,
+    "purchase_intent": 2,
+    "value_for_money": null,
+    "price_reaction": "",
+    "likes": [
+      "A booking system that could stop the double-bookings we catch too late",
+      "One person to call instead of juggling three suppliers"
+    ],
+    "concerns": [
+      "Free build then R1,000 a month forever - that's a trap I've seen before",
+      "Delivery in 1-2 days for a real site? Doesn't add up, and no terms are spelled out",
+      "Portfolio is mostly demos on their own subdomain, so I can't see real proof"
+    ],
+    "would_buy_if": "I could speak to a paying client running the booking system in a real business, the scope and monthly terms were written down clearly, and the ongoing fee was under R500 a month or a once-off project fee I could budget for.",
+    "quote": "Free sounds nice until the monthly fee kicks in - but if their booking system actually stops the double-bookings, that's the one thing I'd pay for.",
+    "client_questions": [
+      {
+        "question": "For a defined booking system or business dashboard, would you choose an upfront project fee or a monthly build, hosting and support plan, and why? Specify required scope, acceptable terms and ZAR price expectations separately for each option.",
+        "answer": "Upfront project fee, no question. I don't want another monthly debit order I have to remember. For a booking system that actually stops double-bookings across our events, I'd pay R12,000 to R20,000 once, with a clear scope written down and a 30-day fix-it period. Monthly plan? Only if it's under R500 a month and I can cancel anytime, otherwise no."
+      },
+      {
+        "question": "After a free website and first year of hosting, SSL and maintenance, what would justify paying R1,000/month? What inclusions, lower monthly price or annual payment option would change your decision?",
+        "answer": "R1,000 a month just for hosting and the odd update is too much for us - our site is basically a services page and a phone number. To justify that I'd need the booking system included, real support when something breaks, and it to replace admin work I'm doing now. If it's R1,000 flat I'd rather pay R6,000-R8,000 once a year and be done."
+      },
+      {
+        "question": "Would you choose a free website with later recurring fees or a low-cost paid website package with transparent ongoing costs? Explain trust concerns, budget and conditions for committing.",
+        "answer": "Low-cost paid, every time. Free means the price is hiding somewhere and I'll find out in year two when I'm locked in. I'd rather pay R5,000-R8,000 upfront for the site and know exactly what hosting costs after. Trust comes from seeing the full terms on paper before I sign anything."
+      },
+      {
+        "question": "What do you currently spend on websites, booking tools and administration, who approves the purchase, and what specific event would prompt you to switch?",
+        "answer": "Right now, almost nothing - a bit of hosting and that's it. The real cost is admin time, mine and my wife's, maybe four or five hours a week across WhatsApp, the paper diary and spreadsheets. We both approve any spend over a few thousand. What would make me switch is a double-booking that costs us a client, or a week where we lose two orders because nobody followed up."
+      },
+      {
+        "question": "Which single service would you buy first, what measurable outcome would justify its cost, and what evidence would you need before paying?",
+        "answer": "The booking system, if anything. If it stops double-bookings and saves us three or four hours a week, that's worth real money. Before I pay I'd want to talk to one of their actual paying clients - not a demo, not a review - and see a booking system running in a business like ours for a few months."
+      }
+    ],
+    "price_too_cheap": 3000.0,
+    "price_bargain": 8000.0,
+    "price_getting_expensive": 15000.0,
+    "price_too_expensive": 30000.0,
+    "price_points_repaired": false
+  },
+  {
+    "persona_id": "P004",
+    "model": "openai/gpt-4.1-mini",
+    "first_reaction": "Sounds interesting but I’m skeptical about the free website turning into expensive monthly fees later.",
+    "appeal": 2,
+    "uniqueness": 3,
+    "believability": 2,
+    "purchase_intent": 2,
+    "value_for_money": null,
+    "price_reaction": "",
+    "likes": [
+      "Free initial website build is attractive",
+      "Direct contact with founders sounds good",
+      "Fast website delivery if true"
+    ],
+    "concerns": [
+      "Unclear ongoing costs and terms after free year",
+      "No clear pricing or scope for web apps",
+      "Skeptical about quality if delivered so fast"
+    ],
+    "would_buy_if": "If the pricing and ongoing costs are clear and reasonable, with solid proof the service reduces my admin workload and clients are happier.",
+    "quote": "Looks promising but I need to see real proof and clear costs before I’d consider switching.",
+    "client_questions": [
+      {
+        "question": "For a defined booking system or business dashboard, would you choose an upfront project fee or a monthly build, hosting and support plan, and why? Specify required scope, acceptable terms and ZAR price expectations separately for each option.",
+        "answer": "I prefer an upfront fee so I know my total cost and avoid surprises. The scope must be clearly defined with fixed deliverables. For the upfront fee, something around R5,000-R7,000 would be reasonable for a small booking system. Monthly plans only if they include real support and updates for under R1,000/month, with no hidden fees."
+      },
+      {
+        "question": "After a free website and first year of hosting, SSL and maintenance, what would justify paying R1,000/month? What inclusions, lower monthly price or annual payment option would change your decision?",
+        "answer": "R1,000 a month is on the high side for me. I’d expect regular updates, backups, security, and quick support included. A lower monthly fee around R600-R700 or a discounted annual payment would make it more acceptable."
+      },
+      {
+        "question": "Would you choose a free website with later recurring fees or a low-cost paid website package with transparent ongoing costs? Explain trust concerns, budget and conditions for committing.",
+        "answer": "I’d prefer a low-cost paid package with clear ongoing costs upfront. Free offers worry me because I don’t want to get stuck with surprise charges later. I need trust and transparency, plus proof of quality before committing."
+      },
+      {
+        "question": "What do you currently spend on websites, booking tools and administration, who approves the purchase, and what specific event would prompt you to switch?",
+        "answer": "We currently spend around R3,000 to R5,000 yearly on our site and some free tools for bookings. I approve purchases myself. I’d consider switching if the new solution clearly saves me admin time, reduces errors like double bookings, and fits within my budget."
+      },
+      {
+        "question": "Which single service would you buy first, what measurable outcome would justify its cost, and what evidence would you need before paying?",
+        "answer": "I’d buy a booking system first to reduce admin time and errors. If it saves at least 3 hours a week or prevents lost bookings, that would justify the cost. I’d need a demo or trial and references from similar businesses before paying."
+      }
+    ],
+    "price_too_cheap": 100.0,
+    "price_bargain": 600.0,
+    "price_getting_expensive": 1200.0,
+    "price_too_expensive": 2000.0,
+    "price_points_repaired": false
+  },
+  {
+    "persona_id": "P005",
+    "model": "deepseek/deepseek-v4.1-flash",
+    "first_reaction": "Free website sounds too good to be true, and the R1,000 a month after that makes me nervous because it's not clear what I'm actually getting.",
+    "appeal": 3,
+    "uniqueness": 2,
+    "believability": 2,
+    "purchase_intent": 2,
+    "value_for_money": null,
+    "price_reaction": "",
+    "likes": [
+      "Direct contact with the founders who build the work",
+      "Fast delivery on small sites, if it's real",
+      "One supplier for website, hosting, and support could save me time"
+    ],
+    "concerns": [
+      "Free first year then R1,000/month feels like a trap; I need to know exactly what that covers",
+      "Most portfolio sites are demos on their subdomain, so I can't judge real client results",
+      "R450/hour for changes could add up fast, and partner plan terms aren't clear"
+    ],
+    "would_buy_if": "They show me a live, working booking system for a food business, give me a fixed price under R10,000, and guarantee I own my domain and data with no hidden fees.",
+    "quote": "The free website sounds nice, but I'd rather pay a fair price upfront than get locked into a monthly fee I can't control.",
+    "client_questions": [
+      {
+        "question": "For a defined booking system or business dashboard, would you choose an upfront project fee or a monthly build, hosting and support plan, and why? Specify required scope, acceptable terms and ZAR price expectations separately for each option.",
+        "answer": "For a booking system, I'd want a fixed project fee so I know the total cost. Monthly plans worry me because they never end. If the scope is clear—say, online booking, calendar sync, and customer reminders—I'd pay R8,000–R12,000 once. For a monthly plan, I'd only consider it if it's under R600/month and includes hosting, support, and updates, with a clear exit. For a dashboard, similar: fixed fee around R6,000–R10,000, or monthly under R500."
+      },
+      {
+        "question": "After a free website and first year of hosting, SSL and maintenance, what would justify paying R1,000/month? What inclusions, lower monthly price or annual payment option would change your decision?",
+        "answer": "R1,000/month is too high for just hosting and maintenance. I'd need it to include SEO work, monthly content updates, security monitoring, and maybe Google Ads management—but not ad spend. If it's just hosting and SSL, I'd expect R300–R500/month. An annual payment option with a discount would help, but I'd still need to see a clear list of what's included and what costs extra."
+      },
+      {
+        "question": "Would you choose a free website with later recurring fees or a low-cost paid website package with transparent ongoing costs? Explain trust concerns, budget and conditions for committing.",
+        "answer": "I'd rather pay a low once-off fee, like R2,000–R3,000, for a simple website and then pay a transparent monthly hosting fee of R300–R500. The free website makes me suspicious that the real cost is hidden in the monthly fee or change requests. I need to own my domain and have a clear contract with no surprises."
+      },
+      {
+        "question": "What do you currently spend on websites, booking tools and administration, who approves the purchase, and what specific event would prompt you to switch?",
+        "answer": "I spent about R15,000 on my current website two years ago, and I pay R400/month for hosting. I handle bookings through WhatsApp and a paper diary. I approve all purchases myself. I'd switch if my current host becomes unreliable, or if I start missing too many catering enquiries because I can't respond fast enough. A booking system that saves me an hour a day would make me consider it."
+      },
+      {
+        "question": "Which single service would you buy first, what measurable outcome would justify its cost, and what evidence would you need before paying?",
+        "answer": "I'd buy a booking system first, because missed catering enquiries cost me sales. If it could capture and confirm bookings automatically, I'd pay up to R5,000 once-off. I'd need to see it working for a similar food business, with a live demo, and talk to a real client. A free trial would help, but I'd still want a clear price and no lock-in."
+      }
+    ],
+    "price_too_cheap": 300.0,
+    "price_bargain": 700.0,
+    "price_getting_expensive": 1500.0,
+    "price_too_expensive": 2500.0,
+    "price_points_repaired": false
+  },
+  {
+    "persona_id": "P006",
+    "model": "openai/gpt-4.1-mini",
+    "first_reaction": "Free website sounds good, but the R1,000 monthly fee after the first year feels steep for my budget and what I actually need.",
+    "appeal": 3,
+    "uniqueness": 3,
+    "believability": 3,
+    "purchase_intent": 2,
+    "value_for_money": null,
+    "price_reaction": "",
+    "likes": [
+      "Free initial website build",
+      "Fast turnaround claims",
+      "Direct contact with founders"
+    ],
+    "concerns": [
+      "High recurring monthly fee after free year",
+      "Unclear scope and terms for changes and support",
+      "No clear pricing for web apps and SEO"
+    ],
+    "would_buy_if": "If the monthly fees were lower, the scope and costs clearly explained upfront, and I was sure it would save me time and headaches compared to my current setup.",
+    "quote": "Looks okay for a quick website, but I’d need to see the fine print on costs before jumping in.",
+    "client_questions": [
+      {
+        "question": "For a defined booking system or business dashboard, would you choose an upfront project fee or a monthly build, hosting and support plan, and why? Specify required scope, acceptable terms and ZAR price expectations separately for each option.",
+        "answer": "I'd prefer an upfront project fee so I know my total cost upfront and avoid surprises. For a booking system, it should cover setup, testing, and a few months of support. I'd expect to pay around R6,000-R8,000 for a complete system. Monthly plans might work if they include support and hosting but should be under R500 per month with clear cancellation terms."
+      },
+      {
+        "question": "After a free website and first year of hosting, SSL and maintenance, what would justify paying R1,000/month? What inclusions, lower monthly price or annual payment option would change your decision?",
+        "answer": "I'd only pay R1,000/month if it included regular updates, quick fixes, security monitoring, and maybe some marketing help. Otherwise, I'd want a lower monthly fee around R400-R600 or a discounted annual payment to justify the cost."
+      },
+      {
+        "question": "Would you choose a free website with later recurring fees or a low-cost paid website package with transparent ongoing costs? Explain trust concerns, budget and conditions for committing.",
+        "answer": "I'd lean towards a low-cost paid package with clear ongoing costs. Free sounds good but I worry about surprises later. If the ongoing fees are too high or unclear, I'd avoid it. Trust comes from knowing exactly what I'll pay and for what services."
+      },
+      {
+        "question": "What do you currently spend on websites, booking tools and administration, who approves the purchase, and what specific event would prompt you to switch?",
+        "answer": "Right now, I spend about R5,000-R7,000 for basic websites and use WhatsApp and spreadsheets for bookings. I approve purchases myself. I'd switch if a new tool saves time, reduces admin errors, or brings more clients without adding big costs."
+      },
+      {
+        "question": "Which single service would you buy first, what measurable outcome would justify its cost, and what evidence would you need before paying?",
+        "answer": "I'd buy a simple booking system first. If it cuts down double bookings and saves me a few hours a week, that would justify the cost. I'd want a demo or trial and positive reviews from similar businesses before committing."
+      }
+    ],
+    "price_too_cheap": 1000.0,
+    "price_bargain": 4000.0,
+    "price_getting_expensive": 7000.0,
+    "price_too_expensive": 10000.0,
+    "price_points_repaired": false
+  },
+  {
+    "persona_id": "P007",
+    "model": "deepseek/deepseek-v4.1-flash",
+    "first_reaction": "Free website sounds like a gimmick to get me locked into a monthly fee I can't control. But a custom dashboard that pulls fuel, tyres and delivery times together? That's the part that got my attention.",
+    "appeal": 3,
+    "uniqueness": 3,
+    "believability": 2,
+    "purchase_intent": 2,
+    "value_for_money": null,
+    "price_reaction": "",
+    "likes": [
+      "Direct contact with the founders who actually build the thing, not a call centre.",
+      "The idea of one supplier for website, hosting and support rather than juggling three vendors.",
+      "A custom dashboard for fleet data is genuinely something I'd use."
+    ],
+    "concerns": [
+      "1-2 day website delivery and 4-5 day web apps sounds too fast for anything properly scoped. My operation isn't a template.",
+      "Free first year then R1,000 a month with no cancellation terms, no usage limits, no VAT clarity. That's a trap waiting to close.",
+      "Started September 2025, only three sites live on client domains. I can't judge quality on demos."
+    ],
+    "would_buy_if": "They showed me a working fleet dashboard demo, gave me a fixed project price with written scope and exceptions, and let me speak to a real paying client in logistics. Without that, I'm not moving.",
+    "quote": "Free website sounds nice until you read the fine print, but if they can actually build me a fleet dashboard that saves me hours a week, I'd listen properly.",
+    "client_questions": [
+      {
+        "question": "For a defined booking system or business dashboard, would you choose an upfront project fee or a monthly build, hosting and support plan, and why? Specify required scope, acceptable terms and ZAR price expectations separately for each option.",
+        "answer": "Fixed project fee, no question. I need to know what I'm paying and when it ends. Monthly build-plus-support sounds like I'm renting something I never own, and if I stop paying, does my dashboard stop working? For a fleet dashboard with fuel tracking, tyre logs and delivery times, I'd want a fixed build around R40,000-R60,000 with a separate optional support fee of maybe R1,500-R2,500 a month tied to uptime and fixes. If it's monthly-only, I'd cap it at R3,000 a month and need a clear exit."
+      },
+      {
+        "question": "After a free website and first year of hosting, SSL and maintenance, what would justify paying R1,000/month? What inclusions, lower monthly price or annual payment option would change your decision?",
+        "answer": "R1,000 a month for a brochure site is too much for me. For that money I'd want hosting, SSL, backups, security patches, and a couple of hours of changes included every month. If it's just hosting and the odd plugin update, I'd pay maybe R300-R400 a month, or R3,500-R4,000 a year paid upfront. Give me the annual option and I'll take it."
+      },
+      {
+        "question": "Would you choose a free website with later recurring fees or a low-cost paid website package with transparent ongoing costs? Explain trust concerns, budget and conditions for committing.",
+        "answer": "Low-cost paid, every time. Free then R1,000 a month means I don't know the real cost until year two, and by then I'm locked in. Charge me R5,000-R8,000 upfront for the build and R400 a month for hosting and support, written into a contract with cancellation terms. That I can budget for. Free offers usually mean someone else owns the leverage."
+      },
+      {
+        "question": "What do you currently spend on websites, booking tools and administration, who approves the purchase, and what specific event would prompt you to switch?",
+        "answer": "I spend maybe R15,000-R20,000 a year on the website, hosting and the courier software licence, plus a lot of hidden cost in my admin lady's time on spreadsheets. I approve everything myself, it's my business. What would make me switch? A breakdown or a late delivery caused by a manual scheduling error, or a month where diesel and tyre costs catch me off guard because my data is scattered. That's when I'd pay for a proper dashboard."
+      },
+      {
+        "question": "Which single service would you buy first, what measurable outcome would justify its cost, and what evidence would you need before paying?",
+        "answer": "The internal dashboard first, not the website. If it saves my admin four to five hours a week and stops me from double-booking vehicles, that's real money. I'd need to see a working demo with my kind of data, talk to an actual paying client, and get a written scope with a fixed price before I commit a cent."
+      }
+    ],
+    "price_too_cheap": 5000.0,
+    "price_bargain": 25000.0,
+    "price_getting_expensive": 55000.0,
+    "price_too_expensive": 90000.0,
+    "price_points_repaired": false
+  },
+  {
+    "persona_id": "P008",
+    "model": "openai/gpt-4.1-mini",
+    "first_reaction": "The free website offer sounds tempting but the R1,000 monthly fee after the first year seems steep for my budget and current needs.",
+    "appeal": 3,
+    "uniqueness": 3,
+    "believability": 3,
+    "purchase_intent": 2,
+    "value_for_money": null,
+    "price_reaction": "",
+    "likes": [
+      "Quick turnaround time for websites",
+      "Direct contact with the founders",
+      "Free first year of hosting and maintenance"
+    ],
+    "concerns": [
+      "High monthly fee after free year without clear value",
+      "Unclear scope and terms for custom web apps",
+      "No clear pricing for SEO or Google Ads management"
+    ],
+    "would_buy_if": "If the pricing was transparent, ongoing fees were lower or optional, and the scope and support terms were clearly defined with good client references.",
+    "quote": "It sounds okay, but I’d need to be sure the ongoing costs won’t blow my budget before I consider switching.",
+    "client_questions": [
+      {
+        "question": "For a defined booking system or business dashboard, would you choose an upfront project fee or a monthly build, hosting and support plan, and why? Specify required scope, acceptable terms and ZAR price expectations separately for each option.",
+        "answer": "I’d prefer an upfront project fee because it’s easier to budget. The scope must be clearly defined, including features and delivery timelines. For a booking system, I’d expect to pay around R5,000 to R7,000 upfront. If a monthly plan is offered, it should be under R500/month with clear limits and support terms."
+      },
+      {
+        "question": "After a free website and first year of hosting, SSL and maintenance, what would justify paying R1,000/month? What inclusions, lower monthly price or annual payment option would change your decision?",
+        "answer": "To pay R1,000/month, I’d need it to include regular updates, security, backups, and support with quick response. Lowering the price to around R500–R700 or offering a discount for annual payment would make it more appealing."
+      },
+      {
+        "question": "Would you choose a free website with later recurring fees or a low-cost paid website package with transparent ongoing costs? Explain trust concerns, budget and conditions for committing.",
+        "answer": "I’d lean toward a low-cost paid package with clear ongoing costs. Free offers make me worry about hidden fees later. I want to know exactly what I’m paying for and have budget certainty."
+      },
+      {
+        "question": "What do you currently spend on websites, booking tools and administration, who approves the purchase, and what specific event would prompt you to switch?",
+        "answer": "I currently spend around R5,000 to R8,000 on websites and use WhatsApp and Excel for bookings and admin. I approve purchases myself. I’d switch if I found a solution that saves me time and reduces mistakes without increasing costs much."
+      },
+      {
+        "question": "Which single service would you buy first, what measurable outcome would justify its cost, and what evidence would you need before paying?",
+        "answer": "I’d buy a custom website first. If it brought more client enquiries or reduced admin time noticeably, that would justify the cost. I’d want to see examples and clear client testimonials first."
+      }
+    ],
+    "price_too_cheap": 500.0,
+    "price_bargain": 1990.0,
+    "price_getting_expensive": 4500.0,
+    "price_too_expensive": 7000.0,
+    "price_points_repaired": false
+  },
+  {
+    "persona_id": "P009",
+    "model": "deepseek/deepseek-v4.1-flash",
+    "first_reaction": "Free website sounds nice until I read the R1,000 a month part, then I start wondering what I'm actually locked into. And a firm that's only been going since September 2025? I'd want to speak to someone who's actually paid them.",
+    "appeal": 3,
+    "uniqueness": 2,
+    "believability": 2,
+    "purchase_intent": 2,
+    "value_for_money": null,
+    "price_reaction": "",
+    "likes": [
+      "One supplier for the site, hosting and changes would save me the back-and-forth",
+      "A booking system or dashboard could actually help with quotes and follow-ups",
+      "Direct contact with the person doing the work, not a call centre"
+    ],
+    "concerns": [
+      "R1,000 a month forever after a free year is exactly the kind of cost that creeps up on you",
+      "Scope, cancellation terms and what's included aren't spelled out, so I can't compare it to anything",
+      "Only a few sites live on client domains and the rest are demos, so I can't tell if they deliver on real projects"
+    ],
+    "would_buy_if": "They showed me live client sites on real domains, gave me a reference I could phone, and put the price, scope, ownership and cancellation terms in writing with no long lock-in.",
+    "quote": "It's not a bad idea, but I'm not signing up for a free website that turns into a thousand rand a month from a firm I've never heard of.",
+    "client_questions": [
+      {
+        "question": "For a defined booking system or business dashboard, would you choose an upfront project fee or a monthly build, hosting and support plan, and why? Specify required scope, acceptable terms and ZAR price expectations separately for each option.",
+        "answer": "Upfront fee, no question. I want to own it and know what it cost me. For a simple booking system with maybe a calendar, client details and a WhatsApp or email confirmation, I'd expect to pay somewhere between R12,000 and R25,000 once off, and then a small hosting fee, maybe R200 to R400 a month. If it's a monthly plan, I'd only consider it if it's under R1,500 a month, nothing is locked in for more than a month, and I can walk away with the data. Otherwise I'd rather keep using my spreadsheet and WhatsApp."
+      },
+      {
+        "question": "After a free website and first year of hosting, SSL and maintenance, what would justify paying R1,000/month? What inclusions, lower monthly price or annual payment option would change your decision?",
+        "answer": "R1,000 a month for a five-page site is too much for what I get. For that money I'd want hosting, backups, security, small content changes included, and someone actually answering when the site goes down. If it's just hosting and the odd edit, I'd want R300 to R450 a month, or an annual option at a discount, maybe R4,000 to R5,000 for the year paid upfront. And I'd want to know I can move the domain and site elsewhere if I leave."
+      },
+      {
+        "question": "Would you choose a free website with later recurring fees or a low-cost paid website package with transparent ongoing costs? Explain trust concerns, budget and conditions for committing.",
+        "answer": "I'd rather pay a fair price upfront with the ongoing cost written down clearly. Free now and R1,000 a month later feels like a trap, especially from a new firm. A paid entry package around R2,000 to R5,000 with hosting at a couple hundred rand a month, and a plain contract that says who owns the domain and the site, would make me far more comfortable."
+      },
+      {
+        "question": "What do you currently spend on websites, booking tools and administration, who approves the purchase, and what specific event would prompt you to switch?",
+        "answer": "I pay maybe R150 to R250 a month for domain and hosting, and that's it. The rest is my own time and Excel. I'm the director, so I approve it, but my wife and I decide on anything that adds a monthly cost. I'd switch if my site started costing me real enquiries, or if a booking and quote system saved me the late nights I spend redoing cost reports and chasing paperwork."
+      },
+      {
+        "question": "Which single service would you buy first, what measurable outcome would justify its cost, and what evidence would you need before paying?",
+        "answer": "A proper website first, because mine is thin and I know it. I'd justify it if I could see more enquiries coming through the contact form or WhatsApp, say two or three extra real leads a month. Before paying I'd want to see live sites on client domains, speak to one or two of those clients, and have the price, scope and exit terms in writing."
+      }
+    ],
+    "price_too_cheap": 1500.0,
+    "price_bargain": 3500.0,
+    "price_getting_expensive": 8000.0,
+    "price_too_expensive": 20000.0,
+    "price_points_repaired": false
+  },
+  {
+    "persona_id": "P010",
+    "model": "openai/gpt-4.1-mini",
+    "first_reaction": "The quick turnaround sounds interesting, but I worry about the catch with the free offer and unclear pricing after the first year.",
+    "appeal": 3,
+    "uniqueness": 3,
+    "believability": 3,
+    "purchase_intent": 3,
+    "value_for_money": null,
+    "price_reaction": "",
+    "likes": [
+      "Fast delivery claims",
+      "Direct founder contact",
+      "Free first year hosting and maintenance"
+    ],
+    "concerns": [
+      "Undefined scope and exceptions",
+      "Unclear ongoing costs and support terms",
+      "No clear proof of consistent quality or long-term client satisfaction"
+    ],
+    "would_buy_if": "If they clearly define scope, provide a demo, and offer fixed pricing with reliable support, I’d consider buying.",
+    "quote": "It sounds promising, but I’d want to see a clear scope and pricing before I commit.",
+    "client_questions": [
+      {
+        "question": "For a defined booking system or business dashboard, would you choose an upfront project fee or a monthly build, hosting and support plan, and why? Specify required scope, acceptable terms and ZAR price expectations separately for each option.",
+        "answer": "I’d prefer an upfront fixed project fee for the build with clear deliverables and timeline, around R25k to R40k depending on complexity. Then a separate monthly support and hosting fee capped at about R1000, with guaranteed uptime and response times. This helps me budget and avoid open-ended costs."
+      },
+      {
+        "question": "After a free website and first year of hosting, SSL and maintenance, what would justify paying R1,000/month? What inclusions, lower monthly price or annual payment option would change your decision?",
+        "answer": "I’d need guaranteed reliable hosting, quick support with SLA, and regular updates or security patches included. If it was just hosting without much support, I’d expect closer to R500–700/month or a discounted annual rate."
+      },
+      {
+        "question": "Would you choose a free website with later recurring fees or a low-cost paid website package with transparent ongoing costs? Explain trust concerns, budget and conditions for committing.",
+        "answer": "I’d rather pay a low-cost upfront fee with transparent ongoing costs. Free offers often feel like bait and switch or lock-in. I need clear contracts and no surprises on recurring fees before committing."
+      },
+      {
+        "question": "What do you currently spend on websites, booking tools and administration, who approves the purchase, and what specific event would prompt you to switch?",
+        "answer": "We spend about R30k–R50k on website builds every few years, plus around R1k monthly on hosting and software subscriptions. I approve purchases. I’d switch if current tools cause delays or errors affecting deliveries or cash flow."
+      },
+      {
+        "question": "Which single service would you buy first, what measurable outcome would justify its cost, and what evidence would you need before paying?",
+        "answer": "I’d buy a custom booking system first to reduce double bookings and admin time. Justified if it saves at least a few hours per week or prevents costly errors. I’d want a demo or prototype showing how it fits our workflow."
+      }
+    ],
+    "price_too_cheap": 2000.0,
+    "price_bargain": 15000.0,
+    "price_getting_expensive": 40000.0,
+    "price_too_expensive": 70000.0,
+    "price_points_repaired": false
+  },
+  {
+    "persona_id": "P011",
+    "model": "deepseek/deepseek-v4.1-flash",
+    "first_reaction": "Free website sounds like bait, and I've been burned before by 'free' that turns into R3,000 a month. But if the portfolio is real and local, I'd take a look.",
+    "appeal": 3,
+    "uniqueness": 2,
+    "believability": 2,
+    "purchase_intent": 2,
+    "value_for_money": null,
+    "price_reaction": "",
+    "likes": [
+      "One supplier for site, hosting and support means fewer people to chase",
+      "Direct contact with the builder, not a call centre",
+      "Free first year would let me test without risk"
+    ],
+    "concerns": [
+      "Started September 2025, most portfolio sites are demos on their own subdomains, not live client domains",
+      "R1,000 a month after year one is a recurring cost I'd need to justify against actual new clients",
+      "Delivery in 1-2 days for a proper site sounds too good, and the terms, ownership and cancellation aren't spelled out"
+    ],
+    "would_buy_if": "They showed me two or three live sites for real Pretoria businesses, gave me a vet or clinic reference I could phone, and put the full price, ownership of the domain and exit terms in writing before I paid a cent.",
+    "quote": "Free website sounds nice until you read the fine print, so I'd want to see it working for another practice first.",
+    "client_questions": [
+      {
+        "question": "For a defined booking system or business dashboard, would you choose an upfront project fee or a monthly build, hosting and support plan, and why? Specify required scope, acceptable terms and ZAR price expectations separately for each option.",
+        "answer": "Upfront fee, definitely. I don't want another subscription bleeding me every month. For a booking system that ties into my practice app and stops double-bookings, I'd pay R15,000 to R25,000 once, with a fixed scope, my domain, my data, and a 30-day fix-it guarantee. If they insist on monthly, I'd only consider it under R800 a month with support included, and I'd want to cancel with 30 days' notice."
+      },
+      {
+        "question": "After a free website and first year of hosting, SSL and maintenance, what would justify paying R1,000/month? What inclusions, lower monthly price or annual payment option would change your decision?",
+        "answer": "R1,000 a month only makes sense if it includes real maintenance, security updates, backups, small content changes and a report showing enquiries or bookings that came through the site. If it's just hosting and SSL, that's worth R300 to R400 a month at most. I'd rather pay annually at a discount, say R9,000 for the year, than be locked in monthly."
+      },
+      {
+        "question": "Would you choose a free website with later recurring fees or a low-cost paid website package with transparent ongoing costs? Explain trust concerns, budget and conditions for committing.",
+        "answer": "I'd take a low-cost paid package with everything written down. Free now with vague fees later is exactly how you end up hostage to a supplier. Charge me R5,000 to R8,000 upfront for the build, tell me hosting is R400 a month from day one, and I'll trust you more, not less."
+      },
+      {
+        "question": "What do you currently spend on websites, booking tools and administration, who approves the purchase, and what specific event would prompt you to switch?",
+        "answer": "I spend maybe R200 a month on hosting and a few hundred on the practice app; the site itself is basically static and I haven't touched it in a year. I approve purchases, sometimes with my husband if it's over R20,000. I'd switch the day I lose a booking or a client because the website couldn't take an enquiry properly, or if a colleague at another practice shows me their site bringing in new clients."
+      },
+      {
+        "question": "Which single service would you buy first, what measurable outcome would justify its cost, and what evidence would you need before paying?",
+        "answer": "The website rebuild, because it's the front door. I'd want to see it bring in at least three to five new client enquiries a month that turn into appointments. Evidence: two or three live local sites I can actually visit, a phone number for a vet or clinic owner who'll vouch for them, and a written quote with no hidden extras."
+      }
+    ],
+    "price_too_cheap": 1500.0,
+    "price_bargain": 8000.0,
+    "price_getting_expensive": 25000.0,
+    "price_too_expensive": 45000.0,
+    "price_points_repaired": false
+  },
+  {
+    "persona_id": "P012",
+    "model": "openai/gpt-4.1-mini",
+    "first_reaction": "The free website build sounds attractive, but the R1,000 monthly hosting after the first year seems steep without clear ongoing value.",
+    "appeal": 3,
+    "uniqueness": 3,
+    "believability": 3,
+    "purchase_intent": 2,
+    "value_for_money": null,
+    "price_reaction": "",
+    "likes": [
+      "Fast turnaround promises",
+      "Direct contact with founders",
+      "Bundled hosting, SSL, and maintenance"
+    ],
+    "concerns": [
+      "Unclear scope and terms for hosting and support",
+      "No transparent pricing for web apps and ads",
+      "Sustainability of free offer and conversion to paid"
+    ],
+    "would_buy_if": "They provide transparent pricing with clear scope and demonstrate measurable lead generation or admin efficiency improvements, plus credible references from similar clients.",
+    "quote": "It sounds interesting, but I’d need to see real proof and clear costs before switching from what I have.",
+    "client_questions": [
+      {
+        "question": "For a defined booking system or business dashboard, would you choose an upfront project fee or a monthly build, hosting and support plan, and why? Specify required scope, acceptable terms and ZAR price expectations separately for each option.",
+        "answer": "I prefer an upfront project fee with clear deliverables and ownership, ideally between R15,000 and R25,000, to avoid ongoing surprises. Monthly plans might work if they include support, updates, and hosting under R1,000/month with clear SLA and exit terms."
+      },
+      {
+        "question": "After a free website and first year of hosting, SSL and maintenance, what would justify paying R1,000/month? What inclusions, lower monthly price or annual payment option would change your decision?",
+        "answer": "I would only pay R1,000/month if it includes proactive SEO, regular updates, security, and quick support. A lower monthly fee around R600–R800 or a discounted annual option would improve acceptance."
+      },
+      {
+        "question": "Would you choose a free website with later recurring fees or a low-cost paid website package with transparent ongoing costs? Explain trust concerns, budget and conditions for committing.",
+        "answer": "I’d prefer a low-cost paid package with transparent ongoing costs to avoid surprises. Trust is key, so I need clear contracts and proof of quality. Budget-wise, something around R12,000 up front and R600/month ongoing is reasonable."
+      },
+      {
+        "question": "What do you currently spend on websites, booking tools and administration, who approves the purchase, and what specific event would prompt you to switch?",
+        "answer": "We spend about R15,000–R20,000 on website builds every few years, and about R1,000/month on hosting and tools. I approve purchases. I’d switch if a new solution clearly saves admin time, improves lead conversion, or reduces compliance risk."
+      },
+      {
+        "question": "Which single service would you buy first, what measurable outcome would justify its cost, and what evidence would you need before paying?",
+        "answer": "I’d buy a custom website first. Justification would be increased qualified leads from the site or better client trust. I’d need portfolio examples, client references, and a clear timeline before committing."
+      }
+    ],
+    "price_too_cheap": 3000.0,
+    "price_bargain": 12000.0,
+    "price_getting_expensive": 25000.0,
+    "price_too_expensive": 40000.0,
+    "price_points_repaired": false
+  },
+  {
+    "persona_id": "P013",
+    "model": "deepseek/deepseek-v4.1-flash",
+    "first_reaction": "Free website and only R1,000 a month after that? That sounds too good, but I've been burned by cheap setups before. If they actually deliver in a day or two and answer WhatsApp, I'd give it a shot.",
+    "appeal": 4,
+    "uniqueness": 3,
+    "believability": 3,
+    "purchase_intent": 4,
+    "value_for_money": null,
+    "price_reaction": "",
+    "likes": [
+      "Free build and first year hosting takes away the risk of paying upfront for something that doesn't work.",
+      "A booking system and dashboard could get my job cards and parts orders out of spreadsheets.",
+      "One person to call for hosting, changes and SEO instead of juggling three suppliers."
+    ],
+    "concerns": [
+      "R1,000 a month after the free year is a real cost - that's almost my monthly data and airtime combined. I need to know exactly what I get.",
+      "The R450 an hour for changes worries me. If I need small tweaks often, that adds up fast and I can't predict it.",
+      "Two founders doing everything in 1-2 days for websites and 4-5 days for apps sounds rushed. I'd want to see a real booking system working for a workshop like mine, not just a demo."
+    ],
+    "would_buy_if": "They show me a working booking system for a workshop like mine, give me a clear written price with no hidden hourly fees, and let me talk to a real customer who's happy.",
+    "quote": "If they can really build me a booking system in a week and it works, R1,000 a month is worth it - but I need to see it first.",
+    "client_questions": [
+      {
+        "question": "For a defined booking system or business dashboard, would you choose an upfront project fee or a monthly build, hosting and support plan, and why? Specify required scope, acceptable terms and ZAR price expectations separately for each option.",
+        "answer": "For a booking system I'd rather pay a once-off project fee so I know what I'm in for. Something like R8,000 to R12,000 for a simple system that takes bookings, sends WhatsApp reminders and shows me a daily job list. If it's monthly, I'd only consider it if it's under R500 a month and includes hosting, support and updates - otherwise I'd feel trapped. For a dashboard, similar: R6,000 to R10,000 once-off, or R400-R600 a month. I need to see it working on my own laptop before I commit."
+      },
+      {
+        "question": "After a free website and first year of hosting, SSL and maintenance, what would justify paying R1,000/month? What inclusions, lower monthly price or annual payment option would change your decision?",
+        "answer": "R1,000 a month is steep for me. That's a chunk of my monthly profit. To justify it, it would have to include hosting, SSL, backups, security updates, at least two hours of changes a month, and someone who answers within an hour when my site goes down. If it also managed my Google Business Profile and sent me a simple monthly report, I'd feel better. A lower price like R500-R600 a month, or an annual payment with a discount, would make me much more comfortable."
+      },
+      {
+        "question": "Would you choose a free website with later recurring fees or a low-cost paid website package with transparent ongoing costs? Explain trust concerns, budget and conditions for committing.",
+        "answer": "I'd lean toward a low-cost paid package with everything spelled out upfront. Free sounds nice, but I've seen 'free' turn into hidden costs or a site I can't move. If I pay R5,000 once-off and know hosting is R300 a month from the start, I can budget for it and I own the site. The free offer would only work for me if the contract clearly says I own the domain and content, and the monthly fee after year one is capped or negotiable."
+      },
+      {
+        "question": "What do you currently spend on websites, booking tools and administration, who approves the purchase, and what specific event would prompt you to switch?",
+        "answer": "Right now I spend about R150 a month on hosting and email, and nothing on booking tools - I use WhatsApp and a paper diary. I approve purchases myself, but I discuss anything over R500 a month with my wife because it affects the household. I'd switch if I lost a big insurance job because I double-booked a bay, or if a customer complained they never got a quote back. That's when I'd pay for a proper booking system."
+      },
+      {
+        "question": "Which single service would you buy first, what measurable outcome would justify its cost, and what evidence would you need before paying?",
+        "answer": "I'd buy the booking system first. If it stops double-bookings and saves me at least three hours of admin a week, that's worth R500-R800 a month to me. Before paying, I'd want to see a live demo on a phone, talk to one existing customer who runs a workshop or similar business, and get a written quote with no surprises. A free trial or a money-back period would seal it."
+      }
+    ],
+    "price_too_cheap": 3000.0,
+    "price_bargain": 7000.0,
+    "price_getting_expensive": 15000.0,
+    "price_too_expensive": 30000.0,
+    "price_points_repaired": false
+  },
+  {
+    "persona_id": "P014",
+    "model": "openai/gpt-4.1-mini",
+    "first_reaction": "The free first year sounds tempting, but I'm cautious about the recurring fees and unclear terms.",
+    "appeal": 3,
+    "uniqueness": 3,
+    "believability": 2,
+    "purchase_intent": 2,
+    "value_for_money": null,
+    "price_reaction": "",
+    "likes": [
+      "Fast delivery claims for websites and apps",
+      "Direct contact with founders",
+      "Free initial website build and hosting"
+    ],
+    "concerns": [
+      "Monthly fee of R1,000 seems steep without clear value",
+      "Lack of clarity on support, usage limits, and cancellation",
+      "Unproven conversion from free to paid customers"
+    ],
+    "would_buy_if": "If the monthly fees were lower or bundled with enough support to save me time and hassle, and if I could see reliable client feedback and clear terms.",
+    "quote": "It sounds useful but I’d need proof it’s worth the ongoing cost before switching from WhatsApp and my spreadsheets.",
+    "client_questions": [
+      {
+        "question": "For a defined booking system or business dashboard, would you choose an upfront project fee or a monthly build, hosting and support plan, and why? Specify required scope, acceptable terms and ZAR price expectations separately for each option.",
+        "answer": "I prefer an upfront project fee because it’s clearer and I can budget better. For a booking system, I’d expect a fixed price between R8,000 and R12,000, including setup and basic support for 6 months. If a monthly plan is offered, it should be under R700/month and include hosting, updates, and reasonable support."
+      },
+      {
+        "question": "After a free website and first year of hosting, SSL and maintenance, what would justify paying R1,000/month? What inclusions, lower monthly price or annual payment option would change your decision?",
+        "answer": "To justify R1,000/month, it must include regular updates, troubleshooting, security monitoring, and some SEO help. If the price dropped to about R600–700/month or there was a discounted annual option, I’d consider it more seriously."
+      },
+      {
+        "question": "Would you choose a free website with later recurring fees or a low-cost paid website package with transparent ongoing costs? Explain trust concerns, budget and conditions for committing.",
+        "answer": "I’d lean towards a low-cost paid package with clear ongoing costs. Free sounds good but I worry about hidden fees or sudden price hikes. A transparent monthly or annual fee, with no surprises, builds trust and fits my budgeting better."
+      },
+      {
+        "question": "What do you currently spend on websites, booking tools and administration, who approves the purchase, and what specific event would prompt you to switch?",
+        "answer": "Currently, I spend around R10,000–R15,000 every few years on websites and use WhatsApp plus spreadsheets for bookings. I approve purchases myself. I’d consider switching if my current system causes too many errors or wastes too much time, making a better digital solution necessary."
+      },
+      {
+        "question": "Which single service would you buy first, what measurable outcome would justify its cost, and what evidence would you need before paying?",
+        "answer": "I’d buy a booking system first to reduce double bookings and save admin hours. If it cuts admin time by at least 30% and improves client responses, that would justify the cost. Before paying, I’d want to see client testimonials, a demo, and clear service terms."
+      }
+    ],
+    "price_too_cheap": 2000.0,
+    "price_bargain": 7000.0,
+    "price_getting_expensive": 12000.0,
+    "price_too_expensive": 16000.0,
+    "price_points_repaired": false
+  },
+  {
+    "persona_id": "P015",
+    "model": "deepseek/deepseek-v4.1-flash",
+    "first_reaction": "A free website sounds great, but I'm wary of what happens after that first year and whether a 1-2 day build is actually any good.",
+    "appeal": 3,
+    "uniqueness": 3,
+    "believability": 2,
+    "purchase_intent": 2,
+    "value_for_money": null,
+    "price_reaction": "",
+    "likes": [
+      "One person to handle the site, booking system and changes",
+      "Free first year means I can test it without much risk"
+    ],
+    "concerns": [
+      "R1,000 a month after the free year feels like a trap if I'm not getting real value",
+      "1-2 day delivery sounds too fast to be properly customised",
+      "No clear pricing for the booking system, which is what I actually need"
+    ],
+    "would_buy_if": "They show me a working booking system in a similar practice, with clear once-off pricing and no hidden monthly costs after the first year.",
+    "quote": "Free website sounds nice, but I'm not signing up for another monthly fee unless it actually saves me admin time.",
+    "client_questions": [
+      {
+        "question": "For a defined booking system or business dashboard, would you choose an upfront project fee or a monthly build, hosting and support plan, and why? Specify required scope, acceptable terms and ZAR price expectations separately for each option.",
+        "answer": "Upfront project fee, because I know what I'm paying and I own it. For a booking system that syncs with my calendar and sends reminders, I'd pay R15,000–R25,000 once-off. A monthly plan only if it's under R1,000 and includes support and updates—but I'd worry about being locked in."
+      },
+      {
+        "question": "After a free website and first year of hosting, SSL and maintenance, what would justify paying R1,000/month? What inclusions, lower monthly price or annual payment option would change your decision?",
+        "answer": "It would need to include regular updates, SEO, and maybe some ad management—not just hosting. R1,000 is too much for hosting alone. If it was R500 a month or I could pay annually at a discount, I'd consider it. But I'd want to see proof it brings in patients."
+      },
+      {
+        "question": "Would you choose a free website with later recurring fees or a low-cost paid website package with transparent ongoing costs? Explain trust concerns, budget and conditions for committing.",
+        "answer": "I'd rather pay a small upfront fee and know exactly what the ongoing costs are. Free then R1,000 a month feels like a trap—what if I want to leave? I'd need clear cancellation terms and no lock-in."
+      },
+      {
+        "question": "What do you currently spend on websites, booking tools and administration, who approves the purchase, and what specific event would prompt you to switch?",
+        "answer": "I spend maybe R500 a month on my online booking tool and a few thousand a year on ad hoc freelancer work. I'm the decision maker. I'd switch if my current system causes double bookings or if I lose a patient because I couldn't respond fast enough."
+      },
+      {
+        "question": "Which single service would you buy first, what measurable outcome would justify its cost, and what evidence would you need before paying?",
+        "answer": "The booking system. If it cuts no-shows by 20% and saves me an hour a day, it pays for itself. I'd need to see it working for another physio or similar practice, and talk to that owner."
+      }
+    ],
+    "price_too_cheap": 5000.0,
+    "price_bargain": 8000.0,
+    "price_getting_expensive": 15000.0,
+    "price_too_expensive": 25000.0,
+    "price_points_repaired": false
+  },
+  {
+    "persona_id": "P016",
+    "model": "openai/gpt-4.1-mini",
+    "first_reaction": "A free website sounds tempting, but the ongoing costs and unclear terms make me cautious.",
+    "appeal": 2,
+    "uniqueness": 3,
+    "believability": 2,
+    "purchase_intent": 2,
+    "value_for_money": null,
+    "price_reaction": "",
+    "likes": [
+      "Fast turnaround time for websites",
+      "Direct contact with the founders",
+      "Free initial website and hosting for a year"
+    ],
+    "concerns": [
+      "Unclear pricing and terms after the free year",
+      "Skeptical about quality if it's delivered too fast",
+      "No clear proof of consistent results or satisfied paying customers"
+    ],
+    "would_buy_if": "If they offered clear, fixed pricing with good support and proof that their system would save me time and reduce errors in bookings.",
+    "quote": "Sounds interesting but I’d need to see clear pricing and real proof before I’d consider switching from what we have.",
+    "client_questions": [
+      {
+        "question": "For a defined booking system or business dashboard, would you choose an upfront project fee or a monthly build, hosting and support plan, and why? Specify required scope, acceptable terms and ZAR price expectations separately for each option.",
+        "answer": "I'd prefer an upfront project fee because it feels more straightforward; scope must be clearly defined including features and support for at least a year. I'd expect something reasonable, maybe around R10,000-R15,000 for a full booking system with support included. Monthly plans might be okay if they cover hosting, updates and support, but I'd want a clear limit on hours and a price under R1,000/month."
+      },
+      {
+        "question": "After a free website and first year of hosting, SSL and maintenance, what would justify paying R1,000/month? What inclusions, lower monthly price or annual payment option would change your decision?",
+        "answer": "I'd only pay R1,000/month if it included reliable support, regular updates, backups, and maybe some SEO basics. A lower price like R600-R700 or a discounted annual payment could make it more attractive. I’d need guarantees on uptime and response times."
+      },
+      {
+        "question": "Would you choose a free website with later recurring fees or a low-cost paid website package with transparent ongoing costs? Explain trust concerns, budget and conditions for committing.",
+        "answer": "I’m skeptical of free offers because they often lead to surprises later. I’d prefer a low-cost paid package with all fees clearly stated upfront. Budget-wise, I want to avoid unexpectedly high monthly charges. Trust comes from clear contracts and maybe references from similar businesses."
+      },
+      {
+        "question": "What do you currently spend on websites, booking tools and administration, who approves the purchase, and what specific event would prompt you to switch?",
+        "answer": "We currently spend around R15,000 to R25,000 on websites every few years, mostly approved by me and my business partner. We use WhatsApp and spreadsheets for bookings. I'd consider switching if we had frequent booking errors or lost enquiries that cost us business."
+      },
+      {
+        "question": "Which single service would you buy first, what measurable outcome would justify its cost, and what evidence would you need before paying?",
+        "answer": "I'd buy a custom booking system first. If it reduced double bookings and saved hours of admin weekly, that would justify the cost. I'd want to see client testimonials and maybe a demo or trial before committing."
+      }
+    ],
+    "price_too_cheap": 200.0,
+    "price_bargain": 700.0,
+    "price_getting_expensive": 1200.0,
+    "price_too_expensive": 1800.0,
+    "price_points_repaired": false
+  },
+  {
+    "persona_id": "P017",
+    "model": "deepseek/deepseek-v4.1-flash",
+    "first_reaction": "Free website sounds nice, but I've been burned before by 'free' that turns into a monthly bill I can't get out of. The 1-2 day build claim makes me wonder what corners get cut.",
+    "appeal": 3,
+    "uniqueness": 2,
+    "believability": 2,
+    "purchase_intent": 2,
+    "value_for_money": null,
+    "price_reaction": "",
+    "likes": [
+      "Direct contact with the founders who actually build it, not a call centre",
+      "The idea of one supplier for website, hosting and maybe ads",
+      "A booking system could help with our installation scheduling"
+    ],
+    "concerns": [
+      "Free first year then R1,000 a month is a big jump and I don't know what I'm locked into",
+      "1-2 day website delivery sounds too fast to be properly done, especially SEO and mobile",
+      "Most of their portfolio is on their own subdomain, not real client sites I can check"
+    ],
+    "would_buy_if": "I could see real client sites they've built that load fast and rank, talk to a reference customer in a similar trade, and get a fixed price with no hidden monthly surprises after the first year.",
+    "quote": "Free website sounds good until you read the fine print and realise you're paying R1,000 a month forever, so I'd want to see it working for someone like me first.",
+    "client_questions": [
+      {
+        "question": "For a defined booking system or business dashboard, would you choose an upfront project fee or a monthly build, hosting and support plan, and why? Specify required scope, acceptable terms and ZAR price expectations separately for each option.",
+        "answer": "Upfront fee, definitely. I want to know what I'm paying and own the thing when it's done. Monthly feels like a trap. For a simple booking system for our installations, I'd pay maybe R15,000-R25,000 once-off. Monthly? No more than R500 a month and only if it includes hosting and fixes."
+      },
+      {
+        "question": "After a free website and first year of hosting, SSL and maintenance, what would justify paying R1,000/month? What inclusions, lower monthly price or annual payment option would change your decision?",
+        "answer": "R1,000 a month is steep for a small business like mine. To justify that I'd need to see actual leads coming in, monthly reports showing enquiries, and maybe some ad management included. If it was R500 or I could pay R5,000 a year upfront, I'd consider it more seriously."
+      },
+      {
+        "question": "Would you choose a free website with later recurring fees or a low-cost paid website package with transparent ongoing costs? Explain trust concerns, budget and conditions for committing.",
+        "answer": "I'd rather pay a fair price upfront than get caught by surprise later. Free sounds good but I've heard stories of people losing their domain or being held hostage. If I pay R5,000-R8,000 for the site and know exactly what hosting costs after, that's cleaner."
+      },
+      {
+        "question": "What do you currently spend on websites, booking tools and administration, who approves the purchase, and what specific event would prompt you to switch?",
+        "answer": "I spent about R12,000 on the current site a few years back, and the Google Ads freelancer gets around R3,500 a month. My husband and I decide together on anything over R10,000. I'd switch if the current site starts losing us enquiries or if a farmer complains they couldn't find us or request a quote easily."
+      },
+      {
+        "question": "Which single service would you buy first, what measurable outcome would justify its cost, and what evidence would you need before paying?",
+        "answer": "Probably the booking system for installations, because we get double-booked sometimes and it wastes a trip. If it saved us two wasted trips a month, that's worth maybe R1,000-R1,500 a month to me. But I'd want to see it working for another borehole or irrigation company first, and speak to that owner."
+      }
+    ],
+    "price_too_cheap": 500.0,
+    "price_bargain": 1500.0,
+    "price_getting_expensive": 3500.0,
+    "price_too_expensive": 8000.0,
+    "price_points_repaired": false
+  },
+  {
+    "persona_id": "P018",
+    "model": "openai/gpt-4.1-mini",
+    "first_reaction": "Free website sounds appealing but the R1,000 monthly fee after a year is quite high for me unless it really cuts down my admin load.",
+    "appeal": 3,
+    "uniqueness": 3,
+    "believability": 3,
+    "purchase_intent": 2,
+    "value_for_money": null,
+    "price_reaction": "",
+    "likes": [
+      "Quick turnaround time for websites",
+      "Direct contact with founders",
+      "Free first year hosting and maintenance"
+    ],
+    "concerns": [
+      "High monthly fee after free period",
+      "Lack of clear scope and terms for web apps",
+      "Unclear ongoing support and fee structure"
+    ],
+    "would_buy_if": "If the monthly fees were lower or bundled with enough service to clearly save me time and hassle, and if I saw proof of success from similar small education centres.",
+    "quote": "It sounds useful, but I’m not convinced the monthly costs will be worth it for what I need.",
+    "client_questions": [
+      {
+        "question": "For a defined booking system or business dashboard, would you choose an upfront project fee or a monthly build, hosting and support plan, and why? Specify required scope, acceptable terms and ZAR price expectations separately for each option.",
+        "answer": "I prefer an upfront project fee because I want to know exactly what I’m paying for and avoid ongoing surprises. For a booking system, the scope must include easy scheduling, payment tracking, and reminders. I’d expect to pay around R7,000 to R10,000 upfront. For a monthly plan, I’d want clear limits on support hours and a price no higher than R700 per month."
+      },
+      {
+        "question": "After a free website and first year of hosting, SSL and maintenance, what would justify paying R1,000/month? What inclusions, lower monthly price or annual payment option would change your decision?",
+        "answer": "To pay R1,000 monthly, it must include regular updates, quick support response, backups, and maybe some marketing help. If the price was closer to R500-700 monthly or there was a discounted annual payment, I’d consider it more seriously."
+      },
+      {
+        "question": "Would you choose a free website with later recurring fees or a low-cost paid website package with transparent ongoing costs? Explain trust concerns, budget and conditions for committing.",
+        "answer": "I’d lean toward a low-cost paid package with clear ongoing costs because free offers often hide future costs or upsells. I need transparency and trust that I won’t get hit with unexpected fees, and my budget is tight so predictable costs help."
+      },
+      {
+        "question": "What do you currently spend on websites, booking tools and administration, who approves the purchase, and what specific event would prompt you to switch?",
+        "answer": "I spend about R5,000 to R10,000 every couple of years on website updates and use free or low-cost booking tools like WhatsApp and spreadsheets. I approve purchases myself. I’d switch if a tool clearly saves me time and reduces fee arrears or double bookings."
+      },
+      {
+        "question": "Which single service would you buy first, what measurable outcome would justify its cost, and what evidence would you need before paying?",
+        "answer": "I’d buy a booking system first. If it reduces my admin time by at least 3 hours a week and cuts down missed payments, that’s worth paying for. I’d need to see a demo and testimonials from similar tutoring centres before committing."
+      }
+    ],
+    "price_too_cheap": 1000.0,
+    "price_bargain": 5000.0,
+    "price_getting_expensive": 11000.0,
+    "price_too_expensive": 16000.0,
+    "price_points_repaired": false
+  },
+  {
+    "persona_id": "P019",
+    "model": "deepseek/deepseek-v4.1-flash",
+    "first_reaction": "Free website sounds too good to be true, and then R1,000 a month after a year is a trap I'd rather avoid. I've got a five-page WordPress site that works fine, and I'm not looking to hand over a monthly fee.",
+    "appeal": 2,
+    "uniqueness": 2,
+    "believability": 2,
+    "purchase_intent": 2,
+    "value_for_money": null,
+    "price_reaction": "",
+    "likes": [
+      "Direct contact with the builder is handy if something breaks.",
+      "If they can really do a booking system in 4-5 days, that could save admin time."
+    ],
+    "concerns": [
+      "Free now, R1,000/month later feels like a setup to lock me into a fee I can't justify.",
+      "No track record, no clear scope, and I can't see what happens if I want to cancel.",
+      "I don't need a custom web app; my spreadsheet and WhatsApp Business cover quotes and jobs."
+    ],
+    "would_buy_if": "They offered a fixed-price website I own outright for under R4,000, or a booking system under R8,000 once-off with a clear scope and no monthly fee.",
+    "quote": "Free website now, R1,000 a month later? Nee, I'll stick with my WordPress site and WhatsApp till I see something that actually saves me time or money.",
+    "client_questions": [
+      {
+        "question": "For a defined booking system or business dashboard, would you choose an upfront project fee or a monthly build, hosting and support plan, and why? Specify required scope, acceptable terms and ZAR price expectations separately for each option.",
+        "answer": "I'd go upfront project fee for something like a booking system. Monthly never ends. If they scope it clearly - say a simple booking form, calendar view, WhatsApp confirmation, and basic client records - I'd consider R5,000 to R8,000 once-off. On subscription, I'd want it under R300/month all-in, with no lock-in, otherwise no. I can't have a surprise R1,000 bill every month."
+      },
+      {
+        "question": "After a free website and first year of hosting, SSL and maintenance, what would justify paying R1,000/month? What inclusions, lower monthly price or annual payment option would change your decision?",
+        "answer": "Nothing really justifies R1,000/month for me. My WordPress site runs on a cheap local package and I update it myself. If it included booking management, review monitoring, and I could call someone anytime, maybe R400/month max. An annual payment option under R3,000 would make me think, but I'd still likely pass."
+      },
+      {
+        "question": "Would you choose a free website with later recurring fees or a low-cost paid website package with transparent ongoing costs? Explain trust concerns, budget and conditions for committing.",
+        "answer": "I'd take a low-cost paid website package upfront. I've seen free offers turn into hostage situations with hosting or domain control. If I pay R2,500 to R4,000 once and I own the site, that's cleaner. The free-then-fee model makes me suspicious about whether I'll be able to move my site later."
+      },
+      {
+        "question": "What do you currently spend on websites, booking tools and administration, who approves the purchase, and what specific event would prompt you to switch?",
+        "answer": "I spend maybe R1,200 a year on hosting and domain, nothing on booking tools, and my admin is my own time. I approve everything myself. The only thing that would make me switch is if I lost a big job because my site looked outdated or enquiries were slipping. Right now that hasn't happened."
+      },
+      {
+        "question": "Which single service would you buy first, what measurable outcome would justify its cost, and what evidence would you need before paying?",
+        "answer": "Maybe the booking system if it could genuinely save me an hour a day chasing appointments. But I'd need to see it working for another installer like me, and I'd want a trial or money-back. A demo isn't enough. Evidence of real savings, not promises."
+      }
+    ],
+    "price_too_cheap": 1500.0,
+    "price_bargain": 3500.0,
+    "price_getting_expensive": 7000.0,
+    "price_too_expensive": 15000.0,
+    "price_points_repaired": false
+  },
+  {
+    "persona_id": "P020",
+    "model": "openai/gpt-4.1-mini",
+    "first_reaction": "The fast delivery and free first year sound interesting, but the unclear scope and future costs make me cautious.",
+    "appeal": 3,
+    "uniqueness": 3,
+    "believability": 3,
+    "purchase_intent": 3,
+    "value_for_money": null,
+    "price_reaction": "",
+    "likes": [
+      "Fast turnaround promised for websites and apps",
+      "Direct contact with the founders",
+      "Free first year hosting and maintenance"
+    ],
+    "concerns": [
+      "No clear scope or exceptions spelled out",
+      "Uncertainty about ongoing costs after the free year",
+      "No clear details on SEO and ads pricing or what's included"
+    ],
+    "would_buy_if": "The offer clearly defines scope, pricing after the free year is transparent and reasonable, and they prove reliable delivery with client references.",
+    "quote": "It sounds promising if they can really deliver fast and clear, but I need more proof and clear costs before I commit.",
+    "client_questions": [
+      {
+        "question": "For a defined booking system or business dashboard, would you choose an upfront project fee or a monthly build, hosting and support plan, and why? Specify required scope, acceptable terms and ZAR price expectations separately for each option.",
+        "answer": "I'd prefer a fixed project fee for the initial build so I know my upfront costs and can budget properly. The scope must include all core features clearly listed with no hidden extras. For hosting and support, a monthly plan capped at around R1000 with defined SLA and two free support hours would work. Transparency and fixed terms are key."
+      },
+      {
+        "question": "After a free website and first year of hosting, SSL and maintenance, what would justify paying R1,000/month? What inclusions, lower monthly price or annual payment option would change your decision?",
+        "answer": "I'd pay R1,000/month only if it covers reliable uptime, quick fixes, security updates, and a reasonable amount of changes included. A discount for annual payment or a lower monthly fee around R700-R800 would make it more attractive."
+      },
+      {
+        "question": "Would you choose a free website with later recurring fees or a low-cost paid website package with transparent ongoing costs? Explain trust concerns, budget and conditions for committing.",
+        "answer": "A low-cost paid package with clear ongoing costs is better for trust. Free sounds good but I worry about surprise charges later. I need clear contracts and no hidden fees to commit, since budgeting is important."
+      },
+      {
+        "question": "What do you currently spend on websites, booking tools and administration, who approves the purchase, and what specific event would prompt you to switch?",
+        "answer": "I spend around R20,000-R50,000 on websites and tools annually. I approve purchases myself. I'd switch if I see a solution that saves me time on admin, reduces errors, and integrates well with my current systems."
+      },
+      {
+        "question": "Which single service would you buy first, what measurable outcome would justify its cost, and what evidence would you need before paying?",
+        "answer": "I'd start with a custom booking system. If it cuts admin time by at least 20% and reduces booking errors, that justifies the cost. I'd want a demo or trial and references from similar businesses before paying."
+      }
+    ],
+    "price_too_cheap": 5000.0,
+    "price_bargain": 15000.0,
+    "price_getting_expensive": 40000.0,
+    "price_too_expensive": 70000.0,
+    "price_points_repaired": false
+  }
+]

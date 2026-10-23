@@ -6,10 +6,11 @@ numbers can't be hallucinated.
 
 from __future__ import annotations
 
+import math
 import statistics
 from collections import Counter, defaultdict
 
-from .schemas import Brief, InterviewResponse, Persona
+from .schemas import Brief, HookVariant, InterviewResponse, Persona
 
 METRICS = ["purchase_intent", "appeal", "uniqueness", "believability", "value_for_money"]
 
@@ -62,6 +63,8 @@ def _crossing(grid: list[float], f: list[float], g: list[float]) -> float | None
         if d[i] * d[i + 1] < 0:
             t = d[i] / (d[i] - d[i + 1])
             return grid[i] + t * (grid[i + 1] - grid[i])
+    if d and d[-1] == 0:
+        return grid[-1]
     return None
 
 
@@ -116,6 +119,169 @@ def price_acceptance(rows: list[InterviewResponse], price: float | None) -> dict
         "expensive_but_considered": round(
             sum(1 for r in pts if r.price_getting_expensive < price < r.price_too_expensive) / n, 3),
         "too_expensive": round(sum(1 for r in pts if price >= r.price_too_expensive) / n, 3),
+    }
+
+
+# --------------------------------------------------------------------------- shootout & statistical inference
+
+
+def wilson_score_interval(conversions: int, total: int, confidence: float = 0.95) -> tuple[float, float]:
+    """Calculates Wilson score confidence interval for a binomial proportion.
+
+    Ensures defensible, robust coverage at small sample sizes (N=20 to N=100)
+    where normal approximation (Wald interval) breaks down.
+    """
+    if total <= 0:
+        return 0.0, 0.0
+    z_map = {0.90: 1.64485, 0.95: 1.95996, 0.99: 2.57583}
+    z = z_map.get(confidence, 1.95996)
+
+    p_hat = conversions / total
+    z2 = z * z
+    denom = 1 + z2 / total
+    center = (p_hat + z2 / (2 * total)) / denom
+    margin = (z / denom) * math.sqrt((p_hat * (1 - p_hat) / total) + (z2 / (4 * total * total)))
+
+    lower = max(0.0, round(center - margin, 4))
+    upper = min(1.0, round(center + margin, 4))
+    return lower, upper
+
+
+def two_proportion_z_test(k1: int, n1: int, k2: int, n2: int) -> tuple[float, float]:
+    """Two-proportion pooled z-test and two-tailed p-value using standard library math."""
+    if n1 <= 0 or n2 <= 0:
+        return 0.0, 1.0
+    p1 = k1 / n1
+    p2 = k2 / n2
+    pooled = (k1 + k2) / (n1 + n2)
+    se = math.sqrt(pooled * (1 - pooled) * (1 / n1 + 1 / n2))
+    if se == 0:
+        return 0.0, 1.0
+    z = (p1 - p2) / se
+    p_val = math.erfc(abs(z) / math.sqrt(2))
+    return round(z, 3), round(p_val, 4)
+
+
+def analyze_shootout(
+    rows: list[InterviewResponse],
+    variants: list[HookVariant],
+    weights: dict[str, float] | None = None,
+) -> dict | None:
+    """Computes between-subjects Hook Shootout metrics with Wilson 95% CIs and pairwise tests."""
+    if not variants:
+        return None
+    rows_with_variant = [r for r in rows if r.variant_id is not None]
+    if not rows_with_variant:
+        return None
+
+    w = weights or {"definitely": 0.75, "probably": 0.25}
+    metrics_list = []
+    raw_stats = {}
+
+    for v in variants:
+        sub = [r for r in rows if r.variant_id == v.id]
+        n = len(sub)
+        if n == 0:
+            raw_stats[v.id] = {
+                "n": 0, "conversions": 0, "top2": 0.0, "mean": 0.0,
+                "trial": 0.0, "appeal": 0.0, "ci": (0.0, 0.0),
+            }
+        else:
+            intents = [r.purchase_intent for r in sub]
+            conv = sum(1 for i in intents if i >= 4)
+            top2 = round(conv / n, 3)
+            ci = wilson_score_interval(conv, n, confidence=0.95)
+            mean_intent = round(statistics.mean(intents), 2)
+            trial = trial_estimate(intents, w)
+            appeal = round(statistics.mean(r.appeal for r in sub), 2)
+            raw_stats[v.id] = {
+                "n": n, "conversions": conv, "top2": top2, "mean": mean_intent,
+                "trial": trial, "appeal": appeal, "ci": ci,
+            }
+
+    for v in variants:
+        st = raw_stats[v.id]
+        pairwise = []
+        for other in variants:
+            if other.id == v.id:
+                continue
+            ost = raw_stats[other.id]
+            z, p = two_proportion_z_test(st["conversions"], st["n"], ost["conversions"], ost["n"])
+            pairwise.append({
+                "other_variant_id": other.id,
+                "diff_top2": round(st["top2"] - ost["top2"], 3),
+                "z_score": z,
+                "p_value": p,
+                "significant_95": p < 0.05,
+                "significant_90": p < 0.10,
+            })
+
+        metrics_list.append({
+            "variant_id": v.id,
+            "variant_name": v.name or v.id,
+            "hook_text": v.hook_text,
+            "angle": v.angle,
+            "n": st["n"],
+            "intent_mean": st["mean"],
+            "intent_top2": st["top2"],
+            "conversion_count": st["conversions"],
+            "wilson_ci": {"lower": st["ci"][0], "upper": st["ci"][1], "confidence": 0.95},
+            "trial_estimate": st["trial"],
+            "appeal_mean": st["appeal"],
+            "pairwise": pairwise,
+        })
+
+    active_variants = [m for m in metrics_list if m["n"] > 0]
+    winner_id = None
+    rationale = ""
+    recommendation = ""
+    if active_variants:
+        ranked = sorted(active_variants, key=lambda m: (m["intent_top2"], m["intent_mean"]), reverse=True)
+        winner = ranked[0]
+        winner_id = winner["variant_id"]
+        if len(ranked) > 1:
+            runner_up = ranked[1]
+            pair = next((p for p in winner["pairwise"] if p["other_variant_id"] == runner_up["variant_id"]), None)
+            sig_95 = pair["significant_95"] if pair else False
+            sig_90 = pair["significant_90"] if pair else False
+            p_val = pair["p_value"] if pair else 1.0
+
+            w_ci = winner["wilson_ci"]
+            r_ci = runner_up["wilson_ci"]
+
+            if sig_95:
+                rationale = (
+                    f"{winner['variant_name']} statistically outperformed {runner_up['variant_name']} "
+                    f"(Top-2-Box: {winner['intent_top2']:.0%} vs {runner_up['intent_top2']:.0%}, p={p_val:.3f} < 0.05)."
+                )
+                recommendation = f"Deploy '{winner['hook_text']}' as primary campaign hook."
+            elif sig_90:
+                rationale = (
+                    f"{winner['variant_name']} showed moderate directional lead over {runner_up['variant_name']} "
+                    f"(Top-2-Box: {winner['intent_top2']:.0%} vs {runner_up['intent_top2']:.0%}, p={p_val:.3f} < 0.10)."
+                )
+                recommendation = f"Favor '{winner['hook_text']}' but monitor early campaign CTR."
+            else:
+                rationale = (
+                    f"{winner['variant_name']} leads Top-2-Box ({winner['intent_top2']:.0%} vs {runner_up['intent_top2']:.0%}), "
+                    f"but 95% Wilson CIs overlap ([{w_ci['lower']:.2f}, {w_ci['upper']:.2f}] vs "
+                    f"[{r_ci['lower']:.2f}, {r_ci['upper']:.2f}], p={p_val:.3f}). "
+                    f"Sample size (N={winner['n']} vs {runner_up['n']}) is underpowered for definitive statistical superiority."
+                )
+                recommendation = (
+                    f"Test '{winner['hook_text']}' against '{runner_up['hook_text']}' in live ad shootout (50/50 budget split) "
+                    "to confirm real-world conversion."
+                )
+        else:
+            rationale = f"Only one active variant tested ({winner['variant_name']})."
+            recommendation = f"Consider testing against contrasting value propositions."
+
+    return {
+        "enabled": True,
+        "variants": metrics_list,
+        "winner_id": winner_id,
+        "winner_rationale": rationale,
+        "recommendation": recommendation,
     }
 
 
@@ -178,8 +344,9 @@ def summarize(brief: Brief, personas: list[Persona], rows: list[InterviewRespons
 
     by = {k: {name: _group_block(v, weights) for name, v in g.items()} for k, g in groups.items()}
     metrics = {m: _metric_block([getattr(r, m) for r in rows if getattr(r, m) is not None]) for m in METRICS}
+    shootout = analyze_shootout(rows, getattr(brief, "variants", []), weights)
 
-    return {
+    out = {
         "n": len(rows),
         "metrics": metrics,
         "trial_estimate": trial_estimate([r.purchase_intent for r in rows], weights),
@@ -194,6 +361,9 @@ def summarize(brief: Brief, personas: list[Persona], rows: list[InterviewRespons
         },
         "diagnostics": diagnostics(rows, by["model"]),
     }
+    if shootout is not None:
+        out["shootout"] = shootout
+    return out
 
 
 def theme_stats(coding_items: list[tuple[str, str]], assignments: dict[str, str], themes: list[dict],
@@ -216,6 +386,8 @@ def theme_stats(coding_items: list[tuple[str, str]], assignments: dict[str, str]
     out = []
     for th in themes:
         pids = per_theme.get(th["id"], set())
+        if not pids:
+            continue
         seg_counts = Counter(pmap[p].traits.segment for p in pids if p in pmap)
         out.append({
             **th,
