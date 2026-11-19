@@ -1,8 +1,8 @@
 # Kohort
 
-**An AI-assisted market research engine for testing product concepts before committing time and capital.**
+**An AI agent system that evaluates product concepts with simulated market research, before you commit time and capital.**
 
-Kohort combines synthetic consumer interviews, live market research, asynchronous LLM orchestration and deterministic Python analytics to produce structured, evidence-aware concept evaluations.
+Kohort combines synthetic consumer interviews, live market research, asynchronous multi-model LLM orchestration and deterministic Python analytics into a supervised agent pipeline that produces structured, evidence-aware concept evaluations. A supervisor oversees each stage, guardrails reject weak or invalid output before the run may continue, and a critic role reviews the research for weaknesses before anything is reported.
 
 **Developer:** Reamogetswe Molefe  
 **Status:** Active development  
@@ -67,6 +67,15 @@ The central engineering principle is:
 > **LLMs generate and interpret qualitative material. Python calculates the quantitative results.**
 
 This separation keeps numerical analysis out of free-form model responses and makes the results easier to inspect.
+
+## Agent behaviour, not just pipeline steps
+
+A fixed workflow runs predefined steps regardless of what it finds. Kohort's stages are capabilities the supervisor can gate, retry or halt based on intermediate results:
+
+- **Supervisor.** Oversees stage execution so a failing stage is never silently passed to the next one.
+- **Stage gates.** Every stage output must pass Pydantic schema validation and guardrail checks (repetitive answers, low response diversity, excessive positivity) before the pipeline may consume it.
+- **Self-critique.** An independent critic role evaluates research quality and flags weaknesses, which are surfaced in the final report rather than hidden.
+- **Recovery and spend control.** The LLM gateway tracks token usage and estimated cost, applies retry handling and enforces configurable spending limits, so a large panel cannot run away.
 
 ## Core capabilities
 
@@ -160,6 +169,7 @@ Kohort is built around a Python orchestration layer that coordinates the stages 
 
 | Component | Responsibility |
 |---|---|
+| Supervisor | Oversees stage execution and decides whether the run may continue |
 | Pipeline orchestrator | Coordinates the research workflow |
 | Async LLM gateway | Routes model requests and manages execution |
 | Pydantic schemas | Validates structured model outputs |
@@ -167,6 +177,8 @@ Kohort is built around a Python orchestration layer that coordinates the stages 
 | Interview stages | Coordinates concept and price-reveal interviews |
 | Analysis engine | Calculates quantitative metrics |
 | Evidence review | Checks claims and supporting evidence |
+| Guardrails | Stage-gate quality checks that reject invalid stage output |
+| Recovery | Retry and advisory-recovery paths for model and stage failures |
 | Reporting engine | Produces Markdown and HTML reports |
 
 ### Asynchronous execution
@@ -349,7 +361,7 @@ Synthetic purchase intent is not proof of actual purchasing behaviour. Pricing e
 
 I'm Reamogetswe Molefe, a mechanical engineering student and software developer interested in applied AI, full-stack engineering and building systems that solve practical business problems.
 
-Kohort is an exploration of how to combine model orchestration, deterministic computation, structured data and evidence review into a practical research workflow.
+Kohort is an exploration of how to combine agent orchestration, deterministic computation, structured data and evidence review into a practical research system.
 
 The project is actively being developed and tested.
 
