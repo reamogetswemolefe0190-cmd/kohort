@@ -1,0 +1,7 @@
+# Generated research deliverables, brand collateral and marketing pages are
+# build artifacts, not source code. Marking them for Linguist keeps Python
+# the dominant language of this repository.
+deliverables/** linguist-generated
+collateral/** linguist-generated
+marketing/** linguist-generated
+*.pdf linguist-generated
